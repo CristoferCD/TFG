@@ -31,9 +31,9 @@ Se establecen las siguientes líneas de trabajo para continuar de aquí a una o 
 
 ## Anexos
 
-| **Nombre**            | **Tipo** | **Ruta**                                     |
-| :-------------------- | -------- | -------------------------------------------- |
-| **Documentación TFG** | E-mail   | "TFG\Resources\E-mail\Documentación TFG.eml" |
+| **Nombre**            | **Tipo** | **Ruta**                                                |
+| :-------------------- | -------- | ------------------------------------------------------- |
+| **Documentación TFG** | E-mail   | "Documentación\_Resources\E-mail\Documentación TFG.eml" |
 
 
 
