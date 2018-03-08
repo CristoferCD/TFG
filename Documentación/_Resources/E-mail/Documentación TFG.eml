@@ -1,0 +1,167 @@
+MIME-Version: 1.0
+Date: Thu, 8 Feb 2018 16:01:26 +0100
+From: PICHEL CAMPOS JUAN CARLOS <juancarlos.pichel@usc.es>
+Subject: =?utf-8?Q?Documentaci=C3=B3n_TFG?=
+Thread-Topic: =?utf-8?Q?Documentaci=C3=B3n_TFG?=
+To: =?utf-8?Q?canosa_dom=C3=ADnguez_cristofer?= <cristofer.canosa@rai.usc.es>
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset="utf-8"
+
+<html>
+<head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf-8">
+</head>
+<body style=3D"word-wrap: break-word; -webkit-nbsp-mode: space; line-break:=
+ after-white-space;" class=3D"">
+<span style=3D"background-color: rgb(255, 255, 255);" class=3D"">M=C3=A1ndo=
+che algunha informaci=C3=B3n sobre Pyomo/PySP para que lle botedes un ollo =
+(hai moita matem=C3=A1tica nestos documentos, pero creo tendo unha idea xer=
+al do algoritmo, podemos ir directamente as partes
+ que nos interesan).&nbsp;</span><br style=3D"background-color: rgb(255, 25=
+5, 255);" class=3D"">
+<br style=3D"background-color: rgb(255, 255, 255);" class=3D"">
+<span style=3D"background-color: rgb(255, 255, 255);" class=3D"">C=C3=B3dig=
+o:</span><br style=3D"background-color: rgb(255, 255, 255);" class=3D"">
+<a class=3D"moz-txt-link-freetext" href=3D"https://github.com/Pyomo/pyomo/t=
+ree/master/pyomo/pysp" style=3D"background-color: rgb(255, 255, 255);">http=
+s://github.com/Pyomo/pyomo/tree/master/pyomo/pysp</a><br style=3D"backgroun=
+d-color: rgb(255, 255, 255);" class=3D"">
+<br style=3D"background-color: rgb(255, 255, 255);" class=3D"">
+<span style=3D"background-color: rgb(255, 255, 255);" class=3D"">Art=C3=ADc=
+ulo:</span><br style=3D"background-color: rgb(255, 255, 255);" class=3D"">
+<a class=3D"moz-txt-link-freetext" href=3D"https://link.springer.com/conten=
+t/pdf/10.1007/s12532-012-0036-1.pdf" style=3D"background-color: rgb(255, 25=
+5, 255);">https://link.springer.com/content/pdf/10.1007/s12532-012-0036-1.p=
+df</a><br style=3D"background-color: rgb(255, 255, 255);" class=3D"">
+<br style=3D"background-color: rgb(255, 255, 255);" class=3D"">
+<span style=3D"background-color: rgb(255, 255, 255);" class=3D"">Doc:</span=
+><br style=3D"background-color: rgb(255, 255, 255);" class=3D"">
+<a class=3D"moz-txt-link-freetext" href=3D"http://www.pyomo.org/documentati=
+on/" style=3D"background-color: rgb(255, 255, 255);">http://www.pyomo.org/d=
+ocumentation/</a><br style=3D"background-color: rgb(255, 255, 255);" class=
+=3D"">
+<a class=3D"moz-txt-link-freetext" href=3D"https://github.com/Pyomo/pyomo/r=
+aw/master/doc/pysp/pyspdoc.pdf" style=3D"background-color: rgb(255, 255, 25=
+5);">https://github.com/Pyomo/pyomo/raw/master/doc/pysp/pyspdoc.pdf</a><br =
+style=3D"background-color: rgb(255, 255, 255);" class=3D"">
+<br style=3D"background-color: rgb(255, 255, 255);" class=3D"">
+<br style=3D"background-color: rgb(255, 255, 255);" class=3D"">
+<span style=3D"background-color: rgb(255, 255, 255);" class=3D"">A idea =C3=
+=A9 traballar sobre PySP, que =C3=A9 un m=C3=B3dulo de Pyomo, unha ferramen=
+ta de optimizaci=C3=B3n moi xeral. En concreto, solo se traballar=C3=ADa so=
+bre &quot;runph&quot;,&nbsp; que b=C3=A1sicamente fai o que vos comentei a =
+ti e a
+ Tom=C3=A1s, solo que =C3=A9 un c=C3=B3digo Python e aberto, polo que nese =
+sentido ser=C3=A1 moito m=C3=A1is flexible que utilizar o meu c=C3=B3digo. =
+PySP/runph est=C3=A1 paralelizado utilizando Pyro (nalg=C3=BAn documento qu=
+e che env=C3=ADo est=C3=A1 descrito): define un nameserver, un solver e un =
+determinado
+ n=C3=BAmero de workers que interaccionan entre eles. O que me gustar=C3=AD=
+a ser=C3=ADa 'trasladar' ese esquema a Spark. A parte negativa de usar PySP=
+ =C3=A9 que eu desco=C3=B1ezo as tripas...&nbsp;</span><br style=3D"backgro=
+und-color: rgb(255, 255, 255);" class=3D"">
+<br style=3D"background-color: rgb(255, 255, 255);" class=3D"">
+<span style=3D"background-color: rgb(255, 255, 255);" class=3D"">Solo por r=
+efrescar, 'runph' utiliza o algoritmo Progressive Hedging:</span><br style=
+=3D"background-color: rgb(255, 255, 255);" class=3D"">
+<span style=3D"background-color: rgb(255, 255, 255);" class=3D"">- resolver=
+ diferentes problemas independentes (a parte paralela);</span><br style=3D"=
+background-color: rgb(255, 255, 255);" class=3D"">
+<span style=3D"background-color: rgb(255, 255, 255);" class=3D"">- a partir=
+ da informaci=C3=B3n que xeran calc=C3=BAlanse uns novos par=C3=A1metros qu=
+e van modificar esos problemas (por decilo as=C3=AD, unha reducci=C3=B3n e =
+un gather)</span><br style=3D"background-color: rgb(255, 255, 255);" class=
+=3D"">
+<span style=3D"background-color: rgb(255, 255, 255);" class=3D"">- este pro=
+ceso itera ata alcanzar unha determinada condici=C3=B3n de converxencia.</s=
+pan>
+<div class=3D""><span style=3D"background-color: rgb(255, 255, 255);" class=
+=3D""><br class=3D"">
+</span>
+<div class=3D"">
+<div style=3D"color: rgb(0, 0, 0); font-family: Helvetica; font-size: 12px;=
+ font-style: normal; font-variant-caps: normal; font-weight: normal; letter=
+-spacing: normal; text-align: start; text-indent: 0px; text-transform: none=
+; white-space: normal; word-spacing: 0px; -webkit-text-stroke-width: 0px; w=
+ord-wrap: break-word; -webkit-nbsp-mode: space; -webkit-line-break: after-w=
+hite-space;" class=3D"">
+<div style=3D"word-wrap: break-word; -webkit-nbsp-mode: space; -webkit-line=
+-break: after-white-space;" class=3D"">
+<div style=3D"color: rgb(0, 0, 0); font-family: Helvetica; font-size: 12px;=
+ font-style: normal; font-variant-caps: normal; font-weight: normal; letter=
+-spacing: normal; text-align: start; text-indent: 0px; text-transform: none=
+; white-space: normal; word-spacing: 0px; -webkit-text-stroke-width: 0px;">
+<br class=3D"Apple-interchange-newline">
+=E2=80=94=E2=80=94</div>
+<div style=3D"color: rgb(0, 0, 0); font-variant-caps: normal; letter-spacin=
+g: normal; text-align: start; text-indent: 0px; text-transform: none; white=
+-space: normal; word-spacing: 0px; -webkit-text-stroke-width: 0px;">
+<font face=3D"Menlo" class=3D""><span style=3D"font-size: 11px;" class=3D""=
+>Juan Carlos Pichel Campos</span></font></div>
+<div style=3D"color: rgb(0, 0, 0); font-variant-caps: normal; letter-spacin=
+g: normal; text-align: start; text-indent: 0px; text-transform: none; white=
+-space: normal; word-spacing: 0px; -webkit-text-stroke-width: 0px;">
+<font face=3D"Menlo" class=3D""><span style=3D"font-size: 11px;" class=3D""=
+>Centro de Investigaci=C3=B3n en Tecnolox=C3=ADas da Informaci=C3=B3n (CiTI=
+US)</span></font></div>
+<div style=3D"color: rgb(0, 0, 0); font-variant-caps: normal; letter-spacin=
+g: normal; text-align: start; text-indent: 0px; text-transform: none; white=
+-space: normal; word-spacing: 0px; -webkit-text-stroke-width: 0px;">
+<font face=3D"Menlo" class=3D""><span style=3D"font-size: 11px;" class=3D""=
+>Universidade de Santiago de Compostela</span></font></div>
+<div style=3D"color: rgb(0, 0, 0); font-variant-caps: normal; letter-spacin=
+g: normal; text-align: start; text-indent: 0px; text-transform: none; white=
+-space: normal; word-spacing: 0px; -webkit-text-stroke-width: 0px;">
+<font face=3D"Menlo" class=3D""><span style=3D"font-size: 11px;" class=3D""=
+>15782 Santiago de Compostela, Spain</span></font></div>
+<div style=3D"color: rgb(0, 0, 0); font-variant-caps: normal; letter-spacin=
+g: normal; text-align: start; text-indent: 0px; text-transform: none; white=
+-space: normal; word-spacing: 0px; -webkit-text-stroke-width: 0px;">
+<font face=3D"Menlo" class=3D""><span style=3D"font-size: 11px;" class=3D""=
+><br class=3D"">
+</span></font></div>
+<div style=3D"color: rgb(0, 0, 0); font-variant-caps: normal; letter-spacin=
+g: normal; text-align: start; text-indent: 0px; text-transform: none; white=
+-space: normal; word-spacing: 0px; -webkit-text-stroke-width: 0px;">
+<font face=3D"Menlo" class=3D""><span style=3D"font-size: 11px;" class=3D""=
+>e-mail:<span class=3D"Apple-converted-space">&nbsp;</span><a href=3D"mailt=
+o:juancarlos.pichel@usc.es" class=3D"">juancarlos.pichel@usc.es</a></span><=
+/font></div>
+<div style=3D"color: rgb(0, 0, 0); font-variant-caps: normal; letter-spacin=
+g: normal; text-align: start; text-indent: 0px; text-transform: none; white=
+-space: normal; word-spacing: 0px; -webkit-text-stroke-width: 0px;">
+<font face=3D"Menlo" class=3D""><span style=3D"font-size: 11px;" class=3D""=
+>web:<span class=3D"Apple-converted-space">&nbsp;</span><a href=3D"http://p=
+ersoal.citius.usc.es/jcpichel" class=3D"">http://persoal.citius.usc.es/jcpi=
+chel</a></span></font></div>
+<div style=3D"color: rgb(0, 0, 0); font-variant-caps: normal; letter-spacin=
+g: normal; text-align: start; text-indent: 0px; text-transform: none; white=
+-space: normal; word-spacing: 0px; -webkit-text-stroke-width: 0px;">
+<font face=3D"Menlo" class=3D""><span style=3D"font-size: 11px;" class=3D""=
+>phone: (&#43;34) 881816437</span></font></div>
+<div style=3D"color: rgb(0, 0, 0); font-variant-caps: normal; letter-spacin=
+g: normal; text-align: start; text-indent: 0px; text-transform: none; white=
+-space: normal; word-spacing: 0px; -webkit-text-stroke-width: 0px;">
+<font face=3D"Menlo" class=3D""><span style=3D"font-size: 11px;" class=3D""=
+>fax: (&#43;34) 881813602</span></font></div>
+<div style=3D"color: rgb(0, 0, 0); font-family: Helvetica; font-size: 12px;=
+ font-style: normal; font-variant-caps: normal; font-weight: normal; letter=
+-spacing: normal; text-align: start; text-indent: 0px; text-transform: none=
+; white-space: normal; word-spacing: 0px; -webkit-text-stroke-width: 0px;" =
+class=3D"">
+<br class=3D"">
+</div>
+<br class=3D"Apple-interchange-newline">
+</div>
+</div>
+<br class=3D"Apple-interchange-newline" style=3D"color: rgb(0, 0, 0); font-=
+family: Helvetica; font-size: 12px; font-style: normal; font-variant-caps: =
+normal; font-weight: normal; letter-spacing: normal; text-align: start; tex=
+t-indent: 0px; text-transform: none; white-space: normal; word-spacing: 0px=
+; -webkit-text-stroke-width: 0px;">
+<br class=3D"Apple-interchange-newline">
+</div>
+<br class=3D"">
+</div>
+</body>
+</html>
