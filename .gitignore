@@ -1,0 +1,8 @@
+
+DistributedTest/\.idea/
+
+DistributedTest/__pycache__/
+
+DistributedTest/dependencies\.zip
+
+*.pyc
