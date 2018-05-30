@@ -15,10 +15,11 @@ if __name__ == "__main__":
 
     startTime = time.time()
 
-    conf = SparkConf().setMaster("local").setAppName("Test")
-    #conf = SparkConf().setMaster("spark://localhost:7077").setAppName("Test")
+    #conf = SparkConf().setMaster("local").setAppName("Test")
+    conf = SparkConf().setMaster("spark://localhost:7077").setAppName("Test")
 
-    sc = SparkContext(conf=conf, pyFiles=["/home/crist/PycharmProjects/DistributedTest/dependencies.zip"])
+    # sc = SparkContext(conf=conf, pyFiles=["/home/crist/PycharmProjects/DistributedTest/dependencies.zip"])
+    sc = SparkContext(conf=conf)
 
     scenarioSize = 20
 
@@ -42,7 +43,7 @@ if __name__ == "__main__":
         broadcast1 = sc.broadcast(var1)
         broadcast2 = sc.broadcast(var2)
 
-        solved_values = parallelWorkerList.foreach(lambda item: do_iteration(item[0], item[1], broadcast1, broadcast2)).collect()
+        solved_values = parallelWorkerList.foreach(lambda item: do_iteration(item[0], item[1], broadcast1, broadcast2))
 
         #solved_values = parallelWorkerList.map(lambda item: do_iteration(item[0], item[1], broadcast1, broadcast2)).collect()
 

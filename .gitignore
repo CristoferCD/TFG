@@ -6,3 +6,5 @@ DistributedTest/__pycache__/
 DistributedTest/dependencies\.zip
 
 *.pyc
+
+pyomo-log
