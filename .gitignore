@@ -8,3 +8,19 @@ DistributedTest/dependencies\.zip
 *.pyc
 
 pyomo-log
+
+*.aux
+
+*.lof
+
+*.fls
+
+Documentación/Memoria/traballo\.log
+
+Documentación/Memoria/traballo\.lot
+
+Documentación/Memoria/traballo\.out
+
+Documentación/Memoria/traballo\.synctex\.gz
+
+Documentación/Memoria/traballo\.toc
