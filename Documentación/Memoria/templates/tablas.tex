@@ -1,0 +1,39 @@
+\usepackage{tabularx}
+\usepackage{xkeyval}
+
+% define the key (arguments)
+\makeatletter
+\define@key{wpkeys}{id}{%
+  \def\wpid{#1}
+}
+\define@key{wpkeys}{name}{%
+  \def\wpname{#1}
+}
+\define@key{wpkeys}{duration}{%
+  \def\wpduration{#1 días}
+}
+\define@key{wpkeys}{results}{%
+  \def\wpresults{#1}
+}
+\makeatother
+% end of key definition
+
+% new command for a work package
+\newcommand{\WorkItem}[2][]{%
+    \setkeys{wpkeys}{#1}%
+    \vspace{5mm}
+    \begin{tabularx}{\linewidth}{|p{3cm}|X|}
+        \hline
+        \textbf{Id} & \wpid \tabularnewline
+        \hline
+        \textbf{Tarea} & \wpname \tabularnewline
+        \hline
+        \textbf{Duración} & \wpduration \tabularnewline
+        \hline
+        \textbf{Descripción} & #2 \tabularnewline
+        \hline
+        \textbf{Salida} & \wpresults \tabularnewline
+        \hline
+    \end{tabularx}
+}
+% end of command definition
