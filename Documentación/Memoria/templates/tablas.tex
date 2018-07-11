@@ -1,6 +1,8 @@
 \usepackage{tabularx}
 \usepackage{xkeyval}
 
+% TABLA TAREA EDT
+
 % define the key (arguments)
 \makeatletter
 \define@key{wpkeys}{id}{%
@@ -18,7 +20,7 @@
 \makeatother
 % end of key definition
 
-% new command for a work package
+% new command
 \newcommand{\WorkItem}[2][]{%
     \setkeys{wpkeys}{#1}%
     \vspace{5mm}
@@ -33,6 +35,41 @@
         \textbf{Descripción} & #2 \tabularnewline
         \hline
         \textbf{Salida} & \wpresults \tabularnewline
+        \hline
+    \end{tabularx}
+}
+% end of command definition
+
+% TABLA REQUISITO
+
+% define the key (arguments)
+\makeatletter
+\define@key{rqkeys}{id}{%
+  \def\rqid{#1}
+}
+\define@key{rqkeys}{name}{%
+  \def\rqname{#1}
+}
+\define@key{rqkeys}{description}{%
+  \def\rqdescription{#1}
+}
+\define@key{rqkeys}{priority}{%
+  \def\rqpriority{#1}
+}
+\makeatother
+% end of key definition
+
+% new command
+\newcommand{\Req}[2][]{%
+    \setkeys{rqkeys}{#1}%
+    \vspace{5mm}
+    \begin{tabularx}{\linewidth}{|p{3cm}|X|}
+        \hline
+        \textbf{\rqid} & \rqname \tabularnewline
+        \hline
+        \textbf{Descripción} & \rqdescription \tabularnewline
+        \hline
+        \textbf{Importancia} & \rqpriority \tabularnewline
         \hline
     \end{tabularx}
 }
