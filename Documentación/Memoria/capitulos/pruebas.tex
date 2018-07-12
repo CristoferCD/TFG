@@ -1,0 +1,229 @@
+\chapter{Plan de pruebas}
+
+\section{Pruebas funcionales}
+
+\subsection{Introducción}
+
+El actual plan de pruebas tiene como objetivo asegurar que los requisitos especificados son cumplidos satisfactoriamente por el módulo de código implementado. Adicionalmente se buscará que el código implementado funcione correctamente cuando dispone de entradas incorrecta.
+
+Este plan de pruebas está basado en el estándar IEEE 829 \cite{IEEE829}.
+
+\subsection{Restricciones}
+
+La principal restricción de este plan de pruebas es el tiempo. Sólo se dispone de 1 día para la creación del plan y otro día para su ejecución y la recolección de resultados.\\
+
+La complejidad de las entradas que recibe el módulo limita el alcance de las pruebas de caja negra que podremos diseñar en el tiempo disponible.
+
+\subsection{Objeto de pruebas}
+
+El código a probar será la implementación del gestor de Spark, concretamente la clase {\it SolverManager\_PHSpark}. Su ejecución se realiza mediante el comando {\it runph} con la opción {\it --solver-manager=phspark}.\\
+
+Se realizarán pruebas de caja negra sobre las diferentes opciones de configuración del solver manager. Adicionalmente se ejecutarán los ejemplos existentes en el proyecto y se comparará la solución generada mediante spark y mediante el algoritmo secuencial.
+
+\subsection{Características a probar y exclusiones}
+
+Se probarán las diferentes opciones de configuración que modifican la ejecución de phspark. Con esto verificamos el requisito RF-01 y RF-02.\\
+
+Adicionalmente se ejecutan los ejemplos existentes para PySP mediante phspark y la implementación secuencial, comparando los resultados. De esta forma se verifica un funcionamiento correcto en distintos escenarios así como el requisito RF-03.\\
+
+Queda excluído de este plan de pruebas la generación de pruebas mediante estrategias de caja blanca. No podremos asegurar una cobertura óptima de código pero no es posible realizarlas en el tiempo disponible dada la complejidad de las entradas.
+
+\subsection{Estrategia}
+
+Se utilizará el módulo ``unittest'' de Python para generar una clase que ejecute los casos de prueba diseñados.\\
+
+Será necesario generar un archivo de salida correcto para usar como punto de comparación con las ejecuciones de pruebas. Será necesario filtrar las diferencais en la salida que causa la ejecución con Spark o, alternativamente, comprobar manualmente el resultado de cada pareja de archivos.
+
+\subsection{Criterios de aceptación}
+
+Se considerará que una prueba ha sido pasada correctamente si, tras introducir los datos de entrada escogidos, la aplicación devuelve una salida que concuerda exactamente con la que se estableció como esperada.\\
+
+Será posible concluir que la aplicación aprobada pasó las pruebas si el 100\% de los casos válidos pasaron los criterios de aceptación. En caso contrario será necesaria la corrección de la implementación.
+
+\subsection{Diseño de pruebas}
+
+\TestItem[
+    id={P-01},
+    name={Conexión a Spark},
+    requirements={RF-01, RF-02},
+    objective={
+        Valida la creación de una conexión a Spark.
+    },
+    techniques={
+        \begin{itemize}
+            \item \textbf{Por caja negra: }
+            \begin{itemize}
+                \item host
+                \begin{itemize}
+                    \item 1. Clase válida: Cadena que represente una IP correcta y disponible.
+                    \item 2. Clase válida: Null.
+                    \item 3. Clase no válida: Cadena que represente una IP errónea.
+                    \item 4. Clase no válida: Cadena que represente una IP correcta pero no disponible.
+                \end{itemize}
+                \item port 
+                \begin{itemize}
+                    \item 5. Clase válida: Entero que represente un puerto correcto y disponible.
+                    \item 6. Clase válida: Null.
+                    \item 7. Clase no válida: Entero que represente un puerto erróneo.
+                    \item 8. Clase no válida: Entero que represente un puerto correcto pero ocupado.
+                \end{itemize}
+            \end{itemize}
+        \end{itemize}
+    },
+    testCases={CP-01, CP-02, CP-03, CP-04, CP-05, CP-06},
+    expected={Conexión correcta y ejecución que genere la salida esperada en el caso de las pruebas para clases válidas. Para las pruebas con entradas no válidas se debe mostrar un error especificando el problema.}
+]
+
+\TestItem[
+    id={P-02},
+    name={Ejecución correcta de ejemplos},
+    requirements={RF-01, RF-02, RF-03},
+    objective={
+        Valida que los resultados devueltos son correctos.
+    },
+    techniques={
+        Se ejecutarán todos los ejemplos disponibles en \textit{``/pyomo/examples/pysp''} usando la versión secuencial para generar el resultado esperado y la versión Spark para verificar su funcionamiento.
+    },
+    testCases={CP-01, CP-02, CP-03},
+    expected={Los resultados de todos los ejemplos son iguales para la versión secuencial y paralela.}
+]
+
+\subsection{Casos de prueba}
+
+\TestCase[
+    id={CP-01},
+    description={Prueba la entrada correcta},
+    validates={P-01(1,5)},
+    environment={
+        Instancia de Spark funcionando en ``spark://localhost:7077''
+    },
+    input={
+        \makecell{
+            host = ``localhost''\\
+            port = 7077
+        }
+    },
+    output={
+        Igual a la ejecución con -\-solver-manager=serial
+    }
+]
+
+\TestCase[
+    id={CP-02},
+    description={Prueba la url por defecto},
+    validates={P-01(2,6)},
+    environment={
+        Instancia de Spark funcionando en ``spark://localhost:7077''
+    },
+    input={
+        \makecell{
+            host = None\\
+            port = None
+        }
+    },
+    output={
+        Igual a la ejecución con -\-solver-manager=serial
+    }
+]
+
+\TestCase[
+    id={CP-03},
+    description={Prueba la gestión de error al intentar conectarse a una IP incorrecta},
+    validates={P-01(3)},
+    environment={
+        N/A
+    },
+    input={
+        \makecell{
+            host = ``111.111''\\
+            port = None
+        }
+    },
+    output={
+        Mensaje de error indicando que no se ha podido conectar a Spark en la URL especificada.
+    }
+]
+
+\TestCase[
+    id={CP-04},
+    description={Prueba la gestión de error al intentar conectarse a una IP donde no se está ejecutando Spark},
+    validates={P-01(4)},
+    environment={
+        La URL ``spark://localhost:7077'' no debe tener ningún servicio escuchando.
+    },
+    input={
+        \makecell{
+            host = ``localhost''\\
+            port = 7077
+        }
+    },
+    output={
+        Mensaje de error indicando que no se ha podido conectar a Spark en la URL especificada.
+    }
+]
+
+\TestCase[
+    id={CP-05},
+    description={Prueba la gestión de error al especificar un puerto inválido},
+    validates={P-01(7)},
+    environment={
+        N/A
+    },
+    input={
+        \makecell{
+            host = None\\
+            port = -1
+        }
+    },
+    output={
+        Mensaje de error indicando que no se ha podido conectar a Spark en la URL especificada.
+    }
+]
+
+\TestCase[
+    id={CP-06},
+    description={Prueba la gestión de error al especificar un puerto donde no se está ejecutando Spark},
+    validates={P-01(8)},
+    environment={
+        La URL ``spark://localhost:8080'' no debe ser una instancia de Spark
+    },
+    input={
+        \makecell{
+            host = ``localhost''\\
+            port = 8080
+        }
+    },
+    output={
+        Mensaje de error indicando que no se ha podido conectar a Spark en la URL especificada.
+    }
+]
+
+\subsection{Procedimiento de pruebas}
+
+Los casos de prueba especificados son idempotentes y no es necesario especificar un orden concreto para su ejecución. Será necesario para cada uno establecer el entorno especificado en cada caso concreto. Adicionalmente, para verificar los resultados será necesario ejecutar la misma entrada de forma secuencial para comparar.\\
+
+Para la prueba P-02 no se especifican casos de prueba concretos porque todos se ejecutan de la misma forma cambiando el directorio de entrada. Para esta prueba se ejecutarán todos los ejemplos disponibles para PySP de forma secuencial y, posteriormente, usando Spark. Si Spark devuelve siempre los mismos resultados (dentro de un margen de error) se considerará la prueba como superada.
+
+\subsection{Ejecución de las pruebas}
+
+\section{Pruebas de rendimiento}
+
+\subsection{Introducción}
+
+\subsection{Restricciones}
+
+\subsection{Objeto de pruebas}
+
+\subsection{Características a probar y exclusiones}
+
+\subsection{Estrategia}
+
+\subsection{Criterios de aceptación}
+
+\subsection{Diseño de pruebas}
+
+\subsection{Casos de prueba}
+
+\subsection{Procedimiento de pruebas}
+
+\subsection{Ejecución de las pruebas}

@@ -74,3 +74,100 @@
     \end{tabularx}
 }
 % end of command definition
+
+% TABLA PRUEBA
+
+% define the key (arguments)
+\makeatletter
+\define@key{tkeys}{id}{%
+  \def\tid{#1}
+}
+\define@key{tkeys}{name}{%
+  \def\tname{#1}
+}
+\define@key{tkeys}{requirements}{%
+  \def\treq{#1}
+}
+\define@key{tkeys}{objective}{%
+  \def\tobjective{#1}
+}
+\define@key{tkeys}{techniques}{%
+  \def\ttechniques{#1}
+}
+\define@key{tkeys}{testCases}{%
+  \def\ttestcases{#1}
+}
+\define@key{tkeys}{expected}{%
+  \def\texpected{#1}
+}
+\makeatother
+% end of key definition
+
+% new command
+\newcommand{\TestItem}[2][]{%
+    \setkeys{tkeys}{#1}%
+    \vspace{5mm}
+    \begin{tabularx}{\linewidth}{|p{3cm}|X|}
+        \hline
+        \textbf{Prueba   \tid} & \tname \tabularnewline
+        \hline
+        \textbf{Objetivo} & \tobjective \tabularnewline
+        \hline
+        \textbf{Requisitos validados} & \treq \tabularnewline
+        \hline
+        \textbf{Técnicas aplicadas} & \ttechniques \tabularnewline
+        \hline
+        \textbf{Casos de prueba} & \ttestcases \tabularnewline
+        \hline
+        \textbf{Salida esperada} & \texpected \tabularnewline
+        \hline
+    \end{tabularx}
+}
+% end of command definition
+
+% TABLA CASO DE PRUEBA
+
+% define the key (arguments)
+\makeatletter
+\define@key{tckeys}{id}{%
+  \def\tcid{#1}
+}
+\define@key{tckeys}{description}{%
+  \def\tcdesc{#1}
+}
+\define@key{tckeys}{validates}{%
+  \def\tcvalidates{#1}
+}
+\define@key{tckeys}{environment}{%
+  \def\tcenv{#1}
+}
+\define@key{tckeys}{input}{%
+  \def\tcinput{#1}
+}
+\define@key{tckeys}{output}{%
+  \def\tcoutput{#1}
+}
+\makeatother
+% end of key definition
+
+% new command
+\newcommand{\TestCase}[2][]{%
+    \setkeys{tckeys}{#1}%
+    \vspace{5mm}
+    \begin{tabularx}{\linewidth}{|p{3cm}|X|}
+        \hline
+        \textbf{Caso de prueba} & \tcid \tabularnewline
+        \hline
+        \textbf{Descripción} & \tcdesc \tabularnewline
+        \hline
+        \textbf{Clases que valida} & \tcvalidates \tabularnewline
+        \hline
+        \textbf{Necesidades del entorno} & \tcenv \tabularnewline
+        \hline
+        \textbf{Entrada} & \tcinput \tabularnewline
+        \hline
+        \textbf{Salida esperada} & \tcoutput \tabularnewline
+        \hline
+    \end{tabularx}
+}
+% end of command definition
