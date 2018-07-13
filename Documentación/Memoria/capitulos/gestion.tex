@@ -2,6 +2,33 @@
 
 \section{Alcance}
 
+\subsection{Descripción del alcance del proyecto}
+
+\subsection{Criterios de aceptación}
+
+El proyecto será aceptado cuando se superen las pruebas definidas en \autoref{sec:pruebas}.\\
+
+El proyecto persigue dos objetivos: la implementación del algoritmo en paralelo y un estudio de rendimiento. La intención es buscar una implementación alternativa y estudiar su viabilidad, no es necesario que la nueva implementación sea inicialmente mejor que la anterior.
+
+\subsection{Entregables del proyecto}
+
+Los elementos a entregar tras la finalización del proyecto son:
+
+\begin{itemize}
+    \item Código de Pyomo actualizado con el módulo de ejecución de PH paralelo.
+    \item Estudio de rendimiento (incluído en el documento actual).
+    \item Memoria de realización del proyecto.
+    \item Otra documentación asociada a la realización del proyecto.
+\end{itemize}
+
+\subsection{Exclusiones}
+
+El proyecto producirá una implementación paralela del algoritmo PH existente. Esta implementación debe ser funcional pero no es un objetivo del proyecto hacer que esta nueva implementación sea mejor que la anterior en términos de eficiencia o rapidez.
+
+\subsection{Restricciones}
+
+El proyecto debe finalizar el día 18/06/2018. En caso de ser necesario se puede postponer la fecha de finalización hasta el 27/07/2018.
+
 \section{Análisis de requisitos}
 
 El objetivo principal de este trabajo es el de paralelizar el algoritmo Progressive Hedging del módulo PySP. Para conseguirlo se establecen los siguientes requisitos:
@@ -39,6 +66,24 @@ El objetivo principal de este trabajo es el de paralelizar el algoritmo Progress
 \section{Análisis de costes}
 
 \section{Gestión de la configuración}
+
+Para especificar la Gestión de la Configuración de este proyecto primero debemos identificar los Elementos de Configuración de Software (ECS), es decir, los elementos que se verán afectados por esta Gestión de la Configuración.\\
+
+Elementos de Configuración:
+\begin{itemize}
+    \item Proyecto de software.
+    \item Memoria del proyecto.
+    \item Anteproyecto.
+    \item Documentos de análisis y diseño.
+    \item Informes de progreso.
+    \item Plantillas de documentos.
+\end{itemize}
+
+Para gestionar las diferentes versiones de estos elementos de configuración se creará un repositorio git alojado en Github. Este repositorio contendrá toda la documentación. Para añadir el proyecto de software se realizará un \textit{fork} del proyecto Pyomo original y se añadirá como un submódulo a nuestro repositorio base. \\
+
+Las modificaciones sobre el software serán individuales por lo que no será necesario considerar técnicas de consistencia en trabajo colaborativo. Para los cambios que se realicen se crea una rama específica sobre el \textit{fork} del proyecto.\\
+
+Para relacionar de forma concreta tareas de la planificación con cambios en el repositorio se utiliza un tablero en la plataforma \textit{Trello}. Estas tareas se reflejan en los informes de progreso del repositorio. Además, funciona como herramienta organizativa.
 
 \section{Planificación temporal}
 
@@ -264,11 +309,4 @@ Con estos nuevos cambios es necesaria una nueva planificación temporal:
     \centerline{\includegraphics[width=15cm]{figuras/planificacion/3_linea-base-final.png}}
     \caption{Línea base final}
 \end{figure}
-
-% TODO: Retrasos
-% - Análisis se retrasa mucho porque el proyecto es complejo
-% - Diseño se elimina y pasamos a hacerlo por prototipos porque así es más fácil adaptarse a Spark que es algo nuevo y es más sencillo ir integrándolo con Pyomo.
-% - Implementación se retrasa porque está todo roto.
-% - Plan de pruebas se hará a correr supongo
-% - Se retrasa la fecha de finalización planificada.
 
