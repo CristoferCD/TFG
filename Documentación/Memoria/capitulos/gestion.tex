@@ -69,6 +69,117 @@ El objetivo principal de este trabajo es el de paralelizar el algoritmo Progress
 
 \section{Análisis de riesgos}
 
+\RiskItem [
+    id={R-01},
+    name={Mala gestión del tiempo de realización del anteproyecto},
+    description={
+        Un anteproyecto erróneo puede suponer el rechazo del mismo. En menor medida, una descripción demasiado concreta puede suponer un limitante a la hora de realización del trabajo.
+    },
+    probability={Moderada},
+    impact={Catastrófico},
+    affected={Anteproyecto},
+    treatment={Prevención -- Generar una lista de elementos necesarios para el anteproyecto, planificarlos temporalmente y cumplir dicha planificación.},
+    indicators={No cumplir la planificación.},
+    follow={Semanal.}
+]
+
+\RiskItem [
+    id={R-02},
+    name={No identificar correctamente los objetivos del trabajo},
+    description={
+        Unos objetivos poco claros pueden llevar a realizar trabajo innecesario o no realizar trabajo imprescindible. También pueden ocasionar desarrollo más lento por no saber qué hacer a continuación.
+    },
+    probability={Moderada},
+    impact={Serio},
+    affected={Anteproyecto, Planificación temporal, Código},
+    treatment={Minimización -- Revisión de los objetivos dispuestos en el anteproyecto con el tutor del TFG. Esta revisión se hará con antelación suficiente para realizar cambios si fuesen necesarios.},
+    indicators={Redacción poco clara del propósito del trabajo en la realización del anteproyecto.},
+    follow={Semanal.}
+]
+
+\RiskItem [
+    id={R-03},
+    name={Inhabilidad para ajustar el trabajo a las horas requeridas},
+    description={
+        La realización de un TFG tiene establecida una cantidad de horas fija. Su incumplimiento debe estar justificado.
+    },
+    probability={Alta},
+    impact={Tolerable},
+    affected={Planificación temporal},
+    treatment={Minimización -- Se estimará la duración de las tareas al alza. En caso de que la planificación acabé con más horas de las permitidas, se podrá disminuir la duración de las tareas menos importantes.},
+    indicators={La planificación suma más horas de las permitidas.},
+    follow={Cada vez que se modifique la planificación.}
+]
+
+\RiskItem [
+    id={R-04},
+    name={Memoria final poco concreta},
+    description={
+        La memoria del proyecto debe representar fielmente el desarrollo del mismo. Si se retrasa demasiado su realización es posible perder detalles relevantes del proyecto.
+    },
+    probability={Alta},
+    impact={Serio},
+    affected={Memoria},
+    treatment={Minimización -- Se realizarán, semanalmente o cada 15 días, documentos de progreso que especifiquen las tareas realizadas. Con esto se tendrá una documentación informal pero muy actualizada y concreta.},
+    indicators={Parte del desarrollo no está especificado en ningún documento de progreso ni en la memoria final.},
+    follow={Semanalmente.}
+]
+
+\RiskItem [
+    id={R-05},
+    name={Incumplimiento del cronograma del proyecto},
+    description={
+        Por errores de código, inexperiencia o una carga de trabajo externa mayor de lo esperada, algunas tareas pueden durar más de lo planificado.
+    },
+    probability={Muy alta},
+    impact={Serio},
+    affected={Planificación temporal},
+    treatment={Prevención -- Seguir el porcentaje de cumplimiento de las tareas sobre el cronograma.},
+    indicators={Una tarea no se finaliza en plazo o el porcentaje de realización no es suficiente para el tiempo establecido en la tarea.},
+    follow={Diario.}
+]
+
+\RiskItem [
+    id={R-06},
+    name={Incompatibilidad de la herramienta escogida con Pyomo},
+    description={
+        Se hará un estudio de herramientas para paralelizar el algoritmo. Si esta herramienta sufre algún tipo de incompatibilidad con el proyecto existente supondrá un retraso importante.
+    },
+    probability={Baja},
+    impact={Catastrófico},
+    affected={Diseño, Código},
+    treatment={Prevención -- Durante la elección de la herramienta se harán pruebas sencillas sobre el proyecto. Tras crear el diseño se hará una implementación de prueba.},
+    indicators={Aparecen errores en el programa que no son causados por fallos de programación.},
+    follow={Semanal durante la fase de diseño. Cada 15 días durante la implementación.}
+]
+
+\RiskItem [
+    id={R-07},
+    name={Retraso del proyecto},
+    description={
+        Alguna de las tareas planificadas dura más de lo especificado. El impacto dependerá de la gravedad del retraso.
+    },
+    probability={Media},
+    impact={Variable},
+    affected={Todos los ECS},
+    treatment={Minimización -- La planificación se creará con un margen de retraso proporcional a la complicación de la tarea.},
+    indicators={Una tarea está tardando en finalizar más de lo esperado.},
+    follow={Semanalmente.}
+]
+
+\RiskItem [
+    id={R-08},
+    name={No conseguir acceso a un cluster},
+    description={
+        Para probar el software es ideal utilizar un cluster de computación que permita evaluar la escalabilidad de la solución.
+    },
+    probability={Media},
+    impact={Serio},
+    affected={Memoria, Informe de rendimiento},
+    treatment={Aceptar -- La pruebas se realizarán en un ordenador personal y es posible que tengan resultados menos relevantes.},
+    follow={Al finalizar la implementación y al comenzar la ejecución de las pruebas.}
+]
+
 \section{Análisis de costes}
 
 \section{Gestión de la configuración}

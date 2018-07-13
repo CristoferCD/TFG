@@ -171,3 +171,63 @@
     \end{tabularx}
 }
 % end of command definition
+
+% TABLA RIESGO
+
+% define the key (arguments)
+\makeatletter
+\define@key{rkkeys}{id}{%
+  \def\rkid{#1}
+}
+\define@key{rkkeys}{name}{%
+  \def\rkname{#1}
+}
+\define@key{rkkeys}{description}{%
+  \def\rkdesc{#1}
+}
+\define@key{rkkeys}{probability}{%
+  \def\rkprobability{#1}
+}
+\define@key{rkkeys}{impact}{%
+  \def\rkimpact{#1}
+}
+\define@key{rkkeys}{affected}{%
+  \def\rkaffected{#1}
+}
+\define@key{rkkeys}{treatment}{%
+  \def\rktreatment{#1}
+}
+\define@key{rkkeys}{indicators}{%
+  \def\rkindicators{#1}
+}
+\define@key{rkkeys}{follow}{%
+  \def\rkfollow{#1}
+}
+\makeatother
+% end of key definition
+
+% new command
+\newcommand{\RiskItem}[2][]{%
+    \setkeys{rkkeys}{#1}%
+    \vspace{5mm}
+    \begin{tabularx}{\linewidth}{|p{3cm}|X|}
+        \hline
+        \textbf{Riesgo \rkid} & \rkname \tabularnewline
+        \hline
+        \textbf{Descripción} & \rkdesc \tabularnewline
+        \hline
+        \textbf{Activos afectados} & \rkaffected \tabularnewline
+        \hline
+        \textbf{Probabilidad} & \rkprobability \tabularnewline
+        \hline
+        \textbf{Impacto} & \rkimpact \tabularnewline
+        \hline
+        \textbf{Tratamiento} & \rktreatment \tabularnewline
+        \hline
+        \textbf{Indicadores} & \rkindicators \tabularnewline
+        \hline
+        \textbf{Seguimiento} & \rkfollow \tabularnewline
+        \hline
+    \end{tabularx}
+}
+% end of command definition
