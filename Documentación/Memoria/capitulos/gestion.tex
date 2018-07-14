@@ -69,6 +69,28 @@ El objetivo principal de este trabajo es el de paralelizar el algoritmo Progress
 
 \section{Análisis de riesgos}
 
+Para un proyecto del tamaño y duración estimados para este TFG es de vital importancia analizar los posibles riesgos que pueden poner en peligro la satisfactoria finalización del trabajo.\\
+
+A continuación se especifican los potenciales riesgos junto a su probabilidad, impacto y tratamiento.\\
+
+La probabilidad se medirá como:
+
+\begin{itemize}
+    \item \textbf{Muy alta:} Probabilidad de ocurrencia superior al 90\%.
+    \item \textbf{Alta:} Probabilidad de ocurrencia superior al 70\%.
+    \item \textbf{Moderada:} Probabilidad de ocurrencia superior al 40\%.
+    \item \textbf{Baja:} Probabilidad de ocurrencia inferior al 40\%.
+\end{itemize}
+
+El impacto que tendrá la ocurrencia del riesgo sobre los activos afectados se medirá como:
+
+\begin{itemize}
+    \item \textbf{Catastrófico: } Supone la cancelación de tareas, inhabilidad de cumplir la fecha límite o, por último, la cancelación del trabajo.
+    \item \textbf{Serio: } Supone modificaciones importantes pero asumibles en la realización de las tareas o el tiempo asignado a las mismas.
+    \item \textbf{Tolerable: } La aparición del riesgo causará la necesidad de trabajo extra pero asumible. También puede suponer eliminar tareas o resultados poco importantes.
+    \item \textbf{Irrelevante: } Las consecuencias generadas por el riesgo pueden ignorarse sin efectos demasiado negativos.
+\end{itemize}
+
 \RiskItem [
     id={R-01},
     name={Mala gestión del tiempo de realización del anteproyecto},
@@ -159,7 +181,7 @@ El objetivo principal de este trabajo es el de paralelizar el algoritmo Progress
     description={
         Alguna de las tareas planificadas dura más de lo especificado. El impacto dependerá de la gravedad del retraso.
     },
-    probability={Media},
+    probability={Moderada},
     impact={Variable},
     affected={Todos los ECS},
     treatment={Minimización -- La planificación se creará con un margen de retraso proporcional a la complicación de la tarea.},
@@ -173,7 +195,7 @@ El objetivo principal de este trabajo es el de paralelizar el algoritmo Progress
     description={
         Para probar el software es ideal utilizar un cluster de computación que permita evaluar la escalabilidad de la solución.
     },
-    probability={Media},
+    probability={Moderada},
     impact={Serio},
     affected={Memoria, Informe de rendimiento},
     treatment={Aceptar -- La pruebas se realizarán en un ordenador personal y es posible que tengan resultados menos relevantes.},
@@ -181,6 +203,80 @@ El objetivo principal de este trabajo es el de paralelizar el algoritmo Progress
 ]
 
 \section{Análisis de costes}
+
+En esta sección se realizará un cálculo de los costes del proyecto basados en la planificación temporal establecida.\\
+
+\subsection{Costes materiales}
+
+En primer lugar se hará un cálculo de los costes materiales necesarios para la realización del proyecto.
+
+El único material utilizado ha sido el ordenador de desarrollo. Considerando una vida útil de 4 años y un precio base de 800{\euro} el precio de su uso a lo largo de 78 días es:
+
+\begin{equation}
+    \frac{800}{365*4} * 78 = 42\mbox{\euro}
+\end{equation}
+
+Todo el software utilizado para la realización del proyecto es gratuito a excepción de MSProject, del cual se hizo uso de la licencia de prueba gratuita.
+
+\subsection{Costes personales}
+
+El coste del desarrollador se estima en 16.300{\euro} brutos. Deduciendo IRPF y costes de Seguridad social, se estima el coste por hora en 9{\euro}.\\
+
+Se deben tener en cuenta los gastos que suponen las reuniones con el tutor del TFG. Se calcula un coste por hora de 20{\euro} y un tiempo total de reuniones en 25h.\\
+
+Si el proyecto dura 78 días y está planificado para un trabajo diario de 5h, los costes personales son:\\
+
+\begin{tabularx}{\linewidth}{|p{3cm}|X|}
+    \hline
+    \textbf{Desarrollador} & $9*78*5=3510\mbox{\euro}$ \tabularnewline
+    \hline
+    \textbf{Tutor} & $20*25=500\mbox{\euro}$ \tabularnewline
+    \hline
+\end{tabularx}
+
+\subsection{Costes indirectos}
+
+Estos costes no están directamente relacionados con el desarrollo del proyecto pero proveen bienes necesarios para la realización del mismo. Entre ellos se encuentran servicios básicos como electricidad e internet.\\
+
+Durante la realización del proyecto se hace uso de estos servicios proporcionados por la universidad mediante el Servicio Universitario de Residencias. \\
+
+Considerando que el proyecto supone 5h diarias, esto es un 13\% del tiempo de uso de dichos servicios. Por lo tanto, en 5 meses (teniendo en cuenta la realización del anteproyecto): 29,25{\euro}
+
+\subsection{Costes tras la ampliación del proyecto}
+
+Una vez modificada la fecha de finalización del proyecto contamos con un mes adicional de gastos. Este nuevo mes debe contar con nuevos gastos indirectos por residir en la vivienda personal, lo que también implica un coste de 10{\euro} por cada reunión que suponga un desplazamiento a Santiago.\\
+
+Esta nueva fecha de finalización supone 40 días extra de gasto. \\
+
+En cuanto a costes materiales, se sumarán 40 días al uso del ordenador, sumando 22{\euro} extra.\\
+
+Los gastos personales, asumiendo otras 15h extra para el tutor:\\
+
+\begin{tabularx}{\linewidth}{|p{3cm}|X|}
+    \hline
+    \textbf{Desarrollador} & $9*40*5=1800\mbox{\euro}$ \tabularnewline
+    \hline
+    \textbf{Tutor} & $20*15=300\mbox{\euro}$ \tabularnewline
+    \hline
+\end{tabularx}
+\ \\
+En los gastos indirectos, el precio ahora es superior, contando 57{\euro} de conexión a internet a mayores del resto de facturas, manteniendo el 13\% de uso, suma otros 90{\euro} en los meses de Junio y Julio.\\
+
+Adicionalmente, se consideran 3 reuniones en este periodo adicional, con un coste de 13{\euro} cada una.
+
+\subsection{Resumen de costes}
+\ \\
+\begin{tabularx}{\linewidth}{|p{3cm}|X|}
+    \hline
+    \textbf{Personales} & 6110{\euro} \tabularnewline
+    \hline
+    \textbf{Materiales} & 64{\euro} \tabularnewline
+    \hline
+    \textbf{Indirectos} & 158,25{\euro} \tabularnewline
+    \hline
+\end{tabularx}
+\ \\
+De esta forma determinamos un \textbf{coste total del proyecto} de 6332,25{\euro}
 
 \section{Gestión de la configuración}
 
