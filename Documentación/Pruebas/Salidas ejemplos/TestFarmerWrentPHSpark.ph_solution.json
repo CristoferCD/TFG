@@ -1,0 +1,743 @@
+{
+  "scenario tree": {
+    "scenarios": {
+      "BelowAverageScenario": {
+        "name": "BelowAverageScenario",
+        "probability": 0.33333333,
+        "nodes": [
+          "RootNode",
+          "BelowAverageNode"
+        ]
+      },
+      "AverageScenario": {
+        "name": "AverageScenario",
+        "probability": 0.33333334,
+        "nodes": [
+          "RootNode",
+          "AverageNode"
+        ]
+      },
+      "AboveAverageScenario": {
+        "name": "AboveAverageScenario",
+        "probability": 0.33333333,
+        "nodes": [
+          "RootNode",
+          "AboveAverageNode"
+        ]
+      }
+    },
+    "stages": {
+      "FirstStage": {
+        "name": "FirstStage",
+        "nodes": [
+          "RootNode"
+        ],
+        "order": 0
+      },
+      "SecondStage": {
+        "name": "SecondStage",
+        "nodes": [
+          "BelowAverageNode",
+          "AverageNode",
+          "AboveAverageNode"
+        ],
+        "order": 1
+      }
+    },
+    "nodes": {
+      "RootNode": {
+        "name": "RootNode",
+        "parent": null,
+        "children": [
+          "BelowAverageNode",
+          "AverageNode",
+          "AboveAverageNode"
+        ],
+        "stage": "FirstStage",
+        "conditional probability": 1.0,
+        "probability": 1.0,
+        "scenarios": [
+          "BelowAverageScenario",
+          "AverageScenario",
+          "AboveAverageScenario"
+        ]
+      },
+      "BelowAverageNode": {
+        "name": "BelowAverageNode",
+        "parent": "RootNode",
+        "children": [],
+        "stage": "SecondStage",
+        "conditional probability": 0.33333333,
+        "probability": 0.33333333,
+        "scenarios": [
+          "BelowAverageScenario"
+        ]
+      },
+      "AverageNode": {
+        "name": "AverageNode",
+        "parent": "RootNode",
+        "children": [],
+        "stage": "SecondStage",
+        "conditional probability": 0.33333334,
+        "probability": 0.33333334,
+        "scenarios": [
+          "AverageScenario"
+        ]
+      },
+      "AboveAverageNode": {
+        "name": "AboveAverageNode",
+        "parent": "RootNode",
+        "children": [],
+        "stage": "SecondStage",
+        "conditional probability": 0.33333333,
+        "probability": 0.33333333,
+        "scenarios": [
+          "AboveAverageScenario"
+        ]
+      }
+    }
+  },
+  "scenario solutions": {
+    "BelowAverageScenario": {
+      "variables": {
+        "DevotedAcreage[CORN]": {
+          "value": 0.0,
+          "fixed": true,
+          "stale": false,
+          "rho": 1.0,
+          "weight": -54.66684408150674
+        },
+        "DevotedAcreage[SUGAR_BEETS]": {
+          "value": 250.00949576709064,
+          "fixed": true,
+          "stale": false,
+          "rho": 1.0,
+          "weight": -16.807826601459766
+        },
+        "DevotedAcreage[WHEAT]": {
+          "value": 66.65012887370469,
+          "fixed": true,
+          "stale": false,
+          "rho": 1.0,
+          "weight": -6.789989539423985
+        },
+        "RentedOutAcreage": {
+          "value": 183.3403753592047,
+          "fixed": true,
+          "stale": false,
+          "rho": 1.0,
+          "weight": 78.26466022239234
+        },
+        "QuantityPurchased[CORN]": {
+          "value": 239.99999999999997,
+          "fixed": false,
+          "stale": false,
+          "rho": null,
+          "weight": null
+        },
+        "QuantityPurchased[SUGAR_BEETS]": {
+          "value": 0.0,
+          "fixed": false,
+          "stale": false,
+          "rho": null,
+          "weight": null
+        },
+        "QuantityPurchased[WHEAT]": {
+          "value": 66.69974225259064,
+          "fixed": false,
+          "stale": false,
+          "rho": null,
+          "weight": null
+        },
+        "QuantitySubQuotaSold[CORN]": {
+          "value": 0.0,
+          "fixed": false,
+          "stale": false,
+          "rho": null,
+          "weight": null
+        },
+        "QuantitySubQuotaSold[SUGAR_BEETS]": {
+          "value": 4000.15193227345,
+          "fixed": false,
+          "stale": false,
+          "rho": null,
+          "weight": null
+        },
+        "QuantitySubQuotaSold[WHEAT]": {
+          "value": 0.0,
+          "fixed": false,
+          "stale": false,
+          "rho": null,
+          "weight": null
+        },
+        "QuantitySuperQuotaSold[CORN]": {
+          "value": 0.0,
+          "fixed": false,
+          "stale": false,
+          "rho": null,
+          "weight": null
+        },
+        "QuantitySuperQuotaSold[SUGAR_BEETS]": {
+          "value": 0.0,
+          "fixed": false,
+          "stale": false,
+          "rho": null,
+          "weight": null
+        },
+        "QuantitySuperQuotaSold[WHEAT]": {
+          "value": 0.0,
+          "fixed": false,
+          "stale": false,
+          "rho": null,
+          "weight": null
+        }
+      },
+      "objective": -78083.83694786146,
+      "cost": -78083.83694786146,
+      "ph weight term": 0.0,
+      "ph proximal term": 0.0,
+      "stage costs": {
+        "FirstStage": -352.90604213386126,
+        "SecondStage": -77730.9309057276
+      }
+    },
+    "AverageScenario": {
+      "variables": {
+        "DevotedAcreage[CORN]": {
+          "value": 0.0,
+          "fixed": true,
+          "stale": false,
+          "rho": 1.0,
+          "weight": -25.916944348647807
+        },
+        "DevotedAcreage[SUGAR_BEETS]": {
+          "value": 250.00949576709064,
+          "fixed": true,
+          "stale": false,
+          "rho": 1.0,
+          "weight": 29.94220682187286
+        },
+        "DevotedAcreage[WHEAT]": {
+          "value": 66.65012887370469,
+          "fixed": true,
+          "stale": false,
+          "rho": 1.0,
+          "weight": 14.960043882479873
+        },
+        "RentedOutAcreage": {
+          "value": 183.3403753592047,
+          "fixed": true,
+          "stale": false,
+          "rho": 1.0,
+          "weight": -18.985306355703003
+        },
+        "QuantityPurchased[CORN]": {
+          "value": 240.0,
+          "fixed": false,
+          "stale": false,
+          "rho": null,
+          "weight": null
+        },
+        "QuantityPurchased[SUGAR_BEETS]": {
+          "value": 0.0,
+          "fixed": false,
+          "stale": false,
+          "rho": null,
+          "weight": null
+        },
+        "QuantityPurchased[WHEAT]": {
+          "value": 33.37467781573828,
+          "fixed": false,
+          "stale": false,
+          "rho": null,
+          "weight": null
+        },
+        "QuantitySubQuotaSold[CORN]": {
+          "value": 0.0,
+          "fixed": false,
+          "stale": false,
+          "rho": null,
+          "weight": null
+        },
+        "QuantitySubQuotaSold[SUGAR_BEETS]": {
+          "value": 5000.1899153418135,
+          "fixed": false,
+          "stale": false,
+          "rho": null,
+          "weight": null
+        },
+        "QuantitySubQuotaSold[WHEAT]": {
+          "value": 0.0,
+          "fixed": false,
+          "stale": false,
+          "rho": null,
+          "weight": null
+        },
+        "QuantitySuperQuotaSold[CORN]": {
+          "value": 0.0,
+          "fixed": false,
+          "stale": false,
+          "rho": null,
+          "weight": null
+        },
+        "QuantitySuperQuotaSold[SUGAR_BEETS]": {
+          "value": 0.0,
+          "fixed": false,
+          "stale": false,
+          "rho": null,
+          "weight": null
+        },
+        "QuantitySuperQuotaSold[WHEAT]": {
+          "value": 0.0,
+          "fixed": false,
+          "stale": false,
+          "rho": null,
+          "weight": null
+        }
+      },
+      "objective": -122016.56967429342,
+      "cost": -122016.56967429342,
+      "ph weight term": 0.0,
+      "ph proximal term": 0.0,
+      "stage costs": {
+        "FirstStage": -352.90604213386126,
+        "SecondStage": -121663.66363215956
+      }
+    },
+    "AboveAverageScenario": {
+      "variables": {
+        "DevotedAcreage[CORN]": {
+          "value": 0.0,
+          "fixed": true,
+          "stale": false,
+          "rho": 1.0,
+          "weight": 80.5837892076629
+        },
+        "DevotedAcreage[SUGAR_BEETS]": {
+          "value": 250.00949576709064,
+          "fixed": true,
+          "stale": false,
+          "rho": 1.0,
+          "weight": -13.134381118677481
+        },
+        "DevotedAcreage[WHEAT]": {
+          "value": 66.65012887370469,
+          "fixed": true,
+          "stale": false,
+          "rho": 1.0,
+          "weight": -8.170054791856671
+        },
+        "RentedOutAcreage": {
+          "value": 183.3403753592047,
+          "fixed": true,
+          "stale": false,
+          "rho": 1.0,
+          "weight": -59.27935329712935
+        },
+        "QuantityPurchased[CORN]": {
+          "value": 239.99999999999997,
+          "fixed": false,
+          "stale": false,
+          "rho": null,
+          "weight": null
+        },
+        "QuantityPurchased[SUGAR_BEETS]": {
+          "value": 0.0,
+          "fixed": false,
+          "stale": false,
+          "rho": null,
+          "weight": null
+        },
+        "QuantityPurchased[WHEAT]": {
+          "value": 0.04961337888597234,
+          "fixed": false,
+          "stale": false,
+          "rho": null,
+          "weight": null
+        },
+        "QuantitySubQuotaSold[CORN]": {
+          "value": 0.0,
+          "fixed": false,
+          "stale": false,
+          "rho": null,
+          "weight": null
+        },
+        "QuantitySubQuotaSold[SUGAR_BEETS]": {
+          "value": 6000.0,
+          "fixed": false,
+          "stale": false,
+          "rho": null,
+          "weight": null
+        },
+        "QuantitySubQuotaSold[WHEAT]": {
+          "value": 0.0,
+          "fixed": false,
+          "stale": false,
+          "rho": null,
+          "weight": null
+        },
+        "QuantitySuperQuotaSold[CORN]": {
+          "value": 0.0,
+          "fixed": false,
+          "stale": false,
+          "rho": null,
+          "weight": null
+        },
+        "QuantitySuperQuotaSold[SUGAR_BEETS]": {
+          "value": 0.22789841017498702,
+          "fixed": false,
+          "stale": false,
+          "rho": null,
+          "weight": null
+        },
+        "QuantitySuperQuotaSold[WHEAT]": {
+          "value": 0.0,
+          "fixed": false,
+          "stale": false,
+          "rho": null,
+          "weight": null
+        }
+      },
+      "objective": -165943.37704206075,
+      "cost": -165943.37704206075,
+      "ph weight term": 0.0,
+      "ph proximal term": 0.0,
+      "stage costs": {
+        "FirstStage": -352.9060421338613,
+        "SecondStage": -165590.47099992688
+      }
+    }
+  },
+  "node solutions": {
+    "RootNode": {
+      "variables": {
+        "DevotedAcreage[CORN]": {
+          "solution": 0.0,
+          "fixed": false,
+          "derived": false,
+          "minimum": 0.0,
+          "average": 0.0,
+          "maximum": 0.0,
+          "xbar": 0.0,
+          "wbar": 7.105427357601002e-15
+        },
+        "DevotedAcreage[SUGAR_BEETS]": {
+          "solution": 250.00949576709064,
+          "fixed": false,
+          "derived": false,
+          "minimum": 250.00949576709064,
+          "average": 250.00949576709064,
+          "maximum": 250.00949576709064,
+          "xbar": 250.00949576709064,
+          "wbar": 6.092903959142859e-13
+        },
+        "DevotedAcreage[WHEAT]": {
+          "solution": 66.65012887370469,
+          "fixed": false,
+          "derived": false,
+          "minimum": 66.65012887370469,
+          "average": 66.65012887370469,
+          "maximum": 66.65012887370469,
+          "xbar": 66.65012887370469,
+          "wbar": 1.7985612998927536e-13
+        },
+        "RentedOutAcreage": {
+          "solution": 183.34037535920467,
+          "fixed": false,
+          "derived": false,
+          "minimum": 183.3403753592047,
+          "average": 183.34037535920467,
+          "maximum": 183.3403753592047,
+          "xbar": 183.3403753592047,
+          "wbar": 2.6645352591003757e-13
+        }
+      },
+      "expected cost": -122014.59455475828
+    },
+    "BelowAverageNode": {
+      "variables": {
+        "QuantityPurchased[CORN]": {
+          "solution": 239.99999999999997,
+          "fixed": false,
+          "derived": false,
+          "minimum": null,
+          "average": null,
+          "maximum": null,
+          "xbar": null,
+          "wbar": null
+        },
+        "QuantityPurchased[SUGAR_BEETS]": {
+          "solution": 0.0,
+          "fixed": false,
+          "derived": false,
+          "minimum": null,
+          "average": null,
+          "maximum": null,
+          "xbar": null,
+          "wbar": null
+        },
+        "QuantityPurchased[WHEAT]": {
+          "solution": 66.69974225259064,
+          "fixed": false,
+          "derived": false,
+          "minimum": null,
+          "average": null,
+          "maximum": null,
+          "xbar": null,
+          "wbar": null
+        },
+        "QuantitySubQuotaSold[CORN]": {
+          "solution": 0.0,
+          "fixed": false,
+          "derived": false,
+          "minimum": null,
+          "average": null,
+          "maximum": null,
+          "xbar": null,
+          "wbar": null
+        },
+        "QuantitySubQuotaSold[SUGAR_BEETS]": {
+          "solution": 4000.1519322734503,
+          "fixed": false,
+          "derived": false,
+          "minimum": null,
+          "average": null,
+          "maximum": null,
+          "xbar": null,
+          "wbar": null
+        },
+        "QuantitySubQuotaSold[WHEAT]": {
+          "solution": 0.0,
+          "fixed": false,
+          "derived": false,
+          "minimum": null,
+          "average": null,
+          "maximum": null,
+          "xbar": null,
+          "wbar": null
+        },
+        "QuantitySuperQuotaSold[CORN]": {
+          "solution": 0.0,
+          "fixed": false,
+          "derived": false,
+          "minimum": null,
+          "average": null,
+          "maximum": null,
+          "xbar": null,
+          "wbar": null
+        },
+        "QuantitySuperQuotaSold[SUGAR_BEETS]": {
+          "solution": 0.0,
+          "fixed": false,
+          "derived": false,
+          "minimum": null,
+          "average": null,
+          "maximum": null,
+          "xbar": null,
+          "wbar": null
+        },
+        "QuantitySuperQuotaSold[WHEAT]": {
+          "solution": 0.0,
+          "fixed": false,
+          "derived": false,
+          "minimum": null,
+          "average": null,
+          "maximum": null,
+          "xbar": null,
+          "wbar": null
+        }
+      },
+      "expected cost": -77730.9309057276
+    },
+    "AverageNode": {
+      "variables": {
+        "QuantityPurchased[CORN]": {
+          "solution": 240.0,
+          "fixed": false,
+          "derived": false,
+          "minimum": null,
+          "average": null,
+          "maximum": null,
+          "xbar": null,
+          "wbar": null
+        },
+        "QuantityPurchased[SUGAR_BEETS]": {
+          "solution": 0.0,
+          "fixed": false,
+          "derived": false,
+          "minimum": null,
+          "average": null,
+          "maximum": null,
+          "xbar": null,
+          "wbar": null
+        },
+        "QuantityPurchased[WHEAT]": {
+          "solution": 33.37467781573828,
+          "fixed": false,
+          "derived": false,
+          "minimum": null,
+          "average": null,
+          "maximum": null,
+          "xbar": null,
+          "wbar": null
+        },
+        "QuantitySubQuotaSold[CORN]": {
+          "solution": 0.0,
+          "fixed": false,
+          "derived": false,
+          "minimum": null,
+          "average": null,
+          "maximum": null,
+          "xbar": null,
+          "wbar": null
+        },
+        "QuantitySubQuotaSold[SUGAR_BEETS]": {
+          "solution": 5000.1899153418135,
+          "fixed": false,
+          "derived": false,
+          "minimum": null,
+          "average": null,
+          "maximum": null,
+          "xbar": null,
+          "wbar": null
+        },
+        "QuantitySubQuotaSold[WHEAT]": {
+          "solution": 0.0,
+          "fixed": false,
+          "derived": false,
+          "minimum": null,
+          "average": null,
+          "maximum": null,
+          "xbar": null,
+          "wbar": null
+        },
+        "QuantitySuperQuotaSold[CORN]": {
+          "solution": 0.0,
+          "fixed": false,
+          "derived": false,
+          "minimum": null,
+          "average": null,
+          "maximum": null,
+          "xbar": null,
+          "wbar": null
+        },
+        "QuantitySuperQuotaSold[SUGAR_BEETS]": {
+          "solution": 0.0,
+          "fixed": false,
+          "derived": false,
+          "minimum": null,
+          "average": null,
+          "maximum": null,
+          "xbar": null,
+          "wbar": null
+        },
+        "QuantitySuperQuotaSold[WHEAT]": {
+          "solution": 0.0,
+          "fixed": false,
+          "derived": false,
+          "minimum": null,
+          "average": null,
+          "maximum": null,
+          "xbar": null,
+          "wbar": null
+        }
+      },
+      "expected cost": -121663.66363215956
+    },
+    "AboveAverageNode": {
+      "variables": {
+        "QuantityPurchased[CORN]": {
+          "solution": 239.99999999999997,
+          "fixed": false,
+          "derived": false,
+          "minimum": null,
+          "average": null,
+          "maximum": null,
+          "xbar": null,
+          "wbar": null
+        },
+        "QuantityPurchased[SUGAR_BEETS]": {
+          "solution": 0.0,
+          "fixed": false,
+          "derived": false,
+          "minimum": null,
+          "average": null,
+          "maximum": null,
+          "xbar": null,
+          "wbar": null
+        },
+        "QuantityPurchased[WHEAT]": {
+          "solution": 0.04961337888597234,
+          "fixed": false,
+          "derived": false,
+          "minimum": null,
+          "average": null,
+          "maximum": null,
+          "xbar": null,
+          "wbar": null
+        },
+        "QuantitySubQuotaSold[CORN]": {
+          "solution": 0.0,
+          "fixed": false,
+          "derived": false,
+          "minimum": null,
+          "average": null,
+          "maximum": null,
+          "xbar": null,
+          "wbar": null
+        },
+        "QuantitySubQuotaSold[SUGAR_BEETS]": {
+          "solution": 6000.0,
+          "fixed": false,
+          "derived": false,
+          "minimum": null,
+          "average": null,
+          "maximum": null,
+          "xbar": null,
+          "wbar": null
+        },
+        "QuantitySubQuotaSold[WHEAT]": {
+          "solution": 0.0,
+          "fixed": false,
+          "derived": false,
+          "minimum": null,
+          "average": null,
+          "maximum": null,
+          "xbar": null,
+          "wbar": null
+        },
+        "QuantitySuperQuotaSold[CORN]": {
+          "solution": 0.0,
+          "fixed": false,
+          "derived": false,
+          "minimum": null,
+          "average": null,
+          "maximum": null,
+          "xbar": null,
+          "wbar": null
+        },
+        "QuantitySuperQuotaSold[SUGAR_BEETS]": {
+          "solution": 0.22789841017498702,
+          "fixed": false,
+          "derived": false,
+          "minimum": null,
+          "average": null,
+          "maximum": null,
+          "xbar": null,
+          "wbar": null
+        },
+        "QuantitySuperQuotaSold[WHEAT]": {
+          "solution": 0.0,
+          "fixed": false,
+          "derived": false,
+          "minimum": null,
+          "average": null,
+          "maximum": null,
+          "xbar": null,
+          "wbar": null
+        }
+      },
+      "expected cost": -165590.47099992688
+    }
+  }
+}

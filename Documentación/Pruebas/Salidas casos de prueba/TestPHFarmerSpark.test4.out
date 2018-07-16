@@ -1,0 +1,85 @@
+User-defined PH solution writer module=pyomo.pysp.plugins.jsonsolutionwriter already imported - skipping
+User-defined PH extension module=pyomo.pysp.plugins.phhistoryextension already imported - skipping
+2018-07-16 12:30:14 WARN  Utils:66 - Your hostname, localhost.localdomain resolves to a loopback address: 127.0.0.1; using 10.0.2.15 instead (on interface enp0s17)
+2018-07-16 12:30:14 WARN  Utils:66 - Set SPARK_LOCAL_IP if you need to bind to another address
+2018-07-16 12:30:14 WARN  NativeCodeLoader:62 - Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+Setting default log level to "WARN".
+To adjust logging level use sc.setLogLevel(newLevel). For SparkR, use setLogLevel(newLevel).
+2018-07-16 12:31:15 ERROR StandaloneSchedulerBackend:70 - Application has been killed. Reason: All masters are unresponsive! Giving up.
+2018-07-16 12:31:15 WARN  StandaloneSchedulerBackend:66 - Application ID is not initialized yet.
+2018-07-16 12:31:15 WARN  StandaloneAppClient$ClientEndpoint:66 - Drop UnregisterApplication(null) because has not yet connected to master
+2018-07-16 12:31:15 ERROR SparkContext:91 - Error initializing SparkContext.
+java.lang.IllegalArgumentException: requirement failed: Can only call getServletHandlers on a running MetricsSystem
+	at scala.Predef$.require(Predef.scala:224)
+	at org.apache.spark.metrics.MetricsSystem.getServletHandlers(MetricsSystem.scala:91)
+	at org.apache.spark.SparkContext.<init>(SparkContext.scala:515)
+	at org.apache.spark.api.java.JavaSparkContext.<init>(JavaSparkContext.scala:58)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at py4j.reflection.MethodInvoker.invoke(MethodInvoker.java:247)
+	at py4j.reflection.ReflectionEngine.invoke(ReflectionEngine.java:357)
+	at py4j.Gateway.invoke(Gateway.java:238)
+	at py4j.commands.ConstructorCommand.invokeConstructor(ConstructorCommand.java:80)
+	at py4j.commands.ConstructorCommand.execute(ConstructorCommand.java:69)
+	at py4j.GatewayConnection.run(GatewayConnection.java:214)
+	at java.lang.Thread.run(Thread.java:748)
+Failed to initialize progressive hedging algorithm
+A failure occurred in PHAlgorithmBuilder. Cleaning up...
+Traceback (most recent call last):
+  File "/media/sf_GitHub/TFG/pyomo/pyomo/solvers/plugins/smanager/phspark.py", line 237, in acquire_servers
+    self._sparkContext = SparkContext(conf=conf, serializer=CloudPickleSerializer())
+  File "/home/crist/python-venv/pyomo3/lib64/python3.6/site-packages/pyspark/context.py", line 118, in __init__
+    conf, jsc, profiler_cls)
+  File "/home/crist/python-venv/pyomo3/lib64/python3.6/site-packages/pyspark/context.py", line 180, in _do_init
+    self._jsc = jsc or self._initialize_context(self._conf._jconf)
+  File "/home/crist/python-venv/pyomo3/lib64/python3.6/site-packages/pyspark/context.py", line 270, in _initialize_context
+    return self._jvm.JavaSparkContext(jconf)
+  File "/home/crist/python-venv/pyomo3/lib64/python3.6/site-packages/py4j/java_gateway.py", line 1428, in __call__
+    answer, self._gateway_client, None, self._fqn)
+  File "/home/crist/python-venv/pyomo3/lib64/python3.6/site-packages/py4j/protocol.py", line 320, in get_return_value
+    format(target_id, ".", name), value)
+py4j.protocol.Py4JJavaError: An error occurred while calling None.org.apache.spark.api.java.JavaSparkContext.
+: java.lang.IllegalArgumentException: requirement failed: Can only call getServletHandlers on a running MetricsSystem
+	at scala.Predef$.require(Predef.scala:224)
+	at org.apache.spark.metrics.MetricsSystem.getServletHandlers(MetricsSystem.scala:91)
+	at org.apache.spark.SparkContext.<init>(SparkContext.scala:515)
+	at org.apache.spark.api.java.JavaSparkContext.<init>(JavaSparkContext.scala:58)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at py4j.reflection.MethodInvoker.invoke(MethodInvoker.java:247)
+	at py4j.reflection.ReflectionEngine.invoke(ReflectionEngine.java:357)
+	at py4j.Gateway.invoke(Gateway.java:238)
+	at py4j.commands.ConstructorCommand.invokeConstructor(ConstructorCommand.java:80)
+	at py4j.commands.ConstructorCommand.execute(ConstructorCommand.java:69)
+	at py4j.GatewayConnection.run(GatewayConnection.java:214)
+	at java.lang.Thread.run(Thread.java:748)
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/crist/python-venv/pyomo3/bin/runph", line 11, in <module>
+    load_entry_point('Pyomo', 'console_scripts', 'runph')()
+  File "/media/sf_GitHub/TFG/pyomo/pyomo/pysp/phinit.py", line 1354, in PH_main
+    return main(args=args)
+  File "/media/sf_GitHub/TFG/pyomo/pyomo/pysp/phinit.py", line 1349, in main
+    traceback=options.traceback)
+  File "/media/sf_GitHub/TFG/pyomo/pyomo/pysp/util/misc.py", line 344, in launch_command
+    rc = command(options, *cmd_args, **cmd_kwds)
+  File "/media/sf_GitHub/TFG/pyomo/pyomo/pysp/phinit.py", line 1287, in exec_runph
+    with PHFromScratchManagedContext(options) as ph:
+  File "/usr/lib64/python3.6/contextlib.py", line 81, in __enter__
+    return next(self.gen)
+  File "/media/sf_GitHub/TFG/pyomo/pyomo/pysp/phinit.py", line 991, in PHFromScratchManagedContext
+    ph = PHFromScratch(options)
+  File "/media/sf_GitHub/TFG/pyomo/pyomo/pysp/phinit.py", line 962, in PHFromScratch
+    ph = PHAlgorithmBuilder(options, scenario_tree)
+  File "/media/sf_GitHub/TFG/pyomo/pyomo/pysp/phinit.py", line 906, in PHAlgorithmBuilder
+    timeout)
+  File "/media/sf_GitHub/TFG/pyomo/pyomo/solvers/plugins/smanager/phspark.py", line 247, in acquire_servers
+    e.java_exception.getMessage()))
+RuntimeError: ERROR connecting with Spark at spark://192.10.10.10:7077. Check if Spark is running on that IP. (java.lang.IllegalArgumentException)requirement failed: Can only call getServletHandlers on a running MetricsSystem

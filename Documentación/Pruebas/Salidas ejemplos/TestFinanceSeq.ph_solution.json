@@ -1,0 +1,1407 @@
+{
+  "scenario tree": {
+    "scenarios": {
+      "StockStockStockScenario": {
+        "name": "StockStockStockScenario",
+        "probability": 0.125,
+        "nodes": [
+          "RootNode",
+          "StockNode",
+          "StockStockNode",
+          "StockStockStockNode"
+        ]
+      },
+      "StockStockBondScenario": {
+        "name": "StockStockBondScenario",
+        "probability": 0.125,
+        "nodes": [
+          "RootNode",
+          "StockNode",
+          "StockStockNode",
+          "StockStockBondNode"
+        ]
+      },
+      "StockBondStockScenario": {
+        "name": "StockBondStockScenario",
+        "probability": 0.125,
+        "nodes": [
+          "RootNode",
+          "StockNode",
+          "StockBondNode",
+          "StockBondStockNode"
+        ]
+      },
+      "StockBondBondScenario": {
+        "name": "StockBondBondScenario",
+        "probability": 0.125,
+        "nodes": [
+          "RootNode",
+          "StockNode",
+          "StockBondNode",
+          "StockBondBondNode"
+        ]
+      },
+      "BondStockStockScenario": {
+        "name": "BondStockStockScenario",
+        "probability": 0.125,
+        "nodes": [
+          "RootNode",
+          "BondNode",
+          "BondStockNode",
+          "BondStockStockNode"
+        ]
+      },
+      "BondStockBondScenario": {
+        "name": "BondStockBondScenario",
+        "probability": 0.125,
+        "nodes": [
+          "RootNode",
+          "BondNode",
+          "BondStockNode",
+          "BondStockBondNode"
+        ]
+      },
+      "BondBondStockScenario": {
+        "name": "BondBondStockScenario",
+        "probability": 0.125,
+        "nodes": [
+          "RootNode",
+          "BondNode",
+          "BondBondNode",
+          "BondBondStockNode"
+        ]
+      },
+      "BondBondBondScenario": {
+        "name": "BondBondBondScenario",
+        "probability": 0.125,
+        "nodes": [
+          "RootNode",
+          "BondNode",
+          "BondBondNode",
+          "BondBondBondNode"
+        ]
+      }
+    },
+    "stages": {
+      "FirstStage": {
+        "name": "FirstStage",
+        "nodes": [
+          "RootNode"
+        ],
+        "order": 0
+      },
+      "SecondStage": {
+        "name": "SecondStage",
+        "nodes": [
+          "StockNode",
+          "BondNode"
+        ],
+        "order": 1
+      },
+      "ThirdStage": {
+        "name": "ThirdStage",
+        "nodes": [
+          "StockStockNode",
+          "StockBondNode",
+          "BondStockNode",
+          "BondBondNode"
+        ],
+        "order": 2
+      },
+      "FourthStage": {
+        "name": "FourthStage",
+        "nodes": [
+          "StockStockStockNode",
+          "StockStockBondNode",
+          "StockBondStockNode",
+          "StockBondBondNode",
+          "BondStockStockNode",
+          "BondStockBondNode",
+          "BondBondStockNode",
+          "BondBondBondNode"
+        ],
+        "order": 3
+      }
+    },
+    "nodes": {
+      "RootNode": {
+        "name": "RootNode",
+        "parent": null,
+        "children": [
+          "StockNode",
+          "BondNode"
+        ],
+        "stage": "FirstStage",
+        "conditional probability": 1.0,
+        "probability": 1.0,
+        "scenarios": [
+          "StockStockStockScenario",
+          "StockStockBondScenario",
+          "StockBondStockScenario",
+          "StockBondBondScenario",
+          "BondStockStockScenario",
+          "BondStockBondScenario",
+          "BondBondStockScenario",
+          "BondBondBondScenario"
+        ]
+      },
+      "StockNode": {
+        "name": "StockNode",
+        "parent": "RootNode",
+        "children": [
+          "StockStockNode",
+          "StockBondNode"
+        ],
+        "stage": "SecondStage",
+        "conditional probability": 0.5,
+        "probability": 0.5,
+        "scenarios": [
+          "StockStockStockScenario",
+          "StockStockBondScenario",
+          "StockBondStockScenario",
+          "StockBondBondScenario"
+        ]
+      },
+      "BondNode": {
+        "name": "BondNode",
+        "parent": "RootNode",
+        "children": [
+          "BondStockNode",
+          "BondBondNode"
+        ],
+        "stage": "SecondStage",
+        "conditional probability": 0.5,
+        "probability": 0.5,
+        "scenarios": [
+          "BondStockStockScenario",
+          "BondStockBondScenario",
+          "BondBondStockScenario",
+          "BondBondBondScenario"
+        ]
+      },
+      "StockStockNode": {
+        "name": "StockStockNode",
+        "parent": "StockNode",
+        "children": [
+          "StockStockStockNode",
+          "StockStockBondNode"
+        ],
+        "stage": "ThirdStage",
+        "conditional probability": 0.5,
+        "probability": 0.25,
+        "scenarios": [
+          "StockStockStockScenario",
+          "StockStockBondScenario"
+        ]
+      },
+      "StockBondNode": {
+        "name": "StockBondNode",
+        "parent": "StockNode",
+        "children": [
+          "StockBondStockNode",
+          "StockBondBondNode"
+        ],
+        "stage": "ThirdStage",
+        "conditional probability": 0.5,
+        "probability": 0.25,
+        "scenarios": [
+          "StockBondStockScenario",
+          "StockBondBondScenario"
+        ]
+      },
+      "BondStockNode": {
+        "name": "BondStockNode",
+        "parent": "BondNode",
+        "children": [
+          "BondStockStockNode",
+          "BondStockBondNode"
+        ],
+        "stage": "ThirdStage",
+        "conditional probability": 0.5,
+        "probability": 0.25,
+        "scenarios": [
+          "BondStockStockScenario",
+          "BondStockBondScenario"
+        ]
+      },
+      "BondBondNode": {
+        "name": "BondBondNode",
+        "parent": "BondNode",
+        "children": [
+          "BondBondStockNode",
+          "BondBondBondNode"
+        ],
+        "stage": "ThirdStage",
+        "conditional probability": 0.5,
+        "probability": 0.25,
+        "scenarios": [
+          "BondBondStockScenario",
+          "BondBondBondScenario"
+        ]
+      },
+      "StockStockStockNode": {
+        "name": "StockStockStockNode",
+        "parent": "StockStockNode",
+        "children": [],
+        "stage": "FourthStage",
+        "conditional probability": 0.5,
+        "probability": 0.125,
+        "scenarios": [
+          "StockStockStockScenario"
+        ]
+      },
+      "StockStockBondNode": {
+        "name": "StockStockBondNode",
+        "parent": "StockStockNode",
+        "children": [],
+        "stage": "FourthStage",
+        "conditional probability": 0.5,
+        "probability": 0.125,
+        "scenarios": [
+          "StockStockBondScenario"
+        ]
+      },
+      "StockBondStockNode": {
+        "name": "StockBondStockNode",
+        "parent": "StockBondNode",
+        "children": [],
+        "stage": "FourthStage",
+        "conditional probability": 0.5,
+        "probability": 0.125,
+        "scenarios": [
+          "StockBondStockScenario"
+        ]
+      },
+      "StockBondBondNode": {
+        "name": "StockBondBondNode",
+        "parent": "StockBondNode",
+        "children": [],
+        "stage": "FourthStage",
+        "conditional probability": 0.5,
+        "probability": 0.125,
+        "scenarios": [
+          "StockBondBondScenario"
+        ]
+      },
+      "BondStockStockNode": {
+        "name": "BondStockStockNode",
+        "parent": "BondStockNode",
+        "children": [],
+        "stage": "FourthStage",
+        "conditional probability": 0.5,
+        "probability": 0.125,
+        "scenarios": [
+          "BondStockStockScenario"
+        ]
+      },
+      "BondStockBondNode": {
+        "name": "BondStockBondNode",
+        "parent": "BondStockNode",
+        "children": [],
+        "stage": "FourthStage",
+        "conditional probability": 0.5,
+        "probability": 0.125,
+        "scenarios": [
+          "BondStockBondScenario"
+        ]
+      },
+      "BondBondStockNode": {
+        "name": "BondBondStockNode",
+        "parent": "BondBondNode",
+        "children": [],
+        "stage": "FourthStage",
+        "conditional probability": 0.5,
+        "probability": 0.125,
+        "scenarios": [
+          "BondBondStockScenario"
+        ]
+      },
+      "BondBondBondNode": {
+        "name": "BondBondBondNode",
+        "parent": "BondBondNode",
+        "children": [],
+        "stage": "FourthStage",
+        "conditional probability": 0.5,
+        "probability": 0.125,
+        "scenarios": [
+          "BondBondBondScenario"
+        ]
+      }
+    }
+  },
+  "scenario solutions": {
+    "StockStockStockScenario": {
+      "variables": {
+        "AmountInvested[BONDS,1]": {
+          "value": 27049.030748556153,
+          "fixed": false,
+          "stale": false,
+          "rho": 1.0,
+          "weight": 10478.654272940843
+        },
+        "AmountInvested[STOCKS,1]": {
+          "value": 27950.969251443817,
+          "fixed": false,
+          "stale": false,
+          "rho": 1.0,
+          "weight": -10478.654272907057
+        },
+        "AmountInvested[BONDS,2]": {
+          "value": 32837.056378098314,
+          "fixed": false,
+          "stale": false,
+          "rho": 1.0,
+          "weight": 2818.1255770952193
+        },
+        "AmountInvested[STOCKS,2]": {
+          "value": 32937.550239560485,
+          "fixed": false,
+          "stale": false,
+          "rho": 1.0,
+          "weight": -3528.440298142097
+        },
+        "AmountInvested[BONDS,3]": {
+          "value": 39303.06002535494,
+          "fixed": false,
+          "stale": false,
+          "rho": 1.0,
+          "weight": 0.042063540386152454
+        },
+        "AmountInvested[STOCKS,3]": {
+          "value": 39303.12204512773,
+          "fixed": false,
+          "stale": false,
+          "rho": 1.0,
+          "weight": -0.042706618154625176
+        },
+        "FinalWealth": {
+          "value": 13934.390985314312,
+          "fixed": false,
+          "stale": false,
+          "rho": null,
+          "weight": null
+        },
+        "TargetDeficit": {
+          "value": 0.0,
+          "fixed": false,
+          "stale": false,
+          "rho": null,
+          "weight": null
+        },
+        "TargetSurplus": {
+          "value": 13934.390985314314,
+          "fixed": false,
+          "stale": false,
+          "rho": null,
+          "weight": null
+        }
+      },
+      "objective": 217315.65721757774,
+      "cost": 13934.390985314312,
+      "ph weight term": 322454.32984569226,
+      "ph proximal term": -119073.06361342884,
+      "stage costs": {
+        "FirstStage": 0.0,
+        "SecondStage": 0.0,
+        "ThirdStage": 0.0,
+        "FourthStage": 13934.390985314312
+      }
+    },
+    "StockStockBondScenario": {
+      "variables": {
+        "AmountInvested[BONDS,1]": {
+          "value": 27049.030747811554,
+          "fixed": false,
+          "stale": false,
+          "rho": 1.0,
+          "weight": 10478.647515676763
+        },
+        "AmountInvested[STOCKS,1]": {
+          "value": 27950.969252188428,
+          "fixed": false,
+          "stale": false,
+          "rho": 1.0,
+          "weight": -10478.647515644101
+        },
+        "AmountInvested[BONDS,2]": {
+          "value": 32837.05635655205,
+          "fixed": false,
+          "stale": false,
+          "rho": 1.0,
+          "weight": 2818.122331324994
+        },
+        "AmountInvested[STOCKS,2]": {
+          "value": 32937.55026118866,
+          "fixed": false,
+          "stale": false,
+          "rho": 1.0,
+          "weight": -3528.4363090735314
+        },
+        "AmountInvested[BONDS,3]": {
+          "value": 39303.06002424587,
+          "fixed": false,
+          "stale": false,
+          "rho": 1.0,
+          "weight": -0.04206354038979043
+        },
+        "AmountInvested[STOCKS,3]": {
+          "value": 39303.12204870931,
+          "fixed": false,
+          "stale": false,
+          "rho": 1.0,
+          "weight": 0.042706618158263154
+        },
+        "FinalWealth": {
+          "value": 5680.73659878723,
+          "fixed": false,
+          "stale": false,
+          "rho": null,
+          "weight": null
+        },
+        "TargetDeficit": {
+          "value": 0.0,
+          "fixed": false,
+          "stale": false,
+          "rho": null,
+          "weight": null
+        },
+        "TargetSurplus": {
+          "value": 5680.736598787231,
+          "fixed": false,
+          "stale": false,
+          "rho": null,
+          "weight": null
+        }
+      },
+      "objective": 209153.52698638226,
+      "cost": 5680.73659878723,
+      "ph weight term": 322545.8597081884,
+      "ph proximal term": -119073.06932059338,
+      "stage costs": {
+        "FirstStage": 0.0,
+        "SecondStage": 0.0,
+        "ThirdStage": 0.0,
+        "FourthStage": 5680.73659878723
+      }
+    },
+    "StockBondStockScenario": {
+      "variables": {
+        "AmountInvested[BONDS,1]": {
+          "value": 27127.420441952177,
+          "fixed": false,
+          "stale": false,
+          "rho": 1.0,
+          "weight": 2747.890790221678
+        },
+        "AmountInvested[STOCKS,1]": {
+          "value": 27872.579558047823,
+          "fixed": false,
+          "stale": false,
+          "rho": 1.0,
+          "weight": -2747.8907901907587
+        },
+        "AmountInvested[BONDS,2]": {
+          "value": 32837.37028464303,
+          "fixed": false,
+          "stale": false,
+          "rho": 1.0,
+          "weight": 2687.8888999029077
+        },
+        "AmountInvested[STOCKS,2]": {
+          "value": 32928.61346674222,
+          "fixed": false,
+          "stale": false,
+          "rho": 1.0,
+          "weight": -2547.81963785247
+        },
+        "AmountInvested[BONDS,3]": {
+          "value": 35841.22301375655,
+          "fixed": false,
+          "stale": false,
+          "rho": 1.0,
+          "weight": -138.52201723829785
+        },
+        "AmountInvested[STOCKS,3]": {
+          "value": 35840.96197979041,
+          "fixed": false,
+          "stale": false,
+          "rho": 1.0,
+          "weight": -135.57700410440884
+        },
+        "FinalWealth": {
+          "value": 5660.196710420485,
+          "fixed": false,
+          "stale": false,
+          "rho": null,
+          "weight": null
+        },
+        "TargetDeficit": {
+          "value": 0.0,
+          "fixed": false,
+          "stale": false,
+          "rho": null,
+          "weight": null
+        },
+        "TargetSurplus": {
+          "value": 5660.196710420486,
+          "fixed": false,
+          "stale": false,
+          "rho": null,
+          "weight": null
+        }
+      },
+      "objective": 422370.2102679047,
+      "cost": 5660.196710420485,
+      "ph weight term": 418815.30706942367,
+      "ph proximal term": -2105.2935119394856,
+      "stage costs": {
+        "FirstStage": 0.0,
+        "SecondStage": 0.0,
+        "ThirdStage": 0.0,
+        "FourthStage": 5660.196710420485
+      }
+    },
+    "StockBondBondScenario": {
+      "variables": {
+        "AmountInvested[BONDS,1]": {
+          "value": 27235.70314015402,
+          "fixed": false,
+          "stale": false,
+          "rho": 1.0,
+          "weight": -7620.201707094187
+        },
+        "AmountInvested[STOCKS,1]": {
+          "value": 27764.296859846032,
+          "fixed": false,
+          "stale": false,
+          "rho": 1.0,
+          "weight": 7620.20170712005
+        },
+        "AmountInvested[BONDS,2]": {
+          "value": 32952.111504432614,
+          "fixed": false,
+          "stale": false,
+          "rho": 1.0,
+          "weight": -8324.13680832104
+        },
+        "AmountInvested[STOCKS,2]": {
+          "value": 32801.96115015051,
+          "fixed": false,
+          "stale": false,
+          "rho": 1.0,
+          "weight": 9604.696245068768
+        },
+        "AmountInvested[BONDS,3]": {
+          "value": 35838.31986901135,
+          "fixed": false,
+          "stale": false,
+          "rho": 1.0,
+          "weight": 138.5220172382833
+        },
+        "AmountInvested[STOCKS,3]": {
+          "value": 35838.123835112725,
+          "fixed": false,
+          "stale": false,
+          "rho": 1.0,
+          "weight": 135.57700410507823
+        },
+        "FinalWealth": {
+          "value": -7490.6819259512595,
+          "fixed": false,
+          "stale": false,
+          "rho": null,
+          "weight": null
+        },
+        "TargetDeficit": {
+          "value": 1872.670481487815,
+          "fixed": false,
+          "stale": false,
+          "rho": null,
+          "weight": null
+        },
+        "TargetSurplus": {
+          "value": 0.0,
+          "fixed": false,
+          "stale": false,
+          "rho": null,
+          "weight": null
+        }
+      },
+      "objective": -18966.351559042276,
+      "cost": -7490.6819259512595,
+      "ph weight term": -11131.583136895975,
+      "ph proximal term": -344.08649619504257,
+      "stage costs": {
+        "FirstStage": 0.0,
+        "SecondStage": 0.0,
+        "ThirdStage": 0.0,
+        "FourthStage": -7490.6819259512595
+      }
+    },
+    "BondStockStockScenario": {
+      "variables": {
+        "AmountInvested[BONDS,1]": {
+          "value": 27127.465864099784,
+          "fixed": false,
+          "stale": false,
+          "rho": 1.0,
+          "weight": 2743.0043495592836
+        },
+        "AmountInvested[STOCKS,1]": {
+          "value": 27872.534135900183,
+          "fixed": false,
+          "stale": false,
+          "rho": 1.0,
+          "weight": -2743.004349525203
+        },
+        "AmountInvested[BONDS,2]": {
+          "value": 30009.7655478559,
+          "fixed": false,
+          "stale": false,
+          "rho": 1.0,
+          "weight": 212.05268190824427
+        },
+        "AmountInvested[STOCKS,2]": {
+          "value": 29917.882403990057,
+          "fixed": false,
+          "stale": false,
+          "rho": 1.0,
+          "weight": 193.80244220900204
+        },
+        "AmountInvested[BONDS,3]": {
+          "value": 35804.37305105791,
+          "fixed": false,
+          "stale": false,
+          "rho": 1.0,
+          "weight": 232.91677837472525
+        },
+        "AmountInvested[STOCKS,3]": {
+          "value": 35804.112678485384,
+          "fixed": false,
+          "stale": false,
+          "rho": 1.0,
+          "weight": 235.86177063547075
+        },
+        "FinalWealth": {
+          "value": 5572.126126312778,
+          "fixed": false,
+          "stale": false,
+          "rho": null,
+          "weight": null
+        },
+        "TargetDeficit": {
+          "value": 0.0,
+          "fixed": false,
+          "stale": false,
+          "rho": null,
+          "weight": null
+        },
+        "TargetSurplus": {
+          "value": 5572.126126312778,
+          "fixed": false,
+          "stale": false,
+          "rho": null,
+          "weight": null
+        }
+      },
+      "objective": 265302.5419042103,
+      "cost": 5572.126126312778,
+      "ph weight term": 260998.0214774526,
+      "ph proximal term": -1267.605699555048,
+      "stage costs": {
+        "FirstStage": 0.0,
+        "SecondStage": 0.0,
+        "ThirdStage": 0.0,
+        "FourthStage": 5572.126126312778
+      }
+    },
+    "BondStockBondScenario": {
+      "variables": {
+        "AmountInvested[BONDS,1]": {
+          "value": 27255.519714811573,
+          "fixed": false,
+          "stale": false,
+          "rho": 1.0,
+          "weight": -9524.635660340864
+        },
+        "AmountInvested[STOCKS,1]": {
+          "value": 27744.480285188452,
+          "fixed": false,
+          "stale": false,
+          "rho": 1.0,
+          "weight": 9524.635660369262
+        },
+        "AmountInvested[BONDS,2]": {
+          "value": 30008.122571642503,
+          "fixed": false,
+          "stale": false,
+          "rho": 1.0,
+          "weight": 370.9990207452938
+        },
+        "AmountInvested[STOCKS,2]": {
+          "value": 29927.208611246224,
+          "fixed": false,
+          "stale": false,
+          "rho": 1.0,
+          "weight": -701.2022972282793
+        },
+        "AmountInvested[BONDS,3]": {
+          "value": 35809.23293423273,
+          "fixed": false,
+          "stale": false,
+          "rho": 1.0,
+          "weight": -232.91677837542375
+        },
+        "AmountInvested[STOCKS,3]": {
+          "value": 35809.0375614975,
+          "fixed": false,
+          "stale": false,
+          "rho": 1.0,
+          "weight": -235.86177063617652
+        },
+        "FinalWealth": {
+          "value": -7744.317193887924,
+          "fixed": false,
+          "stale": false,
+          "rho": null,
+          "weight": null
+        },
+        "TargetDeficit": {
+          "value": 1936.0792984719808,
+          "fixed": false,
+          "stale": false,
+          "rho": null,
+          "weight": null
+        },
+        "TargetSurplus": {
+          "value": 0.0,
+          "fixed": false,
+          "stale": false,
+          "rho": null,
+          "weight": null
+        }
+      },
+      "objective": -12626.459746495582,
+      "cost": -7744.317193887924,
+      "ph weight term": -4568.851453212501,
+      "ph proximal term": -313.29109939515746,
+      "stage costs": {
+        "FirstStage": 0.0,
+        "SecondStage": 0.0,
+        "ThirdStage": 0.0,
+        "FourthStage": -7744.317193887924
+      }
+    },
+    "BondBondStockScenario": {
+      "variables": {
+        "AmountInvested[BONDS,1]": {
+          "value": 27156.86062443737,
+          "fixed": false,
+          "stale": false,
+          "rho": 1.0,
+          "weight": -8.994185567771638
+        },
+        "AmountInvested[STOCKS,1]": {
+          "value": 27843.139375567458,
+          "fixed": false,
+          "stale": false,
+          "rho": 1.0,
+          "weight": 8.994185370178457
+        },
+        "AmountInvested[BONDS,2]": {
+          "value": 30010.790609996464,
+          "fixed": false,
+          "stale": false,
+          "rho": 1.0,
+          "weight": 115.42886625332176
+        },
+        "AmountInvested[STOCKS,2]": {
+          "value": 29918.621027474903,
+          "fixed": false,
+          "stale": false,
+          "rho": 1.0,
+          "weight": 125.30634551082767
+        },
+        "AmountInvested[BONDS,3]": {
+          "value": 32662.762038487996,
+          "fixed": false,
+          "stale": false,
+          "rho": 1.0,
+          "weight": 160.06608373064228
+        },
+        "AmountInvested[STOCKS,3]": {
+          "value": 32663.06173383144,
+          "fixed": false,
+          "stale": false,
+          "rho": 1.0,
+          "weight": 159.62600304026637
+        },
+        "FinalWealth": {
+          "value": -7742.496435337554,
+          "fixed": false,
+          "stale": false,
+          "rho": null,
+          "weight": null
+        },
+        "TargetDeficit": {
+          "value": 1935.624108834388,
+          "fixed": false,
+          "stale": false,
+          "rho": null,
+          "weight": null
+        },
+        "TargetSurplus": {
+          "value": 0.0,
+          "fixed": false,
+          "stale": false,
+          "rho": null,
+          "weight": null
+        }
+      },
+      "objective": 17470871.52632532,
+      "cost": -7742.496435337554,
+      "ph weight term": 17478618.321983345,
+      "ph proximal term": -4.299222688575421,
+      "stage costs": {
+        "FirstStage": 0.0,
+        "SecondStage": 0.0,
+        "ThirdStage": 0.0,
+        "FourthStage": -7742.496435337554
+      }
+    },
+    "BondBondBondScenario": {
+      "variables": {
+        "AmountInvested[BONDS,1]": {
+          "value": 27253.122721800333,
+          "fixed": false,
+          "stale": false,
+          "rho": 1.0,
+          "weight": -9294.365375393296
+        },
+        "AmountInvested[STOCKS,1]": {
+          "value": 27746.87727819982,
+          "fixed": false,
+          "stale": false,
+          "rho": 1.0,
+          "weight": 9294.365375409085
+        },
+        "AmountInvested[BONDS,2]": {
+          "value": 30019.250988800373,
+          "fixed": false,
+          "stale": false,
+          "rho": 1.0,
+          "weight": -698.4805689076275
+        },
+        "AmountInvested[STOCKS,2]": {
+          "value": 29915.936374507815,
+          "fixed": false,
+          "stale": false,
+          "rho": 1.0,
+          "weight": 382.093509508064
+        },
+        "AmountInvested[BONDS,3]": {
+          "value": 32666.076992707083,
+          "fixed": false,
+          "stale": false,
+          "rho": 1.0,
+          "weight": -160.06608373062772
+        },
+        "AmountInvested[STOCKS,3]": {
+          "value": 32666.376671727612,
+          "fixed": false,
+          "stale": false,
+          "rho": 1.0,
+          "weight": -159.6260030405283
+        },
+        "FinalWealth": {
+          "value": -35150.53798454722,
+          "fixed": false,
+          "stale": false,
+          "rho": null,
+          "weight": null
+        },
+        "TargetDeficit": {
+          "value": 8787.634496136805,
+          "fixed": false,
+          "stale": false,
+          "rho": null,
+          "weight": null
+        },
+        "TargetSurplus": {
+          "value": 0.0,
+          "fixed": false,
+          "stale": false,
+          "rho": null,
+          "weight": null
+        }
+      },
+      "objective": -41450.93019600461,
+      "cost": -35150.53798454722,
+      "ph weight term": -6103.76533042537,
+      "ph proximal term": -196.626881032021,
+      "stage costs": {
+        "FirstStage": 0.0,
+        "SecondStage": 0.0,
+        "ThirdStage": 0.0,
+        "FourthStage": -35150.53798454722
+      }
+    }
+  },
+  "node solutions": {
+    "RootNode": {
+      "variables": {
+        "AmountInvested[BONDS,1]": {
+          "solution": 27156.769250452875,
+          "fixed": false,
+          "derived": false,
+          "minimum": 27049.030747811554,
+          "average": 27156.769250452875,
+          "maximum": 27255.519714811573,
+          "xbar": 27156.769250452875,
+          "wbar": 3.0604496714659035e-10
+        },
+        "AmountInvested[STOCKS,1]": {
+          "solution": 27843.230749547754,
+          "fixed": false,
+          "derived": false,
+          "minimum": 27744.480285188452,
+          "average": 27843.230749547754,
+          "maximum": 27950.969252188428,
+          "xbar": 27843.230749547754,
+          "wbar": 1.8189894035458565e-10
+        }
+      },
+      "expected cost": -3410.0728898611437
+    },
+    "StockNode": {
+      "variables": {
+        "AmountInvested[BONDS,2]": {
+          "solution": 32865.89863093151,
+          "fixed": false,
+          "derived": false,
+          "minimum": 32837.05635655205,
+          "average": 32865.89863093151,
+          "maximum": 32952.111504432614,
+          "xbar": 32865.89863093151,
+          "wbar": 5.20230969414115e-10
+        },
+        "AmountInvested[STOCKS,2]": {
+          "solution": 32901.41877941047,
+          "fixed": false,
+          "derived": false,
+          "minimum": 32801.96115015051,
+          "average": 32901.41877941047,
+          "maximum": 32937.55026118866,
+          "xbar": 32901.41877941047,
+          "wbar": 1.673470251262188e-10
+        }
+      },
+      "expected cost": 4446.160592142692
+    },
+    "BondNode": {
+      "variables": {
+        "AmountInvested[BONDS,2]": {
+          "solution": 30011.982429573807,
+          "fixed": false,
+          "derived": false,
+          "minimum": 30008.122571642503,
+          "average": 30011.982429573807,
+          "maximum": 30019.250988800373,
+          "xbar": 30011.982429573807,
+          "wbar": -1.9190338207408786e-10
+        },
+        "AmountInvested[STOCKS,2]": {
+          "solution": 29919.91210430475,
+          "fixed": false,
+          "derived": false,
+          "minimum": 29915.936374507815,
+          "average": 29919.91210430475,
+          "maximum": 29927.208611246224,
+          "xbar": 29919.91210430475,
+          "wbar": -9.640643838793039e-11
+        }
+      },
+      "expected cost": -11266.30637186498
+    },
+    "StockStockNode": {
+      "variables": {
+        "AmountInvested[BONDS,3]": {
+          "solution": 39303.060024800405,
+          "fixed": false,
+          "derived": false,
+          "minimum": 39303.06002424587,
+          "average": 39303.060024800405,
+          "maximum": 39303.06002535494,
+          "xbar": 39303.060024800405,
+          "wbar": -1.8189894035458565e-12
+        },
+        "AmountInvested[STOCKS,3]": {
+          "solution": 39303.12204691852,
+          "fixed": false,
+          "derived": false,
+          "minimum": 39303.12204512773,
+          "average": 39303.12204691852,
+          "maximum": 39303.12204870931,
+          "xbar": 39303.12204691852,
+          "wbar": 1.8189894035458565e-12
+        }
+      },
+      "expected cost": 9807.56379205077
+    },
+    "StockBondNode": {
+      "variables": {
+        "AmountInvested[BONDS,3]": {
+          "solution": 35839.77144138395,
+          "fixed": false,
+          "derived": false,
+          "minimum": 35838.31986901135,
+          "average": 35839.77144138395,
+          "maximum": 35841.22301375655,
+          "xbar": 35839.77144138395,
+          "wbar": -7.275957614183426e-12
+        },
+        "AmountInvested[STOCKS,3]": {
+          "solution": 35839.54290745157,
+          "fixed": false,
+          "derived": false,
+          "minimum": 35838.123835112725,
+          "average": 35839.54290745157,
+          "maximum": 35840.96197979041,
+          "xbar": 35839.54290745157,
+          "wbar": 3.346940502524376e-10
+        }
+      },
+      "expected cost": -915.2426077653872
+    },
+    "BondStockNode": {
+      "variables": {
+        "AmountInvested[BONDS,3]": {
+          "solution": 35806.80299264532,
+          "fixed": false,
+          "derived": false,
+          "minimum": 35804.37305105791,
+          "average": 35806.80299264532,
+          "maximum": 35809.23293423273,
+          "xbar": 35806.80299264532,
+          "wbar": -3.4924596548080444e-10
+        },
+        "AmountInvested[STOCKS,3]": {
+          "solution": 35806.57511999144,
+          "fixed": false,
+          "derived": false,
+          "minimum": 35804.112678485384,
+          "average": 35806.57511999144,
+          "maximum": 35809.0375614975,
+          "xbar": 35806.57511999144,
+          "wbar": -3.5288394428789616e-10
+        }
+      },
+      "expected cost": -1086.095533787573
+    },
+    "BondBondNode": {
+      "variables": {
+        "AmountInvested[BONDS,3]": {
+          "solution": 32664.41951559754,
+          "fixed": false,
+          "derived": false,
+          "minimum": 32662.762038487996,
+          "average": 32664.41951559754,
+          "maximum": 32666.076992707083,
+          "xbar": 32664.41951559754,
+          "wbar": 7.275957614183426e-12
+        },
+        "AmountInvested[STOCKS,3]": {
+          "solution": 32664.719202779524,
+          "fixed": false,
+          "derived": false,
+          "minimum": 32663.06173383144,
+          "average": 32664.719202779524,
+          "maximum": 32666.376671727612,
+          "xbar": 32664.719202779524,
+          "wbar": -1.3096723705530167e-10
+        }
+      },
+      "expected cost": -21446.517209942387
+    },
+    "StockStockStockNode": {
+      "variables": {
+        "FinalWealth": {
+          "solution": 13934.390985314312,
+          "fixed": false,
+          "derived": false,
+          "minimum": null,
+          "average": null,
+          "maximum": null,
+          "xbar": null,
+          "wbar": null
+        },
+        "TargetDeficit": {
+          "solution": 0.0,
+          "fixed": false,
+          "derived": false,
+          "minimum": null,
+          "average": null,
+          "maximum": null,
+          "xbar": null,
+          "wbar": null
+        },
+        "TargetSurplus": {
+          "solution": 13934.390985314314,
+          "fixed": false,
+          "derived": false,
+          "minimum": null,
+          "average": null,
+          "maximum": null,
+          "xbar": null,
+          "wbar": null
+        }
+      },
+      "expected cost": 13934.390985314312
+    },
+    "StockStockBondNode": {
+      "variables": {
+        "FinalWealth": {
+          "solution": 5680.73659878723,
+          "fixed": false,
+          "derived": false,
+          "minimum": null,
+          "average": null,
+          "maximum": null,
+          "xbar": null,
+          "wbar": null
+        },
+        "TargetDeficit": {
+          "solution": 0.0,
+          "fixed": false,
+          "derived": false,
+          "minimum": null,
+          "average": null,
+          "maximum": null,
+          "xbar": null,
+          "wbar": null
+        },
+        "TargetSurplus": {
+          "solution": 5680.736598787231,
+          "fixed": false,
+          "derived": false,
+          "minimum": null,
+          "average": null,
+          "maximum": null,
+          "xbar": null,
+          "wbar": null
+        }
+      },
+      "expected cost": 5680.73659878723
+    },
+    "StockBondStockNode": {
+      "variables": {
+        "FinalWealth": {
+          "solution": 5660.196710420485,
+          "fixed": false,
+          "derived": false,
+          "minimum": null,
+          "average": null,
+          "maximum": null,
+          "xbar": null,
+          "wbar": null
+        },
+        "TargetDeficit": {
+          "solution": 0.0,
+          "fixed": false,
+          "derived": false,
+          "minimum": null,
+          "average": null,
+          "maximum": null,
+          "xbar": null,
+          "wbar": null
+        },
+        "TargetSurplus": {
+          "solution": 5660.196710420486,
+          "fixed": false,
+          "derived": false,
+          "minimum": null,
+          "average": null,
+          "maximum": null,
+          "xbar": null,
+          "wbar": null
+        }
+      },
+      "expected cost": 5660.196710420485
+    },
+    "StockBondBondNode": {
+      "variables": {
+        "FinalWealth": {
+          "solution": -7490.6819259512595,
+          "fixed": false,
+          "derived": false,
+          "minimum": null,
+          "average": null,
+          "maximum": null,
+          "xbar": null,
+          "wbar": null
+        },
+        "TargetDeficit": {
+          "solution": 1872.670481487815,
+          "fixed": false,
+          "derived": false,
+          "minimum": null,
+          "average": null,
+          "maximum": null,
+          "xbar": null,
+          "wbar": null
+        },
+        "TargetSurplus": {
+          "solution": 0.0,
+          "fixed": false,
+          "derived": false,
+          "minimum": null,
+          "average": null,
+          "maximum": null,
+          "xbar": null,
+          "wbar": null
+        }
+      },
+      "expected cost": -7490.6819259512595
+    },
+    "BondStockStockNode": {
+      "variables": {
+        "FinalWealth": {
+          "solution": 5572.126126312778,
+          "fixed": false,
+          "derived": false,
+          "minimum": null,
+          "average": null,
+          "maximum": null,
+          "xbar": null,
+          "wbar": null
+        },
+        "TargetDeficit": {
+          "solution": 0.0,
+          "fixed": false,
+          "derived": false,
+          "minimum": null,
+          "average": null,
+          "maximum": null,
+          "xbar": null,
+          "wbar": null
+        },
+        "TargetSurplus": {
+          "solution": 5572.126126312778,
+          "fixed": false,
+          "derived": false,
+          "minimum": null,
+          "average": null,
+          "maximum": null,
+          "xbar": null,
+          "wbar": null
+        }
+      },
+      "expected cost": 5572.126126312778
+    },
+    "BondStockBondNode": {
+      "variables": {
+        "FinalWealth": {
+          "solution": -7744.317193887924,
+          "fixed": false,
+          "derived": false,
+          "minimum": null,
+          "average": null,
+          "maximum": null,
+          "xbar": null,
+          "wbar": null
+        },
+        "TargetDeficit": {
+          "solution": 1936.0792984719808,
+          "fixed": false,
+          "derived": false,
+          "minimum": null,
+          "average": null,
+          "maximum": null,
+          "xbar": null,
+          "wbar": null
+        },
+        "TargetSurplus": {
+          "solution": 0.0,
+          "fixed": false,
+          "derived": false,
+          "minimum": null,
+          "average": null,
+          "maximum": null,
+          "xbar": null,
+          "wbar": null
+        }
+      },
+      "expected cost": -7744.317193887924
+    },
+    "BondBondStockNode": {
+      "variables": {
+        "FinalWealth": {
+          "solution": -7742.496435337554,
+          "fixed": false,
+          "derived": false,
+          "minimum": null,
+          "average": null,
+          "maximum": null,
+          "xbar": null,
+          "wbar": null
+        },
+        "TargetDeficit": {
+          "solution": 1935.624108834388,
+          "fixed": false,
+          "derived": false,
+          "minimum": null,
+          "average": null,
+          "maximum": null,
+          "xbar": null,
+          "wbar": null
+        },
+        "TargetSurplus": {
+          "solution": 0.0,
+          "fixed": false,
+          "derived": false,
+          "minimum": null,
+          "average": null,
+          "maximum": null,
+          "xbar": null,
+          "wbar": null
+        }
+      },
+      "expected cost": -7742.496435337554
+    },
+    "BondBondBondNode": {
+      "variables": {
+        "FinalWealth": {
+          "solution": -35150.53798454722,
+          "fixed": false,
+          "derived": false,
+          "minimum": null,
+          "average": null,
+          "maximum": null,
+          "xbar": null,
+          "wbar": null
+        },
+        "TargetDeficit": {
+          "solution": 8787.634496136805,
+          "fixed": false,
+          "derived": false,
+          "minimum": null,
+          "average": null,
+          "maximum": null,
+          "xbar": null,
+          "wbar": null
+        },
+        "TargetSurplus": {
+          "solution": 0.0,
+          "fixed": false,
+          "derived": false,
+          "minimum": null,
+          "average": null,
+          "maximum": null,
+          "xbar": null,
+          "wbar": null
+        }
+      },
+      "expected cost": -35150.53798454722
+    }
+  }
+}

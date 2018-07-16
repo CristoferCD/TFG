@@ -1,0 +1,127 @@
+User-defined PH solution writer module=pyomo.pysp.plugins.jsonsolutionwriter already imported - skipping
+User-defined PH extension module=pyomo.pysp.plugins.phhistoryextension already imported - skipping
+2018-07-16 12:30:00 WARN  Utils:66 - Your hostname, localhost.localdomain resolves to a loopback address: 127.0.0.1; using 10.0.2.15 instead (on interface enp0s17)
+2018-07-16 12:30:00 WARN  Utils:66 - Set SPARK_LOCAL_IP if you need to bind to another address
+2018-07-16 12:30:01 WARN  NativeCodeLoader:62 - Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+Setting default log level to "WARN".
+To adjust logging level use sc.setLogLevel(newLevel). For SparkR, use setLogLevel(newLevel).
+2018-07-16 12:30:02 ERROR SparkContext:91 - Error initializing SparkContext.
+org.apache.spark.SparkException: Invalid master URL: spark://111.111:7077
+	at org.apache.spark.util.Utils$.extractHostPortFromSparkUrl(Utils.scala:2449)
+	at org.apache.spark.rpc.RpcAddress$.fromSparkURL(RpcAddress.scala:47)
+	at org.apache.spark.deploy.client.StandaloneAppClient$$anonfun$1.apply(StandaloneAppClient.scala:52)
+	at org.apache.spark.deploy.client.StandaloneAppClient$$anonfun$1.apply(StandaloneAppClient.scala:52)
+	at scala.collection.TraversableLike$$anonfun$map$1.apply(TraversableLike.scala:234)
+	at scala.collection.TraversableLike$$anonfun$map$1.apply(TraversableLike.scala:234)
+	at scala.collection.IndexedSeqOptimized$class.foreach(IndexedSeqOptimized.scala:33)
+	at scala.collection.mutable.ArrayOps$ofRef.foreach(ArrayOps.scala:186)
+	at scala.collection.TraversableLike$class.map(TraversableLike.scala:234)
+	at scala.collection.mutable.ArrayOps$ofRef.map(ArrayOps.scala:186)
+	at org.apache.spark.deploy.client.StandaloneAppClient.<init>(StandaloneAppClient.scala:52)
+	at org.apache.spark.scheduler.cluster.StandaloneSchedulerBackend.start(StandaloneSchedulerBackend.scala:116)
+	at org.apache.spark.scheduler.TaskSchedulerImpl.start(TaskSchedulerImpl.scala:164)
+	at org.apache.spark.SparkContext.<init>(SparkContext.scala:500)
+	at org.apache.spark.api.java.JavaSparkContext.<init>(JavaSparkContext.scala:58)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at py4j.reflection.MethodInvoker.invoke(MethodInvoker.java:247)
+	at py4j.reflection.ReflectionEngine.invoke(ReflectionEngine.java:357)
+	at py4j.Gateway.invoke(Gateway.java:238)
+	at py4j.commands.ConstructorCommand.invokeConstructor(ConstructorCommand.java:80)
+	at py4j.commands.ConstructorCommand.execute(ConstructorCommand.java:69)
+	at py4j.GatewayConnection.run(GatewayConnection.java:214)
+	at java.lang.Thread.run(Thread.java:748)
+2018-07-16 12:30:02 ERROR Utils:91 - Uncaught exception in thread Thread-4
+java.lang.NullPointerException
+	at org.apache.spark.scheduler.cluster.StandaloneSchedulerBackend.org$apache$spark$scheduler$cluster$StandaloneSchedulerBackend$$stop(StandaloneSchedulerBackend.scala:226)
+	at org.apache.spark.scheduler.cluster.StandaloneSchedulerBackend.stop(StandaloneSchedulerBackend.scala:124)
+	at org.apache.spark.scheduler.TaskSchedulerImpl.stop(TaskSchedulerImpl.scala:508)
+	at org.apache.spark.scheduler.DAGScheduler.stop(DAGScheduler.scala:1752)
+	at org.apache.spark.SparkContext$$anonfun$stop$8.apply$mcV$sp(SparkContext.scala:1924)
+	at org.apache.spark.util.Utils$.tryLogNonFatalError(Utils.scala:1357)
+	at org.apache.spark.SparkContext.stop(SparkContext.scala:1923)
+	at org.apache.spark.SparkContext.<init>(SparkContext.scala:578)
+	at org.apache.spark.api.java.JavaSparkContext.<init>(JavaSparkContext.scala:58)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at py4j.reflection.MethodInvoker.invoke(MethodInvoker.java:247)
+	at py4j.reflection.ReflectionEngine.invoke(ReflectionEngine.java:357)
+	at py4j.Gateway.invoke(Gateway.java:238)
+	at py4j.commands.ConstructorCommand.invokeConstructor(ConstructorCommand.java:80)
+	at py4j.commands.ConstructorCommand.execute(ConstructorCommand.java:69)
+	at py4j.GatewayConnection.run(GatewayConnection.java:214)
+	at java.lang.Thread.run(Thread.java:748)
+2018-07-16 12:30:02 WARN  MetricsSystem:66 - Stopping a MetricsSystem that is not running
+Failed to initialize progressive hedging algorithm
+A failure occurred in PHAlgorithmBuilder. Cleaning up...
+Traceback (most recent call last):
+  File "/media/sf_GitHub/TFG/pyomo/pyomo/solvers/plugins/smanager/phspark.py", line 237, in acquire_servers
+    self._sparkContext = SparkContext(conf=conf, serializer=CloudPickleSerializer())
+  File "/home/crist/python-venv/pyomo3/lib64/python3.6/site-packages/pyspark/context.py", line 118, in __init__
+    conf, jsc, profiler_cls)
+  File "/home/crist/python-venv/pyomo3/lib64/python3.6/site-packages/pyspark/context.py", line 180, in _do_init
+    self._jsc = jsc or self._initialize_context(self._conf._jconf)
+  File "/home/crist/python-venv/pyomo3/lib64/python3.6/site-packages/pyspark/context.py", line 270, in _initialize_context
+    return self._jvm.JavaSparkContext(jconf)
+  File "/home/crist/python-venv/pyomo3/lib64/python3.6/site-packages/py4j/java_gateway.py", line 1428, in __call__
+    answer, self._gateway_client, None, self._fqn)
+  File "/home/crist/python-venv/pyomo3/lib64/python3.6/site-packages/py4j/protocol.py", line 320, in get_return_value
+    format(target_id, ".", name), value)
+py4j.protocol.Py4JJavaError: An error occurred while calling None.org.apache.spark.api.java.JavaSparkContext.
+: org.apache.spark.SparkException: Invalid master URL: spark://111.111:7077
+	at org.apache.spark.util.Utils$.extractHostPortFromSparkUrl(Utils.scala:2449)
+	at org.apache.spark.rpc.RpcAddress$.fromSparkURL(RpcAddress.scala:47)
+	at org.apache.spark.deploy.client.StandaloneAppClient$$anonfun$1.apply(StandaloneAppClient.scala:52)
+	at org.apache.spark.deploy.client.StandaloneAppClient$$anonfun$1.apply(StandaloneAppClient.scala:52)
+	at scala.collection.TraversableLike$$anonfun$map$1.apply(TraversableLike.scala:234)
+	at scala.collection.TraversableLike$$anonfun$map$1.apply(TraversableLike.scala:234)
+	at scala.collection.IndexedSeqOptimized$class.foreach(IndexedSeqOptimized.scala:33)
+	at scala.collection.mutable.ArrayOps$ofRef.foreach(ArrayOps.scala:186)
+	at scala.collection.TraversableLike$class.map(TraversableLike.scala:234)
+	at scala.collection.mutable.ArrayOps$ofRef.map(ArrayOps.scala:186)
+	at org.apache.spark.deploy.client.StandaloneAppClient.<init>(StandaloneAppClient.scala:52)
+	at org.apache.spark.scheduler.cluster.StandaloneSchedulerBackend.start(StandaloneSchedulerBackend.scala:116)
+	at org.apache.spark.scheduler.TaskSchedulerImpl.start(TaskSchedulerImpl.scala:164)
+	at org.apache.spark.SparkContext.<init>(SparkContext.scala:500)
+	at org.apache.spark.api.java.JavaSparkContext.<init>(JavaSparkContext.scala:58)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at py4j.reflection.MethodInvoker.invoke(MethodInvoker.java:247)
+	at py4j.reflection.ReflectionEngine.invoke(ReflectionEngine.java:357)
+	at py4j.Gateway.invoke(Gateway.java:238)
+	at py4j.commands.ConstructorCommand.invokeConstructor(ConstructorCommand.java:80)
+	at py4j.commands.ConstructorCommand.execute(ConstructorCommand.java:69)
+	at py4j.GatewayConnection.run(GatewayConnection.java:214)
+	at java.lang.Thread.run(Thread.java:748)
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/crist/python-venv/pyomo3/bin/runph", line 11, in <module>
+    load_entry_point('Pyomo', 'console_scripts', 'runph')()
+  File "/media/sf_GitHub/TFG/pyomo/pyomo/pysp/phinit.py", line 1354, in PH_main
+    return main(args=args)
+  File "/media/sf_GitHub/TFG/pyomo/pyomo/pysp/phinit.py", line 1349, in main
+    traceback=options.traceback)
+  File "/media/sf_GitHub/TFG/pyomo/pyomo/pysp/util/misc.py", line 344, in launch_command
+    rc = command(options, *cmd_args, **cmd_kwds)
+  File "/media/sf_GitHub/TFG/pyomo/pyomo/pysp/phinit.py", line 1287, in exec_runph
+    with PHFromScratchManagedContext(options) as ph:
+  File "/usr/lib64/python3.6/contextlib.py", line 81, in __enter__
+    return next(self.gen)
+  File "/media/sf_GitHub/TFG/pyomo/pyomo/pysp/phinit.py", line 991, in PHFromScratchManagedContext
+    ph = PHFromScratch(options)
+  File "/media/sf_GitHub/TFG/pyomo/pyomo/pysp/phinit.py", line 962, in PHFromScratch
+    ph = PHAlgorithmBuilder(options, scenario_tree)
+  File "/media/sf_GitHub/TFG/pyomo/pyomo/pysp/phinit.py", line 906, in PHAlgorithmBuilder
+    timeout)
+  File "/media/sf_GitHub/TFG/pyomo/pyomo/solvers/plugins/smanager/phspark.py", line 252, in acquire_servers
+    e.java_exception.getMessage()))
+RuntimeError: ERROR connecting with Spark at spark://111.111:7077. URL might be incorrect (org.apache.spark.SparkException)Invalid master URL: spark://111.111:7077

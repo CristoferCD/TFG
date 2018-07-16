@@ -1,0 +1,1910 @@
+{
+  "scenario tree": {
+    "scenarios": {
+      "Scen1": {
+        "name": "Scen1",
+        "probability": 0.11088900000000002,
+        "nodes": [
+          "RootNode",
+          "Node2_1",
+          "Node3_1_1"
+        ]
+      },
+      "Scen2": {
+        "name": "Scen2",
+        "probability": 0.11088900000000002,
+        "nodes": [
+          "RootNode",
+          "Node2_1",
+          "Node3_1_2"
+        ]
+      },
+      "Scen3": {
+        "name": "Scen3",
+        "probability": 0.11122200000000002,
+        "nodes": [
+          "RootNode",
+          "Node2_1",
+          "Node3_1_3"
+        ]
+      },
+      "Scen4": {
+        "name": "Scen4",
+        "probability": 0.11088900000000002,
+        "nodes": [
+          "RootNode",
+          "Node2_2",
+          "Node3_2_1"
+        ]
+      },
+      "Scen5": {
+        "name": "Scen5",
+        "probability": 0.11088900000000002,
+        "nodes": [
+          "RootNode",
+          "Node2_2",
+          "Node3_2_2"
+        ]
+      },
+      "Scen6": {
+        "name": "Scen6",
+        "probability": 0.11122200000000002,
+        "nodes": [
+          "RootNode",
+          "Node2_2",
+          "Node3_2_3"
+        ]
+      },
+      "Scen7": {
+        "name": "Scen7",
+        "probability": 0.11122200000000002,
+        "nodes": [
+          "RootNode",
+          "Node2_3",
+          "Node3_3_1"
+        ]
+      },
+      "Scen8": {
+        "name": "Scen8",
+        "probability": 0.11122200000000002,
+        "nodes": [
+          "RootNode",
+          "Node2_3",
+          "Node3_3_2"
+        ]
+      },
+      "Scen9": {
+        "name": "Scen9",
+        "probability": 0.11155600000000002,
+        "nodes": [
+          "RootNode",
+          "Node2_3",
+          "Node3_3_3"
+        ]
+      }
+    },
+    "stages": {
+      "FirstStage": {
+        "name": "FirstStage",
+        "nodes": [
+          "RootNode"
+        ],
+        "order": 0
+      },
+      "SecondStage": {
+        "name": "SecondStage",
+        "nodes": [
+          "Node2_1",
+          "Node2_2",
+          "Node2_3"
+        ],
+        "order": 1
+      },
+      "ThirdStage": {
+        "name": "ThirdStage",
+        "nodes": [
+          "Node3_1_1",
+          "Node3_1_2",
+          "Node3_1_3",
+          "Node3_2_1",
+          "Node3_2_2",
+          "Node3_2_3",
+          "Node3_3_1",
+          "Node3_3_2",
+          "Node3_3_3"
+        ],
+        "order": 2
+      }
+    },
+    "nodes": {
+      "RootNode": {
+        "name": "RootNode",
+        "parent": null,
+        "children": [
+          "Node2_1",
+          "Node2_2",
+          "Node2_3"
+        ],
+        "stage": "FirstStage",
+        "conditional probability": 1.0,
+        "probability": 1.0,
+        "scenarios": [
+          "Scen1",
+          "Scen2",
+          "Scen3",
+          "Scen4",
+          "Scen5",
+          "Scen6",
+          "Scen7",
+          "Scen8",
+          "Scen9"
+        ]
+      },
+      "Node2_1": {
+        "name": "Node2_1",
+        "parent": "RootNode",
+        "children": [
+          "Node3_1_1",
+          "Node3_1_2",
+          "Node3_1_3"
+        ],
+        "stage": "SecondStage",
+        "conditional probability": 0.333,
+        "probability": 0.333,
+        "scenarios": [
+          "Scen1",
+          "Scen2",
+          "Scen3"
+        ]
+      },
+      "Node2_2": {
+        "name": "Node2_2",
+        "parent": "RootNode",
+        "children": [
+          "Node3_2_1",
+          "Node3_2_2",
+          "Node3_2_3"
+        ],
+        "stage": "SecondStage",
+        "conditional probability": 0.333,
+        "probability": 0.333,
+        "scenarios": [
+          "Scen4",
+          "Scen5",
+          "Scen6"
+        ]
+      },
+      "Node2_3": {
+        "name": "Node2_3",
+        "parent": "RootNode",
+        "children": [
+          "Node3_3_1",
+          "Node3_3_2",
+          "Node3_3_3"
+        ],
+        "stage": "SecondStage",
+        "conditional probability": 0.334,
+        "probability": 0.334,
+        "scenarios": [
+          "Scen7",
+          "Scen8",
+          "Scen9"
+        ]
+      },
+      "Node3_1_1": {
+        "name": "Node3_1_1",
+        "parent": "Node2_1",
+        "children": [],
+        "stage": "ThirdStage",
+        "conditional probability": 0.333,
+        "probability": 0.11088900000000002,
+        "scenarios": [
+          "Scen1"
+        ]
+      },
+      "Node3_1_2": {
+        "name": "Node3_1_2",
+        "parent": "Node2_1",
+        "children": [],
+        "stage": "ThirdStage",
+        "conditional probability": 0.333,
+        "probability": 0.11088900000000002,
+        "scenarios": [
+          "Scen2"
+        ]
+      },
+      "Node3_1_3": {
+        "name": "Node3_1_3",
+        "parent": "Node2_1",
+        "children": [],
+        "stage": "ThirdStage",
+        "conditional probability": 0.334,
+        "probability": 0.11122200000000002,
+        "scenarios": [
+          "Scen3"
+        ]
+      },
+      "Node3_2_1": {
+        "name": "Node3_2_1",
+        "parent": "Node2_2",
+        "children": [],
+        "stage": "ThirdStage",
+        "conditional probability": 0.333,
+        "probability": 0.11088900000000002,
+        "scenarios": [
+          "Scen4"
+        ]
+      },
+      "Node3_2_2": {
+        "name": "Node3_2_2",
+        "parent": "Node2_2",
+        "children": [],
+        "stage": "ThirdStage",
+        "conditional probability": 0.333,
+        "probability": 0.11088900000000002,
+        "scenarios": [
+          "Scen5"
+        ]
+      },
+      "Node3_2_3": {
+        "name": "Node3_2_3",
+        "parent": "Node2_2",
+        "children": [],
+        "stage": "ThirdStage",
+        "conditional probability": 0.334,
+        "probability": 0.11122200000000002,
+        "scenarios": [
+          "Scen6"
+        ]
+      },
+      "Node3_3_1": {
+        "name": "Node3_3_1",
+        "parent": "Node2_3",
+        "children": [],
+        "stage": "ThirdStage",
+        "conditional probability": 0.333,
+        "probability": 0.11122200000000002,
+        "scenarios": [
+          "Scen7"
+        ]
+      },
+      "Node3_3_2": {
+        "name": "Node3_3_2",
+        "parent": "Node2_3",
+        "children": [],
+        "stage": "ThirdStage",
+        "conditional probability": 0.333,
+        "probability": 0.11122200000000002,
+        "scenarios": [
+          "Scen8"
+        ]
+      },
+      "Node3_3_3": {
+        "name": "Node3_3_3",
+        "parent": "Node2_3",
+        "children": [],
+        "stage": "ThirdStage",
+        "conditional probability": 0.334,
+        "probability": 0.11155600000000002,
+        "scenarios": [
+          "Scen9"
+        ]
+      }
+    }
+  },
+  "scenario solutions": {
+    "Scen1": {
+      "variables": {
+        "PDns[1]": {
+          "value": 0.0,
+          "fixed": false,
+          "stale": false,
+          "rho": 1.0,
+          "weight": 2.6574072980004293
+        },
+        "Pgh[1]": {
+          "value": 76.49811931791061,
+          "fixed": false,
+          "stale": false,
+          "rho": 1.0,
+          "weight": -2.283590960429791
+        },
+        "Pgt[1]": {
+          "value": 13.501880682089395,
+          "fixed": false,
+          "stale": false,
+          "rho": 1.0,
+          "weight": -0.373816337570716
+        },
+        "Vol[1]": {
+          "value": 44.45393743652766,
+          "fixed": false,
+          "stale": false,
+          "rho": 1.0,
+          "weight": 1.381115812867641
+        },
+        "PDns[2]": {
+          "value": 0.0,
+          "fixed": false,
+          "stale": false,
+          "rho": 1.0,
+          "weight": 1.3376738054379556
+        },
+        "Pgh[2]": {
+          "value": 60.0,
+          "fixed": false,
+          "stale": false,
+          "rho": 1.0,
+          "weight": -1.5801105401462294
+        },
+        "Pgt[2]": {
+          "value": 100.0,
+          "fixed": false,
+          "stale": false,
+          "rho": 1.0,
+          "weight": 0.242436735231081
+        },
+        "Vol[2]": {
+          "value": 14.21393743652766,
+          "fixed": false,
+          "stale": false,
+          "rho": 1.0,
+          "weight": 1.9312170537150717
+        },
+        "PDns[3]": {
+          "value": 8.24905965895527,
+          "fixed": false,
+          "stale": false,
+          "rho": null,
+          "weight": null
+        },
+        "Pgh[3]": {
+          "value": 1.7509403410447035,
+          "fixed": false,
+          "stale": false,
+          "rho": null,
+          "weight": null
+        },
+        "Pgt[3]": {
+          "value": 100.0,
+          "fixed": false,
+          "stale": false,
+          "rho": null,
+          "weight": null
+        },
+        "Vol[3]": {
+          "value": 60.47999999999999,
+          "fixed": false,
+          "stale": false,
+          "rho": null,
+          "weight": null
+        },
+        "sl": {
+          "value": 0.0,
+          "fixed": false,
+          "stale": false,
+          "rho": null,
+          "weight": null
+        }
+      },
+      "objective": 133.75479449206128,
+      "cost": 295.119281555661,
+      "ph weight term": -161.36555556513537,
+      "ph proximal term": 0.0010685015356397013,
+      "stage costs": {
+        "FirstStage": 13.47722358901855,
+        "SecondStage": 99.81738030685194,
+        "ThirdStage": 181.82467765979055
+      }
+    },
+    "Scen2": {
+      "variables": {
+        "PDns[1]": {
+          "value": 0.0,
+          "fixed": false,
+          "stale": false,
+          "rho": 1.0,
+          "weight": -0.3314290767609102
+        },
+        "Pgh[1]": {
+          "value": 76.49811931791717,
+          "fixed": false,
+          "stale": false,
+          "rho": 1.0,
+          "weight": 0.01567622717200834
+        },
+        "Pgt[1]": {
+          "value": 13.501880682082826,
+          "fixed": false,
+          "stale": false,
+          "rho": 1.0,
+          "weight": 0.31575284958833194
+        },
+        "Vol[1]": {
+          "value": 44.453937436523695,
+          "fixed": false,
+          "stale": false,
+          "rho": 1.0,
+          "weight": -0.00948098219434712
+        },
+        "PDns[2]": {
+          "value": 0.0,
+          "fixed": false,
+          "stale": false,
+          "rho": 1.0,
+          "weight": -2.728110351352604
+        },
+        "Pgh[2]": {
+          "value": 59.999999999951,
+          "fixed": false,
+          "stale": false,
+          "rho": 1.0,
+          "weight": 1.6781470087697627
+        },
+        "Pgt[2]": {
+          "value": 100.0,
+          "fixed": false,
+          "stale": false,
+          "rho": 1.0,
+          "weight": 1.0499633425667696
+        },
+        "Vol[2]": {
+          "value": 14.213937436553323,
+          "fixed": false,
+          "stale": false,
+          "rho": 1.0,
+          "weight": -1.4299739069313953
+        },
+        "PDns[3]": {
+          "value": 0.0,
+          "fixed": false,
+          "stale": false,
+          "rho": null,
+          "weight": null
+        },
+        "Pgh[3]": {
+          "value": 11.750940341065911,
+          "fixed": false,
+          "stale": false,
+          "rho": null,
+          "weight": null
+        },
+        "Pgt[3]": {
+          "value": 98.2490596589341,
+          "fixed": false,
+          "stale": false,
+          "rho": null,
+          "weight": null
+        },
+        "Vol[3]": {
+          "value": 60.47999999999999,
+          "fixed": false,
+          "stale": false,
+          "rho": null,
+          "weight": null
+        },
+        "sl": {
+          "value": 0.0,
+          "fixed": false,
+          "stale": false,
+          "rho": null,
+          "weight": null
+        }
+      },
+      "objective": 401.6756091536115,
+      "cost": 211.1851469524525,
+      "ph weight term": 190.4893936996234,
+      "ph proximal term": 0.0010685015355821142,
+      "stage costs": {
+        "FirstStage": 13.47722358901199,
+        "SecondStage": 99.81738030690086,
+        "ThirdStage": 97.89054305653967
+      }
+    },
+    "Scen3": {
+      "variables": {
+        "PDns[1]": {
+          "value": 0.0,
+          "fixed": false,
+          "stale": false,
+          "rho": 1.0,
+          "weight": -0.3314290767609102
+        },
+        "Pgh[1]": {
+          "value": 76.49811931791717,
+          "fixed": false,
+          "stale": false,
+          "rho": 1.0,
+          "weight": 0.25348501796584344
+        },
+        "Pgt[1]": {
+          "value": 13.501880682082824,
+          "fixed": false,
+          "stale": false,
+          "rho": 1.0,
+          "weight": 0.07794405879490451
+        },
+        "Vol[1]": {
+          "value": 44.453937436523695,
+          "fixed": false,
+          "stale": false,
+          "rho": 1.0,
+          "weight": -0.15330773886594784
+        },
+        "PDns[2]": {
+          "value": 0.0,
+          "fixed": false,
+          "stale": false,
+          "rho": 1.0,
+          "weight": 1.3862735622442406
+        },
+        "Pgh[2]": {
+          "value": 59.999999999950994,
+          "fixed": false,
+          "stale": false,
+          "rho": 1.0,
+          "weight": -0.09774294626276969
+        },
+        "Pgt[2]": {
+          "value": 100.0,
+          "fixed": false,
+          "stale": false,
+          "rho": 1.0,
+          "weight": -1.2885306164877477
+        },
+        "Vol[2]": {
+          "value": 14.213937436553334,
+          "fixed": false,
+          "stale": false,
+          "rho": 1.0,
+          "weight": -0.49974241879936976
+        },
+        "PDns[3]": {
+          "value": 0.0,
+          "fixed": false,
+          "stale": false,
+          "rho": null,
+          "weight": null
+        },
+        "Pgh[3]": {
+          "value": 21.750940341065917,
+          "fixed": false,
+          "stale": false,
+          "rho": null,
+          "weight": null
+        },
+        "Pgt[3]": {
+          "value": 88.24905965893402,
+          "fixed": false,
+          "stale": false,
+          "rho": null,
+          "weight": null
+        },
+        "Vol[3]": {
+          "value": 60.47999999999999,
+          "fixed": false,
+          "stale": false,
+          "rho": null,
+          "weight": null
+        },
+        "sl": {
+          "value": 0.0,
+          "fixed": false,
+          "stale": false,
+          "rho": null,
+          "weight": null
+        }
+      },
+      "objective": 73.11895240056855,
+      "cost": 201.22163754112972,
+      "ph weight term": -128.10375364209676,
+      "ph proximal term": 0.001068501535582223,
+      "stage costs": {
+        "FirstStage": 13.47722358901199,
+        "SecondStage": 99.81738030690086,
+        "ThirdStage": 87.92703364521688
+      }
+    },
+    "Scen4": {
+      "variables": {
+        "PDns[1]": {
+          "value": 0.0,
+          "fixed": false,
+          "stale": false,
+          "rho": 1.0,
+          "weight": -0.3314290767609102
+        },
+        "Pgh[1]": {
+          "value": 76.49849636876465,
+          "fixed": false,
+          "stale": false,
+          "rho": 1.0,
+          "weight": 0.5879906798236334
+        },
+        "Pgt[1]": {
+          "value": 13.501503631235371,
+          "fixed": false,
+          "stale": false,
+          "rho": 1.0,
+          "weight": -0.25656160306245024
+        },
+        "Vol[1]": {
+          "value": 44.45370939617117,
+          "fixed": false,
+          "stale": false,
+          "rho": 1.0,
+          "weight": -0.3556167631570659
+        },
+        "PDns[2]": {
+          "value": 0.0,
+          "fixed": false,
+          "stale": false,
+          "rho": 1.0,
+          "weight": 0.0
+        },
+        "Pgh[2]": {
+          "value": 83.25623427554989,
+          "fixed": false,
+          "stale": false,
+          "rho": 1.0,
+          "weight": 0.35460885926281094
+        },
+        "Pgt[2]": {
+          "value": 76.7437657244501,
+          "fixed": false,
+          "stale": false,
+          "rho": 1.0,
+          "weight": -0.35460885926323726
+        },
+        "Vol[2]": {
+          "value": 24.191999999999975,
+          "fixed": false,
+          "stale": false,
+          "rho": 1.0,
+          "weight": 1.7813380060496975
+        },
+        "PDns[3]": {
+          "value": 0.0,
+          "fixed": false,
+          "stale": false,
+          "rho": null,
+          "weight": null
+        },
+        "Pgh[3]": {
+          "value": 9.999999999999986,
+          "fixed": false,
+          "stale": false,
+          "rho": null,
+          "weight": null
+        },
+        "Pgt[3]": {
+          "value": 100.0,
+          "fixed": false,
+          "stale": false,
+          "rho": null,
+          "weight": null
+        },
+        "Vol[3]": {
+          "value": 60.47999999999999,
+          "fixed": false,
+          "stale": false,
+          "rho": null,
+          "weight": null
+        },
+        "sl": {
+          "value": 0.0,
+          "fixed": false,
+          "stale": false,
+          "rho": null,
+          "weight": null
+        }
+      },
+      "objective": 263.1610390154077,
+      "cost": 189.71555783493466,
+      "ph weight term": 73.41679256444064,
+      "ph proximal term": 0.028688616032387593,
+      "stage costs": {
+        "FirstStage": 13.476847226733637,
+        "SecondStage": 76.60361649497386,
+        "ThirdStage": 99.63509411322715
+      }
+    },
+    "Scen5": {
+      "variables": {
+        "PDns[1]": {
+          "value": 0.0,
+          "fixed": false,
+          "stale": false,
+          "rho": 1.0,
+          "weight": -0.3314290767609102
+        },
+        "Pgh[1]": {
+          "value": 76.50860882376162,
+          "fixed": false,
+          "stale": false,
+          "rho": 1.0,
+          "weight": 0.138543324652872
+        },
+        "Pgt[1]": {
+          "value": 13.491391176238379,
+          "fixed": false,
+          "stale": false,
+          "rho": 1.0,
+          "weight": 0.1928857521079772
+        },
+        "Vol[1]": {
+          "value": 44.447593383389,
+          "fixed": false,
+          "stale": false,
+          "rho": 1.0,
+          "weight": -0.0837910027497557
+        },
+        "PDns[2]": {
+          "value": 0.0,
+          "fixed": false,
+          "stale": false,
+          "rho": 1.0,
+          "weight": 0.0
+        },
+        "Pgh[2]": {
+          "value": 83.2681962128121,
+          "fixed": false,
+          "stale": false,
+          "rho": 1.0,
+          "weight": -0.17703860585537257
+        },
+        "Pgt[2]": {
+          "value": 76.7318037871879,
+          "fixed": false,
+          "stale": false,
+          "rho": 1.0,
+          "weight": 0.17703860585523046
+        },
+        "Vol[2]": {
+          "value": 24.326988313880236,
+          "fixed": false,
+          "stale": false,
+          "rho": 1.0,
+          "weight": -0.8893336670439886
+        },
+        "PDns[3]": {
+          "value": 0.0,
+          "fixed": false,
+          "stale": false,
+          "rho": null,
+          "weight": null
+        },
+        "Pgh[3]": {
+          "value": 20.11159748171317,
+          "fixed": false,
+          "stale": false,
+          "rho": null,
+          "weight": null
+        },
+        "Pgt[3]": {
+          "value": 89.88840251828685,
+          "fixed": false,
+          "stale": false,
+          "rho": null,
+          "weight": null
+        },
+        "Vol[3]": {
+          "value": 60.480000000000004,
+          "fixed": false,
+          "stale": false,
+          "rho": null,
+          "weight": null
+        },
+        "sl": {
+          "value": 0.0,
+          "fixed": false,
+          "stale": false,
+          "rho": null,
+          "weight": null
+        }
+      },
+      "objective": 164.91725221558812,
+      "cost": 179.61882408760727,
+      "ph weight term": -14.723993641446521,
+      "ph proximal term": 0.02242176942739469,
+      "stage costs": {
+        "FirstStage": 13.46675323907093,
+        "SecondStage": 76.59167640256479,
+        "ThirdStage": 89.56039444597157
+      }
+    },
+    "Scen6": {
+      "variables": {
+        "PDns[1]": {
+          "value": 0.0,
+          "fixed": false,
+          "stale": false,
+          "rho": 1.0,
+          "weight": -0.3314290767609102
+        },
+        "Pgh[1]": {
+          "value": 76.50860882376156,
+          "fixed": false,
+          "stale": false,
+          "rho": 1.0,
+          "weight": 0.1385433245786487
+        },
+        "Pgt[1]": {
+          "value": 13.491391176238363,
+          "fixed": false,
+          "stale": false,
+          "rho": 1.0,
+          "weight": 0.1928857521814633
+        },
+        "Vol[1]": {
+          "value": 44.44759338338896,
+          "fixed": false,
+          "stale": false,
+          "rho": 1.0,
+          "weight": -0.08379100270582995
+        },
+        "PDns[2]": {
+          "value": 0.0,
+          "fixed": false,
+          "stale": false,
+          "rho": 1.0,
+          "weight": 0.0
+        },
+        "Pgh[2]": {
+          "value": 83.2681962128121,
+          "fixed": false,
+          "stale": false,
+          "rho": 1.0,
+          "weight": -0.17703860594251353
+        },
+        "Pgt[2]": {
+          "value": 76.7318037871879,
+          "fixed": false,
+          "stale": false,
+          "rho": 1.0,
+          "weight": 0.1770386059423643
+        },
+        "Vol[2]": {
+          "value": 24.32698831388023,
+          "fixed": false,
+          "stale": false,
+          "rho": 1.0,
+          "weight": -0.8893336673321386
+        },
+        "PDns[3]": {
+          "value": 0.0,
+          "fixed": false,
+          "stale": false,
+          "rho": null,
+          "weight": null
+        },
+        "Pgh[3]": {
+          "value": 30.111597481713154,
+          "fixed": false,
+          "stale": false,
+          "rho": null,
+          "weight": null
+        },
+        "Pgt[3]": {
+          "value": 79.88840251828678,
+          "fixed": false,
+          "stale": false,
+          "rho": null,
+          "weight": null
+        },
+        "Vol[3]": {
+          "value": 60.480000000000004,
+          "fixed": false,
+          "stale": false,
+          "rho": null,
+          "weight": null
+        },
+        "sl": {
+          "value": 0.0,
+          "fixed": false,
+          "stale": false,
+          "rho": null,
+          "weight": null
+        }
+      },
+      "objective": 154.95374279395676,
+      "cost": 169.65531467628443,
+      "ph weight term": -14.723993651755057,
+      "ph proximal term": 0.022421769427395037,
+      "stage costs": {
+        "FirstStage": 13.466753239070911,
+        "SecondStage": 76.59167640256477,
+        "ThirdStage": 79.59688503464876
+      }
+    },
+    "Scen7": {
+      "variables": {
+        "PDns[1]": {
+          "value": 0.0,
+          "fixed": false,
+          "stale": false,
+          "rho": 1.0,
+          "weight": -0.3314290767609102
+        },
+        "Pgh[1]": {
+          "value": 76.49838174114377,
+          "fixed": false,
+          "stale": false,
+          "rho": 1.0,
+          "weight": 0.38119757879984206
+        },
+        "Pgt[1]": {
+          "value": 13.501618258856237,
+          "fixed": false,
+          "stale": false,
+          "rho": 1.0,
+          "weight": -0.04976850203902128
+        },
+        "Vol[1]": {
+          "value": 44.453778722956265,
+          "fixed": false,
+          "stale": false,
+          "rho": 1.0,
+          "weight": -0.23054829565834467
+        },
+        "PDns[2]": {
+          "value": 0.0,
+          "fixed": false,
+          "stale": false,
+          "rho": 1.0,
+          "weight": 0.0
+        },
+        "Pgh[2]": {
+          "value": 100.0,
+          "fixed": false,
+          "stale": false,
+          "rho": 1.0,
+          "weight": -2.8421709430404007e-13
+        },
+        "Pgt[2]": {
+          "value": 59.999999999950994,
+          "fixed": false,
+          "stale": false,
+          "rho": 1.0,
+          "weight": -2.2026824808563106e-13
+        },
+        "Vol[2]": {
+          "value": 38.40577872289698,
+          "fixed": false,
+          "stale": false,
+          "rho": 1.0,
+          "weight": -1.7763568394002505e-14
+        },
+        "PDns[3]": {
+          "value": 0.0,
+          "fixed": false,
+          "stale": false,
+          "rho": null,
+          "weight": null
+        },
+        "Pgh[3]": {
+          "value": 21.750809129379125,
+          "fixed": false,
+          "stale": false,
+          "rho": null,
+          "weight": null
+        },
+        "Pgt[3]": {
+          "value": 88.24919087062084,
+          "fixed": false,
+          "stale": false,
+          "rho": null,
+          "weight": null
+        },
+        "Vol[3]": {
+          "value": 60.47999999999999,
+          "fixed": false,
+          "stale": false,
+          "rho": null,
+          "weight": null
+        },
+        "sl": {
+          "value": 0.0,
+          "fixed": false,
+          "stale": false,
+          "rho": null,
+          "weight": null
+        }
+      },
+      "objective": 179.6152337310175,
+      "cost": 161.2945542071887,
+      "ph weight term": 18.319631153966952,
+      "ph proximal term": 0.0010483698618562179,
+      "stage costs": {
+        "FirstStage": 13.476961645021891,
+        "SecondStage": 59.89042818406226,
+        "ThirdStage": 87.92716437810455
+      }
+    },
+    "Scen8": {
+      "variables": {
+        "PDns[1]": {
+          "value": 0.0,
+          "fixed": false,
+          "stale": false,
+          "rho": 1.0,
+          "weight": -0.3314290767609102
+        },
+        "Pgh[1]": {
+          "value": 76.49838174114375,
+          "fixed": false,
+          "stale": false,
+          "rho": 1.0,
+          "weight": 0.38119757879942995
+        },
+        "Pgt[1]": {
+          "value": 13.501618258856235,
+          "fixed": false,
+          "stale": false,
+          "rho": 1.0,
+          "weight": -0.04976850203924865
+        },
+        "Vol[1]": {
+          "value": 44.45377872295625,
+          "fixed": false,
+          "stale": false,
+          "rho": 1.0,
+          "weight": -0.2305482956585152
+        },
+        "PDns[2]": {
+          "value": 0.0,
+          "fixed": false,
+          "stale": false,
+          "rho": 1.0,
+          "weight": 0.0
+        },
+        "Pgh[2]": {
+          "value": 100.0,
+          "fixed": false,
+          "stale": false,
+          "rho": 1.0,
+          "weight": -2.8421709430404007e-13
+        },
+        "Pgt[2]": {
+          "value": 59.999999999951,
+          "fixed": false,
+          "stale": false,
+          "rho": 1.0,
+          "weight": -7.815970093361102e-14
+        },
+        "Vol[2]": {
+          "value": 38.405778722896976,
+          "fixed": false,
+          "stale": false,
+          "rho": 1.0,
+          "weight": -1.3145040611561853e-13
+        },
+        "PDns[3]": {
+          "value": 0.0,
+          "fixed": false,
+          "stale": false,
+          "rho": null,
+          "weight": null
+        },
+        "Pgh[3]": {
+          "value": 31.75080912937911,
+          "fixed": false,
+          "stale": false,
+          "rho": null,
+          "weight": null
+        },
+        "Pgt[3]": {
+          "value": 78.24919087062091,
+          "fixed": false,
+          "stale": false,
+          "rho": null,
+          "weight": null
+        },
+        "Vol[3]": {
+          "value": 60.47999999999999,
+          "fixed": false,
+          "stale": false,
+          "rho": null,
+          "weight": null
+        },
+        "sl": {
+          "value": 0.0,
+          "fixed": false,
+          "stale": false,
+          "rho": null,
+          "weight": null
+        }
+      },
+      "objective": 169.65172431965948,
+      "cost": 151.33104479586603,
+      "ph weight term": 18.319631153931603,
+      "ph proximal term": 0.0010483698618566214,
+      "stage costs": {
+        "FirstStage": 13.476961645021891,
+        "SecondStage": 59.890428184062266,
+        "ThirdStage": 77.96365496678189
+      }
+    },
+    "Scen9": {
+      "variables": {
+        "PDns[1]": {
+          "value": 0.0,
+          "fixed": false,
+          "stale": false,
+          "rho": 1.0,
+          "weight": -0.3314290767609102
+        },
+        "Pgh[1]": {
+          "value": 76.49838174114376,
+          "fixed": false,
+          "stale": false,
+          "rho": 1.0,
+          "weight": 0.38119757879957206
+        },
+        "Pgt[1]": {
+          "value": 13.501618258856238,
+          "fixed": false,
+          "stale": false,
+          "rho": 1.0,
+          "weight": -0.0497685020392149
+        },
+        "Vol[1]": {
+          "value": 44.45377872295626,
+          "fixed": false,
+          "stale": false,
+          "rho": 1.0,
+          "weight": -0.23054829565840151
+        },
+        "PDns[2]": {
+          "value": 0.0,
+          "fixed": false,
+          "stale": false,
+          "rho": 1.0,
+          "weight": 0.0
+        },
+        "Pgh[2]": {
+          "value": 100.0,
+          "fixed": false,
+          "stale": false,
+          "rho": 1.0,
+          "weight": -2.8421709430404007e-13
+        },
+        "Pgt[2]": {
+          "value": 59.999999999951,
+          "fixed": false,
+          "stale": false,
+          "rho": 1.0,
+          "weight": -7.815970093361102e-14
+        },
+        "Vol[2]": {
+          "value": 38.405778722896976,
+          "fixed": false,
+          "stale": false,
+          "rho": 1.0,
+          "weight": -6.750155989720952e-14
+        },
+        "PDns[3]": {
+          "value": 0.0,
+          "fixed": false,
+          "stale": false,
+          "rho": null,
+          "weight": null
+        },
+        "Pgh[3]": {
+          "value": 41.7508091293791,
+          "fixed": false,
+          "stale": false,
+          "rho": null,
+          "weight": null
+        },
+        "Pgt[3]": {
+          "value": 68.24919087062088,
+          "fixed": false,
+          "stale": false,
+          "rho": null,
+          "weight": null
+        },
+        "Vol[3]": {
+          "value": 60.47999999999999,
+          "fixed": false,
+          "stale": false,
+          "rho": null,
+          "weight": null
+        },
+        "sl": {
+          "value": 0.0,
+          "fixed": false,
+          "stale": false,
+          "rho": null,
+          "weight": null
+        }
+      },
+      "objective": 159.68821490835415,
+      "cost": 141.36753538454332,
+      "ph weight term": 18.319631153948993,
+      "ph proximal term": 0.001048369861856442,
+      "stage costs": {
+        "FirstStage": 13.476961645021897,
+        "SecondStage": 59.890428184062266,
+        "ThirdStage": 68.00014555545914
+      }
+    }
+  },
+  "node solutions": {
+    "RootNode": {
+      "variables": {
+        "PDns[1]": {
+          "solution": 0.0,
+          "fixed": false,
+          "derived": false,
+          "minimum": 0.0,
+          "average": 0.0,
+          "maximum": 0.0,
+          "xbar": 0.0,
+          "wbar": -9.71445146547012e-17
+        },
+        "Pgh[1]": {
+          "solution": 76.50057861269816,
+          "fixed": false,
+          "derived": false,
+          "minimum": 76.49811931791061,
+          "average": 76.50057861269816,
+          "maximum": 76.50860882376162,
+          "xbar": 76.50057861269816,
+          "wbar": -2.7226831900151183e-13
+        },
+        "Pgt[1]": {
+          "solution": 13.499421387301833,
+          "fixed": false,
+          "derived": false,
+          "minimum": 13.491391176238363,
+          "average": 13.499421387301833,
+          "maximum": 13.501880682089395,
+          "xbar": 13.499421387301833,
+          "wbar": -3.556443334273851e-14
+        },
+        "Vol[1]": {
+          "solution": 44.45245005504017,
+          "fixed": false,
+          "derived": false,
+          "minimum": 44.44759338338896,
+          "average": 44.45245005504017,
+          "maximum": 44.45393743652766,
+          "xbar": 44.45245005504017,
+          "wbar": -1.1936285293501214e-13
+        }
+      },
+      "expected cost": 188.89473640853123
+    },
+    "Node2_1": {
+      "variables": {
+        "PDns[2]": {
+          "solution": 0.0,
+          "fixed": false,
+          "derived": false,
+          "minimum": 0.0,
+          "average": 0.0,
+          "maximum": 0.0,
+          "xbar": 0.0,
+          "wbar": -1.6653345369377348e-15
+        },
+        "Pgh[2]": {
+          "solution": 59.99999999996732,
+          "fixed": false,
+          "derived": false,
+          "minimum": 59.999999999950994,
+          "average": 59.99999999996732,
+          "maximum": 60.0,
+          "xbar": 59.99999999996732,
+          "wbar": -1.2850831510036187e-13
+        },
+        "Pgt[2]": {
+          "solution": 100.00000000000001,
+          "fixed": false,
+          "derived": false,
+          "minimum": 100.0,
+          "average": 100.00000000000001,
+          "maximum": 100.0,
+          "xbar": 100.00000000000001,
+          "wbar": -2.2354340600827527e-13
+        },
+        "Vol[2]": {
+          "solution": 14.213937436544782,
+          "fixed": false,
+          "derived": false,
+          "minimum": 14.21393743652766,
+          "average": 14.213937436544782,
+          "maximum": 14.213937436553334,
+          "xbar": 14.213937436544782,
+          "wbar": -2.528532938583794e-14
+        }
+      },
+      "expected cost": 222.33017804289236
+    },
+    "Node2_2": {
+      "variables": {
+        "PDns[2]": {
+          "solution": 0.0,
+          "fixed": false,
+          "derived": false,
+          "minimum": 0.0,
+          "average": 0.0,
+          "maximum": 0.0,
+          "xbar": 0.0,
+          "wbar": 0.0
+        },
+        "Pgh[2]": {
+          "solution": 83.26421288770378,
+          "fixed": false,
+          "derived": false,
+          "minimum": 83.25623427554989,
+          "average": 83.26421288770378,
+          "maximum": 83.2681962128121,
+          "xbar": 83.26421288770378,
+          "wbar": -1.2254086634300165e-13
+        },
+        "Pgt[2]": {
+          "solution": 76.73578711229622,
+          "fixed": false,
+          "derived": false,
+          "minimum": 76.7318037871879,
+          "average": 76.73578711229622,
+          "maximum": 76.7437657244501,
+          "xbar": 76.73578711229622,
+          "wbar": -1.1657341758564144e-13
+        },
+        "Vol[2]": {
+          "solution": 24.282037205358108,
+          "fixed": false,
+          "derived": false,
+          "minimum": 24.191999999999975,
+          "average": 24.282037205358108,
+          "maximum": 24.326988313880236,
+          "xbar": 24.282037205358108,
+          "wbar": -3.319566843629218e-14
+        }
+      },
+      "expected cost": 166.19107378675972
+    },
+    "Node2_3": {
+      "variables": {
+        "PDns[2]": {
+          "solution": 0.0,
+          "fixed": false,
+          "derived": false,
+          "minimum": 0.0,
+          "average": 0.0,
+          "maximum": 0.0,
+          "xbar": 0.0,
+          "wbar": 0.0
+        },
+        "Pgh[2]": {
+          "solution": 100.00000000000001,
+          "fixed": false,
+          "derived": false,
+          "minimum": 100.0,
+          "average": 100.00000000000001,
+          "maximum": 100.0,
+          "xbar": 100.00000000000001,
+          "wbar": -2.842170943040401e-13
+        },
+        "Pgt[2]": {
+          "solution": 59.999999999951,
+          "fixed": false,
+          "derived": false,
+          "minimum": 59.999999999950994,
+          "average": 59.999999999951,
+          "maximum": 59.999999999951,
+          "xbar": 59.999999999951,
+          "wbar": -1.254818471352337e-13
+        },
+        "Vol[2]": {
+          "solution": 38.40577872289698,
+          "fixed": false,
+          "derived": false,
+          "minimum": 38.405778722896976,
+          "average": 38.40577872289698,
+          "maximum": 38.40577872289698,
+          "xbar": 38.40577872289698,
+          "wbar": -7.22337745173718e-14
+        }
+      },
+      "expected cost": 137.8441196414328
+    },
+    "Node3_1_1": {
+      "variables": {
+        "PDns[3]": {
+          "solution": 8.24905965895527,
+          "fixed": false,
+          "derived": false,
+          "minimum": null,
+          "average": null,
+          "maximum": null,
+          "xbar": null,
+          "wbar": null
+        },
+        "Pgh[3]": {
+          "solution": 1.7509403410447035,
+          "fixed": false,
+          "derived": false,
+          "minimum": null,
+          "average": null,
+          "maximum": null,
+          "xbar": null,
+          "wbar": null
+        },
+        "Pgt[3]": {
+          "solution": 100.00000000000001,
+          "fixed": false,
+          "derived": false,
+          "minimum": null,
+          "average": null,
+          "maximum": null,
+          "xbar": null,
+          "wbar": null
+        },
+        "Vol[3]": {
+          "solution": 60.47999999999999,
+          "fixed": false,
+          "derived": false,
+          "minimum": null,
+          "average": null,
+          "maximum": null,
+          "xbar": null,
+          "wbar": null
+        },
+        "sl": {
+          "solution": 0.0,
+          "fixed": false,
+          "derived": false,
+          "minimum": null,
+          "average": null,
+          "maximum": null,
+          "xbar": null,
+          "wbar": null
+        }
+      },
+      "expected cost": 181.82467765979055
+    },
+    "Node3_1_2": {
+      "variables": {
+        "PDns[3]": {
+          "solution": 0.0,
+          "fixed": false,
+          "derived": false,
+          "minimum": null,
+          "average": null,
+          "maximum": null,
+          "xbar": null,
+          "wbar": null
+        },
+        "Pgh[3]": {
+          "solution": 11.750940341065911,
+          "fixed": false,
+          "derived": false,
+          "minimum": null,
+          "average": null,
+          "maximum": null,
+          "xbar": null,
+          "wbar": null
+        },
+        "Pgt[3]": {
+          "solution": 98.2490596589341,
+          "fixed": false,
+          "derived": false,
+          "minimum": null,
+          "average": null,
+          "maximum": null,
+          "xbar": null,
+          "wbar": null
+        },
+        "Vol[3]": {
+          "solution": 60.47999999999999,
+          "fixed": false,
+          "derived": false,
+          "minimum": null,
+          "average": null,
+          "maximum": null,
+          "xbar": null,
+          "wbar": null
+        },
+        "sl": {
+          "solution": 0.0,
+          "fixed": false,
+          "derived": false,
+          "minimum": null,
+          "average": null,
+          "maximum": null,
+          "xbar": null,
+          "wbar": null
+        }
+      },
+      "expected cost": 97.89054305653967
+    },
+    "Node3_1_3": {
+      "variables": {
+        "PDns[3]": {
+          "solution": 0.0,
+          "fixed": false,
+          "derived": false,
+          "minimum": null,
+          "average": null,
+          "maximum": null,
+          "xbar": null,
+          "wbar": null
+        },
+        "Pgh[3]": {
+          "solution": 21.750940341065917,
+          "fixed": false,
+          "derived": false,
+          "minimum": null,
+          "average": null,
+          "maximum": null,
+          "xbar": null,
+          "wbar": null
+        },
+        "Pgt[3]": {
+          "solution": 88.24905965893402,
+          "fixed": false,
+          "derived": false,
+          "minimum": null,
+          "average": null,
+          "maximum": null,
+          "xbar": null,
+          "wbar": null
+        },
+        "Vol[3]": {
+          "solution": 60.48,
+          "fixed": false,
+          "derived": false,
+          "minimum": null,
+          "average": null,
+          "maximum": null,
+          "xbar": null,
+          "wbar": null
+        },
+        "sl": {
+          "solution": 0.0,
+          "fixed": false,
+          "derived": false,
+          "minimum": null,
+          "average": null,
+          "maximum": null,
+          "xbar": null,
+          "wbar": null
+        }
+      },
+      "expected cost": 87.92703364521688
+    },
+    "Node3_2_1": {
+      "variables": {
+        "PDns[3]": {
+          "solution": 0.0,
+          "fixed": false,
+          "derived": false,
+          "minimum": null,
+          "average": null,
+          "maximum": null,
+          "xbar": null,
+          "wbar": null
+        },
+        "Pgh[3]": {
+          "solution": 9.999999999999986,
+          "fixed": false,
+          "derived": false,
+          "minimum": null,
+          "average": null,
+          "maximum": null,
+          "xbar": null,
+          "wbar": null
+        },
+        "Pgt[3]": {
+          "solution": 100.00000000000001,
+          "fixed": false,
+          "derived": false,
+          "minimum": null,
+          "average": null,
+          "maximum": null,
+          "xbar": null,
+          "wbar": null
+        },
+        "Vol[3]": {
+          "solution": 60.47999999999999,
+          "fixed": false,
+          "derived": false,
+          "minimum": null,
+          "average": null,
+          "maximum": null,
+          "xbar": null,
+          "wbar": null
+        },
+        "sl": {
+          "solution": 0.0,
+          "fixed": false,
+          "derived": false,
+          "minimum": null,
+          "average": null,
+          "maximum": null,
+          "xbar": null,
+          "wbar": null
+        }
+      },
+      "expected cost": 99.63509411322715
+    },
+    "Node3_2_2": {
+      "variables": {
+        "PDns[3]": {
+          "solution": 0.0,
+          "fixed": false,
+          "derived": false,
+          "minimum": null,
+          "average": null,
+          "maximum": null,
+          "xbar": null,
+          "wbar": null
+        },
+        "Pgh[3]": {
+          "solution": 20.11159748171317,
+          "fixed": false,
+          "derived": false,
+          "minimum": null,
+          "average": null,
+          "maximum": null,
+          "xbar": null,
+          "wbar": null
+        },
+        "Pgt[3]": {
+          "solution": 89.88840251828685,
+          "fixed": false,
+          "derived": false,
+          "minimum": null,
+          "average": null,
+          "maximum": null,
+          "xbar": null,
+          "wbar": null
+        },
+        "Vol[3]": {
+          "solution": 60.480000000000004,
+          "fixed": false,
+          "derived": false,
+          "minimum": null,
+          "average": null,
+          "maximum": null,
+          "xbar": null,
+          "wbar": null
+        },
+        "sl": {
+          "solution": 0.0,
+          "fixed": false,
+          "derived": false,
+          "minimum": null,
+          "average": null,
+          "maximum": null,
+          "xbar": null,
+          "wbar": null
+        }
+      },
+      "expected cost": 89.56039444597157
+    },
+    "Node3_2_3": {
+      "variables": {
+        "PDns[3]": {
+          "solution": 0.0,
+          "fixed": false,
+          "derived": false,
+          "minimum": null,
+          "average": null,
+          "maximum": null,
+          "xbar": null,
+          "wbar": null
+        },
+        "Pgh[3]": {
+          "solution": 30.111597481713154,
+          "fixed": false,
+          "derived": false,
+          "minimum": null,
+          "average": null,
+          "maximum": null,
+          "xbar": null,
+          "wbar": null
+        },
+        "Pgt[3]": {
+          "solution": 79.88840251828678,
+          "fixed": false,
+          "derived": false,
+          "minimum": null,
+          "average": null,
+          "maximum": null,
+          "xbar": null,
+          "wbar": null
+        },
+        "Vol[3]": {
+          "solution": 60.480000000000004,
+          "fixed": false,
+          "derived": false,
+          "minimum": null,
+          "average": null,
+          "maximum": null,
+          "xbar": null,
+          "wbar": null
+        },
+        "sl": {
+          "solution": 0.0,
+          "fixed": false,
+          "derived": false,
+          "minimum": null,
+          "average": null,
+          "maximum": null,
+          "xbar": null,
+          "wbar": null
+        }
+      },
+      "expected cost": 79.59688503464876
+    },
+    "Node3_3_1": {
+      "variables": {
+        "PDns[3]": {
+          "solution": 0.0,
+          "fixed": false,
+          "derived": false,
+          "minimum": null,
+          "average": null,
+          "maximum": null,
+          "xbar": null,
+          "wbar": null
+        },
+        "Pgh[3]": {
+          "solution": 21.750809129379125,
+          "fixed": false,
+          "derived": false,
+          "minimum": null,
+          "average": null,
+          "maximum": null,
+          "xbar": null,
+          "wbar": null
+        },
+        "Pgt[3]": {
+          "solution": 88.24919087062084,
+          "fixed": false,
+          "derived": false,
+          "minimum": null,
+          "average": null,
+          "maximum": null,
+          "xbar": null,
+          "wbar": null
+        },
+        "Vol[3]": {
+          "solution": 60.48,
+          "fixed": false,
+          "derived": false,
+          "minimum": null,
+          "average": null,
+          "maximum": null,
+          "xbar": null,
+          "wbar": null
+        },
+        "sl": {
+          "solution": 0.0,
+          "fixed": false,
+          "derived": false,
+          "minimum": null,
+          "average": null,
+          "maximum": null,
+          "xbar": null,
+          "wbar": null
+        }
+      },
+      "expected cost": 87.92716437810455
+    },
+    "Node3_3_2": {
+      "variables": {
+        "PDns[3]": {
+          "solution": 0.0,
+          "fixed": false,
+          "derived": false,
+          "minimum": null,
+          "average": null,
+          "maximum": null,
+          "xbar": null,
+          "wbar": null
+        },
+        "Pgh[3]": {
+          "solution": 31.750809129379114,
+          "fixed": false,
+          "derived": false,
+          "minimum": null,
+          "average": null,
+          "maximum": null,
+          "xbar": null,
+          "wbar": null
+        },
+        "Pgt[3]": {
+          "solution": 78.24919087062091,
+          "fixed": false,
+          "derived": false,
+          "minimum": null,
+          "average": null,
+          "maximum": null,
+          "xbar": null,
+          "wbar": null
+        },
+        "Vol[3]": {
+          "solution": 60.48,
+          "fixed": false,
+          "derived": false,
+          "minimum": null,
+          "average": null,
+          "maximum": null,
+          "xbar": null,
+          "wbar": null
+        },
+        "sl": {
+          "solution": 0.0,
+          "fixed": false,
+          "derived": false,
+          "minimum": null,
+          "average": null,
+          "maximum": null,
+          "xbar": null,
+          "wbar": null
+        }
+      },
+      "expected cost": 77.96365496678189
+    },
+    "Node3_3_3": {
+      "variables": {
+        "PDns[3]": {
+          "solution": 0.0,
+          "fixed": false,
+          "derived": false,
+          "minimum": null,
+          "average": null,
+          "maximum": null,
+          "xbar": null,
+          "wbar": null
+        },
+        "Pgh[3]": {
+          "solution": 41.7508091293791,
+          "fixed": false,
+          "derived": false,
+          "minimum": null,
+          "average": null,
+          "maximum": null,
+          "xbar": null,
+          "wbar": null
+        },
+        "Pgt[3]": {
+          "solution": 68.24919087062088,
+          "fixed": false,
+          "derived": false,
+          "minimum": null,
+          "average": null,
+          "maximum": null,
+          "xbar": null,
+          "wbar": null
+        },
+        "Vol[3]": {
+          "solution": 60.47999999999999,
+          "fixed": false,
+          "derived": false,
+          "minimum": null,
+          "average": null,
+          "maximum": null,
+          "xbar": null,
+          "wbar": null
+        },
+        "sl": {
+          "solution": 0.0,
+          "fixed": false,
+          "derived": false,
+          "minimum": null,
+          "average": null,
+          "maximum": null,
+          "xbar": null,
+          "wbar": null
+        }
+      },
+      "expected cost": 68.00014555545914
+    }
+  }
+}

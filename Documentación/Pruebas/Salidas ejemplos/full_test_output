@@ -1,0 +1,1942 @@
+Creating baseline for Farmer
+Farmer baseline creation time: 13.086129820
+Executing Farmer with Spark
+Farmer execution time: 100.892756700
+[0;32m------------------[0m
+[0;32mFarmer test passed[0m
+[0;32m------------------[0m
+Creating baseline for baa99
+Baa99 baseline creation time: 570.752790295
+Executing Baa99 with Spark
+Baa99 execution time: 43.321530915
+[0;31m------------------[0m
+[0;31mBaa99 test failed[0m
+
+[0;31m------------------[0m
+Creating baseline for Farmer_generated
+Farmer_generated baseline creation time: 253.831626007
+Executing Farmer_generated with Spark
+Farmer_generated execution time: 3036.632568314
+[0;31m------------------[0m
+[0;31mFarmer_generated test failed[0m
+
+[0;31m------------------[0m
+Creating baseline for FarmerWIntegers
+FarmerWIntegers baseline creation time: 16.474166463
+Executing FarmerWIntegers with Spark
+FarmerWIntegers execution time: 57.560219546
+[0;31m------------------[0m
+[0;31mFarmerWIntegers test failed[0m
+[0;0m{                                                               {[0;0m
+[0;0m  "scenario tree": {                                              "scenario tree": {[0;0m
+[0;0m    "scenarios": {                                                  "scenarios": {[0;0m
+[0;0m      "BelowAverageScenario": {                                       "BelowAverageScenario": {[0;0m
+[0;0m        "name": "BelowAverageScenario",                                 "name": "BelowAverageScenario",[0;0m
+[0;0m        "probability": 0.33333333,                                      "probability": 0.33333333,[0;0m
+[0;0m        "nodes": [                                                      "nodes": [[0;0m
+[0;0m          "RootNode",                                                     "RootNode",[0;0m
+[0;0m          "BelowAverageNode"                                              "BelowAverageNode"[0;0m
+[0;0m        ]                                                               ][0;0m
+[0;0m      },                                                              },[0;0m
+[0;0m      "AverageScenario": {                                            "AverageScenario": {[0;0m
+[0;0m        "name": "AverageScenario",                                      "name": "AverageScenario",[0;0m
+[0;0m        "probability": 0.33333334,                                      "probability": 0.33333334,[0;0m
+[0;0m        "nodes": [                                                      "nodes": [[0;0m
+[0;0m          "RootNode",                                                     "RootNode",[0;0m
+[0;0m          "AverageNode"                                                   "AverageNode"[0;0m
+[0;0m        ]                                                               ][0;0m
+[0;0m      },                                                              },[0;0m
+[0;0m      "AboveAverageScenario": {                                       "AboveAverageScenario": {[0;0m
+[0;0m        "name": "AboveAverageScenario",                                 "name": "AboveAverageScenario",[0;0m
+[0;0m        "probability": 0.33333333,                                      "probability": 0.33333333,[0;0m
+[0;0m        "nodes": [                                                      "nodes": [[0;0m
+[0;0m          "RootNode",                                                     "RootNode",[0;0m
+[0;0m          "AboveAverageNode"                                              "AboveAverageNode"[0;0m
+[0;0m        ]                                                               ][0;0m
+[0;0m      }                                                               }[0;0m
+[0;0m    },                                                              },[0;0m
+[0;0m    "stages": {                                                     "stages": {[0;0m
+[0;0m      "FirstStage": {                                                 "FirstStage": {[0;0m
+[0;0m        "name": "FirstStage",                                           "name": "FirstStage",[0;0m
+[0;0m        "nodes": [                                                      "nodes": [[0;0m
+[0;0m          "RootNode"                                                      "RootNode"[0;0m
+[0;0m        ],                                                              ],[0;0m
+[0;0m        "order": 0                                                      "order": 0[0;0m
+[0;0m      },                                                              },[0;0m
+[0;0m      "SecondStage": {                                                "SecondStage": {[0;0m
+[0;0m        "name": "SecondStage",                                          "name": "SecondStage",[0;0m
+[0;0m        "nodes": [                                                      "nodes": [[0;0m
+[0;0m          "BelowAverageNode",                                             "BelowAverageNode",[0;0m
+[0;0m          "AverageNode",                                                  "AverageNode",[0;0m
+[0;0m          "AboveAverageNode"                                              "AboveAverageNode"[0;0m
+[0;0m        ],                                                              ],[0;0m
+[0;0m        "order": 1                                                      "order": 1[0;0m
+[0;0m      }                                                               }[0;0m
+[0;0m    },                                                              },[0;0m
+[0;0m    "nodes": {                                                      "nodes": {[0;0m
+[0;0m      "RootNode": {                                                   "RootNode": {[0;0m
+[0;0m        "name": "RootNode",                                             "name": "RootNode",[0;0m
+[0;0m        "parent": null,                                                 "parent": null,[0;0m
+[0;0m        "children": [                                                   "children": [[0;0m
+[0;0m          "BelowAverageNode",                                             "BelowAverageNode",[0;0m
+[0;0m          "AverageNode",                                                  "AverageNode",[0;0m
+[0;0m          "AboveAverageNode"                                              "AboveAverageNode"[0;0m
+[0;0m        ],                                                              ],[0;0m
+[0;0m        "stage": "FirstStage",                                          "stage": "FirstStage",[0;0m
+[0;0m        "conditional probability": 1.0,                                 "conditional probability": 1.0,[0;0m
+[0;0m        "probability": 1.0,                                             "probability": 1.0,[0;0m
+[0;0m        "scenarios": [                                                  "scenarios": [[0;0m
+[0;0m          "BelowAverageScenario",                                         "BelowAverageScenario",[0;0m
+[0;0m          "AverageScenario",                                              "AverageScenario",[0;0m
+[0;0m          "AboveAverageScenario"                                          "AboveAverageScenario"[0;0m
+[0;0m        ]                                                               ][0;0m
+[0;0m      },                                                              },[0;0m
+[0;0m      "BelowAverageNode": {                                           "BelowAverageNode": {[0;0m
+[0;0m        "name": "BelowAverageNode",                                     "name": "BelowAverageNode",[0;0m
+[0;0m        "parent": "RootNode",                                           "parent": "RootNode",[0;0m
+[0;0m        "children": [],                                                 "children": [],[0;0m
+[0;0m        "stage": "SecondStage",                                         "stage": "SecondStage",[0;0m
+[0;0m        "conditional probability": 0.33333333,                          "conditional probability": 0.33333333,[0;0m
+[0;0m        "probability": 0.33333333,                                      "probability": 0.33333333,[0;0m
+[0;0m        "scenarios": [                                                  "scenarios": [[0;0m
+[0;0m          "BelowAverageScenario"                                          "BelowAverageScenario"[0;0m
+[0;0m        ]                                                               ][0;0m
+[0;0m      },                                                              },[0;0m
+[0;0m      "AverageNode": {                                                "AverageNode": {[0;0m
+[0;0m        "name": "AverageNode",                                          "name": "AverageNode",[0;0m
+[0;0m        "parent": "RootNode",                                           "parent": "RootNode",[0;0m
+[0;0m        "children": [],                                                 "children": [],[0;0m
+[0;0m        "stage": "SecondStage",                                         "stage": "SecondStage",[0;0m
+[0;0m        "conditional probability": 0.33333334,                          "conditional probability": 0.33333334,[0;0m
+[0;0m        "probability": 0.33333334,                                      "probability": 0.33333334,[0;0m
+[0;0m        "scenarios": [                                                  "scenarios": [[0;0m
+[0;0m          "AverageScenario"                                               "AverageScenario"[0;0m
+[0;0m        ]                                                               ][0;0m
+[0;0m      },                                                              },[0;0m
+[0;0m      "AboveAverageNode": {                                           "AboveAverageNode": {[0;0m
+[0;0m        "name": "AboveAverageNode",                                     "name": "AboveAverageNode",[0;0m
+[0;0m        "parent": "RootNode",                                           "parent": "RootNode",[0;0m
+[0;0m        "children": [],                                                 "children": [],[0;0m
+[0;0m        "stage": "SecondStage",                                         "stage": "SecondStage",[0;0m
+[0;0m        "conditional probability": 0.33333333,                          "conditional probability": 0.33333333,[0;0m
+[0;0m        "probability": 0.33333333,                                      "probability": 0.33333333,[0;0m
+[0;0m        "scenarios": [                                                  "scenarios": [[0;0m
+[0;0m          "AboveAverageScenario"                                          "AboveAverageScenario"[0;0m
+[0;0m        ]                                                               ][0;0m
+[0;0m      }                                                               }[0;0m
+[0;0m    }                                                               }[0;0m
+[0;0m  },                                                              },[0;0m
+[0;0m  "scenario solutions": {                                         "scenario solutions": {[0;0m
+[0;0m    "BelowAverageScenario": {                                       "BelowAverageScenario": {[0;0m
+[0;0m      "variables": {                                                  "variables": {[0;0m
+[0;0m        "DevotedAcreage[CORN]": {                                       "DevotedAcreage[CORN]": {[0;0m
+[0;0m          "value": 80,                                                    "value": 80,[0;0m
+[0;0m          "fixed": true,                                                  "fixed": true,[0;0m
+[0;0m          "stale": false,                                                 "stale": false,[0;0m
+[0;0m          "rho": 1.0,                                                     "rho": 1.0,[0;0m
+[0;0m          "weight": 13.827130492151468                                    "weight": 13.827130492151468[0;0m
+[0;0m        },                                                              },[0;0m
+[0;0m        "DevotedAcreage[SUGAR_BEETS]": {                                "DevotedAcreage[SUGAR_BEETS]": {[0;0m
+[0;0m          "value": 250,                                                   "value": 250,[0;0m
+[0;0m          "fixed": true,                                                  "fixed": true,[0;0m
+[0;0m          "stale": false,                                                 "stale": false,[0;0m
+[0;0m          "rho": 1.0,                                                     "rho": 1.0,[0;0m
+[0;0m          "weight": 55.835306860034365                                    "weight": 55.835306860034365[0;0m
+[0;0m        },                                                              },[0;0m
+[0;0m        "DevotedAcreage[WHEAT]": {                                      "DevotedAcreage[WHEAT]": {[0;0m
+[0;0m          "value": 170,                                                   "value": 170,[0;0m
+[0;0m          "fixed": true,                                                  "fixed": true,[0;0m
+[0;0m          "stale": false,                                                 "stale": false,[0;0m
+[0;0m          "rho": 1.0,                                                     "rho": 1.0,[0;0m
+[0;0m          "weight": -69.66243735218463                                    "weight": -69.66243735218463[0;0m
+[0;0m        },                                                              },[0;0m
+[0;0m        "QuantityPurchased[CORN]": {                                    "QuantityPurchased[CORN]": {[0;0m
+[0;0m          "value": 47.99999999999998,                                     "value": 47.99999999999998,[0;0m
+[0;0m          "fixed": false,                                                 "fixed": false,[0;0m
+[0;0m          "stale": false,                                                 "stale": false,[0;0m
+[0;0m          "rho": null,                                                    "rho": null,[0;0m
+[0;0m          "weight": null                                                  "weight": null[0;0m
+[0;0m        },                                                              },[0;0m
+[0;0m        "QuantityPurchased[SUGAR_BEETS]": {                             "QuantityPurchased[SUGAR_BEETS]": {[0;0m
+[0;0m          "value": 0.0,                                                   "value": 0.0,[0;0m
+[0;0m          "fixed": false,                                                 "fixed": false,[0;0m
+[0;0m          "stale": false,                                                 "stale": false,[0;0m
+[0;0m          "rho": null,                                                    "rho": null,[0;0m
+[0;0m          "weight": null                                                  "weight": null[0;0m
+[0;0m        },                                                              },[0;0m
+[0;0m        "QuantityPurchased[WHEAT]": {                                   "QuantityPurchased[WHEAT]": {[0;0m
+[0;0m          "value": 0.0,                                                   "value": 0.0,[0;0m
+[0;0m          "fixed": false,                                                 "fixed": false,[0;0m
+[0;0m          "stale": false,                                                 "stale": false,[0;0m
+[0;0m          "rho": null,                                                    "rho": null,[0;0m
+[0;0m          "weight": null                                                  "weight": null[0;0m
+[0;0m        },                                                              },[0;0m
+[0;0m        "QuantitySubQuotaSold[CORN]": {                                 "QuantitySubQuotaSold[CORN]": {[0;0m
+[0;0m          "value": 0.0,                                                   "value": 0.0,[0;0m
+[0;0m          "fixed": false,                                                 "fixed": false,[0;0m
+[0;0m          "stale": false,                                                 "stale": false,[0;0m
+[0;0m          "rho": null,                                                    "rho": null,[0;0m
+[0;0m          "weight": null                                                  "weight": null[0;0m
+[0;0m        },                                                              },[0;0m
+[0;0m        "QuantitySubQuotaSold[SUGAR_BEETS]": {                          "QuantitySubQuotaSold[SUGAR_BEETS]": {[0;0m
+[0;0m          "value": 4000.0000000000005,                                    "value": 4000.0000000000005,[0;0m
+[0;0m          "fixed": false,                                                 "fixed": false,[0;0m
+[0;0m          "stale": false,                                                 "stale": false,[0;0m
+[0;0m          "rho": null,                                                    "rho": null,[0;0m
+[0;0m          "weight": null                                                  "weight": null[0;0m
+[0;0m        },                                                              },[0;0m
+[0;0m        "QuantitySubQuotaSold[WHEAT]": {                                "QuantitySubQuotaSold[WHEAT]": {[0;0m
+[0;0m          "value": 139.99999999999997,                                    "value": 139.99999999999997,[0;0m
+[0;0m          "fixed": false,                                                 "fixed": false,[0;0m
+[0;0m          "stale": false,                                                 "stale": false,[0;0m
+[0;0m          "rho": null,                                                    "rho": null,[0;0m
+[0;0m          "weight": null                                                  "weight": null[0;0m
+[0;0m        },                                                              },[0;0m
+[0;0m        "QuantitySuperQuotaSold[CORN]": {                               "QuantitySuperQuotaSold[CORN]": {[0;0m
+[0;0m          "value": 0.0,                                                   "value": 0.0,[0;0m
+[0;0m          "fixed": false,                                                 "fixed": false,[0;0m
+[0;0m          "stale": false,                                                 "stale": false,[0;0m
+[0;0m          "rho": null,                                                    "rho": null,[0;0m
+[0;0m          "weight": null                                                  "weight": null[0;0m
+[0;0m        },                                                              },[0;0m
+[0;0m        "QuantitySuperQuotaSold[SUGAR_BEETS]": {                        "QuantitySuperQuotaSold[SUGAR_BEETS]": {[0;0m
+[0;0m          "value": 0.0,                                                   "value": 0.0,[0;0m
+[0;0m          "fixed": false,                                                 "fixed": false,[0;0m
+[0;0m          "stale": false,                                                 "stale": false,[0;0m
+[0;0m          "rho": null,                                                    "rho": null,[0;0m
+[0;0m          "weight": null                                                  "weight": null[0;0m
+[0;0m        },                                                              },[0;0m
+[0;0m        "QuantitySuperQuotaSold[WHEAT]": {                              "QuantitySuperQuotaSold[WHEAT]": {[0;0m
+[0;0m          "value": 0.0,                                                   "value": 0.0,[0;0m
+[0;0m          "fixed": false,                                                 "fixed": false,[0;0m
+[0;0m          "stale": false,                                                 "stale": false,[0;0m
+[0;0m          "rho": null,                                                    "rho": null,[0;0m
+[0;0m          "weight": null                                                  "weight": null[0;0m
+[0;0m        }                                                               }[0;0m
+[0;0m      },                                                              },[0;0m
+[0;36m      "objective": -48820.00000000003,                        |       "objective": -48820.00000000009,[0;0m
+[0;36m      "cost": -48820.00000000003,                             |       "cost": -48820.00000000009,[0;0m
+[0;0m      "ph weight term": 0.0,                                          "ph weight term": 0.0,[0;0m
+[0;0m      "ph proximal term": 0.0,                                        "ph proximal term": 0.0,[0;0m
+[0;0m      "stage costs": {                                                "stage costs": {[0;0m
+[0;0m        "FirstStage": 108900.0,                                         "FirstStage": 108900.0,[0;0m
+[0;36m        "SecondStage": -157720.00000000003                    |         "SecondStage": -157720.0000000001[0;0m
+[0;0m      }                                                               }[0;0m
+[0;0m    },                                                              },[0;0m
+[0;0m    "AverageScenario": {                                            "AverageScenario": {[0;0m
+[0;0m      "variables": {                                                  "variables": {[0;0m
+[0;0m        "DevotedAcreage[CORN]": {                                       "DevotedAcreage[CORN]": {[0;0m
+[0;0m          "value": 80,                                                    "value": 80,[0;0m
+[0;0m          "fixed": true,                                                  "fixed": true,[0;0m
+[0;0m          "stale": false,                                                 "stale": false,[0;0m
+[0;0m          "rho": 1.0,                                                     "rho": 1.0,[0;0m
+[0;0m          "weight": -83.48529303145445                                    "weight": -83.48529303145445[0;0m
+[0;0m        },                                                              },[0;0m
+[0;0m        "DevotedAcreage[SUGAR_BEETS]": {                                "DevotedAcreage[SUGAR_BEETS]": {[0;0m
+[0;0m          "value": 250,                                                   "value": 250,[0;0m
+[0;0m          "fixed": true,                                                  "fixed": true,[0;0m
+[0;0m          "stale": false,                                                 "stale": false,[0;0m
+[0;0m          "rho": 1.0,                                                     "rho": 1.0,[0;0m
+[0;0m          "weight": 133.99149350988654                                    "weight": 133.99149350988654[0;0m
+[0;0m        },                                                              },[0;0m
+[0;0m        "DevotedAcreage[WHEAT]": {                                      "DevotedAcreage[WHEAT]": {[0;0m
+[0;0m          "value": 170,                                                   "value": 170,[0;0m
+[0;0m          "fixed": true,                                                  "fixed": true,[0;0m
+[0;0m          "stale": false,                                                 "stale": false,[0;0m
+[0;0m          "rho": 1.0,                                                     "rho": 1.0,[0;0m
+[0;0m          "weight": -50.50620047843164                                    "weight": -50.50620047843164[0;0m
+[0;0m        },                                                              },[0;0m
+[0;0m        "QuantityPurchased[CORN]": {                                    "QuantityPurchased[CORN]": {[0;0m
+[0;0m          "value": 0.0,                                                   "value": 0.0,[0;0m
+[0;0m          "fixed": false,                                                 "fixed": false,[0;0m
+[0;0m          "stale": false,                                                 "stale": false,[0;0m
+[0;0m          "rho": null,                                                    "rho": null,[0;0m
+[0;0m          "weight": null                                                  "weight": null[0;0m
+[0;0m        },                                                              },[0;0m
+[0;0m        "QuantityPurchased[SUGAR_BEETS]": {                             "QuantityPurchased[SUGAR_BEETS]": {[0;0m
+[0;0m          "value": 0.0,                                                   "value": 0.0,[0;0m
+[0;0m          "fixed": false,                                                 "fixed": false,[0;0m
+[0;0m          "stale": false,                                                 "stale": false,[0;0m
+[0;0m          "rho": null,                                                    "rho": null,[0;0m
+[0;0m          "weight": null                                                  "weight": null[0;0m
+[0;0m        },                                                              },[0;0m
+[0;0m        "QuantityPurchased[WHEAT]": {                                   "QuantityPurchased[WHEAT]": {[0;0m
+[0;0m          "value": 0.0,                                                   "value": 0.0,[0;0m
+[0;0m          "fixed": false,                                                 "fixed": false,[0;0m
+[0;0m          "stale": false,                                                 "stale": false,[0;0m
+[0;0m          "rho": null,                                                    "rho": null,[0;0m
+[0;0m          "weight": null                                                  "weight": null[0;0m
+[0;0m        },                                                              },[0;0m
+[0;0m        "QuantitySubQuotaSold[CORN]": {                                 "QuantitySubQuotaSold[CORN]": {[0;0m
+[0;0m          "value": 1.1237149380933253e-08,                                "value": 1.1237149380933253e-08,[0;0m
+[0;0m          "fixed": false,                                                 "fixed": false,[0;0m
+[0;0m          "stale": false,                                                 "stale": false,[0;0m
+[0;0m          "rho": null,                                                    "rho": null,[0;0m
+[0;0m          "weight": null                                                  "weight": null[0;0m
+[0;0m        },                                                              },[0;0m
+[0;0m        "QuantitySubQuotaSold[SUGAR_BEETS]": {                          "QuantitySubQuotaSold[SUGAR_BEETS]": {[0;0m
+[0;0m          "value": 5000.000000000001,                                     "value": 5000.000000000001,[0;0m
+[0;0m          "fixed": false,                                                 "fixed": false,[0;0m
+[0;0m          "stale": false,                                                 "stale": false,[0;0m
+[0;0m          "rho": null,                                                    "rho": null,[0;0m
+[0;0m          "weight": null                                                  "weight": null[0;0m
+[0;0m        },                                                              },[0;0m
+[0;0m        "QuantitySubQuotaSold[WHEAT]": {                                "QuantitySubQuotaSold[WHEAT]": {[0;0m
+[0;0m          "value": 224.99999999999997,                                    "value": 224.99999999999997,[0;0m
+[0;0m          "fixed": false,                                                 "fixed": false,[0;0m
+[0;0m          "stale": false,                                                 "stale": false,[0;0m
+[0;0m          "rho": null,                                                    "rho": null,[0;0m
+[0;0m          "weight": null                                                  "weight": null[0;0m
+[0;0m        },                                                              },[0;0m
+[0;0m        "QuantitySuperQuotaSold[CORN]": {                               "QuantitySuperQuotaSold[CORN]": {[0;0m
+[0;0m          "value": 0.0,                                                   "value": 0.0,[0;0m
+[0;0m          "fixed": false,                                                 "fixed": false,[0;0m
+[0;0m          "stale": false,                                                 "stale": false,[0;0m
+[0;0m          "rho": null,                                                    "rho": null,[0;0m
+[0;0m          "weight": null                                                  "weight": null[0;0m
+[0;0m        },                                                              },[0;0m
+[0;0m        "QuantitySuperQuotaSold[SUGAR_BEETS]": {                        "QuantitySuperQuotaSold[SUGAR_BEETS]": {[0;0m
+[0;0m          "value": 0.0,                                                   "value": 0.0,[0;0m
+[0;0m          "fixed": false,                                                 "fixed": false,[0;0m
+[0;0m          "stale": false,                                                 "stale": false,[0;0m
+[0;0m          "rho": null,                                                    "rho": null,[0;0m
+[0;0m          "weight": null                                                  "weight": null[0;0m
+[0;0m        },                                                              },[0;0m
+[0;0m        "QuantitySuperQuotaSold[WHEAT]": {                              "QuantitySuperQuotaSold[WHEAT]": {[0;0m
+[0;0m          "value": 0.0,                                                   "value": 0.0,[0;0m
+[0;0m          "fixed": false,                                                 "fixed": false,[0;0m
+[0;0m          "stale": false,                                                 "stale": false,[0;0m
+[0;0m          "rho": null,                                                    "rho": null,[0;0m
+[0;0m          "weight": null                                                  "weight": null[0;0m
+[0;0m        }                                                               }[0;0m
+[0;0m      },                                                              },[0;0m
+[0;36m      "objective": -109350.00000168564,                       |       "objective": -109350.00000167111,[0;0m
+[0;36m      "cost": -109350.00000168564,                            |       "cost": -109350.00000167111,[0;0m
+[0;0m      "ph weight term": 0.0,                                          "ph weight term": 0.0,[0;0m
+[0;0m      "ph proximal term": 0.0,                                        "ph proximal term": 0.0,[0;0m
+[0;0m      "stage costs": {                                                "stage costs": {[0;0m
+[0;0m        "FirstStage": 108900.0,                                         "FirstStage": 108900.0,[0;0m
+[0;36m        "SecondStage": -218250.00000168564                    |         "SecondStage": -218250.0000016711[0;0m
+[0;0m      }                                                               }[0;0m
+[0;0m    },                                                              },[0;0m
+[0;0m    "AboveAverageScenario": {                                       "AboveAverageScenario": {[0;0m
+[0;0m      "variables": {                                                  "variables": {[0;0m
+[0;0m        "DevotedAcreage[CORN]": {                                       "DevotedAcreage[CORN]": {[0;0m
+[0;0m          "value": 80,                                                    "value": 80,[0;0m
+[0;0m          "fixed": true,                                                  "fixed": true,[0;0m
+[0;0m          "stale": false,                                                 "stale": false,[0;0m
+[0;0m          "rho": 1.0,                                                     "rho": 1.0,[0;0m
+[0;0m          "weight": 69.65816504386224                                     "weight": 69.65816504386224[0;0m
+[0;0m        },                                                              },[0;0m
+[0;0m        "DevotedAcreage[SUGAR_BEETS]": {                                "DevotedAcreage[SUGAR_BEETS]": {[0;0m
+[0;0m          "value": 250,                                                   "value": 250,[0;0m
+[0;0m          "fixed": true,                                                  "fixed": true,[0;0m
+[0;0m          "stale": false,                                                 "stale": false,[0;0m
+[0;0m          "rho": 1.0,                                                     "rho": 1.0,[0;0m
+[0;0m          "weight": -189.82680438966494                                   "weight": -189.82680438966494[0;0m
+[0;0m        },                                                              },[0;0m
+[0;0m        "DevotedAcreage[WHEAT]": {                                      "DevotedAcreage[WHEAT]": {[0;0m
+[0;0m          "value": 170,                                                   "value": 170,[0;0m
+[0;0m          "fixed": true,                                                  "fixed": true,[0;0m
+[0;0m          "stale": false,                                                 "stale": false,[0;0m
+[0;0m          "rho": 1.0,                                                     "rho": 1.0,[0;0m
+[0;0m          "weight": 120.16863934580331                                    "weight": 120.16863934580331[0;0m
+[0;0m        },                                                              },[0;0m
+[0;0m        "QuantityPurchased[CORN]": {                                    "QuantityPurchased[CORN]": {[0;0m
+[0;0m          "value": 0.0,                                                   "value": 0.0,[0;0m
+[0;0m          "fixed": false,                                                 "fixed": false,[0;0m
+[0;0m          "stale": false,                                                 "stale": false,[0;0m
+[0;0m          "rho": null,                                                    "rho": null,[0;0m
+[0;0m          "weight": null                                                  "weight": null[0;0m
+[0;0m        },                                                              },[0;0m
+[0;0m        "QuantityPurchased[SUGAR_BEETS]": {                             "QuantityPurchased[SUGAR_BEETS]": {[0;0m
+[0;0m          "value": 0.0,                                                   "value": 0.0,[0;0m
+[0;0m          "fixed": false,                                                 "fixed": false,[0;0m
+[0;0m          "stale": false,                                                 "stale": false,[0;0m
+[0;0m          "rho": null,                                                    "rho": null,[0;0m
+[0;0m          "weight": null                                                  "weight": null[0;0m
+[0;0m        },                                                              },[0;0m
+[0;0m        "QuantityPurchased[WHEAT]": {                                   "QuantityPurchased[WHEAT]": {[0;0m
+[0;0m          "value": 0.0,                                                   "value": 0.0,[0;0m
+[0;0m          "fixed": false,                                                 "fixed": false,[0;0m
+[0;0m          "stale": false,                                                 "stale": false,[0;0m
+[0;0m          "rho": null,                                                    "rho": null,[0;0m
+[0;0m          "weight": null                                                  "weight": null[0;0m
+[0;0m        },                                                              },[0;0m
+[0;0m        "QuantitySubQuotaSold[CORN]": {                                 "QuantitySubQuotaSold[CORN]": {[0;0m
+[0;0m          "value": 47.99999999999997,                                     "value": 47.99999999999997,[0;0m
+[0;0m          "fixed": false,                                                 "fixed": false,[0;0m
+[0;0m          "stale": false,                                                 "stale": false,[0;0m
+[0;0m          "rho": null,                                                    "rho": null,[0;0m
+[0;0m          "weight": null                                                  "weight": null[0;0m
+[0;0m        },                                                              },[0;0m
+[0;0m        "QuantitySubQuotaSold[SUGAR_BEETS]": {                          "QuantitySubQuotaSold[SUGAR_BEETS]": {[0;0m
+[0;0m          "value": 5999.999999999999,                                     "value": 5999.999999999999,[0;0m
+[0;0m          "fixed": false,                                                 "fixed": false,[0;0m
+[0;0m          "stale": false,                                                 "stale": false,[0;0m
+[0;0m          "rho": null,                                                    "rho": null,[0;0m
+[0;0m          "weight": null                                                  "weight": null[0;0m
+[0;0m        },                                                              },[0;0m
+[0;0m        "QuantitySubQuotaSold[WHEAT]": {                                "QuantitySubQuotaSold[WHEAT]": {[0;0m
+[0;0m          "value": 309.99999999999994,                                    "value": 309.99999999999994,[0;0m
+[0;0m          "fixed": false,                                                 "fixed": false,[0;0m
+[0;0m          "stale": false,                                                 "stale": false,[0;0m
+[0;0m          "rho": null,                                                    "rho": null,[0;0m
+[0;0m          "weight": null                                                  "weight": null[0;0m
+[0;0m        },                                                              },[0;0m
+[0;0m        "QuantitySuperQuotaSold[CORN]": {                               "QuantitySuperQuotaSold[CORN]": {[0;0m
+[0;0m          "value": 0.0,                                                   "value": 0.0,[0;0m
+[0;0m          "fixed": false,                                                 "fixed": false,[0;0m
+[0;0m          "stale": false,                                                 "stale": false,[0;0m
+[0;0m          "rho": null,                                                    "rho": null,[0;0m
+[0;0m          "weight": null                                                  "weight": null[0;0m
+[0;0m        },                                                              },[0;0m
+[0;0m        "QuantitySuperQuotaSold[SUGAR_BEETS]": {                        "QuantitySuperQuotaSold[SUGAR_BEETS]": {[0;0m
+[0;0m          "value": 0.0,                                                   "value": 0.0,[0;0m
+[0;0m          "fixed": false,                                                 "fixed": false,[0;0m
+[0;0m          "stale": false,                                                 "stale": false,[0;0m
+[0;0m          "rho": null,                                                    "rho": null,[0;0m
+[0;0m          "weight": null                                                  "weight": null[0;0m
+[0;0m        },                                                              },[0;0m
+[0;0m        "QuantitySuperQuotaSold[WHEAT]": {                              "QuantitySuperQuotaSold[WHEAT]": {[0;0m
+[0;0m          "value": 0.0,                                                   "value": 0.0,[0;0m
+[0;0m          "fixed": false,                                                 "fixed": false,[0;0m
+[0;0m          "stale": false,                                                 "stale": false,[0;0m
+[0;0m          "rho": null,                                                    "rho": null,[0;0m
+[0;0m          "weight": null                                                  "weight": null[0;0m
+[0;0m        }                                                               }[0;0m
+[0;0m      },                                                              },[0;0m
+[0;36m      "objective": -167000.00000000006,                       |       "objective": -166999.99999999994,[0;0m
+[0;36m      "cost": -167000.00000000006,                            |       "cost": -166999.99999999994,[0;0m
+[0;0m      "ph weight term": 0.0,                                          "ph weight term": 0.0,[0;0m
+[0;0m      "ph proximal term": 0.0,                                        "ph proximal term": 0.0,[0;0m
+[0;0m      "stage costs": {                                                "stage costs": {[0;0m
+[0;0m        "FirstStage": 108900.0,                                         "FirstStage": 108900.0,[0;0m
+[0;36m        "SecondStage": -275900.00000000006                    |         "SecondStage": -275899.99999999994[0;0m
+[0;0m      }                                                               }[0;0m
+[0;0m    }                                                               }[0;0m
+[0;0m  },                                                              },[0;0m
+[0;0m  "node solutions": {                                             "node solutions": {[0;0m
+[0;0m    "RootNode": {                                                   "RootNode": {[0;0m
+[0;0m      "variables": {                                                  "variables": {[0;0m
+[0;0m        "DevotedAcreage[CORN]": {                                       "DevotedAcreage[CORN]": {[0;0m
+[0;0m          "solution": 80.0,                                               "solution": 80.0,[0;0m
+[0;0m          "fixed": false,                                                 "fixed": false,[0;0m
+[0;0m          "derived": false,                                               "derived": false,[0;0m
+[0;0m          "minimum": 80,                                                  "minimum": 80,[0;0m
+[0;0m          "average": 80.0,                                                "average": 80.0,[0;0m
+[0;0m          "maximum": 80,                                                  "maximum": 80,[0;0m
+[0;0m          "xbar": 79.98700594206859,                                      "xbar": 79.98700594206859,[0;0m
+[0;0m          "wbar": 1.4921397450962104e-13                                  "wbar": 1.4921397450962104e-13[0;0m
+[0;0m        },                                                              },[0;0m
+[0;0m        "DevotedAcreage[SUGAR_BEETS]": {                                "DevotedAcreage[SUGAR_BEETS]": {[0;0m
+[0;0m          "solution": 250.0,                                              "solution": 250.0,[0;0m
+[0;0m          "fixed": false,                                                 "fixed": false,[0;0m
+[0;0m          "derived": false,                                               "derived": false,[0;0m
+[0;0m          "minimum": 250,                                                 "minimum": 250,[0;0m
+[0;0m          "average": 250.0,                                               "average": 250.0,[0;0m
+[0;0m          "maximum": 250,                                                 "maximum": 250,[0;0m
+[0;0m          "xbar": 249.9871860928277,                                      "xbar": 249.9871860928277,[0;0m
+[0;0m          "wbar": 2.7000623958883807e-13                                  "wbar": 2.7000623958883807e-13[0;0m
+[0;0m        },                                                              },[0;0m
+[0;0m        "DevotedAcreage[WHEAT]": {                                      "DevotedAcreage[WHEAT]": {[0;0m
+[0;0m          "solution": 170.0,                                              "solution": 170.0,[0;0m
+[0;0m          "fixed": false,                                                 "fixed": false,[0;0m
+[0;0m          "derived": false,                                               "derived": false,[0;0m
+[0;0m          "minimum": 170,                                                 "minimum": 170,[0;0m
+[0;0m          "average": 170.0,                                               "average": 170.0,[0;0m
+[0;0m          "maximum": 170,                                                 "maximum": 170,[0;0m
+[0;0m          "xbar": 170.02580796510372,                                     "xbar": 170.02580796510372,[0;0m
+[0;0m          "wbar": 3.410605131648481e-13                                   "wbar": 3.410605131648481e-13[0;0m
+[0;0m        }                                                               }[0;0m
+[0;0m      },                                                              },[0;0m
+[0;36m      "expected cost": -108390.0000101619                     |       "expected cost": -108390.00001015706[0;0m
+[0;0m    },                                                              },[0;0m
+[0;0m    "BelowAverageNode": {                                           "BelowAverageNode": {[0;0m
+[0;0m      "variables": {                                                  "variables": {[0;0m
+[0;0m        "QuantityPurchased[CORN]": {                                    "QuantityPurchased[CORN]": {[0;0m
+[0;0m          "solution": 47.99999999999998,                                  "solution": 47.99999999999998,[0;0m
+[0;0m          "fixed": false,                                                 "fixed": false,[0;0m
+[0;0m          "derived": false,                                               "derived": false,[0;0m
+[0;0m          "minimum": null,                                                "minimum": null,[0;0m
+[0;0m          "average": null,                                                "average": null,[0;0m
+[0;0m          "maximum": null,                                                "maximum": null,[0;0m
+[0;0m          "xbar": null,                                                   "xbar": null,[0;0m
+[0;0m          "wbar": null                                                    "wbar": null[0;0m
+[0;0m        },                                                              },[0;0m
+[0;0m        "QuantityPurchased[SUGAR_BEETS]": {                             "QuantityPurchased[SUGAR_BEETS]": {[0;0m
+[0;0m          "solution": 0.0,                                                "solution": 0.0,[0;0m
+[0;0m          "fixed": false,                                                 "fixed": false,[0;0m
+[0;0m          "derived": false,                                               "derived": false,[0;0m
+[0;0m          "minimum": null,                                                "minimum": null,[0;0m
+[0;0m          "average": null,                                                "average": null,[0;0m
+[0;0m          "maximum": null,                                                "maximum": null,[0;0m
+[0;0m          "xbar": null,                                                   "xbar": null,[0;0m
+[0;0m          "wbar": null                                                    "wbar": null[0;0m
+[0;0m        },                                                              },[0;0m
+[0;0m        "QuantityPurchased[WHEAT]": {                                   "QuantityPurchased[WHEAT]": {[0;0m
+[0;0m          "solution": 0.0,                                                "solution": 0.0,[0;0m
+[0;0m          "fixed": false,                                                 "fixed": false,[0;0m
+[0;0m          "derived": false,                                               "derived": false,[0;0m
+[0;0m          "minimum": null,                                                "minimum": null,[0;0m
+[0;0m          "average": null,                                                "average": null,[0;0m
+[0;0m          "maximum": null,                                                "maximum": null,[0;0m
+[0;0m          "xbar": null,                                                   "xbar": null,[0;0m
+[0;0m          "wbar": null                                                    "wbar": null[0;0m
+[0;0m        },                                                              },[0;0m
+[0;0m        "QuantitySubQuotaSold[CORN]": {                                 "QuantitySubQuotaSold[CORN]": {[0;0m
+[0;0m          "solution": 0.0,                                                "solution": 0.0,[0;0m
+[0;0m          "fixed": false,                                                 "fixed": false,[0;0m
+[0;0m          "derived": false,                                               "derived": false,[0;0m
+[0;0m          "minimum": null,                                                "minimum": null,[0;0m
+[0;0m          "average": null,                                                "average": null,[0;0m
+[0;0m          "maximum": null,                                                "maximum": null,[0;0m
+[0;0m          "xbar": null,                                                   "xbar": null,[0;0m
+[0;0m          "wbar": null                                                    "wbar": null[0;0m
+[0;0m        },                                                              },[0;0m
+[0;0m        "QuantitySubQuotaSold[SUGAR_BEETS]": {                          "QuantitySubQuotaSold[SUGAR_BEETS]": {[0;0m
+[0;0m          "solution": 4000.000000000001,                                  "solution": 4000.000000000001,[0;0m
+[0;0m          "fixed": false,                                                 "fixed": false,[0;0m
+[0;0m          "derived": false,                                               "derived": false,[0;0m
+[0;0m          "minimum": null,                                                "minimum": null,[0;0m
+[0;0m          "average": null,                                                "average": null,[0;0m
+[0;0m          "maximum": null,                                                "maximum": null,[0;0m
+[0;0m          "xbar": null,                                                   "xbar": null,[0;0m
+[0;0m          "wbar": null                                                    "wbar": null[0;0m
+[0;0m        },                                                              },[0;0m
+[0;0m        "QuantitySubQuotaSold[WHEAT]": {                                "QuantitySubQuotaSold[WHEAT]": {[0;0m
+[0;0m          "solution": 139.99999999999997,                                 "solution": 139.99999999999997,[0;0m
+[0;0m          "fixed": false,                                                 "fixed": false,[0;0m
+[0;0m          "derived": false,                                               "derived": false,[0;0m
+[0;0m          "minimum": null,                                                "minimum": null,[0;0m
+[0;0m          "average": null,                                                "average": null,[0;0m
+[0;0m          "maximum": null,                                                "maximum": null,[0;0m
+[0;0m          "xbar": null,                                                   "xbar": null,[0;0m
+[0;0m          "wbar": null                                                    "wbar": null[0;0m
+[0;0m        },                                                              },[0;0m
+[0;0m        "QuantitySuperQuotaSold[CORN]": {                               "QuantitySuperQuotaSold[CORN]": {[0;0m
+[0;0m          "solution": 0.0,                                                "solution": 0.0,[0;0m
+[0;0m          "fixed": false,                                                 "fixed": false,[0;0m
+[0;0m          "derived": false,                                               "derived": false,[0;0m
+[0;0m          "minimum": null,                                                "minimum": null,[0;0m
+[0;0m          "average": null,                                                "average": null,[0;0m
+[0;0m          "maximum": null,                                                "maximum": null,[0;0m
+[0;0m          "xbar": null,                                                   "xbar": null,[0;0m
+[0;0m          "wbar": null                                                    "wbar": null[0;0m
+[0;0m        },                                                              },[0;0m
+[0;0m        "QuantitySuperQuotaSold[SUGAR_BEETS]": {                        "QuantitySuperQuotaSold[SUGAR_BEETS]": {[0;0m
+[0;0m          "solution": 0.0,                                                "solution": 0.0,[0;0m
+[0;0m          "fixed": false,                                                 "fixed": false,[0;0m
+[0;0m          "derived": false,                                               "derived": false,[0;0m
+[0;0m          "minimum": null,                                                "minimum": null,[0;0m
+[0;0m          "average": null,                                                "average": null,[0;0m
+[0;0m          "maximum": null,                                                "maximum": null,[0;0m
+[0;0m          "xbar": null,                                                   "xbar": null,[0;0m
+[0;0m          "wbar": null                                                    "wbar": null[0;0m
+[0;0m        },                                                              },[0;0m
+[0;0m        "QuantitySuperQuotaSold[WHEAT]": {                              "QuantitySuperQuotaSold[WHEAT]": {[0;0m
+[0;0m          "solution": 0.0,                                                "solution": 0.0,[0;0m
+[0;0m          "fixed": false,                                                 "fixed": false,[0;0m
+[0;0m          "derived": false,                                               "derived": false,[0;0m
+[0;0m          "minimum": null,                                                "minimum": null,[0;0m
+[0;0m          "average": null,                                                "average": null,[0;0m
+[0;0m          "maximum": null,                                                "maximum": null,[0;0m
+[0;0m          "xbar": null,                                                   "xbar": null,[0;0m
+[0;0m          "wbar": null                                                    "wbar": null[0;0m
+[0;0m        }                                                               }[0;0m
+[0;0m      },                                                              },[0;0m
+[0;36m      "expected cost": -157720.00000000003                    |       "expected cost": -157720.0000000001[0;0m
+[0;0m    },                                                              },[0;0m
+[0;0m    "AverageNode": {                                                "AverageNode": {[0;0m
+[0;0m      "variables": {                                                  "variables": {[0;0m
+[0;0m        "QuantityPurchased[CORN]": {                                    "QuantityPurchased[CORN]": {[0;0m
+[0;0m          "solution": 0.0,                                                "solution": 0.0,[0;0m
+[0;0m          "fixed": false,                                                 "fixed": false,[0;0m
+[0;0m          "derived": false,                                               "derived": false,[0;0m
+[0;0m          "minimum": null,                                                "minimum": null,[0;0m
+[0;0m          "average": null,                                                "average": null,[0;0m
+[0;0m          "maximum": null,                                                "maximum": null,[0;0m
+[0;0m          "xbar": null,                                                   "xbar": null,[0;0m
+[0;0m          "wbar": null                                                    "wbar": null[0;0m
+[0;0m        },                                                              },[0;0m
+[0;0m        "QuantityPurchased[SUGAR_BEETS]": {                             "QuantityPurchased[SUGAR_BEETS]": {[0;0m
+[0;0m          "solution": 0.0,                                                "solution": 0.0,[0;0m
+[0;0m          "fixed": false,                                                 "fixed": false,[0;0m
+[0;0m          "derived": false,                                               "derived": false,[0;0m
+[0;0m          "minimum": null,                                                "minimum": null,[0;0m
+[0;0m          "average": null,                                                "average": null,[0;0m
+[0;0m          "maximum": null,                                                "maximum": null,[0;0m
+[0;0m          "xbar": null,                                                   "xbar": null,[0;0m
+[0;0m          "wbar": null                                                    "wbar": null[0;0m
+[0;0m        },                                                              },[0;0m
+[0;0m        "QuantityPurchased[WHEAT]": {                                   "QuantityPurchased[WHEAT]": {[0;0m
+[0;0m          "solution": 0.0,                                                "solution": 0.0,[0;0m
+[0;0m          "fixed": false,                                                 "fixed": false,[0;0m
+[0;0m          "derived": false,                                               "derived": false,[0;0m
+[0;0m          "minimum": null,                                                "minimum": null,[0;0m
+[0;0m          "average": null,                                                "average": null,[0;0m
+[0;0m          "maximum": null,                                                "maximum": null,[0;0m
+[0;0m          "xbar": null,                                                   "xbar": null,[0;0m
+[0;0m          "wbar": null                                                    "wbar": null[0;0m
+[0;0m        },                                                              },[0;0m
+[0;0m        "QuantitySubQuotaSold[CORN]": {                                 "QuantitySubQuotaSold[CORN]": {[0;0m
+[0;0m          "solution": 1.1237149380933253e-08,                             "solution": 1.1237149380933253e-08,[0;0m
+[0;0m          "fixed": false,                                                 "fixed": false,[0;0m
+[0;0m          "derived": false,                                               "derived": false,[0;0m
+[0;0m          "minimum": null,                                                "minimum": null,[0;0m
+[0;0m          "average": null,                                                "average": null,[0;0m
+[0;0m          "maximum": null,                                                "maximum": null,[0;0m
+[0;0m          "xbar": null,                                                   "xbar": null,[0;0m
+[0;0m          "wbar": null                                                    "wbar": null[0;0m
+[0;0m        },                                                              },[0;0m
+[0;0m        "QuantitySubQuotaSold[SUGAR_BEETS]": {                          "QuantitySubQuotaSold[SUGAR_BEETS]": {[0;0m
+[0;0m          "solution": 5000.000000000001,                                  "solution": 5000.000000000001,[0;0m
+[0;0m          "fixed": false,                                                 "fixed": false,[0;0m
+[0;0m          "derived": false,                                               "derived": false,[0;0m
+[0;0m          "minimum": null,                                                "minimum": null,[0;0m
+[0;0m          "average": null,                                                "average": null,[0;0m
+[0;0m          "maximum": null,                                                "maximum": null,[0;0m
+[0;0m          "xbar": null,                                                   "xbar": null,[0;0m
+[0;0m          "wbar": null                                                    "wbar": null[0;0m
+[0;0m        },                                                              },[0;0m
+[0;0m        "QuantitySubQuotaSold[WHEAT]": {                                "QuantitySubQuotaSold[WHEAT]": {[0;0m
+[0;0m          "solution": 224.99999999999997,                                 "solution": 224.99999999999997,[0;0m
+[0;0m          "fixed": false,                                                 "fixed": false,[0;0m
+[0;0m          "derived": false,                                               "derived": false,[0;0m
+[0;0m          "minimum": null,                                                "minimum": null,[0;0m
+[0;0m          "average": null,                                                "average": null,[0;0m
+[0;0m          "maximum": null,                                                "maximum": null,[0;0m
+[0;0m          "xbar": null,                                                   "xbar": null,[0;0m
+[0;0m          "wbar": null                                                    "wbar": null[0;0m
+[0;0m        },                                                              },[0;0m
+[0;0m        "QuantitySuperQuotaSold[CORN]": {                               "QuantitySuperQuotaSold[CORN]": {[0;0m
+[0;0m          "solution": 0.0,                                                "solution": 0.0,[0;0m
+[0;0m          "fixed": false,                                                 "fixed": false,[0;0m
+[0;0m          "derived": false,                                               "derived": false,[0;0m
+[0;0m          "minimum": null,                                                "minimum": null,[0;0m
+[0;0m          "average": null,                                                "average": null,[0;0m
+[0;0m          "maximum": null,                                                "maximum": null,[0;0m
+[0;0m          "xbar": null,                                                   "xbar": null,[0;0m
+[0;0m          "wbar": null                                                    "wbar": null[0;0m
+[0;0m        },                                                              },[0;0m
+[0;0m        "QuantitySuperQuotaSold[SUGAR_BEETS]": {                        "QuantitySuperQuotaSold[SUGAR_BEETS]": {[0;0m
+[0;0m          "solution": 0.0,                                                "solution": 0.0,[0;0m
+[0;0m          "fixed": false,                                                 "fixed": false,[0;0m
+[0;0m          "derived": false,                                               "derived": false,[0;0m
+[0;0m          "minimum": null,                                                "minimum": null,[0;0m
+[0;0m          "average": null,                                                "average": null,[0;0m
+[0;0m          "maximum": null,                                                "maximum": null,[0;0m
+[0;0m          "xbar": null,                                                   "xbar": null,[0;0m
+[0;0m          "wbar": null                                                    "wbar": null[0;0m
+[0;0m        },                                                              },[0;0m
+[0;0m        "QuantitySuperQuotaSold[WHEAT]": {                              "QuantitySuperQuotaSold[WHEAT]": {[0;0m
+[0;0m          "solution": 0.0,                                                "solution": 0.0,[0;0m
+[0;0m          "fixed": false,                                                 "fixed": false,[0;0m
+[0;0m          "derived": false,                                               "derived": false,[0;0m
+[0;0m          "minimum": null,                                                "minimum": null,[0;0m
+[0;0m          "average": null,                                                "average": null,[0;0m
+[0;0m          "maximum": null,                                                "maximum": null,[0;0m
+[0;0m          "xbar": null,                                                   "xbar": null,[0;0m
+[0;0m          "wbar": null                                                    "wbar": null[0;0m
+[0;0m        }                                                               }[0;0m
+[0;0m      },                                                              },[0;0m
+[0;36m      "expected cost": -218250.00000168564                    |       "expected cost": -218250.0000016711[0;0m
+[0;0m    },                                                              },[0;0m
+[0;0m    "AboveAverageNode": {                                           "AboveAverageNode": {[0;0m
+[0;0m      "variables": {                                                  "variables": {[0;0m
+[0;0m        "QuantityPurchased[CORN]": {                                    "QuantityPurchased[CORN]": {[0;0m
+[0;0m          "solution": 0.0,                                                "solution": 0.0,[0;0m
+[0;0m          "fixed": false,                                                 "fixed": false,[0;0m
+[0;0m          "derived": false,                                               "derived": false,[0;0m
+[0;0m          "minimum": null,                                                "minimum": null,[0;0m
+[0;0m          "average": null,                                                "average": null,[0;0m
+[0;0m          "maximum": null,                                                "maximum": null,[0;0m
+[0;0m          "xbar": null,                                                   "xbar": null,[0;0m
+[0;0m          "wbar": null                                                    "wbar": null[0;0m
+[0;0m        },                                                              },[0;0m
+[0;0m        "QuantityPurchased[SUGAR_BEETS]": {                             "QuantityPurchased[SUGAR_BEETS]": {[0;0m
+[0;0m          "solution": 0.0,                                                "solution": 0.0,[0;0m
+[0;0m          "fixed": false,                                                 "fixed": false,[0;0m
+[0;0m          "derived": false,                                               "derived": false,[0;0m
+[0;0m          "minimum": null,                                                "minimum": null,[0;0m
+[0;0m          "average": null,                                                "average": null,[0;0m
+[0;0m          "maximum": null,                                                "maximum": null,[0;0m
+[0;0m          "xbar": null,                                                   "xbar": null,[0;0m
+[0;0m          "wbar": null                                                    "wbar": null[0;0m
+[0;0m        },                                                              },[0;0m
+[0;0m        "QuantityPurchased[WHEAT]": {                                   "QuantityPurchased[WHEAT]": {[0;0m
+[0;0m          "solution": 0.0,                                                "solution": 0.0,[0;0m
+[0;0m          "fixed": false,                                                 "fixed": false,[0;0m
+[0;0m          "derived": false,                                               "derived": false,[0;0m
+[0;0m          "minimum": null,                                                "minimum": null,[0;0m
+[0;0m          "average": null,                                                "average": null,[0;0m
+[0;0m          "maximum": null,                                                "maximum": null,[0;0m
+[0;0m          "xbar": null,                                                   "xbar": null,[0;0m
+[0;0m          "wbar": null                                                    "wbar": null[0;0m
+[0;0m        },                                                              },[0;0m
+[0;0m        "QuantitySubQuotaSold[CORN]": {                                 "QuantitySubQuotaSold[CORN]": {[0;0m
+[0;0m          "solution": 47.99999999999997,                                  "solution": 47.99999999999997,[0;0m
+[0;0m          "fixed": false,                                                 "fixed": false,[0;0m
+[0;0m          "derived": false,                                               "derived": false,[0;0m
+[0;0m          "minimum": null,                                                "minimum": null,[0;0m
+[0;0m          "average": null,                                                "average": null,[0;0m
+[0;0m          "maximum": null,                                                "maximum": null,[0;0m
+[0;0m          "xbar": null,                                                   "xbar": null,[0;0m
+[0;0m          "wbar": null                                                    "wbar": null[0;0m
+[0;0m        },                                                              },[0;0m
+[0;0m        "QuantitySubQuotaSold[SUGAR_BEETS]": {                          "QuantitySubQuotaSold[SUGAR_BEETS]": {[0;0m
+[0;0m          "solution": 5999.999999999999,                                  "solution": 5999.999999999999,[0;0m
+[0;0m          "fixed": false,                                                 "fixed": false,[0;0m
+[0;0m          "derived": false,                                               "derived": false,[0;0m
+[0;0m          "minimum": null,                                                "minimum": null,[0;0m
+[0;0m          "average": null,                                                "average": null,[0;0m
+[0;0m          "maximum": null,                                                "maximum": null,[0;0m
+[0;0m          "xbar": null,                                                   "xbar": null,[0;0m
+[0;0m          "wbar": null                                                    "wbar": null[0;0m
+[0;0m        },                                                              },[0;0m
+[0;0m        "QuantitySubQuotaSold[WHEAT]": {                                "QuantitySubQuotaSold[WHEAT]": {[0;0m
+[0;0m          "solution": 309.99999999999994,                                 "solution": 309.99999999999994,[0;0m
+[0;0m          "fixed": false,                                                 "fixed": false,[0;0m
+[0;0m          "derived": false,                                               "derived": false,[0;0m
+[0;0m          "minimum": null,                                                "minimum": null,[0;0m
+[0;0m          "average": null,                                                "average": null,[0;0m
+[0;0m          "maximum": null,                                                "maximum": null,[0;0m
+[0;0m          "xbar": null,                                                   "xbar": null,[0;0m
+[0;0m          "wbar": null                                                    "wbar": null[0;0m
+[0;0m        },                                                              },[0;0m
+[0;0m        "QuantitySuperQuotaSold[CORN]": {                               "QuantitySuperQuotaSold[CORN]": {[0;0m
+[0;0m          "solution": 0.0,                                                "solution": 0.0,[0;0m
+[0;0m          "fixed": false,                                                 "fixed": false,[0;0m
+[0;0m          "derived": false,                                               "derived": false,[0;0m
+[0;0m          "minimum": null,                                                "minimum": null,[0;0m
+[0;0m          "average": null,                                                "average": null,[0;0m
+[0;0m          "maximum": null,                                                "maximum": null,[0;0m
+[0;0m          "xbar": null,                                                   "xbar": null,[0;0m
+[0;0m          "wbar": null                                                    "wbar": null[0;0m
+[0;0m        },                                                              },[0;0m
+[0;0m        "QuantitySuperQuotaSold[SUGAR_BEETS]": {                        "QuantitySuperQuotaSold[SUGAR_BEETS]": {[0;0m
+[0;0m          "solution": 0.0,                                                "solution": 0.0,[0;0m
+[0;0m          "fixed": false,                                                 "fixed": false,[0;0m
+[0;0m          "derived": false,                                               "derived": false,[0;0m
+[0;0m          "minimum": null,                                                "minimum": null,[0;0m
+[0;0m          "average": null,                                                "average": null,[0;0m
+[0;0m          "maximum": null,                                                "maximum": null,[0;0m
+[0;0m          "xbar": null,                                                   "xbar": null,[0;0m
+[0;0m          "wbar": null                                                    "wbar": null[0;0m
+[0;0m        },                                                              },[0;0m
+[0;0m        "QuantitySuperQuotaSold[WHEAT]": {                              "QuantitySuperQuotaSold[WHEAT]": {[0;0m
+[0;0m          "solution": 0.0,                                                "solution": 0.0,[0;0m
+[0;0m          "fixed": false,                                                 "fixed": false,[0;0m
+[0;0m          "derived": false,                                               "derived": false,[0;0m
+[0;0m          "minimum": null,                                                "minimum": null,[0;0m
+[0;0m          "average": null,                                                "average": null,[0;0m
+[0;0m          "maximum": null,                                                "maximum": null,[0;0m
+[0;0m          "xbar": null,                                                   "xbar": null,[0;0m
+[0;0m          "wbar": null                                                    "wbar": null[0;0m
+[0;0m        }                                                               }[0;0m
+[0;0m      },                                                              },[0;0m
+[0;36m      "expected cost": -275900.00000000006                    |       "expected cost": -275899.99999999994[0;0m
+[0;0m    }                                                               }[0;0m
+[0;0m  }                                                               }[0;0m
+[0;0m}                                                               }[0;0m
+[0;31m------------------[0m
+Creating baseline for FarmerWpiecewise
+FarmerWpiecewise baseline creation time: 4.464392028
+Executing FarmerWpiecewise with Spark
+FarmerWpiecewise execution time: 25.337313672
+[0;31m------------------[0m
+[0;31mFarmerWpiecewise test failed[0m
+[0;0m{                                                               {[0;0m
+[0;0m  "scenario tree": {                                              "scenario tree": {[0;0m
+[0;0m    "scenarios": {                                                  "scenarios": {[0;0m
+[0;0m      "BelowAverageScenario": {                                       "BelowAverageScenario": {[0;0m
+[0;0m        "name": "BelowAverageScenario",                                 "name": "BelowAverageScenario",[0;0m
+[0;0m        "probability": 0.33333333,                                      "probability": 0.33333333,[0;0m
+[0;0m        "nodes": [                                                      "nodes": [[0;0m
+[0;0m          "RootNode",                                                     "RootNode",[0;0m
+[0;0m          "BelowAverageNode"                                              "BelowAverageNode"[0;0m
+[0;0m        ]                                                               ][0;0m
+[0;0m      },                                                              },[0;0m
+[0;0m      "AverageScenario": {                                            "AverageScenario": {[0;0m
+[0;0m        "name": "AverageScenario",                                      "name": "AverageScenario",[0;0m
+[0;0m        "probability": 0.33333334,                                      "probability": 0.33333334,[0;0m
+[0;0m        "nodes": [                                                      "nodes": [[0;0m
+[0;0m          "RootNode",                                                     "RootNode",[0;0m
+[0;0m          "AverageNode"                                                   "AverageNode"[0;0m
+[0;0m        ]                                                               ][0;0m
+[0;0m      },                                                              },[0;0m
+[0;0m      "AboveAverageScenario": {                                       "AboveAverageScenario": {[0;0m
+[0;0m        "name": "AboveAverageScenario",                                 "name": "AboveAverageScenario",[0;0m
+[0;0m        "probability": 0.33333333,                                      "probability": 0.33333333,[0;0m
+[0;0m        "nodes": [                                                      "nodes": [[0;0m
+[0;0m          "RootNode",                                                     "RootNode",[0;0m
+[0;0m          "AboveAverageNode"                                              "AboveAverageNode"[0;0m
+[0;0m        ]                                                               ][0;0m
+[0;0m      }                                                               }[0;0m
+[0;0m    },                                                              },[0;0m
+[0;0m    "stages": {                                                     "stages": {[0;0m
+[0;0m      "FirstStage": {                                                 "FirstStage": {[0;0m
+[0;0m        "name": "FirstStage",                                           "name": "FirstStage",[0;0m
+[0;0m        "nodes": [                                                      "nodes": [[0;0m
+[0;0m          "RootNode"                                                      "RootNode"[0;0m
+[0;0m        ],                                                              ],[0;0m
+[0;0m        "order": 0                                                      "order": 0[0;0m
+[0;0m      },                                                              },[0;0m
+[0;0m      "SecondStage": {                                                "SecondStage": {[0;0m
+[0;0m        "name": "SecondStage",                                          "name": "SecondStage",[0;0m
+[0;0m        "nodes": [                                                      "nodes": [[0;0m
+[0;0m          "BelowAverageNode",                                             "BelowAverageNode",[0;0m
+[0;0m          "AverageNode",                                                  "AverageNode",[0;0m
+[0;0m          "AboveAverageNode"                                              "AboveAverageNode"[0;0m
+[0;0m        ],                                                              ],[0;0m
+[0;0m        "order": 1                                                      "order": 1[0;0m
+[0;0m      }                                                               }[0;0m
+[0;0m    },                                                              },[0;0m
+[0;0m    "nodes": {                                                      "nodes": {[0;0m
+[0;0m      "RootNode": {                                                   "RootNode": {[0;0m
+[0;0m        "name": "RootNode",                                             "name": "RootNode",[0;0m
+[0;0m        "parent": null,                                                 "parent": null,[0;0m
+[0;0m        "children": [                                                   "children": [[0;0m
+[0;0m          "BelowAverageNode",                                             "BelowAverageNode",[0;0m
+[0;0m          "AverageNode",                                                  "AverageNode",[0;0m
+[0;0m          "AboveAverageNode"                                              "AboveAverageNode"[0;0m
+[0;0m        ],                                                              ],[0;0m
+[0;0m        "stage": "FirstStage",                                          "stage": "FirstStage",[0;0m
+[0;0m        "conditional probability": 1.0,                                 "conditional probability": 1.0,[0;0m
+[0;0m        "probability": 1.0,                                             "probability": 1.0,[0;0m
+[0;0m        "scenarios": [                                                  "scenarios": [[0;0m
+[0;0m          "BelowAverageScenario",                                         "BelowAverageScenario",[0;0m
+[0;0m          "AverageScenario",                                              "AverageScenario",[0;0m
+[0;0m          "AboveAverageScenario"                                          "AboveAverageScenario"[0;0m
+[0;0m        ]                                                               ][0;0m
+[0;0m      },                                                              },[0;0m
+[0;0m      "BelowAverageNode": {                                           "BelowAverageNode": {[0;0m
+[0;0m        "name": "BelowAverageNode",                                     "name": "BelowAverageNode",[0;0m
+[0;0m        "parent": "RootNode",                                           "parent": "RootNode",[0;0m
+[0;0m        "children": [],                                                 "children": [],[0;0m
+[0;0m        "stage": "SecondStage",                                         "stage": "SecondStage",[0;0m
+[0;0m        "conditional probability": 0.33333333,                          "conditional probability": 0.33333333,[0;0m
+[0;0m        "probability": 0.33333333,                                      "probability": 0.33333333,[0;0m
+[0;0m        "scenarios": [                                                  "scenarios": [[0;0m
+[0;0m          "BelowAverageScenario"                                          "BelowAverageScenario"[0;0m
+[0;0m        ]                                                               ][0;0m
+[0;0m      },                                                              },[0;0m
+[0;0m      "AverageNode": {                                                "AverageNode": {[0;0m
+[0;0m        "name": "AverageNode",                                          "name": "AverageNode",[0;0m
+[0;0m        "parent": "RootNode",                                           "parent": "RootNode",[0;0m
+[0;0m        "children": [],                                                 "children": [],[0;0m
+[0;0m        "stage": "SecondStage",                                         "stage": "SecondStage",[0;0m
+[0;0m        "conditional probability": 0.33333334,                          "conditional probability": 0.33333334,[0;0m
+[0;0m        "probability": 0.33333334,                                      "probability": 0.33333334,[0;0m
+[0;0m        "scenarios": [                                                  "scenarios": [[0;0m
+[0;0m          "AverageScenario"                                               "AverageScenario"[0;0m
+[0;0m        ]                                                               ][0;0m
+[0;0m      },                                                              },[0;0m
+[0;0m      "AboveAverageNode": {                                           "AboveAverageNode": {[0;0m
+[0;0m        "name": "AboveAverageNode",                                     "name": "AboveAverageNode",[0;0m
+[0;0m        "parent": "RootNode",                                           "parent": "RootNode",[0;0m
+[0;0m        "children": [],                                                 "children": [],[0;0m
+[0;0m        "stage": "SecondStage",                                         "stage": "SecondStage",[0;0m
+[0;0m        "conditional probability": 0.33333333,                          "conditional probability": 0.33333333,[0;0m
+[0;0m        "probability": 0.33333333,                                      "probability": 0.33333333,[0;0m
+[0;0m        "scenarios": [                                                  "scenarios": [[0;0m
+[0;0m          "AboveAverageScenario"                                          "AboveAverageScenario"[0;0m
+[0;0m        ]                                                               ][0;0m
+[0;0m      }                                                               }[0;0m
+[0;0m    }                                                               }[0;0m
+[0;0m  },                                                              },[0;0m
+[0;0m  "scenario solutions": {                                         "scenario solutions": {[0;0m
+[0;0m    "BelowAverageScenario": {                                       "BelowAverageScenario": {[0;0m
+[0;0m      "variables": {                                                  "variables": {[0;0m
+[0;0m        "DevotedAcreage[CORN]": {                                       "DevotedAcreage[CORN]": {[0;0m
+[0;0m          "value": 0.0,                                                   "value": 0.0,[0;0m
+[0;0m          "fixed": true,                                                  "fixed": true,[0;0m
+[0;0m          "stale": false,                                                 "stale": false,[0;0m
+[0;0m          "rho": 1.0,                                                     "rho": 1.0,[0;0m
+[0;0m          "weight": 0.0                                                   "weight": 0.0[0;0m
+[0;0m        },                                                              },[0;0m
+[0;0m        "DevotedAcreage[SUGAR_BEETS]": {                                "DevotedAcreage[SUGAR_BEETS]": {[0;0m
+[0;0m          "value": 3.2666991143991255e-11,                                "value": 3.2666991143991255e-11,[0;0m
+[0;0m          "fixed": true,                                                  "fixed": true,[0;0m
+[0;0m          "stale": false,                                                 "stale": false,[0;0m
+[0;0m          "rho": 1.0,                                                     "rho": 1.0,[0;0m
+[0;0m          "weight": -3.266601820200776e-11                                "weight": -3.266601820200776e-11[0;0m
+[0;0m        },                                                              },[0;0m
+[0;0m        "DevotedAcreage[WHEAT]": {                                      "DevotedAcreage[WHEAT]": {[0;0m
+[0;0m          "value": 500.0,                                                 "value": 500.0,[0;0m
+[0;0m          "fixed": true,                                                  "fixed": true,[0;0m
+[0;0m          "stale": false,                                                 "stale": false,[0;0m
+[0;0m          "rho": 1.0,                                                     "rho": 1.0,[0;0m
+[0;0m          "weight": 0.0                                                   "weight": 0.0[0;0m
+[0;0m        },                                                              },[0;0m
+[0;0m        "ComputeProfits[CORN].SOS2_y[0]": {                             "ComputeProfits[CORN].SOS2_y[0]": {[0;0m
+[0;0m          "value": 0.9999999999995173,                                    "value": 0.9999999999995173,[0;0m
+[0;0m          "fixed": false,                                                 "fixed": false,[0;0m
+[0;0m          "stale": false,                                                 "stale": false,[0;0m
+[0;0m          "rho": null,                                                    "rho": null,[0;0m
+[0;0m          "weight": null                                                  "weight": null[0;0m
+[0;0m        },                                                              },[0;0m
+[0;0m        "ComputeProfits[CORN].SOS2_y[1]": {                             "ComputeProfits[CORN].SOS2_y[1]": {[0;0m
+[0;0m          "value": 0.0,                                                   "value": 0.0,[0;0m
+[0;0m          "fixed": false,                                                 "fixed": false,[0;0m
+[0;0m          "stale": false,                                                 "stale": false,[0;0m
+[0;0m          "rho": null,                                                    "rho": null,[0;0m
+[0;0m          "weight": null                                                  "weight": null[0;0m
+[0;0m        },                                                              },[0;0m
+[0;0m        "ComputeProfits[CORN].SOS2_y[2]": {                             "ComputeProfits[CORN].SOS2_y[2]": {[0;0m
+[0;0m          "value": 4.82569633447195e-13,                                  "value": 4.82569633447195e-13,[0;0m
+[0;0m          "fixed": false,                                                 "fixed": false,[0;0m
+[0;0m          "stale": false,                                                 "stale": false,[0;0m
+[0;0m          "rho": null,                                                    "rho": null,[0;0m
+[0;0m          "weight": null                                                  "weight": null[0;0m
+[0;0m        },                                                              },[0;0m
+[0;36m        "ComputeProfits[SUGAR_BEETS].SOS2_y[0]": {            |         "ComputeProfits[WHEAT].SOS2_y[0]": {[0;0m
+[0;36m          "value": 0.9999999999999859,                        |           "value": 0.8749999999996354,[0;0m
+[0;0m          "fixed": false,                                                 "fixed": false,[0;0m
+[0;0m          "stale": false,                                                 "stale": false,[0;0m
+[0;0m          "rho": null,                                                    "rho": null,[0;0m
+[0;0m          "weight": null                                                  "weight": null[0;0m
+[0;0m        },                                                              },[0;0m
+[0;36m        "ComputeProfits[SUGAR_BEETS].SOS2_y[1]": {            |         "ComputeProfits[WHEAT].SOS2_y[1]": {[0;0m
+[0;0m          "value": 0.0,                                                   "value": 0.0,[0;0m
+[0;0m          "fixed": false,                                                 "fixed": false,[0;0m
+[0;0m          "stale": false,                                                 "stale": false,[0;0m
+[0;0m          "rho": null,                                                    "rho": null,[0;0m
+[0;0m          "weight": null                                                  "weight": null[0;0m
+[0;0m        },                                                              },[0;0m
+[0;36m        "ComputeProfits[SUGAR_BEETS].SOS2_y[2]": {            |         "ComputeProfits[WHEAT].SOS2_y[2]": {[0;0m
+[0;36m          "value": 1.3973423402397309e-14,                    |           "value": 0.12500000000036465,[0;0m
+[0;0m          "fixed": false,                                                 "fixed": false,[0;0m
+[0;0m          "stale": false,                                                 "stale": false,[0;0m
+[0;0m          "rho": null,                                                    "rho": null,[0;0m
+[0;0m          "weight": null                                                  "weight": null[0;0m
+[0;0m        },                                                              },[0;0m
+[0;36m        "ComputeProfits[WHEAT].SOS2_y[0]": {                  |         "ComputeProfits[SUGAR_BEETS].SOS2_y[0]": {[0;0m
+[0;36m          "value": 0.8749999999996354,                        |           "value": 0.9999999999999859,[0;0m
+[0;0m          "fixed": false,                                                 "fixed": false,[0;0m
+[0;0m          "stale": false,                                                 "stale": false,[0;0m
+[0;0m          "rho": null,                                                    "rho": null,[0;0m
+[0;0m          "weight": null                                                  "weight": null[0;0m
+[0;0m        },                                                              },[0;0m
+[0;36m        "ComputeProfits[WHEAT].SOS2_y[1]": {                  |         "ComputeProfits[SUGAR_BEETS].SOS2_y[1]": {[0;0m
+[0;0m          "value": 0.0,                                                   "value": 0.0,[0;0m
+[0;0m          "fixed": false,                                                 "fixed": false,[0;0m
+[0;0m          "stale": false,                                                 "stale": false,[0;0m
+[0;0m          "rho": null,                                                    "rho": null,[0;0m
+[0;0m          "weight": null                                                  "weight": null[0;0m
+[0;0m        },                                                              },[0;0m
+[0;36m        "ComputeProfits[WHEAT].SOS2_y[2]": {                  |         "ComputeProfits[SUGAR_BEETS].SOS2_y[2]": {[0;0m
+[0;36m          "value": 0.12500000000036465,                       |           "value": 1.3973423402397309e-14,[0;0m
+[0;0m          "fixed": false,                                                 "fixed": false,[0;0m
+[0;0m          "stale": false,                                                 "stale": false,[0;0m
+[0;0m          "rho": null,                                                    "rho": null,[0;0m
+[0;0m          "weight": null                                                  "weight": null[0;0m
+[0;0m        },                                                              },[0;0m
+[0;0m        "Profit[CORN]": {                                               "Profit[CORN]": {[0;0m
+[0;0m          "value": 6.188472979326829e-06,                                 "value": 6.188472979326829e-06,[0;0m
+[0;0m          "fixed": false,                                                 "fixed": false,[0;0m
+[0;0m          "stale": false,                                                 "stale": false,[0;0m
+[0;0m          "rho": null,                                                    "rho": null,[0;0m
+[0;0m          "weight": null                                                  "weight": null[0;0m
+[0;0m        },                                                              },[0;0m
+[0;0m        "Profit[SUGAR_BEETS]": {                                        "Profit[SUGAR_BEETS]": {[0;0m
+[0;0m          "value": 4.4826742274890566e-08,                                "value": 4.4826742274890566e-08,[0;0m
+[0;0m          "fixed": false,                                                 "fixed": false,[0;0m
+[0;0m          "stale": false,                                                 "stale": false,[0;0m
+[0;0m          "rho": null,                                                    "rho": null,[0;0m
+[0;0m          "weight": null                                                  "weight": null[0;0m
+[0;0m        },                                                              },[0;0m
+[0;0m        "Profit[WHEAT]": {                                              "Profit[WHEAT]": {[0;0m
+[0;0m          "value": 4001000.000011672,                                     "value": 4001000.000011672,[0;0m
+[0;0m          "fixed": false,                                                 "fixed": false,[0;0m
+[0;0m          "stale": false,                                                 "stale": false,[0;0m
+[0;0m          "rho": null,                                                    "rho": null,[0;0m
+[0;0m          "weight": null                                                  "weight": null[0;0m
+[0;0m        },                                                              },[0;0m
+[0;0m        "QuantityPurchased[CORN]": {                                    "QuantityPurchased[CORN]": {[0;0m
+[0;0m          "value": 239.99999999878554,                                    "value": 239.99999999878554,[0;0m
+[0;0m          "fixed": false,                                                 "fixed": false,[0;0m
+[0;0m          "stale": false,                                                 "stale": false,[0;0m
+[0;0m          "rho": null,                                                    "rho": null,[0;0m
+[0;0m          "weight": null                                                  "weight": null[0;0m
+[0;0m        },                                                              },[0;0m
+[0;0m        "QuantityPurchased[SUGAR_BEETS]": {                             "QuantityPurchased[SUGAR_BEETS]": {[0;0m
+[0;0m          "value": 0.0,                                                   "value": 0.0,[0;0m
+[0;0m          "fixed": false,                                                 "fixed": false,[0;0m
+[0;0m          "stale": false,                                                 "stale": false,[0;0m
+[0;0m          "rho": null,                                                    "rho": null,[0;0m
+[0;0m          "weight": null                                                  "weight": null[0;0m
+[0;0m        },                                                              },[0;0m
+[0;0m        "QuantityPurchased[WHEAT]": {                                   "QuantityPurchased[WHEAT]": {[0;0m
+[0;0m          "value": 199.99999999592123,                                    "value": 199.99999999592123,[0;0m
+[0;0m          "fixed": false,                                                 "fixed": false,[0;0m
+[0;0m          "stale": false,                                                 "stale": false,[0;0m
+[0;0m          "rho": null,                                                    "rho": null,[0;0m
+[0;0m          "weight": null                                                  "weight": null[0;0m
+[0;0m        },                                                              },[0;0m
+[0;0m        "QuantitySold[CORN]": {                                         "QuantitySold[CORN]": {[0;0m
+[0;0m          "value": 3.860557067577561e-09,                                 "value": 3.860557067577561e-09,[0;0m
+[0;0m          "fixed": false,                                                 "fixed": false,[0;0m
+[0;0m          "stale": false,                                                 "stale": false,[0;0m
+[0;0m          "rho": null,                                                    "rho": null,[0;0m
+[0;0m          "weight": null                                                  "weight": null[0;0m
+[0;0m        },                                                              },[0;0m
+[0;0m        "QuantitySold[SUGAR_BEETS]": {                                  "QuantitySold[SUGAR_BEETS]": {[0;0m
+[0;0m          "value": 1.1180295429091445e-10,                                "value": 1.1180295429091445e-10,[0;0m
+[0;0m          "fixed": false,                                                 "fixed": false,[0;0m
+[0;0m          "stale": false,                                                 "stale": false,[0;0m
+[0;0m          "rho": null,                                                    "rho": null,[0;0m
+[0;0m          "weight": null                                                  "weight": null[0;0m
+[0;0m        },                                                              },[0;0m
+[0;0m        "QuantitySold[WHEAT]": {                                        "QuantitySold[WHEAT]": {[0;0m
+[0;0m          "value": 1000.0000000029174,                                    "value": 1000.0000000029174,[0;0m
+[0;0m          "fixed": false,                                                 "fixed": false,[0;0m
+[0;0m          "stale": false,                                                 "stale": false,[0;0m
+[0;0m          "rho": null,                                                    "rho": null,[0;0m
+[0;0m          "weight": null                                                  "weight": null[0;0m
+[0;0m        }                                                               }[0;0m
+[0;0m      },                                                              },[0;0m
+[0;36m      "objective": -3828000.000019123,                        |       "objective": -3828000.0000191308,[0;0m
+[0;36m      "cost": -3828000.000019123,                             |       "cost": -3828000.0000191308,[0;0m
+[0;0m      "ph weight term": 0.0,                                          "ph weight term": 0.0,[0;0m
+[0;0m      "ph proximal term": 0.0,                                        "ph proximal term": 0.0,[0;0m
+[0;0m      "stage costs": {                                                "stage costs": {[0;0m
+[0;36m        "FirstStage": 75000.00000000848,                      |         "FirstStage": 74999.99999999999,[0;0m
+[0;36m        "SecondStage": -3903000.000019131                     |         "SecondStage": -3903000.0000191308[0;0m
+[0;0m      }                                                               }[0;0m
+[0;0m    },                                                              },[0;0m
+[0;0m    "AverageScenario": {                                            "AverageScenario": {[0;0m
+[0;0m      "variables": {                                                  "variables": {[0;0m
+[0;0m        "DevotedAcreage[CORN]": {                                       "DevotedAcreage[CORN]": {[0;0m
+[0;0m          "value": 0.0,                                                   "value": 0.0,[0;0m
+[0;0m          "fixed": true,                                                  "fixed": true,[0;0m
+[0;0m          "stale": false,                                                 "stale": false,[0;0m
+[0;0m          "rho": 1.0,                                                     "rho": 1.0,[0;0m
+[0;0m          "weight": 0.0                                                   "weight": 0.0[0;0m
+[0;0m        },                                                              },[0;0m
+[0;0m        "DevotedAcreage[SUGAR_BEETS]": {                                "DevotedAcreage[SUGAR_BEETS]": {[0;0m
+[0;0m          "value": 3.2666991143991255e-11,                                "value": 3.2666991143991255e-11,[0;0m
+[0;0m          "fixed": true,                                                  "fixed": true,[0;0m
+[0;0m          "stale": false,                                                 "stale": false,[0;0m
+[0;0m          "rho": 1.0,                                                     "rho": 1.0,[0;0m
+[0;0m          "weight": 1.633300885600875e-11                                 "weight": 1.633300885600875e-11[0;0m
+[0;0m        },                                                              },[0;0m
+[0;0m        "DevotedAcreage[WHEAT]": {                                      "DevotedAcreage[WHEAT]": {[0;0m
+[0;0m          "value": 500.0,                                                 "value": 500.0,[0;0m
+[0;0m          "fixed": true,                                                  "fixed": true,[0;0m
+[0;0m          "stale": false,                                                 "stale": false,[0;0m
+[0;0m          "rho": 1.0,                                                     "rho": 1.0,[0;0m
+[0;0m          "weight": -5.684341886080802e-14                                "weight": -5.684341886080802e-14[0;0m
+[0;0m        },                                                              },[0;0m
+[0;0m        "ComputeProfits[CORN].SOS2_y[0]": {                             "ComputeProfits[CORN].SOS2_y[0]": {[0;0m
+[0;36m          "value": 0.9999999999996622,                        |           "value": 0.9999999999996315,[0;0m
+[0;0m          "fixed": false,                                                 "fixed": false,[0;0m
+[0;0m          "stale": false,                                                 "stale": false,[0;0m
+[0;0m          "rho": null,                                                    "rho": null,[0;0m
+[0;0m          "weight": null                                                  "weight": null[0;0m
+[0;0m        },                                                              },[0;0m
+[0;0m        "ComputeProfits[CORN].SOS2_y[1]": {                             "ComputeProfits[CORN].SOS2_y[1]": {[0;0m
+[0;0m          "value": 0.0,                                                   "value": 0.0,[0;0m
+[0;0m          "fixed": false,                                                 "fixed": false,[0;0m
+[0;0m          "stale": false,                                                 "stale": false,[0;0m
+[0;0m          "rho": null,                                                    "rho": null,[0;0m
+[0;0m          "weight": null                                                  "weight": null[0;0m
+[0;0m        },                                                              },[0;0m
+[0;0m        "ComputeProfits[CORN].SOS2_y[2]": {                             "ComputeProfits[CORN].SOS2_y[2]": {[0;0m
+[0;0m          "value": 3.377743673009111e-13,                                 "value": 3.377743673009111e-13,[0;0m
+[0;0m          "fixed": false,                                                 "fixed": false,[0;0m
+[0;0m          "stale": false,                                                 "stale": false,[0;0m
+[0;0m          "rho": null,                                                    "rho": null,[0;0m
+[0;0m          "weight": null                                                  "weight": null[0;0m
+[0;0m        },                                                              },[0;0m
+[0;36m        "ComputeProfits[SUGAR_BEETS].SOS2_y[0]": {            |         "ComputeProfits[WHEAT].SOS2_y[0]": {[0;0m
+[0;36m          "value": 0.9999999999999898,                        |           "value": 0.8749999999996659,[0;0m
+[0;0m          "fixed": false,                                                 "fixed": false,[0;0m
+[0;0m          "stale": false,                                                 "stale": false,[0;0m
+[0;0m          "rho": null,                                                    "rho": null,[0;0m
+[0;0m          "weight": null                                                  "weight": null[0;0m
+[0;0m        },                                                              },[0;0m
+[0;36m        "ComputeProfits[SUGAR_BEETS].SOS2_y[1]": {            |         "ComputeProfits[WHEAT].SOS2_y[1]": {[0;0m
+[0;0m          "value": 0.0,                                                   "value": 0.0,[0;0m
+[0;0m          "fixed": false,                                                 "fixed": false,[0;0m
+[0;0m          "stale": false,                                                 "stale": false,[0;0m
+[0;0m          "rho": null,                                                    "rho": null,[0;0m
+[0;0m          "weight": null                                                  "weight": null[0;0m
+[0;0m        },                                                              },[0;0m
+[0;36m        "ComputeProfits[SUGAR_BEETS].SOS2_y[2]": {            |         "ComputeProfits[WHEAT].SOS2_y[2]": {[0;0m
+[0;36m          "value": 1.0282972182584672e-14,                    |           "value": 0.12500000000033418,[0;0m
+[0;0m          "fixed": false,                                                 "fixed": false,[0;0m
+[0;0m          "stale": false,                                                 "stale": false,[0;0m
+[0;0m          "rho": null,                                                    "rho": null,[0;0m
+[0;0m          "weight": null                                                  "weight": null[0;0m
+[0;0m        },                                                              },[0;0m
+[0;36m        "ComputeProfits[WHEAT].SOS2_y[0]": {                  |         "ComputeProfits[SUGAR_BEETS].SOS2_y[0]": {[0;0m
+[0;36m          "value": 0.8749999999996659,                        |           "value": 1.0000000000003668,[0;0m
+[0;0m          "fixed": false,                                                 "fixed": false,[0;0m
+[0;0m          "stale": false,                                                 "stale": false,[0;0m
+[0;0m          "rho": null,                                                    "rho": null,[0;0m
+[0;0m          "weight": null                                                  "weight": null[0;0m
+[0;0m        },                                                              },[0;0m
+[0;36m        "ComputeProfits[WHEAT].SOS2_y[1]": {                  |         "ComputeProfits[SUGAR_BEETS].SOS2_y[1]": {[0;0m
+[0;0m          "value": 0.0,                                                   "value": 0.0,[0;0m
+[0;0m          "fixed": false,                                                 "fixed": false,[0;0m
+[0;0m          "stale": false,                                                 "stale": false,[0;0m
+[0;0m          "rho": null,                                                    "rho": null,[0;0m
+[0;0m          "weight": null                                                  "weight": null[0;0m
+[0;0m        },                                                              },[0;0m
+[0;36m        "ComputeProfits[WHEAT].SOS2_y[2]": {                  |         "ComputeProfits[SUGAR_BEETS].SOS2_y[2]": {[0;0m
+[0;36m          "value": 0.12500000000033418,                       |           "value": 1.0282972182584672e-14,[0;0m
+[0;0m          "fixed": false,                                                 "fixed": false,[0;0m
+[0;0m          "stale": false,                                                 "stale": false,[0;0m
+[0;0m          "rho": null,                                                    "rho": null,[0;0m
+[0;0m          "weight": null                                                  "weight": null[0;0m
+[0;0m        },                                                              },[0;0m
+[0;0m        "Profit[CORN]": {                                               "Profit[CORN]": {[0;0m
+[0;0m          "value": 6.7656205770372505e-06,                                "value": 6.7656205770372505e-06,[0;0m
+[0;0m          "fixed": false,                                                 "fixed": false,[0;0m
+[0;0m          "stale": false,                                                 "stale": false,[0;0m
+[0;0m          "rho": null,                                                    "rho": null,[0;0m
+[0;0m          "weight": null                                                  "weight": null[0;0m
+[0;0m        },                                                              },[0;0m
+[0;0m        "Profit[SUGAR_BEETS]": {                                        "Profit[SUGAR_BEETS]": {[0;0m
+[0;0m          "value": 5.151769063474921e-08,                                 "value": 5.151769063474921e-08,[0;0m
+[0;0m          "fixed": false,                                                 "fixed": false,[0;0m
+[0;0m          "stale": false,                                                 "stale": false,[0;0m
+[0;0m          "rho": null,                                                    "rho": null,[0;0m
+[0;0m          "weight": null                                                  "weight": null[0;0m
+[0;0m        },                                                              },[0;0m
+[0;0m        "Profit[WHEAT]": {                                              "Profit[WHEAT]": {[0;0m
+[0;0m          "value": 6251250.000016712,                                     "value": 6251250.000016712,[0;0m
+[0;0m          "fixed": false,                                                 "fixed": false,[0;0m
+[0;0m          "stale": false,                                                 "stale": false,[0;0m
+[0;0m          "rho": null,                                                    "rho": null,[0;0m
+[0;0m          "weight": null                                                  "weight": null[0;0m
+[0;0m        },                                                              },[0;0m
+[0;0m        "QuantityPurchased[CORN]": {                                    "QuantityPurchased[CORN]": {[0;0m
+[0;0m          "value": 239.99999999640636,                                    "value": 239.99999999640636,[0;0m
+[0;0m          "fixed": false,                                                 "fixed": false,[0;0m
+[0;0m          "stale": false,                                                 "stale": false,[0;0m
+[0;0m          "rho": null,                                                    "rho": null,[0;0m
+[0;0m          "weight": null                                                  "weight": null[0;0m
+[0;0m        },                                                              },[0;0m
+[0;0m        "QuantityPurchased[SUGAR_BEETS]": {                             "QuantityPurchased[SUGAR_BEETS]": {[0;0m
+[0;0m          "value": 0.0,                                                   "value": 0.0,[0;0m
+[0;0m          "fixed": false,                                                 "fixed": false,[0;0m
+[0;0m          "stale": false,                                                 "stale": false,[0;0m
+[0;0m          "rho": null,                                                    "rho": null,[0;0m
+[0;0m          "weight": null                                                  "weight": null[0;0m
+[0;0m        },                                                              },[0;0m
+[0;0m        "QuantityPurchased[WHEAT]": {                                   "QuantityPurchased[WHEAT]": {[0;0m
+[0;0m          "value": 199.9999999971213,                                     "value": 199.9999999971213,[0;0m
+[0;0m          "fixed": false,                                                 "fixed": false,[0;0m
+[0;0m          "stale": false,                                                 "stale": false,[0;0m
+[0;0m          "rho": null,                                                    "rho": null,[0;0m
+[0;0m          "weight": null                                                  "weight": null[0;0m
+[0;0m        },                                                              },[0;0m
+[0;0m        "QuantitySold[CORN]": {                                         "QuantitySold[CORN]": {[0;0m
+[0;36m          "value": 3.377743673009111e-09,                     |           "value": 3.684447931470485e-09,[0;0m
+[0;0m          "fixed": false,                                                 "fixed": false,[0;0m
+[0;0m          "stale": false,                                                 "stale": false,[0;0m
+[0;0m          "rho": null,                                                    "rho": null,[0;0m
+[0;0m          "weight": null                                                  "weight": null[0;0m
+[0;0m        },                                                              },[0;0m
+[0;0m        "QuantitySold[SUGAR_BEETS]": {                                  "QuantitySold[SUGAR_BEETS]": {[0;0m
+[0;36m          "value": 1.0282972182584672e-10,                    |           "value": 1.0828297218258468e-09,[0;0m
+[0;0m          "fixed": false,                                                 "fixed": false,[0;0m
+[0;0m          "stale": false,                                                 "stale": false,[0;0m
+[0;0m          "rho": null,                                                    "rho": null,[0;0m
+[0;0m          "weight": null                                                  "weight": null[0;0m
+[0;0m        },                                                              },[0;0m
+[0;0m        "QuantitySold[WHEAT]": {                                        "QuantitySold[WHEAT]": {[0;0m
+[0;0m          "value": 1250.000000003342,                                     "value": 1250.000000003342,[0;0m
+[0;0m          "fixed": false,                                                 "fixed": false,[0;0m
+[0;0m          "stale": false,                                                 "stale": false,[0;0m
+[0;0m          "rho": null,                                                    "rho": null,[0;0m
+[0;0m          "weight": null                                                  "weight": null[0;0m
+[0;0m        }                                                               }[0;0m
+[0;0m      },                                                              },[0;0m
+[0;36m      "objective": -6078250.00002496,                         |       "objective": -6078250.000029657,[0;0m
+[0;36m      "cost": -6078250.00002496,                              |       "cost": -6078250.000029657,[0;0m
+[0;0m      "ph weight term": 0.0,                                          "ph weight term": 0.0,[0;0m
+[0;0m      "ph proximal term": 0.0,                                        "ph proximal term": 0.0,[0;0m
+[0;0m      "stage costs": {                                                "stage costs": {[0;0m
+[0;36m        "FirstStage": 75000.00000000848,                      |         "FirstStage": 75000.00000000146,[0;0m
+[0;36m        "SecondStage": -6153250.000024969                     |         "SecondStage": -6153250.000029659[0;0m
+[0;0m      }                                                               }[0;0m
+[0;0m    },                                                              },[0;0m
+[0;0m    "AboveAverageScenario": {                                       "AboveAverageScenario": {[0;0m
+[0;0m      "variables": {                                                  "variables": {[0;0m
+[0;0m        "DevotedAcreage[CORN]": {                                       "DevotedAcreage[CORN]": {[0;0m
+[0;0m          "value": 0.0,                                                   "value": 0.0,[0;0m
+[0;0m          "fixed": true,                                                  "fixed": true,[0;0m
+[0;0m          "stale": false,                                                 "stale": false,[0;0m
+[0;0m          "rho": 1.0,                                                     "rho": 1.0,[0;0m
+[0;0m          "weight": 0.0                                                   "weight": 0.0[0;0m
+[0;0m        },                                                              },[0;0m
+[0;0m        "DevotedAcreage[SUGAR_BEETS]": {                                "DevotedAcreage[SUGAR_BEETS]": {[0;0m
+[0;0m          "value": 3.2666991143991255e-11,                                "value": 3.2666991143991255e-11,[0;0m
+[0;0m          "fixed": true,                                                  "fixed": true,[0;0m
+[0;0m          "stale": false,                                                 "stale": false,[0;0m
+[0;0m          "rho": 1.0,                                                     "rho": 1.0,[0;0m
+[0;0m          "weight": 1.6333008856008744e-11                                "weight": 1.6333008856008744e-11[0;0m
+[0;0m        },                                                              },[0;0m
+[0;0m        "DevotedAcreage[WHEAT]": {                                      "DevotedAcreage[WHEAT]": {[0;0m
+[0;0m          "value": 500.0,                                                 "value": 500.0,[0;0m
+[0;0m          "fixed": true,                                                  "fixed": true,[0;0m
+[0;0m          "stale": false,                                                 "stale": false,[0;0m
+[0;0m          "rho": 1.0,                                                     "rho": 1.0,[0;0m
+[0;0m          "weight": 0.0                                                   "weight": 0.0[0;0m
+[0;0m        },                                                              },[0;0m
+[0;0m        "ComputeProfits[CORN].SOS2_y[0]": {                             "ComputeProfits[CORN].SOS2_y[0]": {[0;0m
+[0;36m          "value": 0.9999999999997472,                        |           "value": 0.9999999999997174,[0;0m
+[0;0m          "fixed": false,                                                 "fixed": false,[0;0m
+[0;0m          "stale": false,                                                 "stale": false,[0;0m
+[0;0m          "rho": null,                                                    "rho": null,[0;0m
+[0;0m          "weight": null                                                  "weight": null[0;0m
+[0;0m        },                                                              },[0;0m
+[0;0m        "ComputeProfits[CORN].SOS2_y[1]": {                             "ComputeProfits[CORN].SOS2_y[1]": {[0;0m
+[0;0m          "value": 0.0,                                                   "value": 0.0,[0;0m
+[0;0m          "fixed": false,                                                 "fixed": false,[0;0m
+[0;0m          "stale": false,                                                 "stale": false,[0;0m
+[0;0m          "rho": null,                                                    "rho": null,[0;0m
+[0;0m          "weight": null                                                  "weight": null[0;0m
+[0;0m        },                                                              },[0;0m
+[0;0m        "ComputeProfits[CORN].SOS2_y[2]": {                             "ComputeProfits[CORN].SOS2_y[2]": {[0;0m
+[0;0m          "value": 2.527355931128086e-13,                                 "value": 2.527355931128086e-13,[0;0m
+[0;0m          "fixed": false,                                                 "fixed": false,[0;0m
+[0;0m          "stale": false,                                                 "stale": false,[0;0m
+[0;0m          "rho": null,                                                    "rho": null,[0;0m
+[0;0m          "weight": null                                                  "weight": null[0;0m
+[0;0m        },                                                              },[0;0m
+[0;36m        "ComputeProfits[SUGAR_BEETS].SOS2_y[0]": {            |         "ComputeProfits[WHEAT].SOS2_y[0]": {[0;0m
+[0;36m          "value": 0.999999999999992,                         |           "value": 0.8749999999997399,[0;0m
+[0;0m          "fixed": false,                                                 "fixed": false,[0;0m
+[0;0m          "stale": false,                                                 "stale": false,[0;0m
+[0;0m          "rho": null,                                                    "rho": null,[0;0m
+[0;0m          "weight": null                                                  "weight": null[0;0m
+[0;0m        },                                                              },[0;0m
+[0;36m        "ComputeProfits[SUGAR_BEETS].SOS2_y[1]": {            |         "ComputeProfits[WHEAT].SOS2_y[1]": {[0;0m
+[0;0m          "value": 0.0,                                                   "value": 0.0,[0;0m
+[0;0m          "fixed": false,                                                 "fixed": false,[0;0m
+[0;0m          "stale": false,                                                 "stale": false,[0;0m
+[0;0m          "rho": null,                                                    "rho": null,[0;0m
+[0;0m          "weight": null                                                  "weight": null[0;0m
+[0;0m        },                                                              },[0;0m
+[0;36m        "ComputeProfits[SUGAR_BEETS].SOS2_y[2]": {            |         "ComputeProfits[WHEAT].SOS2_y[2]": {[0;0m
+[0;36m          "value": 8.04175984171841e-15,                      |           "value": 0.1250000000002602,[0;0m
+[0;0m          "fixed": false,                                                 "fixed": false,[0;0m
+[0;0m          "stale": false,                                                 "stale": false,[0;0m
+[0;0m          "rho": null,                                                    "rho": null,[0;0m
+[0;0m          "weight": null                                                  "weight": null[0;0m
+[0;0m        },                                                              },[0;0m
+[0;36m        "ComputeProfits[WHEAT].SOS2_y[0]": {                  |         "ComputeProfits[SUGAR_BEETS].SOS2_y[0]": {[0;0m
+[0;36m          "value": 0.8749999999997399,                        |           "value": 1.0000000000003522,[0;0m
+[0;0m          "fixed": false,                                                 "fixed": false,[0;0m
+[0;0m          "stale": false,                                                 "stale": false,[0;0m
+[0;0m          "rho": null,                                                    "rho": null,[0;0m
+[0;0m          "weight": null                                                  "weight": null[0;0m
+[0;0m        },                                                              },[0;0m
+[0;36m        "ComputeProfits[WHEAT].SOS2_y[1]": {                  |         "ComputeProfits[SUGAR_BEETS].SOS2_y[1]": {[0;0m
+[0;0m          "value": 0.0,                                                   "value": 0.0,[0;0m
+[0;0m          "fixed": false,                                                 "fixed": false,[0;0m
+[0;0m          "stale": false,                                                 "stale": false,[0;0m
+[0;0m          "rho": null,                                                    "rho": null,[0;0m
+[0;0m          "weight": null                                                  "weight": null[0;0m
+[0;0m        },                                                              },[0;0m
+[0;36m        "ComputeProfits[WHEAT].SOS2_y[2]": {                  |         "ComputeProfits[SUGAR_BEETS].SOS2_y[2]": {[0;0m
+[0;36m          "value": 0.1250000000002602,                        |           "value": 8.04175984171841e-15,[0;0m
+[0;0m          "fixed": false,                                                 "fixed": false,[0;0m
+[0;0m          "stale": false,                                                 "stale": false,[0;0m
+[0;0m          "rho": null,                                                    "rho": null,[0;0m
+[0;0m          "weight": null                                                  "weight": null[0;0m
+[0;0m        },                                                              },[0;0m
+[0;0m        "Profit[CORN]": {                                               "Profit[CORN]": {[0;0m
+[0;0m          "value": 7.287883563000948e-06,                                 "value": 7.287883563000948e-06,[0;0m
+[0;0m          "fixed": false,                                                 "fixed": false,[0;0m
+[0;0m          "stale": false,                                                 "stale": false,[0;0m
+[0;0m          "rho": null,                                                    "rho": null,[0;0m
+[0;0m          "weight": null                                                  "weight": null[0;0m
+[0;0m        },                                                              },[0;0m
+[0;0m        "Profit[SUGAR_BEETS]": {                                        "Profit[SUGAR_BEETS]": {[0;0m
+[0;0m          "value": 5.7997171978473175e-08,                                "value": 5.7997171978473175e-08,[0;0m
+[0;0m          "fixed": false,                                                 "fixed": false,[0;0m
+[0;0m          "stale": false,                                                 "stale": false,[0;0m
+[0;0m          "rho": null,                                                    "rho": null,[0;0m
+[0;0m          "weight": null                                                  "weight": null[0;0m
+[0;0m        },                                                              },[0;0m
+[0;0m        "Profit[WHEAT]": {                                              "Profit[WHEAT]": {[0;0m
+[0;0m          "value": 9001500.000018738,                                     "value": 9001500.000018738,[0;0m
+[0;0m          "fixed": false,                                                 "fixed": false,[0;0m
+[0;0m          "stale": false,                                                 "stale": false,[0;0m
+[0;0m          "rho": null,                                                    "rho": null,[0;0m
+[0;0m          "weight": null                                                  "weight": null[0;0m
+[0;0m        },                                                              },[0;0m
+[0;0m        "QuantityPurchased[CORN]": {                                    "QuantityPurchased[CORN]": {[0;0m
+[0;0m          "value": 239.9999999968406,                                     "value": 239.9999999968406,[0;0m
+[0;0m          "fixed": false,                                                 "fixed": false,[0;0m
+[0;0m          "stale": false,                                                 "stale": false,[0;0m
+[0;0m          "rho": null,                                                    "rho": null,[0;0m
+[0;0m          "weight": null                                                  "weight": null[0;0m
+[0;0m        },                                                              },[0;0m
+[0;0m        "QuantityPurchased[SUGAR_BEETS]": {                             "QuantityPurchased[SUGAR_BEETS]": {[0;0m
+[0;0m          "value": 0.0,                                                   "value": 0.0,[0;0m
+[0;0m          "fixed": false,                                                 "fixed": false,[0;0m
+[0;0m          "stale": false,                                                 "stale": false,[0;0m
+[0;0m          "rho": null,                                                    "rho": null,[0;0m
+[0;0m          "weight": null                                                  "weight": null[0;0m
+[0;0m        },                                                              },[0;0m
+[0;0m        "QuantityPurchased[WHEAT]": {                                   "QuantityPurchased[WHEAT]": {[0;0m
+[0;0m          "value": 199.99999999746572,                                    "value": 199.99999999746572,[0;0m
+[0;0m          "fixed": false,                                                 "fixed": false,[0;0m
+[0;0m          "stale": false,                                                 "stale": false,[0;0m
+[0;0m          "rho": null,                                                    "rho": null,[0;0m
+[0;0m          "weight": null                                                  "weight": null[0;0m
+[0;0m        },                                                              },[0;0m
+[0;0m        "QuantitySold[CORN]": {                                         "QuantitySold[CORN]": {[0;0m
+[0;36m          "value": 3.0328271173537026e-09,                    |           "value": 3.3906527608287187e-09,[0;0m
+[0;0m          "fixed": false,                                                 "fixed": false,[0;0m
+[0;0m          "stale": false,                                                 "stale": false,[0;0m
+[0;0m          "rho": null,                                                    "rho": null,[0;0m
+[0;0m          "weight": null                                                  "weight": null[0;0m
+[0;0m        },                                                              },[0;0m
+[0;0m        "QuantitySold[SUGAR_BEETS]": {                                  "QuantitySold[SUGAR_BEETS]": {[0;0m
+[0;36m          "value": 9.650111810062068e-11,                     |           "value": 1.272501118100621e-09,[0;0m
+[0;0m          "fixed": false,                                                 "fixed": false,[0;0m
+[0;0m          "stale": false,                                                 "stale": false,[0;0m
+[0;0m          "rho": null,                                                    "rho": null,[0;0m
+[0;0m          "weight": null                                                  "weight": null[0;0m
+[0;0m        },                                                              },[0;0m
+[0;0m        "QuantitySold[WHEAT]": {                                        "QuantitySold[WHEAT]": {[0;0m
+[0;0m          "value": 1500.0000000031225,                                    "value": 1500.0000000031225,[0;0m
+[0;0m          "fixed": false,                                                 "fixed": false,[0;0m
+[0;0m          "stale": false,                                                 "stale": false,[0;0m
+[0;0m          "rho": null,                                                    "rho": null,[0;0m
+[0;0m          "weight": null                                                  "weight": null[0;0m
+[0;0m        }                                                               }[0;0m
+[0;0m      },                                                              },[0;0m
+[0;36m      "objective": -8828500.00002734,                         |       "objective": -8828500.000033855,[0;0m
+[0;36m      "cost": -8828500.00002734,                              |       "cost": -8828500.000033855,[0;0m
+[0;0m      "ph weight term": 0.0,                                          "ph weight term": 0.0,[0;0m
+[0;0m      "ph proximal term": 0.0,                                        "ph proximal term": 0.0,[0;0m
+[0;0m      "stage costs": {                                                "stage costs": {[0;0m
+[0;36m        "FirstStage": 75000.0000000085,                       |         "FirstStage": 75000.00000000146,[0;0m
+[0;36m        "SecondStage": -8903500.00002735                      |         "SecondStage": -8903500.000033857[0;0m
+[0;0m      }                                                               }[0;0m
+[0;0m    }                                                               }[0;0m
+[0;0m  },                                                              },[0;0m
+[0;0m  "node solutions": {                                             "node solutions": {[0;0m
+[0;0m    "RootNode": {                                                   "RootNode": {[0;0m
+[0;0m      "variables": {                                                  "variables": {[0;0m
+[0;0m        "DevotedAcreage[CORN]": {                                       "DevotedAcreage[CORN]": {[0;0m
+[0;0m          "solution": 0.0,                                                "solution": 0.0,[0;0m
+[0;0m          "fixed": false,                                                 "fixed": false,[0;0m
+[0;0m          "derived": false,                                               "derived": false,[0;0m
+[0;0m          "minimum": 0.0,                                                 "minimum": 0.0,[0;0m
+[0;0m          "average": 0.0,                                                 "average": 0.0,[0;0m
+[0;0m          "maximum": 0.0,                                                 "maximum": 0.0,[0;0m
+[0;0m          "xbar": 0.0,                                                    "xbar": 0.0,[0;0m
+[0;0m          "wbar": 0.0                                                     "wbar": 0.0[0;0m
+[0;0m        },                                                              },[0;0m
+[0;0m        "DevotedAcreage[SUGAR_BEETS]": {                                "DevotedAcreage[SUGAR_BEETS]": {[0;0m
+[0;0m          "solution": 3.2666991143991255e-11,                             "solution": 3.2666991143991255e-11,[0;0m
+[0;0m          "fixed": false,                                                 "fixed": false,[0;0m
+[0;0m          "derived": false,                                               "derived": false,[0;0m
+[0;0m          "minimum": 3.2666991143991255e-11,                              "minimum": 3.2666991143991255e-11,[0;0m
+[0;0m          "average": 3.2666991143991255e-11,                              "average": 3.2666991143991255e-11,[0;0m
+[0;0m          "maximum": 3.2666991143991255e-11,                              "maximum": 3.2666991143991255e-11,[0;0m
+[0;0m          "xbar": 3.2666991143991255e-11,                                 "xbar": 3.2666991143991255e-11,[0;0m
+[0;0m          "wbar": 2.4233807008389483e-27                                  "wbar": 2.4233807008389483e-27[0;0m
+[0;0m        },                                                              },[0;0m
+[0;0m        "DevotedAcreage[WHEAT]": {                                      "DevotedAcreage[WHEAT]": {[0;0m
+[0;0m          "solution": 500.0,                                              "solution": 500.0,[0;0m
+[0;0m          "fixed": false,                                                 "fixed": false,[0;0m
+[0;0m          "derived": false,                                               "derived": false,[0;0m
+[0;0m          "minimum": 500.0,                                               "minimum": 500.0,[0;0m
+[0;0m          "average": 500.0,                                               "average": 500.0,[0;0m
+[0;0m          "maximum": 500.0,                                               "maximum": 500.0,[0;0m
+[0;0m          "xbar": 500.0,                                                  "xbar": 500.0,[0;0m
+[0;0m          "wbar": -1.894780666589213e-14                                  "wbar": -1.894780666589213e-14[0;0m
+[0;0m        }                                                               }[0;0m
+[0;0m      },                                                              },[0;0m
+[0;36m      "expected cost": -6244916.665023807                     |       "expected cost": -6244916.6650275495[0;0m
+[0;0m    },                                                              },[0;0m
+[0;0m    "BelowAverageNode": {                                           "BelowAverageNode": {[0;0m
+[0;0m      "variables": {                                                  "variables": {[0;0m
+[0;0m        "ComputeProfits[CORN].SOS2_y[0]": {                             "ComputeProfits[CORN].SOS2_y[0]": {[0;0m
+[0;0m          "solution": 0.9999999999995172,                                 "solution": 0.9999999999995172,[0;0m
+[0;0m          "fixed": false,                                                 "fixed": false,[0;0m
+[0;0m          "derived": false,                                               "derived": false,[0;0m
+[0;0m          "minimum": null,                                                "minimum": null,[0;0m
+[0;0m          "average": null,                                                "average": null,[0;0m
+[0;0m          "maximum": null,                                                "maximum": null,[0;0m
+[0;0m          "xbar": null,                                                   "xbar": null,[0;0m
+[0;0m          "wbar": null                                                    "wbar": null[0;0m
+[0;0m        },                                                              },[0;0m
+[0;0m        "ComputeProfits[CORN].SOS2_y[1]": {                             "ComputeProfits[CORN].SOS2_y[1]": {[0;0m
+[0;0m          "solution": 0.0,                                                "solution": 0.0,[0;0m
+[0;0m          "fixed": false,                                                 "fixed": false,[0;0m
+[0;0m          "derived": false,                                               "derived": false,[0;0m
+[0;0m          "minimum": null,                                                "minimum": null,[0;0m
+[0;0m          "average": null,                                                "average": null,[0;0m
+[0;0m          "maximum": null,                                                "maximum": null,[0;0m
+[0;0m          "xbar": null,                                                   "xbar": null,[0;0m
+[0;0m          "wbar": null                                                    "wbar": null[0;0m
+[0;0m        },                                                              },[0;0m
+[0;0m        "ComputeProfits[CORN].SOS2_y[2]": {                             "ComputeProfits[CORN].SOS2_y[2]": {[0;0m
+[0;0m          "solution": 4.82569633447195e-13,                               "solution": 4.82569633447195e-13,[0;0m
+[0;0m          "fixed": false,                                                 "fixed": false,[0;0m
+[0;0m          "derived": false,                                               "derived": false,[0;0m
+[0;0m          "minimum": null,                                                "minimum": null,[0;0m
+[0;0m          "average": null,                                                "average": null,[0;0m
+[0;0m          "maximum": null,                                                "maximum": null,[0;0m
+[0;0m          "xbar": null,                                                   "xbar": null,[0;0m
+[0;0m          "wbar": null                                                    "wbar": null[0;0m
+[0;0m        },                                                              },[0;0m
+[0;36m        "ComputeProfits[SUGAR_BEETS].SOS2_y[0]": {            |         "ComputeProfits[WHEAT].SOS2_y[0]": {[0;0m
+[0;36m          "solution": 0.9999999999999858,                     |           "solution": 0.8749999999996353,[0;0m
+[0;0m          "fixed": false,                                                 "fixed": false,[0;0m
+[0;0m          "derived": false,                                               "derived": false,[0;0m
+[0;0m          "minimum": null,                                                "minimum": null,[0;0m
+[0;0m          "average": null,                                                "average": null,[0;0m
+[0;0m          "maximum": null,                                                "maximum": null,[0;0m
+[0;0m          "xbar": null,                                                   "xbar": null,[0;0m
+[0;0m          "wbar": null                                                    "wbar": null[0;0m
+[0;0m        },                                                              },[0;0m
+[0;36m        "ComputeProfits[SUGAR_BEETS].SOS2_y[1]": {            |         "ComputeProfits[WHEAT].SOS2_y[1]": {[0;0m
+[0;0m          "solution": 0.0,                                                "solution": 0.0,[0;0m
+[0;0m          "fixed": false,                                                 "fixed": false,[0;0m
+[0;0m          "derived": false,                                               "derived": false,[0;0m
+[0;0m          "minimum": null,                                                "minimum": null,[0;0m
+[0;0m          "average": null,                                                "average": null,[0;0m
+[0;0m          "maximum": null,                                                "maximum": null,[0;0m
+[0;0m          "xbar": null,                                                   "xbar": null,[0;0m
+[0;0m          "wbar": null                                                    "wbar": null[0;0m
+[0;0m        },                                                              },[0;0m
+[0;36m        "ComputeProfits[SUGAR_BEETS].SOS2_y[2]": {            |         "ComputeProfits[WHEAT].SOS2_y[2]": {[0;0m
+[0;36m          "solution": 1.3973423402397309e-14,                 |           "solution": 0.12500000000036465,[0;0m
+[0;0m          "fixed": false,                                                 "fixed": false,[0;0m
+[0;0m          "derived": false,                                               "derived": false,[0;0m
+[0;0m          "minimum": null,                                                "minimum": null,[0;0m
+[0;0m          "average": null,                                                "average": null,[0;0m
+[0;0m          "maximum": null,                                                "maximum": null,[0;0m
+[0;0m          "xbar": null,                                                   "xbar": null,[0;0m
+[0;0m          "wbar": null                                                    "wbar": null[0;0m
+[0;0m        },                                                              },[0;0m
+[0;36m        "ComputeProfits[WHEAT].SOS2_y[0]": {                  |         "ComputeProfits[SUGAR_BEETS].SOS2_y[0]": {[0;0m
+[0;36m          "solution": 0.8749999999996353,                     |           "solution": 0.9999999999999858,[0;0m
+[0;0m          "fixed": false,                                                 "fixed": false,[0;0m
+[0;0m          "derived": false,                                               "derived": false,[0;0m
+[0;0m          "minimum": null,                                                "minimum": null,[0;0m
+[0;0m          "average": null,                                                "average": null,[0;0m
+[0;0m          "maximum": null,                                                "maximum": null,[0;0m
+[0;0m          "xbar": null,                                                   "xbar": null,[0;0m
+[0;0m          "wbar": null                                                    "wbar": null[0;0m
+[0;0m        },                                                              },[0;0m
+[0;36m        "ComputeProfits[WHEAT].SOS2_y[1]": {                  |         "ComputeProfits[SUGAR_BEETS].SOS2_y[1]": {[0;0m
+[0;0m          "solution": 0.0,                                                "solution": 0.0,[0;0m
+[0;0m          "fixed": false,                                                 "fixed": false,[0;0m
+[0;0m          "derived": false,                                               "derived": false,[0;0m
+[0;0m          "minimum": null,                                                "minimum": null,[0;0m
+[0;0m          "average": null,                                                "average": null,[0;0m
+[0;0m          "maximum": null,                                                "maximum": null,[0;0m
+[0;0m          "xbar": null,                                                   "xbar": null,[0;0m
+[0;0m          "wbar": null                                                    "wbar": null[0;0m
+[0;0m        },                                                              },[0;0m
+[0;36m        "ComputeProfits[WHEAT].SOS2_y[2]": {                  |         "ComputeProfits[SUGAR_BEETS].SOS2_y[2]": {[0;0m
+[0;36m          "solution": 0.12500000000036465,                    |           "solution": 1.3973423402397309e-14,[0;0m
+[0;0m          "fixed": false,                                                 "fixed": false,[0;0m
+[0;0m          "derived": false,                                               "derived": false,[0;0m
+[0;0m          "minimum": null,                                                "minimum": null,[0;0m
+[0;0m          "average": null,                                                "average": null,[0;0m
+[0;0m          "maximum": null,                                                "maximum": null,[0;0m
+[0;0m          "xbar": null,                                                   "xbar": null,[0;0m
+[0;0m          "wbar": null                                                    "wbar": null[0;0m
+[0;0m        },                                                              },[0;0m
+[0;0m        "Profit[CORN]": {                                               "Profit[CORN]": {[0;0m
+[0;0m          "solution": 6.188472979326829e-06,                              "solution": 6.188472979326829e-06,[0;0m
+[0;0m          "fixed": false,                                                 "fixed": false,[0;0m
+[0;0m          "derived": false,                                               "derived": false,[0;0m
+[0;0m          "minimum": null,                                                "minimum": null,[0;0m
+[0;0m          "average": null,                                                "average": null,[0;0m
+[0;0m          "maximum": null,                                                "maximum": null,[0;0m
+[0;0m          "xbar": null,                                                   "xbar": null,[0;0m
+[0;0m          "wbar": null                                                    "wbar": null[0;0m
+[0;0m        },                                                              },[0;0m
+[0;0m        "Profit[SUGAR_BEETS]": {                                        "Profit[SUGAR_BEETS]": {[0;0m
+[0;0m          "solution": 4.4826742274890566e-08,                             "solution": 4.4826742274890566e-08,[0;0m
+[0;0m          "fixed": false,                                                 "fixed": false,[0;0m
+[0;0m          "derived": false,                                               "derived": false,[0;0m
+[0;0m          "minimum": null,                                                "minimum": null,[0;0m
+[0;0m          "average": null,                                                "average": null,[0;0m
+[0;0m          "maximum": null,                                                "maximum": null,[0;0m
+[0;0m          "xbar": null,                                                   "xbar": null,[0;0m
+[0;0m          "wbar": null                                                    "wbar": null[0;0m
+[0;0m        },                                                              },[0;0m
+[0;0m        "Profit[WHEAT]": {                                              "Profit[WHEAT]": {[0;0m
+[0;0m          "solution": 4001000.000011672,                                  "solution": 4001000.000011672,[0;0m
+[0;0m          "fixed": false,                                                 "fixed": false,[0;0m
+[0;0m          "derived": false,                                               "derived": false,[0;0m
+[0;0m          "minimum": null,                                                "minimum": null,[0;0m
+[0;0m          "average": null,                                                "average": null,[0;0m
+[0;0m          "maximum": null,                                                "maximum": null,[0;0m
+[0;0m          "xbar": null,                                                   "xbar": null,[0;0m
+[0;0m          "wbar": null                                                    "wbar": null[0;0m
+[0;0m        },                                                              },[0;0m
+[0;0m        "QuantityPurchased[CORN]": {                                    "QuantityPurchased[CORN]": {[0;0m
+[0;0m          "solution": 239.99999999878554,                                 "solution": 239.99999999878554,[0;0m
+[0;0m          "fixed": false,                                                 "fixed": false,[0;0m
+[0;0m          "derived": false,                                               "derived": false,[0;0m
+[0;0m          "minimum": null,                                                "minimum": null,[0;0m
+[0;0m          "average": null,                                                "average": null,[0;0m
+[0;0m          "maximum": null,                                                "maximum": null,[0;0m
+[0;0m          "xbar": null,                                                   "xbar": null,[0;0m
+[0;0m          "wbar": null                                                    "wbar": null[0;0m
+[0;0m        },                                                              },[0;0m
+[0;0m        "QuantityPurchased[SUGAR_BEETS]": {                             "QuantityPurchased[SUGAR_BEETS]": {[0;0m
+[0;0m          "solution": 0.0,                                                "solution": 0.0,[0;0m
+[0;0m          "fixed": false,                                                 "fixed": false,[0;0m
+[0;0m          "derived": false,                                               "derived": false,[0;0m
+[0;0m          "minimum": null,                                                "minimum": null,[0;0m
+[0;0m          "average": null,                                                "average": null,[0;0m
+[0;0m          "maximum": null,                                                "maximum": null,[0;0m
+[0;0m          "xbar": null,                                                   "xbar": null,[0;0m
+[0;0m          "wbar": null                                                    "wbar": null[0;0m
+[0;0m        },                                                              },[0;0m
+[0;0m        "QuantityPurchased[WHEAT]": {                                   "QuantityPurchased[WHEAT]": {[0;0m
+[0;0m          "solution": 199.99999999592126,                                 "solution": 199.99999999592126,[0;0m
+[0;0m          "fixed": false,                                                 "fixed": false,[0;0m
+[0;0m          "derived": false,                                               "derived": false,[0;0m
+[0;0m          "minimum": null,                                                "minimum": null,[0;0m
+[0;0m          "average": null,                                                "average": null,[0;0m
+[0;0m          "maximum": null,                                                "maximum": null,[0;0m
+[0;0m          "xbar": null,                                                   "xbar": null,[0;0m
+[0;0m          "wbar": null                                                    "wbar": null[0;0m
+[0;0m        },                                                              },[0;0m
+[0;0m        "QuantitySold[CORN]": {                                         "QuantitySold[CORN]": {[0;0m
+[0;0m          "solution": 3.860557067577561e-09,                              "solution": 3.860557067577561e-09,[0;0m
+[0;0m          "fixed": false,                                                 "fixed": false,[0;0m
+[0;0m          "derived": false,                                               "derived": false,[0;0m
+[0;0m          "minimum": null,                                                "minimum": null,[0;0m
+[0;0m          "average": null,                                                "average": null,[0;0m
+[0;0m          "maximum": null,                                                "maximum": null,[0;0m
+[0;0m          "xbar": null,                                                   "xbar": null,[0;0m
+[0;0m          "wbar": null                                                    "wbar": null[0;0m
+[0;0m        },                                                              },[0;0m
+[0;0m        "QuantitySold[SUGAR_BEETS]": {                                  "QuantitySold[SUGAR_BEETS]": {[0;0m
+[0;0m          "solution": 1.1180295429091445e-10,                             "solution": 1.1180295429091445e-10,[0;0m
+[0;0m          "fixed": false,                                                 "fixed": false,[0;0m
+[0;0m          "derived": false,                                               "derived": false,[0;0m
+[0;0m          "minimum": null,                                                "minimum": null,[0;0m
+[0;0m          "average": null,                                                "average": null,[0;0m
+[0;0m          "maximum": null,                                                "maximum": null,[0;0m
+[0;0m          "xbar": null,                                                   "xbar": null,[0;0m
+[0;0m          "wbar": null                                                    "wbar": null[0;0m
+[0;0m        },                                                              },[0;0m
+[0;0m        "QuantitySold[WHEAT]": {                                        "QuantitySold[WHEAT]": {[0;0m
+[0;0m          "solution": 1000.0000000029174,                                 "solution": 1000.0000000029174,[0;0m
+[0;0m          "fixed": false,                                                 "fixed": false,[0;0m
+[0;0m          "derived": false,                                               "derived": false,[0;0m
+[0;0m          "minimum": null,                                                "minimum": null,[0;0m
+[0;0m          "average": null,                                                "average": null,[0;0m
+[0;0m          "maximum": null,                                                "maximum": null,[0;0m
+[0;0m          "xbar": null,                                                   "xbar": null,[0;0m
+[0;0m          "wbar": null                                                    "wbar": null[0;0m
+[0;0m        }                                                               }[0;0m
+[0;0m      },                                                              },[0;0m
+[0;36m      "expected cost": -3903000.000019131                     |       "expected cost": -3903000.0000191308[0;0m
+[0;0m    },                                                              },[0;0m
+[0;0m    "AverageNode": {                                                "AverageNode": {[0;0m
+[0;0m      "variables": {                                                  "variables": {[0;0m
+[0;0m        "ComputeProfits[CORN].SOS2_y[0]": {                             "ComputeProfits[CORN].SOS2_y[0]": {[0;0m
+[0;36m          "solution": 0.9999999999996622,                     |           "solution": 0.9999999999996315,[0;0m
+[0;0m          "fixed": false,                                                 "fixed": false,[0;0m
+[0;0m          "derived": false,                                               "derived": false,[0;0m
+[0;0m          "minimum": null,                                                "minimum": null,[0;0m
+[0;0m          "average": null,                                                "average": null,[0;0m
+[0;0m          "maximum": null,                                                "maximum": null,[0;0m
+[0;0m          "xbar": null,                                                   "xbar": null,[0;0m
+[0;0m          "wbar": null                                                    "wbar": null[0;0m
+[0;0m        },                                                              },[0;0m
+[0;0m        "ComputeProfits[CORN].SOS2_y[1]": {                             "ComputeProfits[CORN].SOS2_y[1]": {[0;0m
+[0;0m          "solution": 0.0,                                                "solution": 0.0,[0;0m
+[0;0m          "fixed": false,                                                 "fixed": false,[0;0m
+[0;0m          "derived": false,                                               "derived": false,[0;0m
+[0;0m          "minimum": null,                                                "minimum": null,[0;0m
+[0;0m          "average": null,                                                "average": null,[0;0m
+[0;0m          "maximum": null,                                                "maximum": null,[0;0m
+[0;0m          "xbar": null,                                                   "xbar": null,[0;0m
+[0;0m          "wbar": null                                                    "wbar": null[0;0m
+[0;0m        },                                                              },[0;0m
+[0;0m        "ComputeProfits[CORN].SOS2_y[2]": {                             "ComputeProfits[CORN].SOS2_y[2]": {[0;0m
+[0;0m          "solution": 3.377743673009111e-13,                              "solution": 3.377743673009111e-13,[0;0m
+[0;0m          "fixed": false,                                                 "fixed": false,[0;0m
+[0;0m          "derived": false,                                               "derived": false,[0;0m
+[0;0m          "minimum": null,                                                "minimum": null,[0;0m
+[0;0m          "average": null,                                                "average": null,[0;0m
+[0;0m          "maximum": null,                                                "maximum": null,[0;0m
+[0;0m          "xbar": null,                                                   "xbar": null,[0;0m
+[0;0m          "wbar": null                                                    "wbar": null[0;0m
+[0;0m        },                                                              },[0;0m
+[0;36m        "ComputeProfits[SUGAR_BEETS].SOS2_y[0]": {            |         "ComputeProfits[WHEAT].SOS2_y[0]": {[0;0m
+[0;36m          "solution": 0.9999999999999899,                     |           "solution": 0.874999999999666,[0;0m
+[0;0m          "fixed": false,                                                 "fixed": false,[0;0m
+[0;0m          "derived": false,                                               "derived": false,[0;0m
+[0;0m          "minimum": null,                                                "minimum": null,[0;0m
+[0;0m          "average": null,                                                "average": null,[0;0m
+[0;0m          "maximum": null,                                                "maximum": null,[0;0m
+[0;0m          "xbar": null,                                                   "xbar": null,[0;0m
+[0;0m          "wbar": null                                                    "wbar": null[0;0m
+[0;0m        },                                                              },[0;0m
+[0;36m        "ComputeProfits[SUGAR_BEETS].SOS2_y[1]": {            |         "ComputeProfits[WHEAT].SOS2_y[1]": {[0;0m
+[0;0m          "solution": 0.0,                                                "solution": 0.0,[0;0m
+[0;0m          "fixed": false,                                                 "fixed": false,[0;0m
+[0;0m          "derived": false,                                               "derived": false,[0;0m
+[0;0m          "minimum": null,                                                "minimum": null,[0;0m
+[0;0m          "average": null,                                                "average": null,[0;0m
+[0;0m          "maximum": null,                                                "maximum": null,[0;0m
+[0;0m          "xbar": null,                                                   "xbar": null,[0;0m
+[0;0m          "wbar": null                                                    "wbar": null[0;0m
+[0;0m        },                                                              },[0;0m
+[0;36m        "ComputeProfits[SUGAR_BEETS].SOS2_y[2]": {            |         "ComputeProfits[WHEAT].SOS2_y[2]": {[0;0m
+[0;36m          "solution": 1.0282972182584672e-14,                 |           "solution": 0.12500000000033418,[0;0m
+[0;0m          "fixed": false,                                                 "fixed": false,[0;0m
+[0;0m          "derived": false,                                               "derived": false,[0;0m
+[0;0m          "minimum": null,                                                "minimum": null,[0;0m
+[0;0m          "average": null,                                                "average": null,[0;0m
+[0;0m          "maximum": null,                                                "maximum": null,[0;0m
+[0;0m          "xbar": null,                                                   "xbar": null,[0;0m
+[0;0m          "wbar": null                                                    "wbar": null[0;0m
+[0;0m        },                                                              },[0;0m
+[0;36m        "ComputeProfits[WHEAT].SOS2_y[0]": {                  |         "ComputeProfits[SUGAR_BEETS].SOS2_y[0]": {[0;0m
+[0;36m          "solution": 0.874999999999666,                      |           "solution": 1.0000000000003668,[0;0m
+[0;0m          "fixed": false,                                                 "fixed": false,[0;0m
+[0;0m          "derived": false,                                               "derived": false,[0;0m
+[0;0m          "minimum": null,                                                "minimum": null,[0;0m
+[0;0m          "average": null,                                                "average": null,[0;0m
+[0;0m          "maximum": null,                                                "maximum": null,[0;0m
+[0;0m          "xbar": null,                                                   "xbar": null,[0;0m
+[0;0m          "wbar": null                                                    "wbar": null[0;0m
+[0;0m        },                                                              },[0;0m
+[0;36m        "ComputeProfits[WHEAT].SOS2_y[1]": {                  |         "ComputeProfits[SUGAR_BEETS].SOS2_y[1]": {[0;0m
+[0;0m          "solution": 0.0,                                                "solution": 0.0,[0;0m
+[0;0m          "fixed": false,                                                 "fixed": false,[0;0m
+[0;0m          "derived": false,                                               "derived": false,[0;0m
+[0;0m          "minimum": null,                                                "minimum": null,[0;0m
+[0;0m          "average": null,                                                "average": null,[0;0m
+[0;0m          "maximum": null,                                                "maximum": null,[0;0m
+[0;0m          "xbar": null,                                                   "xbar": null,[0;0m
+[0;0m          "wbar": null                                                    "wbar": null[0;0m
+[0;0m        },                                                              },[0;0m
+[0;36m        "ComputeProfits[WHEAT].SOS2_y[2]": {                  |         "ComputeProfits[SUGAR_BEETS].SOS2_y[2]": {[0;0m
+[0;36m          "solution": 0.12500000000033418,                    |           "solution": 1.0282972182584672e-14,[0;0m
+[0;0m          "fixed": false,                                                 "fixed": false,[0;0m
+[0;0m          "derived": false,                                               "derived": false,[0;0m
+[0;0m          "minimum": null,                                                "minimum": null,[0;0m
+[0;0m          "average": null,                                                "average": null,[0;0m
+[0;0m          "maximum": null,                                                "maximum": null,[0;0m
+[0;0m          "xbar": null,                                                   "xbar": null,[0;0m
+[0;0m          "wbar": null                                                    "wbar": null[0;0m
+[0;0m        },                                                              },[0;0m
+[0;0m        "Profit[CORN]": {                                               "Profit[CORN]": {[0;0m
+[0;0m          "solution": 6.7656205770372505e-06,                             "solution": 6.7656205770372505e-06,[0;0m
+[0;0m          "fixed": false,                                                 "fixed": false,[0;0m
+[0;0m          "derived": false,                                               "derived": false,[0;0m
+[0;0m          "minimum": null,                                                "minimum": null,[0;0m
+[0;0m          "average": null,                                                "average": null,[0;0m
+[0;0m          "maximum": null,                                                "maximum": null,[0;0m
+[0;0m          "xbar": null,                                                   "xbar": null,[0;0m
+[0;0m          "wbar": null                                                    "wbar": null[0;0m
+[0;0m        },                                                              },[0;0m
+[0;0m        "Profit[SUGAR_BEETS]": {                                        "Profit[SUGAR_BEETS]": {[0;0m
+[0;0m          "solution": 5.151769063474921e-08,                              "solution": 5.151769063474921e-08,[0;0m
+[0;0m          "fixed": false,                                                 "fixed": false,[0;0m
+[0;0m          "derived": false,                                               "derived": false,[0;0m
+[0;0m          "minimum": null,                                                "minimum": null,[0;0m
+[0;0m          "average": null,                                                "average": null,[0;0m
+[0;0m          "maximum": null,                                                "maximum": null,[0;0m
+[0;0m          "xbar": null,                                                   "xbar": null,[0;0m
+[0;0m          "wbar": null                                                    "wbar": null[0;0m
+[0;0m        },                                                              },[0;0m
+[0;0m        "Profit[WHEAT]": {                                              "Profit[WHEAT]": {[0;0m
+[0;0m          "solution": 6251250.000016712,                                  "solution": 6251250.000016712,[0;0m
+[0;0m          "fixed": false,                                                 "fixed": false,[0;0m
+[0;0m          "derived": false,                                               "derived": false,[0;0m
+[0;0m          "minimum": null,                                                "minimum": null,[0;0m
+[0;0m          "average": null,                                                "average": null,[0;0m
+[0;0m          "maximum": null,                                                "maximum": null,[0;0m
+[0;0m          "xbar": null,                                                   "xbar": null,[0;0m
+[0;0m          "wbar": null                                                    "wbar": null[0;0m
+[0;0m        },                                                              },[0;0m
+[0;0m        "QuantityPurchased[CORN]": {                                    "QuantityPurchased[CORN]": {[0;0m
+[0;0m          "solution": 239.99999999640636,                                 "solution": 239.99999999640636,[0;0m
+[0;0m          "fixed": false,                                                 "fixed": false,[0;0m
+[0;0m          "derived": false,                                               "derived": false,[0;0m
+[0;0m          "minimum": null,                                                "minimum": null,[0;0m
+[0;0m          "average": null,                                                "average": null,[0;0m
+[0;0m          "maximum": null,                                                "maximum": null,[0;0m
+[0;0m          "xbar": null,                                                   "xbar": null,[0;0m
+[0;0m          "wbar": null                                                    "wbar": null[0;0m
+[0;0m        },                                                              },[0;0m
+[0;0m        "QuantityPurchased[SUGAR_BEETS]": {                             "QuantityPurchased[SUGAR_BEETS]": {[0;0m
+[0;0m          "solution": 0.0,                                                "solution": 0.0,[0;0m
+[0;0m          "fixed": false,                                                 "fixed": false,[0;0m
+[0;0m          "derived": false,                                               "derived": false,[0;0m
+[0;0m          "minimum": null,                                                "minimum": null,[0;0m
+[0;0m          "average": null,                                                "average": null,[0;0m
+[0;0m          "maximum": null,                                                "maximum": null,[0;0m
+[0;0m          "xbar": null,                                                   "xbar": null,[0;0m
+[0;0m          "wbar": null                                                    "wbar": null[0;0m
+[0;0m        },                                                              },[0;0m
+[0;0m        "QuantityPurchased[WHEAT]": {                                   "QuantityPurchased[WHEAT]": {[0;0m
+[0;0m          "solution": 199.9999999971213,                                  "solution": 199.9999999971213,[0;0m
+[0;0m          "fixed": false,                                                 "fixed": false,[0;0m
+[0;0m          "derived": false,                                               "derived": false,[0;0m
+[0;0m          "minimum": null,                                                "minimum": null,[0;0m
+[0;0m          "average": null,                                                "average": null,[0;0m
+[0;0m          "maximum": null,                                                "maximum": null,[0;0m
+[0;0m          "xbar": null,                                                   "xbar": null,[0;0m
+[0;0m          "wbar": null                                                    "wbar": null[0;0m
+[0;0m        },                                                              },[0;0m
+[0;0m        "QuantitySold[CORN]": {                                         "QuantitySold[CORN]": {[0;0m
+[0;36m          "solution": 3.3777436730091114e-09,                 |           "solution": 3.684447931470485e-09,[0;0m
+[0;0m          "fixed": false,                                                 "fixed": false,[0;0m
+[0;0m          "derived": false,                                               "derived": false,[0;0m
+[0;0m          "minimum": null,                                                "minimum": null,[0;0m
+[0;0m          "average": null,                                                "average": null,[0;0m
+[0;0m          "maximum": null,                                                "maximum": null,[0;0m
+[0;0m          "xbar": null,                                                   "xbar": null,[0;0m
+[0;0m          "wbar": null                                                    "wbar": null[0;0m
+[0;0m        },                                                              },[0;0m
+[0;0m        "QuantitySold[SUGAR_BEETS]": {                                  "QuantitySold[SUGAR_BEETS]": {[0;0m
+[0;36m          "solution": 1.0282972182584673e-10,                 |           "solution": 1.0828297218258468e-09,[0;0m
+[0;0m          "fixed": false,                                                 "fixed": false,[0;0m
+[0;0m          "derived": false,                                               "derived": false,[0;0m
+[0;0m          "minimum": null,                                                "minimum": null,[0;0m
+[0;0m          "average": null,                                                "average": null,[0;0m
+[0;0m          "maximum": null,                                                "maximum": null,[0;0m
+[0;0m          "xbar": null,                                                   "xbar": null,[0;0m
+[0;0m          "wbar": null                                                    "wbar": null[0;0m
+[0;0m        },                                                              },[0;0m
+[0;0m        "QuantitySold[WHEAT]": {                                        "QuantitySold[WHEAT]": {[0;0m
+[0;0m          "solution": 1250.000000003342,                                  "solution": 1250.000000003342,[0;0m
+[0;0m          "fixed": false,                                                 "fixed": false,[0;0m
+[0;0m          "derived": false,                                               "derived": false,[0;0m
+[0;0m          "minimum": null,                                                "minimum": null,[0;0m
+[0;0m          "average": null,                                                "average": null,[0;0m
+[0;0m          "maximum": null,                                                "maximum": null,[0;0m
+[0;0m          "xbar": null,                                                   "xbar": null,[0;0m
+[0;0m          "wbar": null                                                    "wbar": null[0;0m
+[0;0m        }                                                               }[0;0m
+[0;0m      },                                                              },[0;0m
+[0;36m      "expected cost": -6153250.000024969                     |       "expected cost": -6153250.000029659[0;0m
+[0;0m    },                                                              },[0;0m
+[0;0m    "AboveAverageNode": {                                           "AboveAverageNode": {[0;0m
+[0;0m      "variables": {                                                  "variables": {[0;0m
+[0;0m        "ComputeProfits[CORN].SOS2_y[0]": {                             "ComputeProfits[CORN].SOS2_y[0]": {[0;0m
+[0;36m          "solution": 0.9999999999997472,                     |           "solution": 0.9999999999997173,[0;0m
+[0;0m          "fixed": false,                                                 "fixed": false,[0;0m
+[0;0m          "derived": false,                                               "derived": false,[0;0m
+[0;0m          "minimum": null,                                                "minimum": null,[0;0m
+[0;0m          "average": null,                                                "average": null,[0;0m
+[0;0m          "maximum": null,                                                "maximum": null,[0;0m
+[0;0m          "xbar": null,                                                   "xbar": null,[0;0m
+[0;0m          "wbar": null                                                    "wbar": null[0;0m
+[0;0m        },                                                              },[0;0m
+[0;0m        "ComputeProfits[CORN].SOS2_y[1]": {                             "ComputeProfits[CORN].SOS2_y[1]": {[0;0m
+[0;0m          "solution": 0.0,                                                "solution": 0.0,[0;0m
+[0;0m          "fixed": false,                                                 "fixed": false,[0;0m
+[0;0m          "derived": false,                                               "derived": false,[0;0m
+[0;0m          "minimum": null,                                                "minimum": null,[0;0m
+[0;0m          "average": null,                                                "average": null,[0;0m
+[0;0m          "maximum": null,                                                "maximum": null,[0;0m
+[0;0m          "xbar": null,                                                   "xbar": null,[0;0m
+[0;0m          "wbar": null                                                    "wbar": null[0;0m
+[0;0m        },                                                              },[0;0m
+[0;0m        "ComputeProfits[CORN].SOS2_y[2]": {                             "ComputeProfits[CORN].SOS2_y[2]": {[0;0m
+[0;0m          "solution": 2.527355931128086e-13,                              "solution": 2.527355931128086e-13,[0;0m
+[0;0m          "fixed": false,                                                 "fixed": false,[0;0m
+[0;0m          "derived": false,                                               "derived": false,[0;0m
+[0;0m          "minimum": null,                                                "minimum": null,[0;0m
+[0;0m          "average": null,                                                "average": null,[0;0m
+[0;0m          "maximum": null,                                                "maximum": null,[0;0m
+[0;0m          "xbar": null,                                                   "xbar": null,[0;0m
+[0;0m          "wbar": null                                                    "wbar": null[0;0m
+[0;0m        },                                                              },[0;0m
+[0;36m        "ComputeProfits[SUGAR_BEETS].SOS2_y[0]": {            |         "ComputeProfits[WHEAT].SOS2_y[0]": {[0;0m
+[0;36m          "solution": 0.999999999999992,                      |           "solution": 0.8749999999997399,[0;0m
+[0;0m          "fixed": false,                                                 "fixed": false,[0;0m
+[0;0m          "derived": false,                                               "derived": false,[0;0m
+[0;0m          "minimum": null,                                                "minimum": null,[0;0m
+[0;0m          "average": null,                                                "average": null,[0;0m
+[0;0m          "maximum": null,                                                "maximum": null,[0;0m
+[0;0m          "xbar": null,                                                   "xbar": null,[0;0m
+[0;0m          "wbar": null                                                    "wbar": null[0;0m
+[0;0m        },                                                              },[0;0m
+[0;36m        "ComputeProfits[SUGAR_BEETS].SOS2_y[1]": {            |         "ComputeProfits[WHEAT].SOS2_y[1]": {[0;0m
+[0;0m          "solution": 0.0,                                                "solution": 0.0,[0;0m
+[0;0m          "fixed": false,                                                 "fixed": false,[0;0m
+[0;0m          "derived": false,                                               "derived": false,[0;0m
+[0;0m          "minimum": null,                                                "minimum": null,[0;0m
+[0;0m          "average": null,                                                "average": null,[0;0m
+[0;0m          "maximum": null,                                                "maximum": null,[0;0m
+[0;0m          "xbar": null,                                                   "xbar": null,[0;0m
+[0;0m          "wbar": null                                                    "wbar": null[0;0m
+[0;0m        },                                                              },[0;0m
+[0;36m        "ComputeProfits[SUGAR_BEETS].SOS2_y[2]": {            |         "ComputeProfits[WHEAT].SOS2_y[2]": {[0;0m
+[0;36m          "solution": 8.04175984171841e-15,                   |           "solution": 0.1250000000002602,[0;0m
+[0;0m          "fixed": false,                                                 "fixed": false,[0;0m
+[0;0m          "derived": false,                                               "derived": false,[0;0m
+[0;0m          "minimum": null,                                                "minimum": null,[0;0m
+[0;0m          "average": null,                                                "average": null,[0;0m
+[0;0m          "maximum": null,                                                "maximum": null,[0;0m
+[0;0m          "xbar": null,                                                   "xbar": null,[0;0m
+[0;0m          "wbar": null                                                    "wbar": null[0;0m
+[0;0m        },                                                              },[0;0m
+[0;36m        "ComputeProfits[WHEAT].SOS2_y[0]": {                  |         "ComputeProfits[SUGAR_BEETS].SOS2_y[0]": {[0;0m
+[0;36m          "solution": 0.8749999999997399,                     |           "solution": 1.0000000000003522,[0;0m
+[0;0m          "fixed": false,                                                 "fixed": false,[0;0m
+[0;0m          "derived": false,                                               "derived": false,[0;0m
+[0;0m          "minimum": null,                                                "minimum": null,[0;0m
+[0;0m          "average": null,                                                "average": null,[0;0m
+[0;0m          "maximum": null,                                                "maximum": null,[0;0m
+[0;0m          "xbar": null,                                                   "xbar": null,[0;0m
+[0;0m          "wbar": null                                                    "wbar": null[0;0m
+[0;0m        },                                                              },[0;0m
+[0;36m        "ComputeProfits[WHEAT].SOS2_y[1]": {                  |         "ComputeProfits[SUGAR_BEETS].SOS2_y[1]": {[0;0m
+[0;0m          "solution": 0.0,                                                "solution": 0.0,[0;0m
+[0;0m          "fixed": false,                                                 "fixed": false,[0;0m
+[0;0m          "derived": false,                                               "derived": false,[0;0m
+[0;0m          "minimum": null,                                                "minimum": null,[0;0m
+[0;0m          "average": null,                                                "average": null,[0;0m
+[0;0m          "maximum": null,                                                "maximum": null,[0;0m
+[0;0m          "xbar": null,                                                   "xbar": null,[0;0m
+[0;0m          "wbar": null                                                    "wbar": null[0;0m
+[0;0m        },                                                              },[0;0m
+[0;36m        "ComputeProfits[WHEAT].SOS2_y[2]": {                  |         "ComputeProfits[SUGAR_BEETS].SOS2_y[2]": {[0;0m
+[0;36m          "solution": 0.1250000000002602,                     |           "solution": 8.04175984171841e-15,[0;0m
+[0;0m          "fixed": false,                                                 "fixed": false,[0;0m
+[0;0m          "derived": false,                                               "derived": false,[0;0m
+[0;0m          "minimum": null,                                                "minimum": null,[0;0m
+[0;0m          "average": null,                                                "average": null,[0;0m
+[0;0m          "maximum": null,                                                "maximum": null,[0;0m
+[0;0m          "xbar": null,                                                   "xbar": null,[0;0m
+[0;0m          "wbar": null                                                    "wbar": null[0;0m
+[0;0m        },                                                              },[0;0m
+[0;0m        "Profit[CORN]": {                                               "Profit[CORN]": {[0;0m
+[0;0m          "solution": 7.287883563000948e-06,                              "solution": 7.287883563000948e-06,[0;0m
+[0;0m          "fixed": false,                                                 "fixed": false,[0;0m
+[0;0m          "derived": false,                                               "derived": false,[0;0m
+[0;0m          "minimum": null,                                                "minimum": null,[0;0m
+[0;0m          "average": null,                                                "average": null,[0;0m
+[0;0m          "maximum": null,                                                "maximum": null,[0;0m
+[0;0m          "xbar": null,                                                   "xbar": null,[0;0m
+[0;0m          "wbar": null                                                    "wbar": null[0;0m
+[0;0m        },                                                              },[0;0m
+[0;0m        "Profit[SUGAR_BEETS]": {                                        "Profit[SUGAR_BEETS]": {[0;0m
+[0;0m          "solution": 5.799717197847317e-08,                              "solution": 5.799717197847317e-08,[0;0m
+[0;0m          "fixed": false,                                                 "fixed": false,[0;0m
+[0;0m          "derived": false,                                               "derived": false,[0;0m
+[0;0m          "minimum": null,                                                "minimum": null,[0;0m
+[0;0m          "average": null,                                                "average": null,[0;0m
+[0;0m          "maximum": null,                                                "maximum": null,[0;0m
+[0;0m          "xbar": null,                                                   "xbar": null,[0;0m
+[0;0m          "wbar": null                                                    "wbar": null[0;0m
+[0;0m        },                                                              },[0;0m
+[0;0m        "Profit[WHEAT]": {                                              "Profit[WHEAT]": {[0;0m
+[0;0m          "solution": 9001500.000018738,                                  "solution": 9001500.000018738,[0;0m
+[0;0m          "fixed": false,                                                 "fixed": false,[0;0m
+[0;0m          "derived": false,                                               "derived": false,[0;0m
+[0;0m          "minimum": null,                                                "minimum": null,[0;0m
+[0;0m          "average": null,                                                "average": null,[0;0m
+[0;0m          "maximum": null,                                                "maximum": null,[0;0m
+[0;0m          "xbar": null,                                                   "xbar": null,[0;0m
+[0;0m          "wbar": null                                                    "wbar": null[0;0m
+[0;0m        },                                                              },[0;0m
+[0;0m        "QuantityPurchased[CORN]": {                                    "QuantityPurchased[CORN]": {[0;0m
+[0;0m          "solution": 239.99999999684056,                                 "solution": 239.99999999684056,[0;0m
+[0;0m          "fixed": false,                                                 "fixed": false,[0;0m
+[0;0m          "derived": false,                                               "derived": false,[0;0m
+[0;0m          "minimum": null,                                                "minimum": null,[0;0m
+[0;0m          "average": null,                                                "average": null,[0;0m
+[0;0m          "maximum": null,                                                "maximum": null,[0;0m
+[0;0m          "xbar": null,                                                   "xbar": null,[0;0m
+[0;0m          "wbar": null                                                    "wbar": null[0;0m
+[0;0m        },                                                              },[0;0m
+[0;0m        "QuantityPurchased[SUGAR_BEETS]": {                             "QuantityPurchased[SUGAR_BEETS]": {[0;0m
+[0;0m          "solution": 0.0,                                                "solution": 0.0,[0;0m
+[0;0m          "fixed": false,                                                 "fixed": false,[0;0m
+[0;0m          "derived": false,                                               "derived": false,[0;0m
+[0;0m          "minimum": null,                                                "minimum": null,[0;0m
+[0;0m          "average": null,                                                "average": null,[0;0m
+[0;0m          "maximum": null,                                                "maximum": null,[0;0m
+[0;0m          "xbar": null,                                                   "xbar": null,[0;0m
+[0;0m          "wbar": null                                                    "wbar": null[0;0m
+[0;0m        },                                                              },[0;0m
+[0;0m        "QuantityPurchased[WHEAT]": {                                   "QuantityPurchased[WHEAT]": {[0;0m
+[0;0m          "solution": 199.99999999746575,                                 "solution": 199.99999999746575,[0;0m
+[0;0m          "fixed": false,                                                 "fixed": false,[0;0m
+[0;0m          "derived": false,                                               "derived": false,[0;0m
+[0;0m          "minimum": null,                                                "minimum": null,[0;0m
+[0;0m          "average": null,                                                "average": null,[0;0m
+[0;0m          "maximum": null,                                                "maximum": null,[0;0m
+[0;0m          "xbar": null,                                                   "xbar": null,[0;0m
+[0;0m          "wbar": null                                                    "wbar": null[0;0m
+[0;0m        },                                                              },[0;0m
+[0;0m        "QuantitySold[CORN]": {                                         "QuantitySold[CORN]": {[0;0m
+[0;36m          "solution": 3.0328271173537026e-09,                 |           "solution": 3.3906527608287187e-09,[0;0m
+[0;0m          "fixed": false,                                                 "fixed": false,[0;0m
+[0;0m          "derived": false,                                               "derived": false,[0;0m
+[0;0m          "minimum": null,                                                "minimum": null,[0;0m
+[0;0m          "average": null,                                                "average": null,[0;0m
+[0;0m          "maximum": null,                                                "maximum": null,[0;0m
+[0;0m          "xbar": null,                                                   "xbar": null,[0;0m
+[0;0m          "wbar": null                                                    "wbar": null[0;0m
+[0;0m        },                                                              },[0;0m
+[0;0m        "QuantitySold[SUGAR_BEETS]": {                                  "QuantitySold[SUGAR_BEETS]": {[0;0m
+[0;36m          "solution": 9.650111810062068e-11,                  |           "solution": 1.272501118100621e-09,[0;0m
+[0;0m          "fixed": false,                                                 "fixed": false,[0;0m
+[0;0m          "derived": false,                                               "derived": false,[0;0m
+[0;0m          "minimum": null,                                                "minimum": null,[0;0m
+[0;0m          "average": null,                                                "average": null,[0;0m
+[0;0m          "maximum": null,                                                "maximum": null,[0;0m
+[0;0m          "xbar": null,                                                   "xbar": null,[0;0m
+[0;0m          "wbar": null                                                    "wbar": null[0;0m
+[0;0m        },                                                              },[0;0m
+[0;0m        "QuantitySold[WHEAT]": {                                        "QuantitySold[WHEAT]": {[0;0m
+[0;0m          "solution": 1500.0000000031225,                                 "solution": 1500.0000000031225,[0;0m
+[0;0m          "fixed": false,                                                 "fixed": false,[0;0m
+[0;0m          "derived": false,                                               "derived": false,[0;0m
+[0;0m          "minimum": null,                                                "minimum": null,[0;0m
+[0;0m          "average": null,                                                "average": null,[0;0m
+[0;0m          "maximum": null,                                                "maximum": null,[0;0m
+[0;0m          "xbar": null,                                                   "xbar": null,[0;0m
+[0;0m          "wbar": null                                                    "wbar": null[0;0m
+[0;0m        }                                                               }[0;0m
+[0;0m      },                                                              },[0;0m
+[0;36m      "expected cost": -8903500.00002735                      |       "expected cost": -8903500.000033857[0;0m
+[0;0m    }                                                               }[0;0m
+[0;0m  }                                                               }[0;0m
+[0;0m}                                                               }[0;0m
+[0;31m------------------[0m
+Creating baseline for FarmerWrent
+FarmerWrent baseline creation time: 7.107146874
+Executing FarmerWrent with Spark
+FarmerWrent execution time: 52.367414373
+[0;32m------------------[0m
+[0;32mFarmerWrent test passed[0m
+[0;32m------------------[0m
+Creating baseline for Finance
+Finance baseline creation time: 21.758214254
+Executing Finance with Spark
+Finance execution time: 207.501034903
+[0;31m------------------[0m
+[0;31mFinance test failed[0m
+
+[0;31m------------------[0m
+Creating baseline for Hydro
+Hydro baseline creation time: 8.614823902
+Executing Hydro with Spark
+Hydro execution time: 107.436810524
+[0;32m------------------[0m
+[0;32mHydro test passed[0m
+[0;32m------------------[0m
