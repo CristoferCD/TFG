@@ -345,6 +345,40 @@ En este plan de pruebas no definiremos casos de prueba siguiendo el estándar. A
 
 \subsection{Procedimiento de pruebas}
 
-Utilizando las configuraciones anteriores se ejecutará cada una de ellas 3 veces y se guardará una media de los tiempos.
+Utilizando las configuraciones anteriores se ejecutará cada una de ellas 3 veces y se guardará una media de los tiempos.\\
+
+Se establecerá también la media de duración por iteración para observar de forma más concreta el overhead causado por la nueva implementación.
 
 \subsection{Ejecución de las pruebas}
+
+El primer aspecto a probar es el tiempo de ejecución del ejemplo \textit{Hydro}. Este modelo especifica 9 escenarios diferentes que, teniendo en cuenta que la paralelización se realiza a nivel de escenario, es esperable una buena escalabilidad.\\
+
+Sin embargo, los resultados obtenidos no cumplen lo esperado:\\
+
+\begin{figure}[H]
+    \centerline{\includegraphics[width=15cm]{figuras/pruebas/test-hydro.png}}
+    \caption{Tiempos de ejecución Hydro}
+    \label{fig:test-hydro}
+\end{figure}
+
+Para analizar estos datos, primero debemos tener en cuenta dos puntos importantes: la ejecución no se ha realizado en una máquina adecuada para aprovechar la paralelización y el tiempo de ejecución de la versión secuencia es de aproximadamente 6s.\\
+
+A parte de ejecutar las pruebas con distinto número de hilos, también se ha probado a limitar la memoria disponible en Spark a 2GB o 4GB. Esto está representado en la gráfica como las líneas naranja y azul. Podemos concluir facilmente que, para este ejemplo concreto, no existe diferencia en la memoria disponible. Esto puede ser porque la memoria necesaria es siempre inferior a 2GB o es siempre superior a 4GB. \\
+
+En cuanto a los tiempos de ejecución, si tenemos en cuenta que la ejecución normal tarda unos 6s, la implementación con Spark utilizando 1 hilo tarda 74s, siendo una opción claramente peor a nivel temporal.\\
+
+Aumentando el número de hilos disponible, observamos inicialmente una mejora importante. Pasando de 1 a 2 hilos reducimos el tiempo casi a la mitad (0,57x). Esto es una prueba de la escalabilidad que promete Spark. Sin embargo, aumentar el número de hilos no resulta en ningún tipo de mejora, a pesar de que esperábamos mejoras con la utilización de hasta 9 hilos (por existir 9 escenarios). Esto puede ser el resultado de ejecutar un programa demasiado pequeño en una plataforma poco adecuada. \\
+
+Estos tiempos están claramente lejos de lo conseguido con la ejecución secuencial, pero son un claro indicador del potencial de una implementación con Spark para la resolución de problemas estocásticos y, con futuras optimizaciones y un cluster donde ejecutarse, esta implementación podría ser una alternativa viable para abordar problemas que antes no eran resolubles en un tiempo razonable.\\
+
+Con el objetivo de analizar los tiempos sobre un problema mayor se utilizarán los tiempos establecidos por el ejemplo \textit{Finance}. Este ejemplo no consigue finalizar por lo que parecen ser limitaciones de memoria, pero sí podemos observar los tiempos de ejecución de las primeras iteraciones. Se seleccionan los tiempos de ejecución de las primeras 10 iteraciones y se hace una media de los mismos. En la siguiente figura se muestra el tiempo medio por iteración para el ejemplo \textit{Finance} así como para el anterior ejemplo \textit{Hydro} utilizando 1,2 y 8 hilos.\\
+
+\begin{figure}[H]
+    \centerline{\includegraphics[width=15cm]{figuras/pruebas/test-iteration-time.png}}
+    \caption{Tiempo medio por iteración}
+    \label{fig:test-iteration-time}
+\end{figure}
+
+Los resultados, de nuevo, no son los esperados. El ejemplo \textit{Finance} no falla porque el modelo a procesar sea demasiado grande, si no porque necesita una mayor cantidad de datos durante más iteraciones. \\
+
+En esta prueba observamos un comportamiento similar a lo visto en la anterior gráfica. En primer lugar, el ejemplo \textit{Finance} se ejecuta más rápido que \textit{Hydro} y conseguimos una mejora del 0,55x y 0,57x respectivamente. 
