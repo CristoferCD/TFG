@@ -7,7 +7,7 @@
 
 El actual plan de pruebas tiene como objetivo asegurar que los requisitos especificados son cumplidos satisfactoriamente por el módulo de código implementado. Adicionalmente se buscará que el código implementado funcione correctamente cuando dispone de entradas incorrecta.
 
-Este plan de pruebas está basado en el estándar IEEE 829 \cite{IEEE829}.
+Este plan de pruebas, así como todos los creados como parte de este proyecto, está basado en el estándar IEEE 829 \cite{IEEE829}.
 
 \subsection{Restricciones}
 
@@ -271,20 +271,80 @@ Queda como tarea en un futuro optimizar la gestión de la memoria y el uso de Sp
 
 \subsection{Introducción}
 
+Este segundo plan de pruebas se centrará en evaluar el rendimiento de la implementación con Spark. El objetivo es establecer una medición concreta comparando la ejecución en Spark con la ejecución secuencial y con Pyro.
+
 \subsection{Restricciones}
+
+Existen dos restricciones principales sobre la realización de este plan de pruebas. En primer lugar, el tiempo disponible. Se disponen de 3 días para elaborar, ejecutar y analizar las pruebas expuestas en esta sección. \\
+
+Adicionalmente, las pruebas no se ejecutarán en un cluster de computación, lo que limitará el tamaño de los problemas a probar y la escalabilidad que podremos observar. La máquina de pruebas será un portátil ejecutando una máquina virtual con las siguientes características:
+
+\begin{itemize}
+    \item Fedora 27 (Workstation Edition)
+    \item i7 7700HQ
+    \item 4GB
+\end{itemize}
 
 \subsection{Objeto de pruebas}
 
+Durante la ejecución del primer plan de pruebas se realizaron mediciones en el tiempo de ejecución de los ejemplos existentes como parte de Pyomo. Con estos valores iniciales decidimos que se utilizará el ejemplo ``Hydro'' para esta evaluación de rendimiento. Este ejemplo nos proporciona un problema con 9 escenarios, lo que debería favorecer la escalabilidad en paralelo, y se puede ejecutar en un tiempo razonable en nuestra máquina de pruebas.
+
 \subsection{Características a probar y exclusiones}
+
+Se medirá el tiempo de ejecución del ejemplo especificado utilizando diferentes configuraciones hardware, usando desde 1 núcleo hasta 8 para Spark y con variaciones en la memoria disponible.
 
 \subsection{Estrategia}
 
+Se utilizará la opción `\textit{--output-times}' que utiliza la librería ``time'' de python para la medición de tiempos. Los valores de las diferentes ejecuciones se recopilarán en una hoja de cálculo para generar gráficas que faciliten el estudio de los resultados.
+
 \subsection{Criterios de aceptación}
 
-\subsection{Diseño de pruebas}
+Las pruebas se considerarán satisfactorias si producen resultados estudiables. Dichos resultados deben ser replicables utilizando una configuración similar. Deben evitarse resultados que pueden haber sido alterados por condiciones externas durante la ejecución del programa, por lo que deberían realizarse múltiples ejecuciones iguales para filtrar los resultados coherentes.
 
 \subsection{Casos de prueba}
 
+En este plan de pruebas no definiremos casos de prueba siguiendo el estándar. A continuación se listan las diferentes configuraciones de núcleos y memoria con las que realizará la ejecución.
+
+\begin{tabularx}{\linewidth}{|X|X|}
+    \hline
+    \centering \textbf{Hilos} & \centering \textbf{Memoria} \tabularnewline
+    \hline
+    \centering 1 & \centering 2GB \tabularnewline
+    \hline
+    \centering 2 & \centering 2GB \tabularnewline
+    \hline
+    \centering 3 & \centering 2GB \tabularnewline
+    \hline
+    \centering 4 & \centering 2GB \tabularnewline
+    \hline
+    \centering 5 & \centering 2GB \tabularnewline
+    \hline
+    \centering 6 & \centering 2GB \tabularnewline
+    \hline
+    \centering 7 & \centering 2GB \tabularnewline
+    \hline
+    \centering 8 & \centering 2GB \tabularnewline
+    \hline
+    \centering 1 & \centering 4GB \tabularnewline
+    \hline
+    \centering 2 & \centering 4GB \tabularnewline
+    \hline
+    \centering 3 & \centering 4GB \tabularnewline
+    \hline
+    \centering 4 & \centering 4GB \tabularnewline
+    \hline
+    \centering 5 & \centering 4GB \tabularnewline
+    \hline
+    \centering 6 & \centering 4GB \tabularnewline
+    \hline
+    \centering 7 & \centering 4GB \tabularnewline
+    \hline
+    \centering 8 & \centering 4GB \tabularnewline
+    \hline       
+\end{tabularx}
+
 \subsection{Procedimiento de pruebas}
+
+Utilizando las configuraciones anteriores se ejecutará cada una de ellas 3 veces y se guardará una media de los tiempos.
 
 \subsection{Ejecución de las pruebas}
