@@ -3,4 +3,26 @@
 
 \section{Lecciones aprendidas}
 
+El desarrollo de este trabajo fue más accidentado de lo esperado, llegando a ser necesario un mes extra de trabajo. Incluso con este tiempo extra, no he tenido tiempo para centrarme en los puntos que me parecían más interesantes al comenzar este trabajo, principalmente el periodo de optimización en el que tendría que aprender y aprovechar las características más concretas de Spark. \\
+
+En un proyecto de esta complejidad y duración, la importancia de la gestión se hace más aparente. Desde la realización del anteproyecto, la planificación temporal del proyecto se realizó sin utilizar ningún método de estimación ni datos concretos. A pesar de tener que realizar un proyecto utilizando tecnologías desconocidas (tanto Python como Spark), condiciones muy relevantes para considerar un ciclo en cascada como inadecuado, se decidió planificar el proyecto en cascada porque era más sencillo organizar el tiempo. Se esperaba que, en el caso de retrasarse en una tarea, simplemente se trabajaría más horas y eso sería suficiente. Después de los primeros retrasos sí se modifica el ciclo de vida tomando en consideración estas limitaciones, pero esto es a costa de eliminar la fase de diseño. Para la solución que se implementó finalmente, el diseño no es una fase demasiado importante y creo que se ejecutó satisfactoriamente.\\
+
+El otro pilar importante de este proyecto es Spark. Adaptar una arquitectura orientada a objetos para funcionar en Spark no es una solución óptima, como podemos comprobar por la cantidad de errores encontrados así como los números de rendimiento finales. Viendo la documentación de Spark, está claro que el caso de uso óptimo es el transformar datos estáticos y ejecutar operaciones sobre ellos. En nuestro caso estamos paralelizando una jerarquía completa de objetos, con multitud de dependencias y estos objetos incluso interactúan con archivos y programas externos. El simple hecho de que esta implementación funcione correctamente demuestra la versatilidad de este framework.\\
+
+Cuando se encuentran problemas en el código que necesitan múltiples horas de pruebas y búsqueda de errores, es muy útil hacer un seguimiento por escrito de las tareas realizadas. En este caso se utilizaron múltiples herramientas que facilitaron en gran medida la realización del proyecto así como de la memoria final:
+
+\begin{itemize}
+    \item \textbf{Trello: } Es una herramienta web que permite gestionar paneles con listas de tareas. Con esto es sencillo hacer un seguimiento de las tareas pendientes, las que se están ejecutando actualmente y del trabajo ya finalizado.
+    \item \textbf{Git: } Un sistema de control de versiones es crucial cuando se están buscando problemas en el código. Permite modificar secciones enteras de código, introducir pruebas, etc, con la tranquilidad de siempre poder volver a una versión correcta. Además nos da una lista de todos los cambios que hemos hecho con lo que podemos identificar dónde están los errores y cómo se han solucionado. Por último, es muy útil poder cambiar entre versiones del código para realizar múltiples pruebas.
+    \item \textbf{Informes de seguimiento: } Al principio del proyecto se decidió realizar documentos de progreso cada poco tiempo. Estos archivos no sólo son útiles para documentar el proyecto, también sirven como puntos de reflexión. Generar un informe de progreso nos fuerza a resumir todo lo hecho hasta ahora y a tener claros los objetivos que se deben perseguir a continuación.
+\end{itemize}
+
 \section{Trabajo futuro}
+
+Aunque el desarrollo sufrió múltiples problemas en su realización, el resultado final supone una buena base para una implementación útil de Spark en Pyomo. En su estado actual no provee ninguna ventaja con respecto a las implementaciones existentes pero tiene potencial para ser una alternativa muy eficaz. \\
+
+Partiendo de esta base, hay dos caminos claros a seguir para generar una implementación que ofrezca un buen rendimiento. Podemos mantener la arquitectura orientada a objetos actual y centrarnos en optimizar al gestión de las tareas para que las transformaciones ejecutadas en Spark sean menos y contengan mayor trabajo. Por otro lado, podemos simplificar el trabajo que debe realizarse dentro de Spark para acercarse más al tipo de operaciones que funcionan de mejor en Spark.\\
+
+Todos estos cambios deben apoyarse en una batería de pruebas utilizando un cluster de computación que aproveche al máximo las ventajas que nos ofrece Spark. Los problemas a probar deben tener la complejidad suficiente para visualizar la utilidad de un entorno distribuido.\\
+
+Si se realizan todos estos cambios, el objetivo final, dado que Pyomo es un proyecto abierto, sería realizar un \textit{pull-request} para que cualquiera pueda aprovechar estas ventajas utilizando la versión estable de Pyomo.
