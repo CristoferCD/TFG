@@ -1,5 +1,5 @@
 \chapter{Plan de pruebas}
-\label{sec:pruebas}
+\label{ch:pruebas}
 
 \section{Pruebas funcionales}
 
@@ -73,7 +73,8 @@ Será posible concluir que la aplicación aprobada pasó las pruebas si el 100\%
     },
     testCases={CP-01, CP-02, CP-03, CP-04, CP-05, CP-06},
     expected={Conexión correcta y ejecución que genere la salida esperada en el caso de las pruebas para clases válidas. Para las pruebas con entradas no válidas se debe mostrar un error especificando el problema.}
-]
+] { \caption{P-01: Conexión a Spark}
+    \label{tab:p-01}}
 
 \TestItem[
     id={P-02},
@@ -87,7 +88,8 @@ Será posible concluir que la aplicación aprobada pasó las pruebas si el 100\%
     },
     testCases={CP-01, CP-02, CP-03},
     expected={Los resultados de todos los ejemplos son iguales para la versión secuencial y paralela.}
-]
+] { \caption{P-02: Ejecución correcta de ejemplos}
+    \label{tab:p-02}}
 
 \subsection{Casos de prueba}
 
@@ -107,7 +109,8 @@ Será posible concluir que la aplicación aprobada pasó las pruebas si el 100\%
     output={
         Igual a la ejecución con -\-solver-manager=serial
     }
-]
+] { \caption{CP-01: Prueba la entrada correcta}
+    \label{tab:cp-01}}
 
 \TestCase[
     id={CP-02},
@@ -125,7 +128,8 @@ Será posible concluir que la aplicación aprobada pasó las pruebas si el 100\%
     output={
         Igual a la ejecución con -\-solver-manager=serial
     }
-]
+] { \caption{CP-02: Prueba la url por defecto}
+    \label{tab:cp-02}}
 
 \TestCase[
     id={CP-03},
@@ -143,7 +147,8 @@ Será posible concluir que la aplicación aprobada pasó las pruebas si el 100\%
     output={
         Mensaje de error indicando que no se ha podido conectar a Spark en la URL especificada.
     }
-]
+] { \caption{CP-03: Prueba una IP incorrecta}
+    \label{tab:cp-03}}
 
 \TestCase[
     id={CP-04},
@@ -161,7 +166,8 @@ Será posible concluir que la aplicación aprobada pasó las pruebas si el 100\%
     output={
         Mensaje de error indicando que no se ha podido conectar a Spark en la URL especificada.
     }
-]
+] { \caption{CP-04: Prueba una IP sin Spark}
+    \label{tab:cp-04}}
 
 \TestCase[
     id={CP-05},
@@ -179,7 +185,8 @@ Será posible concluir que la aplicación aprobada pasó las pruebas si el 100\%
     output={
         Mensaje de error indicando que no se ha podido conectar a Spark en la URL especificada.
     }
-]
+] { \caption{CP-05: Prueba un puerto inválido}
+    \label{tab:cp-05}}
 
 \TestCase[
     id={CP-06},
@@ -197,7 +204,8 @@ Será posible concluir que la aplicación aprobada pasó las pruebas si el 100\%
     output={
         Mensaje de error indicando que no se ha podido conectar a Spark en la URL especificada.
     }
-]
+] { \caption{CP-06: Prueba un puerto sin Spark}
+    \label{tab:cp-06}}
 
 \subsection{Procedimiento de pruebas}
 
@@ -213,23 +221,27 @@ Por las razones expuestas los tests se programarán para ejecutarse automáticam
 
 La solución de cada ejecución se guarda en un archivo \textit{ph\_solution.json}. Se guarda la solución de la ejecución secuencial y posteriormente es posible ejecutar \textit{diff} con la solución devuelta por el test, siempre que se espere una salida correcta. En caso contrario se comprobará manualmente que la salida es la esperada.\\
 
-\begin{tabularx}{\linewidth}{|c|X|c|}
-    \hline
-    \textbf{ID} & \centering \textbf{Salida} & \textbf{Superada} \tabularnewline
-    \hline
-    CP-01 & TestPHFarmerSpark.test1.ph\_solution.json.out & Si \tabularnewline
-    \hline
-    CP-02 & TestPHFarmerSpark.test2.ph\_solution.json.out & Si \tabularnewline
-    \hline
-    CP-03 & RuntimeError: ERROR connecting with Spark at spark://111.111:7077. URL might be incorrect (org.apache.spark.SparkException)Invalid master URL: spark://111.111:7077 & Si \tabularnewline
-    \hline
-    CP-04 & RuntimeError: ERROR connecting with Spark at spark://192.10.10.10:7077. Check if Spark is running on that IP. (java.lang.IllegalArgumentException)requirement failed: Can only call getServletHandlers on a running MetricsSystem & Si \tabularnewline
-    \hline
-    CP-05 & RuntimeError: ERROR connecting with Spark at spark://localhost:-1. URL might be incorrect (org.apache.spark.SparkException)Invalid master URL: spark://localhost:-1 & Si \tabularnewline
-    \hline
-    CP-06 & RuntimeError: ERROR connecting with Spark at spark://localhost:8080. Check if Spark is running on that IP. (java.lang.IllegalArgumentException)requirement failed: Can only call getServletHandlers on a running MetricsSystem & Si \tabularnewline
-    \hline
-\end{tabularx}
+\begin{table} [H]
+    \begin{tabularx}{\linewidth}{|c|X|c|}
+        \hline
+        \textbf{ID} & \centering \textbf{Salida} & \textbf{Superada} \tabularnewline
+        \hline
+        CP-01 & TestPHFarmerSpark.test1.ph\_solution.json.out & Si \tabularnewline
+        \hline
+        CP-02 & TestPHFarmerSpark.test2.ph\_solution.json.out & Si \tabularnewline
+        \hline
+        CP-03 & RuntimeError: ERROR connecting with Spark at spark://111.111:7077. URL might be incorrect (org.apache.spark.SparkException)Invalid master URL: spark://111.111:7077 & Si \tabularnewline
+        \hline
+        CP-04 & RuntimeError: ERROR connecting with Spark at spark://192.10.10.10:7077. Check if Spark is running on that IP. (java.lang.IllegalArgumentException)requirement failed: Can only call getServletHandlers on a running MetricsSystem & Si \tabularnewline
+        \hline
+        CP-05 & RuntimeError: ERROR connecting with Spark at spark://localhost:-1. URL might be incorrect (org.apache.spark.SparkException)Invalid master URL: spark://localhost:-1 & Si \tabularnewline
+        \hline
+        CP-06 & RuntimeError: ERROR connecting with Spark at spark://localhost:8080. Check if Spark is running on that IP. (java.lang.IllegalArgumentException)requirement failed: Can only call getServletHandlers on a running MetricsSystem & Si \tabularnewline
+        \hline
+    \end{tabularx}
+    \caption{Resultados de la ejecución de los casos de prueba}
+    \label{tab:test-results}
+\end{table}
 
 A continuación se probará la ejecución de los ejemplos disponibles en el proyecto. Para ello se utilizará un script en bash que se mueva entre los directorios y ejecute la versión secuencial y paralela para cada ejemplo, imprimiendo los resultados de ejecutar el comando \textit{diff}. Aunque con este script se busca automatizar al máximo la ejecución de pruebas, no se consigue totalmente. La naturaleza del algoritmo hace que existan ligeras diferencias en los valores generados. Esto causará que las salidas sean diferentes, pero no implica que los resultados sean incorrectos. 
 Para facilitar la comprobación de esta situación, se utiliza la herramienta \textit{colordiff} que resaltará las diferencias entre ambas soluciones.\\
@@ -243,26 +255,30 @@ A continuación se muestra el primer test del script donde se ejecuta el ejemplo
 
 El resultado de ejecutar este script completo se muestra en la tabla a continuación: \\
 
-\begin{tabularx}{\linewidth}{|X|c|}
-    \hline
-    Farmer & passed \tabularnewline
-    \hline
-    Baa99 & failed (stackoverflow) \tabularnewline
-    \hline
-    Farmer\_generated & failed (stackoverflow) \tabularnewline
-    \hline
-    FarmerWIntegers & passed \tabularnewline
-    \hline
-    FarmerWPieceWise & passed \tabularnewline
-    \hline
-    FarmerWrent & passed \tabularnewline
-    \hline
-    Finance & failed (stackoverflow) \tabularnewline
-    \hline
-    Hydro & passed \tabularnewline
-    \hline
-\end{tabularx}
-\\ \newline
+\begin{table} [H]
+    \begin{tabularx}{\linewidth}{|X|c|}
+        \hline
+        Farmer & passed \tabularnewline
+        \hline
+        Baa99 & failed (stackoverflow) \tabularnewline
+        \hline
+        Farmer\_generated & failed (stackoverflow) \tabularnewline
+        \hline
+        FarmerWIntegers & passed \tabularnewline
+        \hline
+        FarmerWPieceWise & passed \tabularnewline
+        \hline
+        FarmerWrent & passed \tabularnewline
+        \hline
+        Finance & failed (stackoverflow) \tabularnewline
+        \hline
+        Hydro & passed \tabularnewline
+        \hline
+    \end{tabularx}
+    \caption{Resultados de la ejecución de los ejemplos}
+    \label{tab:test-examples}
+\end{table}
+
 Podemos observar que algunos tests aparecen como fallidos con un error \textit{stackoverflow}. Esto no significa necesariamente que el programa no funcione como se espera, lo más probable es que se deba a limitaciones de la máquina en la que se han realizado las pruebas.\\
 
 Queda como tarea en un futuro optimizar la gestión de la memoria y el uso de Spark para que ejecutar problemas como este sea posible en máquinas con menos recursos. 
@@ -305,43 +321,47 @@ Las pruebas se considerarán satisfactorias si producen resultados estudiables. 
 
 En este plan de pruebas no definiremos casos de prueba siguiendo el estándar. A continuación se listan las diferentes configuraciones de núcleos y memoria con las que realizará la ejecución.
 
-\begin{tabularx}{\linewidth}{|X|X|}
-    \hline
-    \centering \textbf{Hilos} & \centering \textbf{Memoria} \tabularnewline
-    \hline
-    \centering 1 & \centering 2GB \tabularnewline
-    \hline
-    \centering 2 & \centering 2GB \tabularnewline
-    \hline
-    \centering 3 & \centering 2GB \tabularnewline
-    \hline
-    \centering 4 & \centering 2GB \tabularnewline
-    \hline
-    \centering 5 & \centering 2GB \tabularnewline
-    \hline
-    \centering 6 & \centering 2GB \tabularnewline
-    \hline
-    \centering 7 & \centering 2GB \tabularnewline
-    \hline
-    \centering 8 & \centering 2GB \tabularnewline
-    \hline
-    \centering 1 & \centering 4GB \tabularnewline
-    \hline
-    \centering 2 & \centering 4GB \tabularnewline
-    \hline
-    \centering 3 & \centering 4GB \tabularnewline
-    \hline
-    \centering 4 & \centering 4GB \tabularnewline
-    \hline
-    \centering 5 & \centering 4GB \tabularnewline
-    \hline
-    \centering 6 & \centering 4GB \tabularnewline
-    \hline
-    \centering 7 & \centering 4GB \tabularnewline
-    \hline
-    \centering 8 & \centering 4GB \tabularnewline
-    \hline       
-\end{tabularx}
+\begin{table}[H]
+    \begin{tabularx}{\linewidth}{|X|X|}
+        \hline
+        \centering \textbf{Hilos} & \centering \textbf{Memoria} \tabularnewline
+        \hline
+        \centering 1 & \centering 2GB \tabularnewline
+        \hline
+        \centering 2 & \centering 2GB \tabularnewline
+        \hline
+        \centering 3 & \centering 2GB \tabularnewline
+        \hline
+        \centering 4 & \centering 2GB \tabularnewline
+        \hline
+        \centering 5 & \centering 2GB \tabularnewline
+        \hline
+        \centering 6 & \centering 2GB \tabularnewline
+        \hline
+        \centering 7 & \centering 2GB \tabularnewline
+        \hline
+        \centering 8 & \centering 2GB \tabularnewline
+        \hline
+        \centering 1 & \centering 4GB \tabularnewline
+        \hline
+        \centering 2 & \centering 4GB \tabularnewline
+        \hline
+        \centering 3 & \centering 4GB \tabularnewline
+        \hline
+        \centering 4 & \centering 4GB \tabularnewline
+        \hline
+        \centering 5 & \centering 4GB \tabularnewline
+        \hline
+        \centering 6 & \centering 4GB \tabularnewline
+        \hline
+        \centering 7 & \centering 4GB \tabularnewline
+        \hline
+        \centering 8 & \centering 4GB \tabularnewline
+        \hline       
+    \end{tabularx}
+    \caption{Tabla de pruebas de rendimiento}    
+    \label{tab:test-perf-configs}
+\end{table}
 
 \subsection{Procedimiento de pruebas}
 
