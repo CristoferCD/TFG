@@ -47,10 +47,14 @@ El término Big Data se refiere al manejo masivo de datos cada vez más relevant
 Estudiaremos la herramienta Spark \cite{spark} de Apache para la implementación del algoritmo. Spark es un framework de código abierto para la programación en entornos distribuidos. Proporciona una capa de abstracción que permite ejecutar trabajos de forma distribuida sin tener conocimiento de las características del cluster. Spark se encarga de la distribución de los datos, el mantenimiento de su consistencia y la optimización de la repartición.\\
 
 \subsection{MPI}
-% TODO: Ampliar esta explicación
- MPI, siglas para \textit{``Message Passing Interface''}, es un estándar de paso de mensajes que permite la comunicación entre programas a través de la red. Esta interfaz puede utilizarse para implementar una red de objetos distribuidos y solucionar problemas de forma paralela.\\
 
- MPI permite el paso de mensajes utilizando tipos primitivos o la creación de tipos personalizados. La comunicación puede ser punto a punto entre dos objetos, sincronizando las llamadas a \textit{send} y \textit{receive}, o puede ser colectiva. MPI también provee funciones para facilitar la ejecución de algoritmos distribuidos como MPI\_BCAST, MPI\_SCATTER o MPI\_REDUCE.
+MPI, siglas para \textit{``Message Passing Interface''}, es un estándar de paso de mensajes que permite la comunicación entre programas a través de la red. Esta interfaz puede utilizarse para implementar una red de objetos distribuidos y solucionar problemas de forma paralela.\\
+
+MPI permite el paso de mensajes utilizando tipos primitivos o la creación de tipos personalizados. La comunicación puede ser punto a punto entre dos objetos, sincronizando las llamadas a \textit{send} y \textit{receive}, o puede ser colectiva. MPI también provee funciones para facilitar la ejecución de algoritmos distribuidos como MPI\_BCAST, MPI\_SCATTER o MPI\_REDUCE.\\
+
+Dado que MPI es un estándar, existen librerías para multidud de lenguajes de programación diferentes. Esto permite que programas escritos en lenguajes diferentes puedan colaborar usando una interfaz común. Una utilidad de esta interoperabilidad es poder escribir un nuevo programa que ejecute trabajos en un lenguaje moderno y que se comunique con un programa anterior sin tener que modificarlo. \\
+
+MPI define una interfaz de bajo nivel para ejecutar trabajos en paralelo. Esto permite una mayor optimización pero debemos ser más cuidadosos con la implementación. Si queremos paralelizar un programa debemos gestionar manualmente la división de la memoria así como sincronizar los mensajes enviados y recibidos.
  
 \subsection{Pyro}
 

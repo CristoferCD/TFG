@@ -139,7 +139,9 @@ Otros módulos de Spark son:
 Para el problema entre manos, lo más adecuado sería el uso de RDDs, instanciando los workers como un objeto distribuido y enviando las tareas mediante la interfaz de Spark.
 
 \subsection{MPI}
-% TODO: Ampliar esto
+
 El estándar MPI permite el paso de mensajes entre objetos remotos. En este proyecto, MPI funcionaría de una forma similar a la implementación actual con Pyro. Sería necesario definir una interfaz como parte de los workers para recibir las tareas concretas. Podemos aprovechar las características concretas de MPI para enviar datos en masa a todos los workers al mismo tiempo (con MPI\_BCAST o MPI\_SCATTER) y, de forma similar, recoger las soluciones de todos en una sola operación (con MPI\_GATHER).\\
+
+Como MPI es una interfaz de bajo nivel, hay varias cuestiones que debemos tener en cuenta para llevar a cabo una buena implementación. En cuanto a la gestión de la memoria, debemos establecer un método eficiente para subdividir los problemas y asignarlos a los procesos adecuados. Otros datos tendrán que ser enviados a todos los procesos a la vez y también debemos gestionar la recepción de soluciones. Todos estos envios y recepciones deben estar sincronizados para evitar bloqueos. Si queremos aprovechar las funciones asíncronas habrá que tener cuidado adicional para asegurar su correcto funcionamiento. Adicionalmente, el hecho de que MPI sea un estándar compatible con múltiples lenguajes hace que los mensajes enviados sigan un formato concreto de MPI. Si queremos enviar algún tipo de dato complejo tendremos que definirlo utilizando las herramientas proporcionadas por MPI.\\
 
 Estos cambios podrían suponer una optimización relevante con respecto a la implementación actual con Pyro.

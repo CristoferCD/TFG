@@ -12,10 +12,10 @@ Se realizará un estudio inicial de Pyomo para decidir la integración y la tecn
 El rendimiento de esta nueva implementación estará reflejado en un informe tras hacer pruebas con distintos problemas y en distintos sistemas.
 
 \subsection{Criterios de aceptación}
-% TODO: Concretar y diferenciar de exclusiones
+
 El proyecto será aceptado cuando se superen las pruebas definidas en el \autoref{ch:pruebas}.\\
 
-El proyecto persigue dos objetivos: la implementación del algoritmo en paralelo y un estudio de rendimiento. La intención es buscar una implementación alternativa y estudiar su viabilidad, no es necesario que la nueva implementación sea inicialmente mejor que la anterior.
+El proyecto persigue dos objetivos: la implementación del algoritmo en paralelo y un estudio de rendimiento. La nueva implementación debe ser capaz de resolver problemas estocásticos de forma paralela usando el algoritmo \textit{Progressive Hedging} y su rendimiento debe escalar añadiendo nodos de computación. Esta implementación debe poder ejecutarse sobre una instalación remota de Spark y utilizando como entrada los mismos modelos de problema que la versión actual de Pyomo. 
 
 \subsection{Entregables del proyecto}
 
@@ -30,7 +30,9 @@ Los elementos a entregar tras la finalización del proyecto son:
 
 \subsection{Exclusiones}
 
-El proyecto producirá una implementación paralela del algoritmo PH existente. Esta implementación debe ser funcional pero no es un objetivo del proyecto hacer que esta nueva implementación sea mejor que la anterior en términos de eficiencia o rapidez.
+El proyecto producirá una implementación paralela del algoritmo PH existente. Esta implementación debe ser funcional pero no es un objetivo del proyecto hacer que esta nueva implementación sea mejor que la anterior en términos de eficiencia o rapidez.\\
+
+Pyomo permite el uso de plugins externos que se pueden ejecutar antes o después de calcular la solución y pueden modificar la entrada/salida del mismo. No se harán pruebas de compatibilidad de la nueva solución con estos plugins de terceros en Pyomo. Sólo se verificará su funcionamiento con la ejecución incluida por defecto.
 
 \subsection{Restricciones}
 
