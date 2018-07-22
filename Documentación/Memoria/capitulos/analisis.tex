@@ -1,17 +1,24 @@
 \chapter{Análisis}
 \label{ch:analisis}
 
-\section{Funcionamiento del algoritmo}
+\section{Funcionamiento del algoritmo \textit{Progressive Hedging}}
 
 % Explicación del algoritmo a nivel conceptual basándose en el libro de referencia de Birge.
 
-El primer paso imprescindible para la realización de este proyecto será entender el algoritmo con el que se trabajará. Se debe estudiar el funcionamiento teórico de la Programación Estocástica y el algoritmo Progressive Hedging con el objetivo de entender posteriormente su implementación en PySP. \\
+El primer paso imprescindible para la realización de este proyecto será entender el algoritmo con el que se trabajará. Se debe estudiar el funcionamiento teórico de la Programación Estocástica y el algoritmo \textit{Progressive Hedging} con el objetivo de entender posteriormente su implementación en PySP. \\
 
 Como referencia principal se utiliza el libro {\it Introduction to Stochastic Programming} \cite{stochasticProgramming}. Como se explicó anteriormente, la programación estocástica resuelve problemas donde existe un cierto nivel de incertidumbre. A lo largo de esta fase de análisis utilizaremos el ejemplo ``Farmer'' para ver un problema real en funcionamiento que sea sencillo de entender. Este problema está explicado en el libro anterior e incluido como ejemplo en el repositorio de Pyomo por lo que será una referencia muy útil.\\
 
 En el problema del granjero, nos encontramos con una superficie concreta donde podemos plantar 3 tipos diferentes de cultivos. El problema de optimización es especificar la cantidad de superficie óptima para cada uno de los cultivos. Para llegar a la solución óptima se deben tener en cuenta múltiples restricciones como el precio por tonelada de cada cultivo, la cantidad de cultivo que conseguimos por unidad de superficie, su coste o cantidad mínima necesaria para venderlo. La incertidumbre en este problema viene dada por la eficiencia de cada cultivo. Aunque plantemos una cantidad concreta en una superficie específica, no podemos asegurar la cantidad de producto que conseguiremos pues depende de multitud de factores externos. Conocemos por datos pasados una aproximación de lo que producirá una cierta plantación, pero debemos considerar los escenarios en que esta producción será menor o superior. Con esto, tenemos un árbol de escenarios como el explicado en la \autoref{fig:scenario-tree}.\\
 
 Para resolver este tipo de problemas, se utilizará el algoritmo \textit{Progressive Hedging}. Este algoritmo se ejecuta iterativamente y funciona descomponiendo el árbol de escenarios en problemas individuales. Cada rama del árbol se transforma en un problema lineal que se puede procesar directamente para obtener un resultado. Si simplemente hacemos esta descomposición y resolución, tendremos múltiples soluciones diferentes en función de los escenarios que existían en cada camino. Para poder obtener una solución correcta que tenga en cuenta todos los escenarios, debemos conseguir que todas las soluciones individuales convergan a un mismo valor (considerando un cierto margen de error). Esta convergencia se consigue iterando sobre el procesamiento de estos subproblemas. Evidentemente debemos hacer modificaciones en los mismos para poder conseguir la convergencia. Entre cada iteración se van a modificar las variables de las que depende cada subproblema siguiendo la fórmula definida por el algoritmo. El parámetro principal es la variable $\rho$, que no es específica de ningún problema. Esta variable se puede denominar como ``penalizador'' que influirá en cómo se modifican el resto de variables para hacer que sus valores tiendan a la solución buscada.
+% TODO: explicar algoritmo
+
+\begin{figure}
+    \centerline{\includegraphics[width=15cm]{figuras/ph-pseudocode.png}}
+    \caption{Pseudocódigo del algoritmo \textit{Progressive Hedging}}
+    \label{fig:ph_pseudocode}
+\end{figure}
 
 \section{Analizando Pyomo}
 
@@ -53,11 +60,11 @@ En cuanto a la ejecución de la resolución, podemos distinguir tres fases: pres
 
 \begin{itemize}
     \item En el \textbf{presolve} se preprocesan los escenarios del problema y se escriben en un archivo con el formato especificado. En este caso se escribe un archivo con el formato ``nl'' (\texttt{\_print\_model\_NL}) aceptado por solvers que siguen la interfaz AMPL \cite{AMPL}.
-    \item En \textbf{\_apply\_solver} se utiliza el archivo generado en el paso anterior y la ruta al ejecutable del solver escogido (en nuestro caso usaremos ``minos'') para crear un comando. Esto se ejecuta como un comando en el sistema operativo y Python recoge el resultado.
+    \item En \textbf{\_apply\_solver} se utiliza el archivo generado en el paso anterior y la ruta al ejecutable del solver escogido (en nuestro caso usaremos ``minos'' \cite{minos}) para crear un comando. Esto se ejecuta como un comando en el sistema operativo y Python recoge el resultado.
     \item En el \textbf{postsolve} se procesa la salida recuperada del solver y se adapta en función del formato de salida.
 \end{itemize}
 
-En el método \texttt{solve} de \texttt{runph} es donde podemos encontrar el bucle principal que ejecuta los solves de cada iteración y realiza los cálculos necesarios para modificar los valores de cada subproblema. Al final de cada iteración se hace una prueba de convergencia que será la que indique la finalización del algoritmo.\\
+En el método \texttt{solve} de \texttt{runph} es donde podemos encontrar el bucle principal que solicita al solver externo el resultado de cada iteración y realiza los cálculos necesarios para modificar los valores de cada subproblema. Al final de cada iteración se hace una prueba de convergencia que será la que indique la finalización del algoritmo.\\
 
 Para nuestra implementación paralela analizaremos a continuación la implementación actual con Pyro. En este caso, por ser necesario lanzar múltiples procesos a la vez (el servidor de nombres, el propio \texttt{runph} y los workers), no podemos utilizar la ejecución paso a paso del IDE. En esta fase del análisis haremos usaremos la salida generada por la ejecución que, como dijimos antes, puede ser bastante específica haciendo uso de la opción \texttt{--verbose}. Analizando esta salida, podemos generar una traza con las operaciones realizadas:\\
 
@@ -108,6 +115,7 @@ En la traza anterior podemos observar claramente la comunicación entre el hilo 
 Llegados a este punto tenemos una idea bastante concreta de la implementación del algoritmo en Pyomo. Con este conocimiento podemos comenzar el análisis de tecnologías teniendo en cuenta su posible integración y, posteriormente, comenzar con el diseño de la solución.
 
 \section{Análisis de herramientas}
+\label{sec:herramientasAlternativas}
 
 \subsection{Spark}
 
@@ -131,7 +139,7 @@ Otros módulos de Spark son:
 Para el problema entre manos, lo más adecuado sería el uso de RDDs, instanciando los workers como un objeto distribuido y enviando las tareas mediante la interfaz de Spark.
 
 \subsection{MPI}
-
+% TODO: Ampliar esto
 El estándar MPI permite el paso de mensajes entre objetos remotos. En este proyecto, MPI funcionaría de una forma similar a la implementación actual con Pyro. Sería necesario definir una interfaz como parte de los workers para recibir las tareas concretas. Podemos aprovechar las características concretas de MPI para enviar datos en masa a todos los workers al mismo tiempo (con MPI\_BCAST o MPI\_SCATTER) y, de forma similar, recoger las soluciones de todos en una sola operación (con MPI\_GATHER).\\
 
 Estos cambios podrían suponer una optimización relevante con respecto a la implementación actual con Pyro.

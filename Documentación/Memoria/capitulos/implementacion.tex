@@ -41,7 +41,7 @@ El primer paso es la creación del RDD. Esto se realiza mediante la función \te
 
 \begin{figure}[]
     \centerline{\includegraphics[width=15cm]{figuras/codigo/acquire-servers-prototipo.png}}
-    \caption{Método acquire\_servers del prototipo de integración.}
+    \caption{Método \texttt{acquire\_servers} del prototipo de integración.}
     \label{fig:code-acquire-servers-prototipo}
 \end{figure}
 
@@ -49,7 +49,7 @@ Una vez tenemos el RDD creado, el solver manager queda a la espera de que el hil
 
 \begin{figure}[]
     \centerline{\includegraphics[width=15cm]{figuras/codigo/perform-queue-prototipo.png}}
-    \caption{Método \_peform\_queue del prototipo de integración.}
+    \caption{Método \texttt{\_peform\_queue} del prototipo de integración.}
     \label{fig:code-perform-queue-prototipo}
 \end{figure}
 
@@ -59,7 +59,7 @@ En la implementación del worker, generamos un wrapper (\texttt{PHSparkWorker}) 
 
 \begin{figure}[]
     \centerline{\includegraphics[width=15cm]{figuras/codigo/phsparkworker-prototipo.png}}
-    \caption{Objeto PHSparkWorker del prototipo de integración.}
+    \caption{Objeto \texttt{PHSparkWorker} del prototipo de integración.}
     \label{fig:code-phsparkworker-prototipo}
 \end{figure}
 
@@ -69,7 +69,7 @@ Con esta implementación conseguimos generar el RDD y ejecutar la tarea de inici
 
 \section{Prototipo funcional}
 
-% Utilización del map e ir explicando los problemas encontrados (serializador no compatible con lambdas, tener que devolver el propio worker junto al resultado, problemas de dependencias por rutas en los workers y el problema gordo). TODO: buscar en los informes de progreso información más concreta.
+% Utilización del map e ir explicando los problemas encontrados (serializador no compatible con lambdas, tener que devolver el propio worker junto al resultado, problemas de dependencias por rutas en los workers y el problema gordo). 
 
 El esqueleto del nuevo solver manager ya está implementada y en esta fase nos centraremos en implementar lo necesario para que el algoritme finalice correctamente. En lugar de estar centrado en generar nuevo código, será una etapa donde se irán analizando los errores que aparezcan y solucionándolos. \\
 
@@ -80,7 +80,7 @@ Una primera conclusión es la existencia de errores en la fase de serialización
 
 Este programa es bastante resistente frente a errores lo que implica que, aunque suceda un error, el programa puede continuar funcionando. Sin embargo, el resto de la ejecución, aunque no se pare, puede devolver resultados erróneos. Esto hace que encontrar errores sea bastante complicado.\\
 
-Un problema recurrente en este proyecto son las dependencias. Al ser un proyecto con múltiples paquetes dependientes unos de otros, se hace complicado llevar uno de estos objetos a Spark. Cuando ejecutamos el objeto PHSolverServer dentro del entorno de Spark, aunque teóricamente se serializan sus dependencias, no accede correctamente a todos los archivos a los que tendría acceso en local.
+Un problema recurrente en este proyecto son las dependencias. Al ser un proyecto con múltiples paquetes dependientes unos de otros, se hace complicado llevar uno de estos objetos a Spark. Cuando ejecutamos el objeto \texttt{PHSolverServer} dentro del entorno de Spark, aunque teóricamente se serializan sus dependencias, no accede correctamente a todos los archivos a los que tendría acceso en local.
 En primer lugar, debemos hacer que el solver esté disponible para los workers. Como estamos usando el solver \textit{minos} que consta de un solo archivo ejecutable, es sencillo añadir este archivo únicamente como dependencia dentro de Spark mediante el método \texttt{addFile}. Para que los workers puedan utilizarlo deben conocer la ruta que tendrá este archivo en los nodos que se ejecuten. Para conseguir esta nueva ruta podemos utilizar la función de Spark \texttt{SparkFiles.get}. Por último debemos añadir el archivo que define el problema a solucionar, normalmente con el nombre de \textit{ReferenceModel.py}, pues se intenta añadir el archivo como un módulo y esto lo guarda con una ruta de acceso al archivo.\\
 
 Otro caso de dependencias que debemos solucionar es el uso del patrón \textit{factory} desde dentro de Spark. Estas clases deben tener acceso a una lista de clases que pueden instanciar y esto puede no estar disponible desde un worker. La solución temporal a este problema es instanciar las clases necesarias para la ejecución fuera del RDD y luego pasar las instancias a los workers. Esto en principio limita las opciones que soporta nuestra nueva implementación, pues sólo tenemos acceso a un objeto para escribir archivos ``nl'', sólo podemos transformar modelos con ``mpec.nl'' y sólo podemos abrir soluciones en formato ``sol''. \\
@@ -89,7 +89,7 @@ Por último, observamos un problema en la creación del archivo necesario para l
 
 \begin{figure}[H]
     \centerline{\includegraphics[width=10cm]{figuras/codigo/borrado-ampl.png}}
-    \caption{Borrado del parámetro \_ampl\_repn.}
+    \caption{Borrado del parámetro \texttt{\_ampl\_repn}.}
     \label{fig:ampl-repn-deletion}
 \end{figure}
 
@@ -99,7 +99,7 @@ En la \autoref{fig:code-acquire-servers-final} podemos ver cómo se inicializan 
 
 \begin{figure}[H]
     \centerline{\includegraphics[width=15cm]{figuras/codigo/acquire-servers-final.png}}
-    \caption{Método acquire\_servers del prototipo funcional.}
+    \caption{Método \texttt{acquire\_servers} del prototipo funcional.}
     \label{fig:code-acquire-servers-final}
 \end{figure}
 
@@ -107,7 +107,7 @@ En el método de asignación de tareas (\autoref{fig:code-perform-queue-final}) 
 
 \begin{figure}[H]
     \centerline{\includegraphics[width=15cm]{figuras/codigo/perform-queue-final.png}}
-    \caption{Método \_peform\_queue del prototipo funcional.}
+    \caption{Método \texttt{\_peform\_queue} del prototipo funcional.}
     \label{fig:code-perform-queue-final}
 \end{figure}
 
@@ -115,6 +115,6 @@ El último método que merece explicación adicional es el encargado de la recol
 
 \begin{figure}[H]
     \centerline{\includegraphics[width=15cm]{figuras/codigo/wait-final.png}}
-    \caption{Método \_peform\_wait\_any del prototipo funcional.}
+    \caption{Método \texttt{\_peform\_wait\_any} del prototipo funcional.}
     \label{fig:code-wait-final}
 \end{figure}
