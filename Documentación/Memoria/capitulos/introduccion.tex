@@ -20,13 +20,13 @@ En este proyecto se ampliará el módulo PySP, el paquete de Pyomo dedicado a la
 % TODO: Buscar un mejor ejemplo
 Este tipo de problemas es muy común en el mundo real. Por ejemplo, en una tesis defendida en la Universidad de Chile \cite{thesisHydro}, se utiliza la programación estocástica aplicada a la coordinación hidrotérmica. Este problema ``busca encontrar la operación óptima para un Sistema Eléctrico Mixto, combinando en la solución los efectos de las etapas futuras así como los efectos que la hidrología tiene en la operación del sistema''. Es un problema de optimización para una red energética gubernamental donde se deben tener en cuenta costes y eficiencia de cada tipo de generación de energía, además de contar con factores externos. \\
 
-Los problemas estocásticos pueden subdividirse en problemas individuales (un problema para cada combinación de posibles escenarios generados) lo que los hace muy buenos candidatos para su paralelización. Estos problemas individuales deben converger a una solución única, lo que se consigue con un algoritmo como el \textit{Progressive Hedging} \cite{progressiveHedging} el cual hace uso de las variables concretas de cada escenario y el valor de control $\rho$ para hacer converger las soluciones a un valor equivalente a la resolución del problema antes de subdividirlo.
+Los problemas estocásticos pueden subdividirse en problemas individuales (un problema para cada combinación de posibles escenarios generados) lo que los hace muy buenos candidatos para su paralelización. Estos problemas individuales deben converger a una solución única, lo que se consigue con un algoritmo como el \textit{Progressive Hedging} (PH) \cite{progressiveHedging}. 
 
 \section{Motivación del proyecto}
 
 % Adaptarse a nuevas tecnologías para abarcar problemas de mayor tamaño.
 
-Como se ha explicado en el apartado anterior, los problemas estocásticos representan situaciones comunes y su solución puede ser aplicable a muchos campos diferentes. Además, Pyomo ya dispone de herramientas para solucionar este tipo de problemas de forma sencilla, siendo incluso posible hacerlo de forma paralela.\\
+Como se ha explicado en el apartado anterior, los problemas estocásticos representan situaciones comunes y su solución puede ser aplicable a muchos campos diferentes. Además, Pyomo ya dispone de herramientas para solucionar este tipo de problemas de forma sencilla, siendo incluso posible hacerlo de forma paralela (usando la librería de objetos remotos de Python Pyro).\\
 
 Este proyecto tiene como objetivo realizar una nueva implementación alternativa haciendo uso de herramientas Big Data como Spark \cite{spark} o modelos de programación clásicos como MPI \cite{mpi}. Esta implementación funcionará como base para la resolución de problemas estocásticos en entornos distribuidos, siendo susceptible de recibir optimizaciones concretas para la tecnología escogida y plataformas futuras.
 
@@ -36,7 +36,7 @@ Este proyecto tiene como objetivo realizar una nueva implementación alternativa
 
 Existen múltiples métodos para solucionar problemas estocásticos. Una forma es solucionar la ``representación extendida'' del problema. En este caso se preprocesa el árbol de escenarios para resolverlo como un problema único.\\
 
-El método en el que se centrará este proyecto es el algoritmo \textit{Progressive Hedging} (PH) que, como se explicó anteriormente, consiste en la solución de subproblemas y la convergencia de sus soluciones. Podemos ver el pseudo-código del algoritmo concreto en la \autoref{fig:ph_pseudocode}.\\
+El método en el que se centrará este proyecto es el algoritmo \textit{Progressive Hedging} (PH) que consiste en la solución de subproblemas y la convergencia de sus soluciones. Esto lo consigue usando las variables concretas de cada escenario y el valor de control $\rho$ para hacer converger las soluciones a un valor equivalente a la resolución del problema antes de subdividirlo. Podemos ver el pseudo-código del algoritmo concreto en la \autoref{fig:ph_pseudocode}.\\
 
 A continuación se especifican las posibles herramientas para implementar este algoritmo y Pyro, la librería utilizada en la implementación paralela ya existente en Pyomo.
 

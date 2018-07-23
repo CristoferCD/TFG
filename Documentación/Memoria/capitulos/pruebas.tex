@@ -19,7 +19,7 @@ La complejidad de las entradas que recibe el módulo limita el alcance de las pr
 
 El código a probar será la implementación del gestor de Spark, concretamente la clase {\it SolverManager\_PHSpark}. Su ejecución se realiza mediante el comando {\it runph} con la opción {\it -\-solver-manager=phspark}.\\
 
-Se realizarán pruebas de caja negra sobre las diferentes opciones de configuración del solver manager. Adicionalmente se ejecutarán los ejemplos existentes en el proyecto y se comparará la solución generada mediante spark y mediante el algoritmo secuencial.
+Se realizarán pruebas de caja negra sobre las diferentes opciones de configuración del solver manager. Adicionalmente se ejecutarán los ejemplos existentes en el proyecto y se comparará la solución generada mediante Spark y mediante el algoritmo secuencial.
 
 \subsection{Características a probar y exclusiones}
 
@@ -33,7 +33,7 @@ Queda excluído de este plan de pruebas la generación de pruebas mediante estra
 
 Se utilizará el módulo ``unittest'' de Python para generar una clase que ejecute los casos de prueba diseñados.\\
 
-Será necesario generar un archivo de salida correcto para usar como punto de comparación con las ejecuciones de pruebas. Será necesario filtrar las diferencais en la salida que causa la ejecución con Spark o, alternativamente, comprobar manualmente el resultado de cada pareja de archivos.
+Será necesario generar un archivo de salida correcto para usar como punto de comparación con las ejecuciones de pruebas. Será necesario filtrar las diferencias en la salida que causa la ejecución con Spark o, alternativamente, comprobar manualmente el resultado de cada pareja de archivos.
 
 \subsection{Criterios de aceptación}
 
@@ -279,7 +279,8 @@ El resultado de ejecutar este script completo se muestra en la tabla a continuac
     \label{tab:test-examples}
 \end{table}
 
-Podemos observar que algunos tests aparecen como fallidos con un error \textit{stackoverflow}. Esto no significa necesariamente que el programa no funcione como se espera, lo más probable es que se deba a limitaciones de la máquina en la que se han realizado las pruebas.\\
+Podemos observar que algunos tests aparecen como fallidos con un error \textit{stackoverflow}. Esto no representa un error en el programa si no las limitaciones de la máquina en la que se ejecutaron las pruebas. 
+Será necesario utilizar hardware adecuado y problemas mayores para adquirir mejores conclusiones de este plan de pruebas.\\
 
 Queda como tarea en un futuro optimizar la gestión de la memoria y el uso de Spark para que ejecutar problemas como este sea posible en máquinas con menos recursos. 
 
@@ -319,7 +320,9 @@ Las pruebas se considerarán satisfactorias si producen resultados estudiables. 
 
 \subsection{Casos de prueba}
 
-En este plan de pruebas no definiremos casos de prueba siguiendo el estándar. A continuación se listan las diferentes configuraciones de núcleos y memoria con las que realizará la ejecución.
+En este plan de pruebas no definiremos casos de prueba siguiendo el estándar anterior ya que utilizaremos los ejemplos proporcionados por Pyomo. Todas las ejecuciones serán similares modificando el problema de entrada y con las modificaciones que sean necesarias para cada ejemplo concreto (como las rutas de los archivos del problema). Para la generación de estos casos de prueba no se sigue ninguna metodología de análisis concreta como pueden ser las técnicas de caja negra o caja blanca por lo que se explicó previamente.\\
+
+A continuación se listan las diferentes configuraciones de núcleos y memoria con las que realizará la ejecución.
 
 \begin{table}[H]
     \begin{tabularx}{\linewidth}{|X|X|}
@@ -373,17 +376,17 @@ Se establecerá también la media de duración por iteración para observar de f
 
 El primer aspecto a probar es el tiempo de ejecución del ejemplo \textit{Hydro}. Este modelo especifica 9 escenarios diferentes que, teniendo en cuenta que la paralelización se realiza a nivel de escenario, es esperable una buena escalabilidad.\\
 
-Sin embargo, los resultados obtenidos no cumplen lo esperado:\\
+Sin embargo, como vemos en la \autoref{fig:test-hydro}, los resultados obtenidos no cumplen lo esperado.\\
 
 \begin{figure}[H]
     \centerline{\includegraphics[width=15cm]{figuras/pruebas/test-hydro.png}}
-    \caption{Tiempos de ejecución Hydro}
+    \caption{Tiempos de ejecución Hydro con múltiples hilos con 2GB o 4GB}
     \label{fig:test-hydro}
 \end{figure}
 
 Para analizar estos datos, primero debemos tener en cuenta dos puntos importantes: la ejecución no se ha realizado en una máquina adecuada para aprovechar la paralelización y el tiempo de ejecución de la versión secuencia es de aproximadamente 6s.\\
 
-A parte de ejecutar las pruebas con distinto número de hilos, también se ha probado a limitar la memoria disponible en Spark a 2GB o 4GB. Esto está representado en la gráfica como las líneas naranja y azul. Podemos concluir facilmente que, para este ejemplo concreto, no existe diferencia en la memoria disponible. Esto puede ser porque la memoria necesaria es siempre inferior a 2GB o es siempre superior a 4GB. \\
+A parte de ejecutar las pruebas con distinto número de hilos (eje x de la figura), también se ha probado a limitar la memoria disponible en Spark a 2GB o 4GB. Esto está representado en la gráfica como las líneas naranja y azul. Podemos concluir facilmente que, para este ejemplo concreto, no existe diferencia en la memoria disponible. Esto puede ser porque la memoria necesaria es siempre inferior a 2GB o es siempre superior a 4GB. \\
 
 En cuanto a los tiempos de ejecución, si tenemos en cuenta que la ejecución normal tarda unos 6s, la implementación con Spark utilizando 1 hilo tarda 74s, siendo una opción claramente peor a nivel temporal.\\
 
@@ -391,7 +394,7 @@ Aumentando el número de hilos disponible, observamos inicialmente una mejora im
 
 Estos tiempos están claramente lejos de lo conseguido con la ejecución secuencial, pero son un claro indicador del potencial de una implementación con Spark para la resolución de problemas estocásticos y, con futuras optimizaciones y un cluster donde ejecutarse, esta implementación podría ser una alternativa viable para abordar problemas que antes no eran resolubles en un tiempo razonable.\\
 
-Con el objetivo de analizar los tiempos sobre un problema mayor se utilizarán los tiempos establecidos por el ejemplo \textit{Finance}. Este ejemplo no consigue finalizar por lo que parecen ser limitaciones de memoria, pero sí podemos observar los tiempos de ejecución de las primeras iteraciones. Se seleccionan los tiempos de ejecución de las primeras 10 iteraciones y se hace una media de los mismos. En la siguiente figura se muestra el tiempo medio por iteración para el ejemplo \textit{Finance} así como para el anterior ejemplo \textit{Hydro} utilizando 1,2 y 8 hilos.\\
+Con el objetivo de analizar los tiempos sobre un problema mayor se utilizarán los tiempos establecidos por el ejemplo \textit{Finance}. Este ejemplo no consigue finalizar por lo que parecen ser limitaciones de memoria, pero sí podemos observar los tiempos de ejecución de las primeras iteraciones. Se seleccionan los tiempos de ejecución de las primeras 10 iteraciones y se hace una media de los mismos. En la \autoref{fig:test-iteration-time} se muestra el tiempo medio por iteración para el ejemplo \textit{Finance} así como para el anterior ejemplo \textit{Hydro} utilizando 1,2 y 8 hilos.\\
 
 \begin{figure}[H]
     \centerline{\includegraphics[width=15cm]{figuras/pruebas/test-iteration-time.png}}

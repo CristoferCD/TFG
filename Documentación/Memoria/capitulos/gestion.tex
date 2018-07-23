@@ -5,7 +5,7 @@
 
 \subsection{Descripción del alcance del proyecto}
 
-En este proyecto se construirá un módulo software como parte del proyecto Pyomo. Este nuevo módulo adaptará el funcionamiento del actual módulo de programación estocástica (\textit{PySP}) a una implementación paralela.\\
+En este proyecto se construirá un módulo software como parte del proyecto Pyomo. Este nuevo módulo adaptará el funcionamiento del actual módulo de programación estocástica (\textit{PySP}) a una nueva implementación paralela.\\
 
 Se realizará un estudio inicial de Pyomo para decidir la integración y la tecnología a utilizar para la nueva implementación. El objetivo de esta nueva implementación es el de proporcionar una ejecución más escalable que permita abordar problemas de mayor tamaño o, al menos, proporcionar una implementación base que, con futuras optimizaciones, permita conseguir ese objetivo.\\
 
@@ -243,7 +243,7 @@ El impacto que tendrá la ocurrencia del riesgo sobre los activos afectados se m
     },
     probability={Moderada},
     impact={Variable},
-    affected={Todos los ECS},
+    affected={Todos los Elementos de Configuración del Software (ECS)},
     treatment={Minimización -- La planificación se creará con un margen de retraso proporcional a la complicación de la tarea.},
     indicators={Una tarea está tardando en finalizar más de lo esperado.},
     follow={Semanalmente.}
@@ -306,7 +306,7 @@ Considerando que el proyecto supone 5h diarias, esto es un 13\% del tiempo de us
 
 \subsection{Costes tras la ampliación del proyecto}
 
-Una vez modificada la fecha de finalización del proyecto contamos con un mes adicional de gastos. Este nuevo mes debe contar con nuevos gastos indirectos por residir en la vivienda personal, lo que también implica un coste de 10{\euro} por cada reunión que suponga un desplazamiento a Santiago.\\
+Una vez modificada la fecha de finalización del proyecto, tal y como se especifica en la \autoref{sec:modificacionesCronograma}, contamos con un mes adicional de gastos. Este nuevo mes debe contar con nuevos gastos indirectos por residir en la vivienda personal, lo que también implica un coste de 10{\euro} por cada reunión que suponga un desplazamiento a Santiago.\\
 
 Esta nueva fecha de finalización supone 40 días extra de gasto. \\
 
@@ -401,7 +401,7 @@ Con el objetivo de controlar estos tiempos y asumiendo que la fase de implementa
 
 \WorkItem [
         id=1.2, 
-        name={Análisis de la solución actual en PySP/runph},
+        name={Análisis de la solución actual en PySP},
         description= {
             Una vez conocido el funcionamiento teórico del algoritmo, estudiar su implementación sobre el proyecto Pyomo.
         },
@@ -409,7 +409,7 @@ Con el objetivo de controlar estos tiempos y asumiendo que la fase de implementa
         results={Diagrama de funcionamiento PH \cite{local_funcionamientoPH}.}
     ]
 {
-    \caption{Tarea 1.2: Análisis de la solución actual en PySP/runph}
+    \caption{Tarea 1.2: Análisis de la solución actual en PySP}
     \label{tab:task1.2}
 }
 
@@ -476,7 +476,7 @@ Con el objetivo de controlar estos tiempos y asumiendo que la fase de implementa
             Idear un plan de pruebas para el nuevo módulo.
         },
         duration=4,
-        results={Documento de pruebas \cite{local_planPruebas}.}
+        results={Documento de pruebas en el \autoref{ch:pruebas}.}
     ]
 {
     \caption{Tarea 4.1: Generación de plan de pruebas}
@@ -490,7 +490,7 @@ Con el objetivo de controlar estos tiempos y asumiendo que la fase de implementa
             Implementar y ejecutar las pruebas establecidas para establecer confianza sobre el correcto funcionamiento de la implementación.
         },
         duration=1,
-        results={Informe de ejecución de pruebas.}
+        results={Informe de ejecución de pruebas en el \autoref{ch:pruebas}}
     ]
 {
     \caption{Tarea 4.2: Ejecución del plan de pruebas}
@@ -504,7 +504,7 @@ Con el objetivo de controlar estos tiempos y asumiendo que la fase de implementa
             Idear un plan de pruebas con problemas que permitan estudiar el rendimiento del programa.  
         },
         duration=3,
-        results={Documento de pruebas de rendimiento \cite{local_planPruebasRendimiento}.}
+        results={Documento de pruebas de rendimiento \autoref{ch:pruebas}.}
     ]
 {
     \caption{Tarea 4.3: Plan de pruebas de rendimiento}
@@ -518,7 +518,7 @@ Con el objetivo de controlar estos tiempos y asumiendo que la fase de implementa
             Ejecutar el plan de pruebas anterior y compararlo con las versiones originales tanto secuencial como con Pyro.
         },
         duration=2,
-        results={Informe de rendimiento \cite{local_informeRendimiento}.}
+        results={Informe de rendimiento \autoref{ch:pruebas}.}
     ]
 {
     \caption{Tarea 4.4: Estudio de rendimiento}
@@ -539,9 +539,78 @@ Con el objetivo de controlar estos tiempos y asumiendo que la fase de implementa
     \label{tab:task5}
 }
 
-\subsubsection{Tareas no planificadas}
+\subsection{Cronograma inicial}
 
-Tras las modificaciones realizadas sobre el cronograma y explicadas en \autoref{sec:modificacionesCronograma}, se generan nuevas tareas para el proyecto: 
+Para la realización del trabajo se plantea un ciclo de vida en cascada. Este ciclo de vida nos permitirá realizar un seguimiento del progreso del proyecto en función del tiempo disponible.
+
+\begin{figure}[H]
+    \centerline{\includegraphics[width=18cm]{figuras/planificacion/linea-base.png}}
+    \caption{Línea base}
+\end{figure}
+
+\section{Modificaciones al cronograma inicial}
+\label{sec:modificacionesCronograma}
+
+Se ha realizado una estimación temporal inicial poco precisa por no utilizar ningún tipo de método probado ni datos concretos.
+
+Esta es la razón principal para los retrasos que se explican a continuación.
+
+\subsection{Retraso en análisis}
+
+El primer retraso se produce en la fase de análisis de la implementación actual. En esta fase se debe estudiar el funcionamiento del proyecto Pyomo y, en concreto, el módulo de resolución de problemas mediante \textit{Progressive Hedging}. 
+
+A pesar de conocer el funcionamiento teórico del algoritmo mediante \cite{progressiveHedging}, Pyomo es un proyecto complejo, con multitud de funcionalidades para resolver otros tipos de problemas, soporte para plugins, etc. Todo esto hace que la complejidad del código aumente y sea necesario estudiar múltiples capas de abstracción para entender correctamente el funcionamiento del programa.
+
+Otra complicación añadida es el personal desconocimiento del lenguaje Python previo a la realización de este trabajo.\\
+
+Tras este primer retraso se intenta ajustar la planificación reduciendo el tiempo de diseño a la mitad:
+
+\begin{figure}[H]
+    \centerline{\includegraphics[width=18cm]{figuras/planificacion/1_retraso-analisis-inicial.png}}
+    \caption{Primer retraso}
+\end{figure}
+
+Teniendo en cuenta que los primeros retrasos fueron principalmente causados por el desconocimiento de la tecnología a usar así como de una mala estimación, es muy probable que en las fases siguientes se produzcan otros retrasos. En este punto se considera entonces abandonar el ciclo de vida en cascada. Su principal atractivo era poder ajustarnos a una planificación temporal que nos permita acabar el proyecto dentro de tiempo, pero esta ventaja no se está cumpliendo en la práctica. Buscando reducir el tiempo de implementación con tecnologías que serán usadas por primera vez, se decide adaptar la planificación a un ciclo de vida por prototipos. 
+
+La creación de sucesivos prototipos permite ir acostumbrándose a las tecnologías desconocidas, en este caso Python y Spark, así como ir probando el rendimiento y la integración a medida que se desarrolla.
+
+En primer lugar se crea un prototipo aislado para comprobar la implementación de Spark con una arquitectura similar a la que se implementará en Pyomo. Este primer prototipo sirve como aprendizaje de la instalación de Spark y el despliegue de una aplicación en el mismo, así como la implementación en Python que interactuará con Spark. Es deseable utilizar una arquitectura de objetos Python similar a la que se usará en Pyomo para concretar el uso de Spark y descubrir posibles problemas con la implementación elegida.
+
+Posteriormente se realizarán prototipos sucesivos sobre Pyomo para integrar el nuevo módulo e ir solucionando posibles problemas de rendimiento o funcionamiento que vayan surgiendo. 
+
+Dado que la implementación partirá de un protipo inicial de baja calidad será importante realizar una fase de optimización y refactorización al final de la implementación para asegurarse un código final de calidad. Definir la calidad del código no es algo trivial y en este caso calificaremos el código como "de calidad" si cumple:
+
+\begin{itemize}
+    \item Funciona correctamente y es resistente a errores. Para esto nos apoyaremos en un plan de pruebas funcional.
+    \item Funciona eficientemente y otorga un buen rendimiento, en comparación a las implementaciones existentes. En este caso nos apoyaremos en el plan de pruebas de rendimiento.
+    \item Se integra adecuadamente al proyecto actual. Debe seguir una filosofía de diseño análoga al resto del código así como funcionar correctamente de forma paralela a todo lo implementado previamente.
+\end{itemize}
+
+Tras esta modificación en la planificación, se genera una nueva planificación que podemos ver en la figura y se guardará como una nueva línea base.
+
+\begin{figure}[H]
+    \centerline{\includegraphics[width=18cm]{figuras/planificacion/2_linea-base-prototipos.png}}
+    \caption{Línea base prototipos}
+\end{figure}
+
+En este punto hemos eliminado la fase de Diseño para poder aumentar el tiempo asignado a Análisis e Implementación. En caso de sufrir más retrasos en la fase de implementación podremos reducir el tiempo asignado a pruebas si el retraso no es grave. En caso de ser un retraso mayor, no cumpliremos la fecha de finalización establecida.
+
+\subsection{Retraso en implementación}
+
+Durante la implementación del prototipo funcional el desarrollo llega a un punto muerto. Las funciones implementadas no devuelven el resultado correcto y se debe hacer una búsqueda de los errores que lo causan. Por falta de experiencia y desconocimiento de las tecnologías, esta fase de implementación se alarga hasta el día 07/07/2018. \\
+
+Este retraso sumado a un retraso de 10 días en la creación del prototipo aislado nos fuerza a retrasar la fecha de finalización del proyecto al día 25/07/2018. \\
+
+Con estos nuevos cambios es necesaria una nueva planificación temporal:
+
+\begin{figure}[H]
+    \centerline{\includegraphics[width=18cm]{figuras/planificacion/3_linea-base-final.png}}
+    \caption{Línea base final}
+\end{figure}
+
+\subsection{Tareas no planificadas}
+
+Tras las modificaciones realizadas sobre el cronograma y explicadas en la \autoref{sec:modificacionesCronograma}, se generan nuevas tareas para el proyecto: 
  
 \WorkItem [ 
         id=3.*,  
@@ -584,72 +653,4 @@ Tras las modificaciones realizadas sobre el cronograma y explicadas en \autoref{
      \label{tab:task3.*3}
 } 
 
-\subsection{Cronograma inicial}
-
-Para la realización del trabajo se plantea un ciclo de vida en cascada. Este ciclo de vida nos permitirá realizar un seguimiento del progreso del proyecto en función del tiempo disponible.
-
-\begin{figure}[H]
-    \centerline{\includegraphics[width=18cm]{figuras/planificacion/linea-base.png}}
-    \caption{Línea base}
-\end{figure}
-
-\subsection{Modificaciones al cronograma inicial}
-\label{sec:modificacionesCronograma}
-
-Se ha realizado una estimación temporal inicial poco precisa por no utilizar ningún tipo de método probado ni datos concretos.
-
-Esta es la razón principal para los retrasos que se explican a continuación.
-
-\subsubsection{Retraso en análisis}
-
-El primer retraso se produce en la fase de análisis de la implementación actual. En esta fase se debe estudiar el funcionamiento del proyecto Pyomo y, en concreto, el módulo de resolución de problemas mediante \textit{Progressive Hedging}. 
-
-A pesar de conocer el funcionamiento teórico del algoritmo mediante \cite{progressiveHedging}, Pyomo es un proyecto complejo, con multitud de funcionalidades para resolver otros tipos de problemas, soporte para plugins, etc. Todo esto hace que la complejidad del código aumente y sea necesario estudiar múltiples capas de abstracción para entender correctamente el funcionamiento del programa.
-
-Otra complicación añadida es el personal desconocimiento del lenguaje Python previo a la realización de este trabajo.\\
-
-Tras este primer retraso se intenta ajustar la planificación reduciendo el tiempo de diseño a la mitad:
-
-\begin{figure}[H]
-    \centerline{\includegraphics[width=18cm]{figuras/planificacion/1_retraso-analisis-inicial.png}}
-    \caption{Primer retraso}
-\end{figure}
-
-Teniendo en cuenta que los primeros retrasos fueron principalmente causados por el desconocimiento de la tecnología a usar así como de una mala estimación, es muy probable que en las fases siguientes se produzcan otros retrasos. En este punto se considera entonces abandonar el ciclo de vida en cascada. Su principal atractivo era poder ajustarnos a una planificación temporal que nos permita acabar el proyecto dentro de tiempo, pero esta ventaja no se está cumpliendo en la práctica. Buscando reducir el tiempo de implementación con tecnologías que serán usadas por primera vez, se decide adaptar la planificación a un ciclo de vida por prototipos. 
-
-La creación de sucesivos prototipos permite ir acostumbrándose a las tecnologías desconocidas, en este caso Python y Spark, así como ir probando el rendimiento y la integración a medida que se desarrolla.
-
-En primer lugar se crea un prototipo aislado para comprobar la implementación de Spark con una arquitectura similar a la que se implementará en Pyomo. Este primer prototipo sirve como aprendizaje de la instalación de Spark y el despliegue de una aplicación en el mismo, así como la implementación en Python que interactuará con Spark. Es deseable utilizar una arquitectura de objetos Python similar a la que se usará en Pyomo para concretar el uso de Spark y descubrir posibles problemas con la implementación elegida.
-
-Posteriormente se realizarán prototipos sucesivos sobre Pyomo para integrar el nuevo módulo e ir solucionando posibles problemas de rendimiento o funcionamiento que vayan surgiendo. 
-
-Dado que la implementación partirá de un protipo inicial de baja calidad será importante realizar una fase de optimización y refactorización al final de la implementación para asegurarse un código final de calidad. Definir la calidad del código no es algo trivial y en este caso calificaremos el código como "de calidad" si cumple:
-
-\begin{itemize}
-    \item Funciona correctamente y es resistente a errores. Para esto nos apoyaremos en un plan de pruebas funcional.
-    \item Funciona eficientemente y otorga un buen rendimiento, en comparación a las implementaciones existentes. En este caso nos apoyaremos en el plan de pruebas de rendimiento.
-    \item Se integra adecuadamente al proyecto actual. Debe seguir una filosofía de diseño análoga al resto del código así como funcionar correctamente de forma paralela a todo lo implementado previamente.
-\end{itemize}
-
-Tras esta modificación en la planificación, se genera una nueva planificación que podemos ver en la figura y se guardará como una nueva línea base.
-
-\begin{figure}[H]
-    \centerline{\includegraphics[width=18cm]{figuras/planificacion/2_linea-base-prototipos.png}}
-    \caption{Línea base prototipos}
-\end{figure}
-
-En este punto hemos eliminado la fase de Diseño para poder aumentar el tiempo asignado a Análisis e Implementación. En caso de sufrir más retrasos en la fase de implementación podremos reducir el tiempo asignado a pruebas si el retraso no es grave. En caso de ser un retraso mayor, no cumpliremos la fecha de finalización establecida.
-
-\subsubsection{Retraso en implementación}
-
-Durante la implementación del prototipo funcional el desarrollo llega a un punto muerto. Las funciones implementadas no devuelven el resultado correcto y se debe hacer una búsqueda de los errores que lo causan. Por falta de experiencia y desconocimiento de las tecnologías, esta fase de implementación se alarga hasta el día 07/07/2018. \\
-
-Este retraso sumado a un retraso de 10 días en la creación del prototipo aislado nos fuerza a retrasar la fecha de finalización del proyecto al día 25/07/2018. \\
-
-Con estos nuevos cambios es necesaria una nueva planificación temporal:
-
-\begin{figure}[H]
-    \centerline{\includegraphics[width=18cm]{figuras/planificacion/3_linea-base-final.png}}
-    \caption{Línea base final}
-\end{figure}
 
