@@ -38,12 +38,32 @@ Pyomo permite el uso de plugins externos que se pueden ejecutar antes o después
 
 El proyecto debe finalizar el día 18/06/2018. En caso de ser necesario se puede postponer la fecha de finalización hasta el 27/07/2018.
 
+\section{Casos de uso}
+
+\begin{figure}[H]
+    \centerline{\includegraphics[width=12cm]{figuras/analisis/use-cases.png}}
+    \caption{Casos de uso}
+    \label{fig:use-cases}
+\end{figure}
+
 \section{Análisis de requisitos}
 
-El objetivo principal de este trabajo es el de paralelizar el algoritmo \textit{Progressive Hedging} del módulo PySP. Para conseguirlo se establecen los siguientes requisitos:
+El objetivo principal de este trabajo es el de paralelizar el algoritmo \textit{Progressive Hedging} del módulo PySP. Para conseguirlo se establecen una serie de requisitos funcionales y no funcionales.\\
 
-% TODO: Introducción a las tablas y concretar algo más. Introducción similar a lo explicado en la sección de riesgos.
-% TODO: Añadir requisitos no funcionales y casos de uso.
+Cada requisito vendrá definido por:
+
+\begin{itemize}
+    \item \textbf{ID: } Identificador único para cada requisito, imprescindible para referenciarlo desde otros puntos del documento como pruebas u objetivos. Tendrá el prefijo ``RF'' en caso de ser un requisito funcional, y ``RNF'' para un requisito no funcional.
+    \item \textbf{Nombre: } Breve explicación que identifique el objetivo que cumple este requisito.
+    \item \textbf{Descripción: } Describe brevemente los criterios de cumplimiento necesarios para aceptar este requisito como completado.
+    \item \textbf{Importancia: } Especifica la prioridad de realización de este requisito en función del impacto que tendría su ausencia en el producto final. Podrá ser:
+    \begin{itemize}
+        \item \textit{Imprescindible: } No cumplir este requisito puede impedir la finalización satisfactoria del proyecto.
+        \item \textit{Importante: } No cumplir este requisito supondrá una degradación importante de la calidad del resultado.
+        \item \textit{Deseable: } Añadir este requisito supone una mejora de la calidad del resultado pero su falta no tiene consecuencias importantes.
+        \item \textit{Irrelevante: } La existencia de este requisito no tiene un impacto importante (positivo o negativo) en el resultado final.
+    \end{itemize}
+\end{itemize}
 
 \Req [
     id=RF-01,
@@ -76,6 +96,30 @@ El objetivo principal de este trabajo es el de paralelizar el algoritmo \textit{
     priority={Importante}
 ] { \caption{RF-04: Establecer medición de rendimiento de Spark}
     \label{tab:rf-04}}
+
+\Req [
+    id=RNF-01,
+    name={Aprovechar la escalabilidad de Spark},
+    description={La implementación debe mostrar una mejora en el tiempo de ejecución cuando se utiliza un mayor número de recursos en paralelo},
+    priority={Importante}
+] { \caption{RNF-01: Aprovechar la escalabilidad de Spark}
+    \label{tab:rnf-01}}
+
+\Req [
+    id=RNF-02,
+    name={Compatibilidad con entradas y salidas previas},
+    description={Las entradas y salidas del programa deben usar el mismo formato que para la ejecución secuencial.},
+    priority={Deseable}
+] { \caption{RNF-02: Compatibilidad con entradas y salidas previas}
+    \label{tab:rnf-02}}
+
+\Req [
+    id=RNF-03,
+    name={Extensibilidad},
+    description={La implementación diseñada debe permitir la adición de mejoras en un futuro de la forma más sencilla posible.},
+    priority={Deseable}
+] { \caption{RNF-03: Extensibilidad}
+    \label{tab:rnf-03}}
 
 \section{Análisis de riesgos}
 
@@ -328,7 +372,11 @@ Para relacionar de forma concreta tareas de la planificación con cambios en el 
 
 \subsection{Metodología de desarrollo}
 
-% TODO: Explicar elección de cascada.
+Antes de especificar el orden de las tareas y el tiempo asignado a cada una, debemos decidir el ciclo de vida que adoptaremos para la realización de este proyecto. \\
+
+Este trabajo tiene un tiempo límite fijado que debemos respetar. Los aspectos más importantes serán la investigación inicial y la fase final de optimización y recogida de datos. Inicialmente no se estima que el desarrollo tenga mucho peso en el total del proyecto.\\
+
+Con el objetivo de controlar estos tiempos y asumiendo que la fase de implementación no necesitará de un ciclo de desarrollo complicado, utilizaremos un ciclo de vida en cascada. Este ciclo de vida nos permite definir la lista de tareas a realizar en orden y ajustándose al tiempo disponible. Como el tiempo de cada tarea está claramente delimitado, será sencillo realizar un seguimiento de la realización de este proyecto, facilitando la detección temprana de retrasos.
 
 \subsection{EDT}
 

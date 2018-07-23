@@ -1,7 +1,13 @@
 \chapter{Conclusiones}
 \label{ch:conclusiones}
 
-% TODO: Indicar logros conseguidos
+En este proyecto hemos visto un uso muy interesante para las tecnologías Big Data. En principio, cuando pensamos en Big Data, pensamos en una gran cantidad de datos como una red de sensores o datos de usuarios en internet que son procesados para realizar análisis estadísticos, por ejemplo. Este trabajo muestra las virtudes del framework Spark como herramienta para ejecutar trabajos de forma paralela. Hemos demostrado con un ejemplo práctico cómo Spark puede soportar una arquitectura de objetos distribuidos para solucionar problemas en el ámbito científico. 
+
+Este modelo de computación distribuida supone múltiples ventajas con respecto a utilizar otras herramientas como MPI u OpenMP. La principal ventaja es su sencillez. El framework Spark facilita la gestión del clúster de computación y se encarga de la repartición de datos y la distribución de la carga computacional. Esto permite a los desarrolladores centrarse en el algoritmo concreto y no en los detalles específicos de trabajar en un entorno distribuido. Además, como el clúster y la implementación están desacopladas, se pueden mejorar y modificar de forma aislada, pudiendo aprovechar nuevas versiones de Spark y hardware más potente sin hacer ninguna o pocas modificaciones sobre la implementación.\\
+
+Otro logro importante es la integración con Pyomo. Aunque se deben mejorar algunas cuestiones menores, el nuevo módulo de trabajos con Spark se integra perfectamente con el resto del proyecto, funcionando con sólo modificar una opción de ejecución. Esto abre las puertas a, en un futuro, añadir esta funcionalidad a la versión estable de Pyomo para que se pueda utilizar libremente y, al ser un proyecto de código abierto, otros grupos de investigación podrán añadir mejoras al mismo.\\
+
+En cuanto al rendimiento, los valores de escalabilidad prometen ofrecer un buen rendimiento dados un hardware y problemas de entrada adecuados. Podemos observar una mejora superior al 0,5x pasando de 1 a 2 hilos de ejecución. En las pruebas que se pudieron ejecutar, no es posible mejorar estos números con más hilos, probablemente por los problemas ejecutados y la máquina de pruebas. Sin embargo, con alguna optimización a mayores, es posible que consigamos una escalabilidad casi perfecta con respecto al número de nodos de procesamiento. Esto implicaría tener una implementación muy eficiente que permitiría abordar grandes problemas estocásticos en poco tiempo haciendo uso de un clúster de computación adecuado.
 
 \section{Lecciones aprendidas}
 
