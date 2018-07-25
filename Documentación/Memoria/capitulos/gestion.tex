@@ -46,6 +46,14 @@ El proyecto debe finalizar el día 18/06/2018. En caso de ser necesario se puede
     \label{fig:use-cases}
 \end{figure}
 
+Para este proyecto, los casos de uso son sencillos pues la interacción con Pyomo no se verá modificada con respecto a su estado anterior. Como casos concretos para esta nueva implementación vemos los siguientes:
+
+\begin{itemize}
+    \item \textbf{Resolución de problemas definidos como modelos de Pyomo: } Utilizando un modelo de problema como entrada a la nueva implementación, lo interpretará correctamente y calculará su solución.
+    \item \textbf{Envío de trabajos a Spark: } Dada una instalación de Spark, el usuario debe poder indicar la URL de ésta y el algoritmo de resolución del problema se ejecutará en el clúster especificado.
+    \item \textbf{Recolección de los resultados calculados por Spark: } Una vez se ejecute el algoritmo en el clúster de Spark, los resultados deben ser recolectados y devueltos al cliente mostrando una salida equivalente a una ejecución del algoritmo en local.
+\end{itemize}
+
 \section{Análisis de requisitos}
 
 El objetivo principal de este trabajo es el de paralelizar el algoritmo \textit{Progressive Hedging} del módulo PySP. Para conseguirlo se establecen una serie de requisitos funcionales y no funcionales.\\
