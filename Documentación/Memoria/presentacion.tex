@@ -6,17 +6,17 @@
 
 \documentclass{beamer}
 \usepackage{beamerthemeshadow}
-\usepackage[galician]{babel}
-% \usepackage[spanish]{babel}
+%\usepackage[galician]{babel}
+\usepackage[spanish]{babel}
 \usepackage[utf8]{inputenc}
 %\usepackage[latin1]{inputenc}
 
 \begin{document}
-\title{Título do Traballo de Fin de Grao}
-\subtitle{Grao en Enxeñaría Informática \\
-Universidade de Santiago de Compostela}  
-\author{Autor: Nome do Autor}
-\institute{Director: Nome do Director}
+\title{Paralelización del algoritmo Progressive Hedging para la resolución de problemas estocásticos}
+\subtitle{Grao en Ingeniería Informática \\
+Universidad de Santiago de Compostela}  
+\author{Autor: Cristofer Canosa Domínguez}
+\institute{Director: Juan Carlos Pichel Campos}
 \date{\today} 
 
 \begin{frame}
@@ -24,8 +24,238 @@ Universidade de Santiago de Compostela}
 \end{frame}
 
 \begin{frame}
-\frametitle{Taboa de contidos}\tableofcontents
+\frametitle{Tabla de contenidos}\tableofcontents
 \end{frame} 
+
+\section{Introducción}
+
+\subsection{Programación Estocástica}
+
+\begin{frame}
+    \frametitle{Programación estocástica}
+    \begin{itemize}
+        \item Problemas de optimización \pause
+        \item Existe un nivel de incertidumbre \pause
+        \item Generan múltiples escenarios
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Programación estocástica}
+    \begin{figure}[H]
+        \centerline{\includegraphics[width=8cm]{figuras/scenario-tree.png}}
+        \caption{Árbol de escenarios en un problema estocástico}
+        \label{fig:scenario-tree}
+    \end{figure}
+    % Explicar que son las variables las que generan los múltiples escenarios. Si tenemos más de una variable, el árbol crece.
+\end{frame}
+
+\begin{frame}
+    \frametitle{Ejemplos de aplicación}
+    \begin{enumerate}
+        \item TFM: ``Problemas de rutas de vehículos''
+        % Abastecer a un conjunto de clientes con un número concreto de vehículos. Se busca la ruta óptima. Múltiples puntos de salida. Se diferencia del problema del viajante en que cada vehículo tiene una capacidad concreta. p.e si tenemos repartidores de pizzas: cuantas pizzas puede llevar cada coche.
+        % Incertidumbre en la demanda.
+        \item Modelo de optimización de la oferta de generación eléctrica para compañías eléctricas que participan en el mercado eléctrico liberalizado MIBEL.
+        % MIBEL: Mercado Ibérico de la Electricidad.
+        % Grupo de mercado en el que las compañías generadoras ofertan energía y los distribuidores realizan una demanada.
+        \item ``Progressive Hedging aplicado a coordinación hidrotérmica''
+        % Optimizar una red eléctrica con múltiples fuentes de energía y la variabilidad que introducen.
+    \end{enumerate}
+\end{frame}
+
+\subsection{Pyomo}
+
+\begin{frame}
+    \frametitle{Pyomo}
+    \begin{columns}
+        \begin{column}{5cm}
+            \begin{itemize}
+            \item Formulación y solución de modelos de optimización
+            \item Uso de solucionadores de terceros (CPLEX, GLPK)
+            \item \textit{Sandia National Laboratories} y \textit{University of California}
+            \item Python
+            \end{itemize}
+        \end{column}
+        \begin{column}{5cm}
+            \begin{figure}[H]
+                \centerline{\includegraphics[width=3cm]{figuras/pyomo-logo.png}}
+            \end{figure}
+        \end{column}
+    \end{columns}
+    % Programa de código abierto que se usa para solucionar problemas de optimización de todo tipo. Permite escribir un script en python que defina tu problema y lo soluciona. 
+    % Usa los solvers de terceros. Existe una interfaz muy conocida AMPL.
+    % Nos centraremos en PySP que es el módulo concreto orientado a la resolución de problemas estocásticos.
+\end{frame}
+
+\subsection{Objetivos}
+
+\begin{frame}
+    \frametitle{Objetivos}
+    \begin{enumerate}
+        \item Estudiar y analizar el funcionamiento del algoritmo \textit{Progressive Hedging} en PySP.
+        \item Análisis de las diferentes alternativas de paralelización disponibles que mejor se adapten al problema. Se tendrán en cuenta tecnologías Big Data (Apache Spark) o modelos tradicionales de paralelización.
+        \item Diseño e implementación del nuevo módulo e integración con Pyomo.
+        \item Análisis y evaluación del rendimiento.
+    \end{enumerate}
+\end{frame}
+
+\section{Gestión del proyecto}
+
+\subsection{Alcance y entregables}
+
+\begin{frame}
+    \frametitle{Alcance}
+    \begin{itemize}
+        \item Adaptar el módulo de programación estocástica (PySP) a una nueva implementación paralela.
+        \item Nueva implementación más escalable que permita abordar problemas de mayor tamaño.
+        \item Realizar un análisis de rendimiento.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Entregables}
+    \begin{itemize}
+        \item Código de Pyomo actualizado con el módulo de ejecución de PH paralelo.
+        \item Estudio de rendimiento.
+        \item Memoria de realización del proyecto.
+        \item Otra documentación asociada a la realización del proyecto.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Casos de uso}
+    \begin{figure}[H]
+        \centerline{\includegraphics[width=8cm]{figuras/analisis/use-cases.png}}
+        \caption{Casos de uso}
+        \label{fig:use-cases}
+    \end{figure}
+\end{frame}
+
+\subsection{Planificación temporal}
+
+\begin{frame}
+    \frametitle{Metodología de desarrollo}   
+    \begin{itemize}
+        \item Límite temporal estricto \pause
+        \item Poco peso de la fase de implementación \pause
+        \item Mayor énfasis en análisis y documentación \pause
+        \item Metodología en cascada
+    \end{itemize} 
+\end{frame}
+
+\begin{frame}[plain]
+    \frametitle{EDT}
+    \begin{figure}[H]
+        \centerline{\includegraphics[width=9cm]{figuras/planificacion/edt-inicial.png}}
+        \caption{EDT inicial}
+    \end{figure}
+\end{frame}
+
+\begin{frame}[plain]
+    \frametitle{Cronograma}
+    \begin{figure}[H]
+        \centerline{\includegraphics[width=12cm]{figuras/planificacion/linea-base.png}}
+        \caption{Línea base}
+    \end{figure}
+\end{frame}
+
+\begin{frame}[plain]
+    \frametitle{Adaptación de la planificación}
+    \begin{figure}[H]
+        \centerline{\includegraphics[width=12cm]{figuras/planificacion/1_retraso-analisis-inicial.png}}
+        \caption{Primer retraso}
+    \end{figure}
+\end{frame}
+
+\begin{frame}[plain]
+    \frametitle{Adaptación de la planificación}
+    \begin{figure}[H]
+        \centerline{\includegraphics[width=12cm]{figuras/planificacion/2_linea-base-prototipos.png}}
+        \caption{Línea base prototipos}
+    \end{figure}
+\end{frame}
+
+\begin{frame}[plain]
+    \frametitle{Cronograma final}
+    \begin{figure}[H]
+        \centerline{\includegraphics[width=12cm]{figuras/planificacion/3_linea-base-final.png}}
+        \caption{Línea base final}
+    \end{figure}
+\end{frame}
+
+\section{Análisis}
+
+\subsection{Algoritmo \textit{Progressive Hedging}}
+
+\begin{frame}
+    \frametitle{\textit{Progressive Hedging}}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Implementación en Pyomo}
+\end{frame}
+
+\subsection{Herramientas}
+
+\begin{frame}
+    \frametitle{Spark}
+\end{frame}
+
+\begin{frame}{}
+    \frametitle{MPI}
+\end{frame}
+
+\section{Diseño}
+
+\begin{frame}{}
+    \frametitle{Diseño}
+\end{frame}
+
+\section{Implementación}
+
+\begin{frame}{}
+    \frametitle{Proceso}
+    % Indicar que se hicieron prototipos, etc.
+\end{frame}
+
+\begin{frame}{}
+    \frametitle{Funcionamiento}
+    % Dibujitos de cómo funciona la implementación de Spark
+\end{frame}
+
+\begin{frame}{}
+    \frametitle{Implementación}
+    % Enseñar la clase que controla el RDD y tal.
+\end{frame}
+
+\section{Pruebas}
+
+\begin{frame}{}
+    \frametitle{Recursos}
+    % Indicar que también se hicieron pruebas funcionales, pero para la presentación nos interesa el rendimiento, como objetivo principal del proyecto.
+    % Decir que se usaron los ejemplos que vienen y ya.
+\end{frame}
+
+\begin{frame}{}
+    \frametitle{Resultados}
+\end{frame}
+
+\section{Conclusiones}
+
+\begin{frame}{}
+    \frametitle{Lecciones aprendidas}
+\end{frame}
+
+\begin{frame}{}
+    \frametitle{Trabajo futuro}
+\end{frame}
+
+\begin{frame}{}
+    \frametitle{Conclusiones}
+\end{frame}
+
+\iffalse
 
 \section{Sección 1} 
 \subsection{Ejemplo de subsección}
@@ -170,6 +400,7 @@ Febrero & 20 & 20:00 \\ \hline
 \caption{Una figura grande}
 \end{figure}
 \end{frame}
+\fi
 
 \end{document}
 

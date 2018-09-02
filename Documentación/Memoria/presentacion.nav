@@ -1,0 +1,98 @@
+\headcommand {\slideentry {0}{0}{1}{1/1}{}{0}}
+\headcommand {\beamer@framepages {1}{1}}
+\headcommand {\slideentry {0}{0}{2}{2/2}{}{0}}
+\headcommand {\beamer@framepages {2}{2}}
+\headcommand {\beamer@sectionpages {1}{2}}
+\headcommand {\beamer@subsectionpages {1}{2}}
+\headcommand {\sectionentry {1}{Introducci\IeC {\'o}n}{3}{Introducci\IeC {\'o}n}{0}}
+\headcommand {\beamer@subsectionpages {3}{2}}
+\headcommand {\beamer@subsectionentry {0}{1}{1}{3}{Programaci\IeC {\'o}n Estoc\IeC {\'a}stica}}
+\headcommand {\slideentry {1}{1}{1}{3/5}{Programaci\IeC {\'o}n Estoc\IeC {\'a}stica}{0}}
+\headcommand {\beamer@framepages {3}{5}}
+\headcommand {\slideentry {1}{1}{2}{6/6}{Programaci\IeC {\'o}n Estoc\IeC {\'a}stica}{0}}
+\headcommand {\beamer@framepages {6}{6}}
+\headcommand {\slideentry {1}{1}{3}{7/7}{Programaci\IeC {\'o}n Estoc\IeC {\'a}stica}{0}}
+\headcommand {\beamer@framepages {7}{7}}
+\headcommand {\beamer@subsectionpages {3}{7}}
+\headcommand {\beamer@subsectionentry {0}{1}{2}{8}{Pyomo}}
+\headcommand {\slideentry {1}{2}{1}{8/8}{Pyomo}{0}}
+\headcommand {\beamer@framepages {8}{8}}
+\headcommand {\beamer@subsectionpages {8}{8}}
+\headcommand {\beamer@subsectionentry {0}{1}{3}{9}{Objetivos}}
+\headcommand {\slideentry {1}{3}{1}{9/9}{Objetivos}{0}}
+\headcommand {\beamer@framepages {9}{9}}
+\headcommand {\beamer@sectionpages {3}{9}}
+\headcommand {\beamer@subsectionpages {9}{9}}
+\headcommand {\sectionentry {2}{Gesti\IeC {\'o}n del proyecto}{10}{Gesti\IeC {\'o}n del proyecto}{0}}
+\headcommand {\beamer@subsectionpages {10}{9}}
+\headcommand {\beamer@subsectionentry {0}{2}{1}{10}{Alcance y entregables}}
+\headcommand {\slideentry {2}{1}{1}{10/10}{Alcance y entregables}{0}}
+\headcommand {\beamer@framepages {10}{10}}
+\headcommand {\slideentry {2}{1}{2}{11/11}{Alcance y entregables}{0}}
+\headcommand {\beamer@framepages {11}{11}}
+\headcommand {\slideentry {2}{1}{3}{12/12}{Alcance y entregables}{0}}
+\headcommand {\beamer@framepages {12}{12}}
+\headcommand {\beamer@subsectionpages {10}{12}}
+\headcommand {\beamer@subsectionentry {0}{2}{2}{13}{Planificaci\IeC {\'o}n temporal}}
+\headcommand {\slideentry {2}{2}{1}{13/16}{Planificaci\IeC {\'o}n temporal}{0}}
+\headcommand {\beamer@framepages {13}{16}}
+\headcommand {\slideentry {2}{2}{2}{17/17}{Planificaci\IeC {\'o}n temporal}{0}}
+\headcommand {\beamer@framepages {17}{17}}
+\headcommand {\slideentry {2}{2}{3}{18/18}{Planificaci\IeC {\'o}n temporal}{0}}
+\headcommand {\beamer@framepages {18}{18}}
+\headcommand {\slideentry {2}{2}{4}{19/19}{Planificaci\IeC {\'o}n temporal}{0}}
+\headcommand {\beamer@framepages {19}{19}}
+\headcommand {\slideentry {2}{2}{5}{20/20}{Planificaci\IeC {\'o}n temporal}{0}}
+\headcommand {\beamer@framepages {20}{20}}
+\headcommand {\slideentry {2}{2}{6}{21/21}{Planificaci\IeC {\'o}n temporal}{0}}
+\headcommand {\beamer@framepages {21}{21}}
+\headcommand {\beamer@sectionpages {10}{21}}
+\headcommand {\beamer@subsectionpages {13}{21}}
+\headcommand {\sectionentry {3}{An\IeC {\'a}lisis}{22}{An\IeC {\'a}lisis}{0}}
+\headcommand {\beamer@subsectionpages {22}{21}}
+\headcommand {\beamer@subsectionentry {0}{3}{1}{22}{Algoritmo \textit {Progressive Hedging}}}
+\headcommand {\slideentry {3}{1}{1}{22/22}{Algoritmo \textit {Progressive Hedging}}{0}}
+\headcommand {\beamer@framepages {22}{22}}
+\headcommand {\slideentry {3}{1}{2}{23/23}{Algoritmo \textit {Progressive Hedging}}{0}}
+\headcommand {\beamer@framepages {23}{23}}
+\headcommand {\beamer@subsectionpages {22}{23}}
+\headcommand {\beamer@subsectionentry {0}{3}{2}{24}{Herramientas}}
+\headcommand {\slideentry {3}{2}{1}{24/24}{Herramientas}{0}}
+\headcommand {\beamer@framepages {24}{24}}
+\headcommand {\slideentry {3}{2}{2}{25/25}{Herramientas}{0}}
+\headcommand {\beamer@framepages {25}{25}}
+\headcommand {\beamer@sectionpages {22}{25}}
+\headcommand {\beamer@subsectionpages {24}{25}}
+\headcommand {\sectionentry {4}{Dise\IeC {\~n}o}{26}{Dise\IeC {\~n}o}{0}}
+\headcommand {\slideentry {4}{0}{1}{26/26}{}{0}}
+\headcommand {\beamer@framepages {26}{26}}
+\headcommand {\beamer@sectionpages {26}{26}}
+\headcommand {\beamer@subsectionpages {26}{26}}
+\headcommand {\sectionentry {5}{Implementaci\IeC {\'o}n}{27}{Implementaci\IeC {\'o}n}{0}}
+\headcommand {\slideentry {5}{0}{1}{27/27}{}{0}}
+\headcommand {\beamer@framepages {27}{27}}
+\headcommand {\slideentry {5}{0}{2}{28/28}{}{0}}
+\headcommand {\beamer@framepages {28}{28}}
+\headcommand {\slideentry {5}{0}{3}{29/29}{}{0}}
+\headcommand {\beamer@framepages {29}{29}}
+\headcommand {\beamer@sectionpages {27}{29}}
+\headcommand {\beamer@subsectionpages {27}{29}}
+\headcommand {\sectionentry {6}{Pruebas}{30}{Pruebas}{0}}
+\headcommand {\slideentry {6}{0}{1}{30/30}{}{0}}
+\headcommand {\beamer@framepages {30}{30}}
+\headcommand {\slideentry {6}{0}{2}{31/31}{}{0}}
+\headcommand {\beamer@framepages {31}{31}}
+\headcommand {\beamer@sectionpages {30}{31}}
+\headcommand {\beamer@subsectionpages {30}{31}}
+\headcommand {\sectionentry {7}{Conclusiones}{32}{Conclusiones}{0}}
+\headcommand {\slideentry {7}{0}{1}{32/32}{}{0}}
+\headcommand {\beamer@framepages {32}{32}}
+\headcommand {\slideentry {7}{0}{2}{33/33}{}{0}}
+\headcommand {\beamer@framepages {33}{33}}
+\headcommand {\slideentry {7}{0}{3}{34/34}{}{0}}
+\headcommand {\beamer@framepages {34}{34}}
+\headcommand {\beamer@partpages {1}{34}}
+\headcommand {\beamer@subsectionpages {32}{34}}
+\headcommand {\beamer@sectionpages {32}{34}}
+\headcommand {\beamer@documentpages {34}}
+\headcommand {\gdef \inserttotalframenumber {29}}
