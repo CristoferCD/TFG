@@ -190,26 +190,89 @@ Universidad de Santiago de Compostela}
 
 \begin{frame}
     \frametitle{\textit{Progressive Hedging}}
+    \begin{itemize}
+        \item Algoritmo iterativo
+        \item Descomposición del árbol de escenarios en múltiples problemas lineales.
+        \item Convergencia de las múltiples soluciones
+    \end{itemize}
+\end{frame}
+
+\begin{frame}[plain]
+    \frametitle{\textit{Progressive Hedging}}
+    \begin{figure}[H]
+        \centerline{\includegraphics[width=12cm]{figuras/ph-pseudocode.png}}
+        \caption{Pseudocódigo del algoritmo}
+    \end{figure}
 \end{frame}
 
 \begin{frame}
     \frametitle{Implementación en Pyomo}
+    \begin{enumerate}
+        \item Se importan el modelo y los escenarios.
+        \item Genera los objetos necesarios para la ejecución.
+        % Solver manager, etc. Son configurables por el usuario.
+        \item Cada iteración se divide en 3 fases:
+        \begin{enumerate}
+            \item ``presolve'': Preprocesa los escenarios.
+            % Genera el archivo de entrada
+            \item ``apply\_solver'': Ejecuta el solver externo.
+            \item ``postsolve'': Adapta la salida del solver externo.
+        \end{enumerate}
+    \end{enumerate}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Implementación en Pyomo}
+    \begin{itemize}
+        \item Arquitectura basada en tareas
+        \item Facilita intercambiar el módulo que ejecuta la solución del problema
+        \item Simplifica la paralelización
+    \end{itemize}
 \end{frame}
 
 \subsection{Herramientas}
 
+\begin{frame}{}
+    \frametitle{Herramientas}
+    Para la nueva implementación paralela se analizarán dos posibles tecnologías:
+    \begin{enumerate}
+        \item Spark
+        \item MPI
+    \end{enumerate}
+\end{frame}
+
 \begin{frame}
     \frametitle{Spark}
+    \begin{itemize}
+        \item Herramienta Big Data de código abierto \pause
+        \item Abstracción del entorno distribuido \pause
+        \item Trabaja sobre RDD (\textit{Resilient Distributed Datasets}):
+        \begin{itemize}
+            \item Transformaciones
+            \item Acciones \pause
+        \end{itemize}
+        \item Otros módulos (Dataframes, MLib, etc)
+    \end{itemize}
 \end{frame}
 
 \begin{frame}{}
     \frametitle{MPI}
+    \begin{itemize}
+        \item Interfaz estándar de paso de mensajes
+        \item Desacoplamiento entre trabajadores
+        \item Implementación de bajo nivel (sincronización entre trabajadores, tipos personalizados)
+        \item Funciones específicas para el tratamiento paralelo de datos (MPI\_BCAST, MPI\_SCATTER, etc)
+    \end{itemize}
 \end{frame}
 
 \section{Diseño}
 
-\begin{frame}{}
+\begin{frame}[plain]
     \frametitle{Diseño}
+    \begin{figure}[H]
+        \centerline{\includegraphics[width=12cm]{figuras/ph-diagram.png}}
+        \label{fig:ph-diagram}
+    \end{figure}
 \end{frame}
 
 \section{Implementación}
@@ -217,6 +280,14 @@ Universidad de Santiago de Compostela}
 \begin{frame}{}
     \frametitle{Proceso}
     % Indicar que se hicieron prototipos, etc.
+    \begin{itemize}
+        \item Generación de 3 prototipos \pause
+        \begin{enumerate}
+            \item Prototipo inicial \pause
+            \item Prototipo de integración \pause
+            \item Prototipo funcional
+        \end{enumerate}
+    \end{itemize}
 \end{frame}
 
 \begin{frame}{}

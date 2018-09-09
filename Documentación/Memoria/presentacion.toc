@@ -8,8 +8,8 @@
 \beamer@subsectionintoc {2}{2}{Planificaci\IeC {\'o}n temporal}{13}{0}{2}
 \beamer@sectionintoc {3}{An\IeC {\'a}lisis}{22}{0}{3}
 \beamer@subsectionintoc {3}{1}{Algoritmo \textit {Progressive Hedging}}{22}{0}{3}
-\beamer@subsectionintoc {3}{2}{Herramientas}{24}{0}{3}
-\beamer@sectionintoc {4}{Dise\IeC {\~n}o}{26}{0}{4}
-\beamer@sectionintoc {5}{Implementaci\IeC {\'o}n}{27}{0}{5}
-\beamer@sectionintoc {6}{Pruebas}{30}{0}{6}
-\beamer@sectionintoc {7}{Conclusiones}{32}{0}{7}
+\beamer@subsectionintoc {3}{2}{Herramientas}{26}{0}{3}
+\beamer@sectionintoc {4}{Dise\IeC {\~n}o}{32}{0}{4}
+\beamer@sectionintoc {5}{Implementaci\IeC {\'o}n}{33}{0}{5}
+\beamer@sectionintoc {6}{Pruebas}{39}{0}{6}
+\beamer@sectionintoc {7}{Conclusiones}{41}{0}{7}
