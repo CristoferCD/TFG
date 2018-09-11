@@ -293,23 +293,51 @@ Universidad de Santiago de Compostela}
 \begin{frame}{}
     \frametitle{Funcionamiento}
     % Dibujitos de cómo funciona la implementación de Spark
-\end{frame}
-
-\begin{frame}{}
-    \frametitle{Implementación}
-    % Enseñar la clase que controla el RDD y tal.
+    % * Creación del RDD, es una lista y se inicializa en paralelo. 
+    % * Envio del solver y cosas.
+    % * Encapsulado de tareas, explicar el wrapper.
+    % * Ver cómo se recogen los resultados. Explicar la naturaleza lazy, para ir encolando tareas.
 \end{frame}
 
 \section{Pruebas}
 
 \begin{frame}{}
-    \frametitle{Recursos}
-    % Indicar que también se hicieron pruebas funcionales, pero para la presentación nos interesa el rendimiento, como objetivo principal del proyecto.
-    % Decir que se usaron los ejemplos que vienen y ya.
+    \frametitle{Pruebas}
+    \begin{itemize}
+        \item Diseño de pruebas funcionales
+        \begin{itemize}
+            \item Diferentes opciones de configuración que modifican la ejecución
+            \item Resolución de los ejemplos
+        \end{itemize}
+        \item Diseño de pruebas de rendimiento
+    \end{itemize}
 \end{frame}
 
 \begin{frame}{}
+    \frametitle{Recursos}
+    % Indicar que también se hicieron pruebas funcionales, pero para la presentación nos interesa el rendimiento, como objetivo principal del proyecto.
+    % Decir que se usaron los ejemplos que vienen y ya.
+    \item Se probarán los ejemplos \textit{Finance} y \textit{Hydro}
+    \item Se prueba la escalabilidad en 1 y 8 hilos
+    \item Se medirá el tiempo total de ejecución y el tiempo medio por iteración
+\end{frame}
+
+\begin{frame}[plain]
     \frametitle{Resultados}
+    \begin{figure}[H]
+        \centerline{\includegraphics[width=15cm]{figuras/pruebas/test-hydro.png}}
+        \caption{Tiempos de ejecución Hydro con múltiples hilos con 2GB o 4GB}
+        \label{fig:test-hydro}
+    \end{figure}
+\end{frame}
+
+\begin{frame}[plain]
+    \frametitle{Resultados}
+    \begin{figure}[H]
+        \centerline{\includegraphics[width=15cm]{figuras/pruebas/test-iteration-time.png}}
+        \caption{Tiempo medio por iteración}
+        \label{fig:test-iteration-time}
+    \end{figure}
 \end{frame}
 
 \section{Conclusiones}
