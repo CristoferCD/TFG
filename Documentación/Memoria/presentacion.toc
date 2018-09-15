@@ -11,5 +11,5 @@
 \beamer@subsectionintoc {3}{2}{Herramientas}{26}{0}{3}
 \beamer@sectionintoc {4}{Dise\IeC {\~n}o}{32}{0}{4}
 \beamer@sectionintoc {5}{Implementaci\IeC {\'o}n}{33}{0}{5}
-\beamer@sectionintoc {6}{Pruebas}{39}{0}{6}
-\beamer@sectionintoc {7}{Conclusiones}{41}{0}{7}
+\beamer@sectionintoc {6}{Pruebas}{42}{0}{6}
+\beamer@sectionintoc {7}{Conclusiones}{46}{0}{7}
